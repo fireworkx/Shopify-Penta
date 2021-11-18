@@ -1,12 +1,8 @@
 {
-  "sections": {
-    "enquiry-form": {
-      "type": "penta-form-enquiry",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "enquiry-form"
-  ]
+	"sections": {
+		"penta-collection-content": {
+			"type": "penta-collection-content"
+		}
+	},
+	"order": ["penta-collection-content"]
 }
