@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+      }
+    },
+    "pf-bc0d8592": {
+      "type": "pf-bc0d8592",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "pf-bc0d8592"
+  ]
+}
