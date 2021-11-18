@@ -1,14 +1,8 @@
 {
-  "sections": {
-    "banner": {
-      "type": "main-collection-banner"
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid"
-    }
-  },
-  "order": [
-    "banner",
-    "product-grid"
-  ]
+	"sections": {
+		"enquiry-form": {
+			"type": "penta-form-enquiry"
+		}
+	},
+	"order": ["enquiry-form"]
 }
