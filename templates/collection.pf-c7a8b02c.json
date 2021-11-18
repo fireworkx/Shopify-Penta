@@ -4,9 +4,15 @@
       "type": "penta-form-enquiry",
       "settings": {
       }
+    },
+    "pf-c7a8b02c": {
+      "type": "pf-c7a8b02c",
+      "settings": {
+      }
     }
   },
   "order": [
-    "enquiry-form"
+    "enquiry-form",
+    "pf-c7a8b02c"
   ]
 }
