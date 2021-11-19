@@ -1,12 +1,13 @@
 {
-  "sections": {
-    "penta-collection-content": {
-      "type": "penta-collection-content",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "penta-collection-content"
-  ]
+	"sections": {
+		"penta-collection-content-top": {
+			"type": "penta-collection-content-top",
+			"settings": {}
+		},
+		"penta-collection-content-bottom": {
+			"type": "penta-collection-content-bottom",
+			"settings": {}
+		}
+	},
+	"order": ["penta-collection-content-top", "penta-collection-content-bottom"]
 }

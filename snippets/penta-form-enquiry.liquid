@@ -4,13 +4,41 @@
   </form>
 </div>
 
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modalButtons = document.querySelectorAll('a[data-modal]')
+    modalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modalType = button.dataset.modal;
+        const modal = document.querySelector(`.modal#${modalType}`)
+        if(modal){
+          modal.classList.toggle('show')
+        }
+      });
+    })
+  })
+
+</script>
+
 <style>
-  #enquiry-form-content{
+  .modal{
     position:fixed;
+    top:0;
     bottom:0;
-    left:0;
-    height:300px;
+    right:0;
     width:300px;
     background:red;
+    visibility:hidden;
+    opacity:0;
+    pointer-events:none;
+    transform: translateX(100%);
+    transition: transform 0.15s, opacity 0.15s, visibility 0.15s;
+    z-index:4;
   }
+  .show{
+    visibility:visible;
+    opacity:1;
+    transform: translateX(0);
+  }  
 </style>
