@@ -120,6 +120,9 @@
                                       {%- else -%}
                                         <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
                                           <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
+                                            {% if childlink.type == "collection_link" and childlink.object.image %}
+                                              {{ childlink.object.image | img_url: 'small' | img_tag }}
+                                            {% endif %}
                                             {{ childlink.title | escape }}
                                             {% render 'icon-arrow' %}
                                             {% render 'icon-caret' %}
@@ -133,6 +136,9 @@
                                               {%- for grandchildlink in childlink.links -%}
                                                 <li>
                                                   <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                    {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
+                                                      {{ grandchildlink.object.image | img_url: 'small' | img_tag }}
+                                                    {% endif %}
                                                     {{ grandchildlink.title | escape }}
                                                   </a>
                                                 </li>
@@ -371,12 +377,18 @@
                             <details id="Details-HeaderSubMenu-{{ forloop.index }}">
                               <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                 {{ childlink.title | escape }}
+                                {% if childlink.type == "collection_link" and childlink.object.image %}
+                                  {{ childlink.object.image | img_url: 'small' | img_tag }}
+                                {% endif %}
                                 {% render 'icon-caret' %}
                               </summary>
                               <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce">
                                 {%- for grandchildlink in childlink.links -%}
                                   <li>
                                     <a href="{{ grandchildlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                      {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
+                                        {{ grandchildlink.object.image | img_url: 'small' | img_tag }}
+                                      {% endif %}
                                       {{ grandchildlink.title | escape }}
                                     </a>
                                   </li>
