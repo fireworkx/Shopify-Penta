@@ -13,3 +13,21 @@
 <section class="modal" id="test-drive-modal">
   {% render 'penta-form-test-drive' %}
 </section>
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modalButtons = document.querySelectorAll('a[data-modal]')
+    modalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const modalType = button.dataset.modal;
+        const modal = document.querySelector(`.modal#${modalType}`)
+        if(modal){
+          modal.classList.toggle('show')
+        }
+      });
+    })
+  })
+
+</script>
