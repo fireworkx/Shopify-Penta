@@ -1,11 +1,5 @@
 {{ 'penta-collection.css' | asset_url | stylesheet_tag }}
 
-{% if template.name == 'collection' %}
-
-  <div>{{ collection.title }}</div>
-
-{% endif %}
-
 <section class="modal" id="enquiry-modal">
   {% render 'penta-form-enquiry' %}
 </section>
