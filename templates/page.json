@@ -1,18 +1,8 @@
 {
-  "sections": {
-    "penta-page-content-top": {
-      "type": "penta-page-content-top",
-      "settings": {
-      }
-    },
-    "penta-page-content-bottom": {
-      "type": "penta-page-content-bottom",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "penta-page-content-top",
-    "penta-page-content-bottom"
-  ]
+	"sections": {
+		"main": {
+			"type": "main-page"
+		}
+	},
+	"order": ["main"]
 }
