@@ -1,12 +1,13 @@
 {
-  "sections": {
-    "pf-01c6f706": {
-      "type": "pf-01c6f706",
-      "settings": {
-      }
-    }
-  },
-  "order": [
-    "pf-01c6f706"
-  ]
+	"sections": {
+		"penta-page-content-top": {
+			"type": "penta-page-content-top",
+			"settings": {}
+		},
+		"pf-01c6f706": {
+			"type": "pf-01c6f706",
+			"settings": {}
+		}
+	},
+	"order": ["penta-page-content-top", "pf-01c6f706"]
 }
