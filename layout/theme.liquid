@@ -122,6 +122,11 @@
     {%- endif -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+    {% comment %} Penta styles {% endcomment %}
+
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
+    <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
 
   <body class="gradient">
@@ -169,5 +174,13 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% comment %} Penta forms  {% endcomment %}
+
+    {% render 'penta-form-contact-us' %}
+    {% render 'penta-form-enquiry' %}
+    {% render 'penta-form-test-drive' %}
+    {% render 'penta-modal-overlay' %}
+  
   </body>
 </html>

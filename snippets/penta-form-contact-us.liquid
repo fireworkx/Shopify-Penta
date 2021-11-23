@@ -1,46 +1,8 @@
-<section class="modal" id="contact-us-modal">
+<section class="penta-modal" id="contact-us-modal">
   <div id="contact-us-form-content">
     <h1>Contact us</h1>
     <form>
     </form>
   </div>
-</div>
-
-<style>
-  .modal{
-    position:fixed;
-    top:0;
-    bottom:0;
-    right:0;
-    width:300px;
-    background:red;
-    visibility:hidden;
-    opacity:0;
-    pointer-events:none;
-    transform: translateX(100%);
-    transition: transform 0.15s, opacity 0.15s, visibility 0.15s;
-    z-index:4;
-  }
-  .show{
-    visibility:visible;
-    opacity:1;
-    transform: translateX(0);
-  }  
-</style>
-
-<script>
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const modalButtons = document.querySelectorAll('a[data-modal]')
-    modalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modalType = button.dataset.modal;
-        const modal = document.querySelector(`.modal#${modalType}`)
-        if(modal){
-          modal.classList.toggle('show')
-        }
-      });
-    })
-  })
-
-</script>
+  <button data-modal="close-modal">Close Modal</button>
+</section>
