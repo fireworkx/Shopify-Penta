@@ -126,6 +126,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     {%- endif -%}
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+    {% comment %} Penta styles {% endcomment %}
+
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
+    <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
 
   <body class="gradient"><div class="pagefly-container">{{ content_for_layout }}</div></body>
