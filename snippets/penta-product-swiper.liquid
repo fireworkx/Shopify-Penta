@@ -1,0 +1,32 @@
+<div class="swiper penta-swiper" id="penta-product-swiper">
+  <div class="swiper-wrapper">
+      {%- for media in product.media -%}
+          <div class="swiper-slide">
+              {%- if media != blank -%}
+                  <img src="{{ media | img_url: '1000x' }}"
+                        loading="lazy"
+                        width=""
+                        height=""
+                >
+              {%- endif -%}
+          </div>
+      {%- endfor -%}
+  </div>
+  <div class="swiper-button-next">.</div>
+  <div class="swiper-button-prev">.</div>
+</div>
+<div class="swiper penta-swiper penta-thumbs-swiper" id="penta-product-thumbs-swiper">
+  <div class="swiper-wrapper">
+      {%- for media in product.media -%}
+          <div class="swiper-slide">
+              {%- if media != blank -%}
+                  <img src="{{ media | img_url: '1000x' }}"
+                        loading="lazy"
+                        width=""
+                        height=""
+                  >
+              {%- endif -%}
+          </div>
+      {%- endfor -%}
+  </div>
+</div>
