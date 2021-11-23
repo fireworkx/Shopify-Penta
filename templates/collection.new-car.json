@@ -1,8 +1,12 @@
 {
-	"sections": {
-		"penta-collection-content": {
-			"type": "penta-collection-content"
-		}
-	},
-	"order": ["penta-collection-content"]
+  "sections": {
+    "penta-collection-content": {
+      "type": "penta-collection-content",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "penta-collection-content"
+  ]
 }
