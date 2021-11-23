@@ -13,9 +13,8 @@
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% comment %} Custom scripts {% endcomment %}
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js" async></script>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" async/>
-<script src="{{ 'penta-product.js' | asset_url }}" defer ></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}
@@ -40,35 +39,6 @@
       {% render 'penta-metafield-table' %}
     </div>
   </div>
-
-  <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
-    <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
-      <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
-
-      <div class="product-media-modal__content" role="document" aria-label="{{ 'products.modal.label' | t }}" tabindex="0">
-        {%- liquid
-          if product.selected_or_first_available_variant.featured_media != null
-            assign media = product.selected_or_first_available_variant.featured_media
-            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
-          endif
-        -%}
-
-        {%- for media in product.media -%}
-          {%- liquid
-            if section.settings.hide_variants and variant_images contains media.src
-              assign variant_image = true
-            else
-              assign variant_image = false
-            endif
-
-            unless media.id == product.selected_or_first_available_variant.featured_media.id
-              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
-            endunless
-          -%}
-        {%- endfor -%}
-      </div>
-    </div>
-  </product-modal>
 
   {% assign popups = section.blocks | where: "type", "popup" %}
   {%- for block in popups -%}
@@ -196,6 +166,7 @@
     ]
   }
 </script>
+<script src="{{ 'penta-product.js' | asset_url }}" defer="defer" ></script>
 
 {% schema %}
 {
