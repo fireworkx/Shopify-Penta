@@ -1,0 +1,44 @@
+<table>
+  {% if product.metafields.product.Make != blank %}
+    <tr><td>Make</td><td>{{ product.metafields.product.Make }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.Model != blank %}
+    <tr><td>Model</td><td>{{ product.metafields.product.Model }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.Year != blank %}
+    <tr><td>Year</td><td>{{ product.metafields.product.Year }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.Odometer != blank %}
+    <tr><td>Mileage</td><td>{{ product.metafields.product.Odometer }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.EngineSize != blank %}
+    <tr><td>Engine Size</td><td>{{ product.metafields.product.EngineSize }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.FuelType != blank %}
+    <tr><td>Fuel Type</td><td>{{ product.metafields.product.FuelType }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.Transmission != blank %}
+    <tr><td>Gearbox</td><td>{{ product.metafields.product.Transmission }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.RegistrationNumber != blank %}
+    <tr><td>Registration</td><td>{{ product.metafields.product.RegistrationNumber }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.RegistrationDate != blank %}
+    <tr><td>Registered</td><td>{{ product.metafields.product.RegistrationDate | date: "%Y"  }} </td></tr>
+  {% endif %}
+  {% if product.metafields.product.Colour != blank %}
+    <tr><td>Colour</td><td>{{ product.metafields.product.Colour }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.Interior != blank %}
+    <tr><td>Interior</td><td>{{ product.metafields.product.Interior }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.VehicleType != blank %}
+    <tr><td>Vehicle Type</td><td>{{ product.metafields.product.VehicleType }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.HasServiceHistory != blank %}
+    <tr><td>Has Service History</td><td>{{ product.metafields.product.HasServiceHistory }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.DealerContactNumber != blank %}
+    <tr><td>DealerContactNumber</td><td><a href="tel:{{ product.metafields.product.DealerContactNumber |  replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a></td></tr>
+  {% endif %}
+</table>

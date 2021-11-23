@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			open: false,
 			type: "",
 			elem: "",
-			buttons: document.querySelectorAll("a[data-modal]"),
-			closeElems: document.querySelectorAll('[data-modal="close-modal"]'),
+			buttons: document.querySelectorAll("[data-modal]"),
+			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
 			openModal(type) {
 				this.open = true;

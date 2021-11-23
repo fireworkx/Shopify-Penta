@@ -22,3 +22,9 @@
 .penta-accordion-content:not(.penta-show) {
 	display: none !important;
 }
+
+/* Swipers */
+
+.penta-swiper .swiper-slide img {
+	width: 100%;
+}
