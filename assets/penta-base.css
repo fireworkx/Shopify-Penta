@@ -16,3 +16,9 @@
 	opacity: 1;
 	transform: translateX(0);
 }
+
+/* Accordions */
+
+.penta-accordion-content:not(.penta-show) {
+	display: none !important;
+}
