@@ -1,11 +1,9 @@
 {
 	"sections": {
-		"banner": {
-			"type": "main-collection-banner"
-		},
-		"product-grid": {
-			"type": "main-collection-product-grid"
+		"penta-collection-content": {
+			"type": "penta-collection-content",
+			"settings": {}
 		}
 	},
-	"order": ["banner", "product-grid"]
+	"order": ["penta-collection-content"]
 }
