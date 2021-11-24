@@ -118,6 +118,17 @@ button[data-modal="gallery-modal"]:hover svg {
 	}
 }
 
+/* Forms */
+.penta-form-content {
+	background-color: #fafafa;
+	pointer-events: all;
+	transition: transform 0.15s;
+	transform: translateX(100%);
+}
+
+.penta-show .penta-form-content {
+	transform: translateX(0);
+}
 /* Form feedback */
 
 .penta-form-feedback {
