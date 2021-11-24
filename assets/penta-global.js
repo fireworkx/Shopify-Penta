@@ -52,10 +52,58 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			}
 		},
+		forms: {
+			api: "https://pinewood-api.dev.fireworkx.com/api/v1/leadsubmit",
+			form: {},
+			init() {
+				const forms = document.querySelectorAll(".penta-form");
+				forms.forEach((elem) => {
+					let form = new Form(elem);
+				});
+			}
+		},
 		init() {
 			this.modal.init();
 			this.accordions.init();
+			this.forms.init();
 		}
 	};
+	function Form(form) {
+		this.sendForm = function () {
+			let formData = new FormData(form);
+			formData.append("Type", form.id);
+			formData.append("URL", window.location.href);
+			formDataJson = JSON.stringify(Object.fromEntries(formData));
+			fetch(penta.forms.api, {
+				method: "POST",
+				body: formDataJson,
+				headers: {
+					"Content-Type": "application/json"
+				}
+			})
+				.then((response) => {
+					if (response.status !== 200) {
+						console.error("Error: NOT 200");
+					}
+					if (response.status == 200) {
+						console.log("Success:");
+						this.resetForm(form);
+					}
+				})
+				.catch((error) => {
+					console.error("Error: Catch ERROR", error);
+				});
+		};
+		this.resetForm = function () {
+			console.log("form reset");
+		};
+		this.init = function () {
+			const submitButton = form.querySelector(".penta-submit-button");
+			submitButton.addEventListener("click", () => {
+				this.sendForm();
+			});
+		};
+		this.init();
+	}
 	penta.init();
 });

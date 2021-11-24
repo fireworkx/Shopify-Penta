@@ -1,7 +1,10 @@
 <section class="penta-modal" id="contact-us-modal">
   <div id="contact-us-form-content">
-    <h1>Contact us</h1>
-    <form>
+    <form id="contact-us-form" class="penta-form">
+      {% render 'penta-form-heading', form_heading: 'Get in Touch' %}
+      {% render 'penta-form-context-block' %}
+      {% render 'penta-form-footer', 
+        submitText: 'Submit Message' %}
     </form>
   </div>
   <button data-close-modal>Close Modal</button>

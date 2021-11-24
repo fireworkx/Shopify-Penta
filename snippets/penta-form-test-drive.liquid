@@ -1,7 +1,46 @@
 <section class="penta-modal" id="test-drive-modal">
   <div id="test-drive-form-content">
-    <h1>Test Drive</h1>
-    <form>
+    <form id="test-drive-form" class="penta-form">
+      {% render 'penta-form-heading', form_heading: 'Book a Test Drive' %}
+      {% render 'penta-form-context-block' %}
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>First Name*</label>
+          <input type="text" name="FirstName" value="" required />
+        </div>
+        <div class="penta-input">
+          <label>Surname*</label>
+          <input type="text" type="text" name="Surname" value="" required />
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Contact Number*</label>
+          <input type="tel" name="TelephoneNumber" pattern="^[0-9-+\s()]*$" value="" required inputmode="numeric" />
+        </div>
+        <div class="penta-input">
+          <label>Email Address*</label>
+          <input type="email" name="EmailAddress" value="" required />
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Title*</label>
+          <select required >
+            <option></option>
+            <option>Mr</option>
+            <option>Mrs</option>
+          </select>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Message*</label>
+          <textarea type="text" required name="Message"></textarea>
+        </div>
+      </div>
+      {% render 'penta-form-footer', 
+        submitText: 'Book Test Drive' %}
     </form>
   </div>
   <button data-close-modal>Close Modal</button>

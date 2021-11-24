@@ -1,7 +1,49 @@
 <section class="penta-modal" id="enquiry-modal">
-  <div id="enquiry-form-content">
-    <h1>Make an Enquiry</h1>
-    <form>
+  <div class="penta-form-content" id="enquiry-form-content">
+    <form id="enquiry-form" class="penta-form">
+      {% render 'penta-form-heading', form_heading: 'Make an Enquiry' %}
+      {% render 'penta-form-context-block' %}
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>First Name*</label>
+          <input type="text" name="FirstName" value="" required />
+        </div>
+        <div class="penta-input">
+          <label>Surname*</label>
+          <input type="text" type="text" name="Surname" value="" required />
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Contact Number*</label>
+          <input type="tel" name="TelephoneNumber" pattern="^[0-9-+\s()]*$" value="" required inputmode="numeric" />
+        </div>
+        <div class="penta-input">
+          <label>Email Address*</label>
+          <input type="email" name="EmailAddress" value="" required />
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Title*</label>
+          <select required >
+            <option></option>
+            <option>Mr</option>
+            <option>Mrs</option>
+          </select>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Message*</label>
+          <textarea type="text" required name="Message"></textarea>
+        </div>
+      </div>
+      <div class="penta-hidden-fields">
+            <input type="hidden" name="StocklistApiId" value="{% if product.metafields.product.StocklistApiId != blank %} {{ product.metafields.product.StocklistApiId }} {% else %}NA{% endif %}" />
+      </div>
+      {% render 'penta-form-footer', 
+        submitText: 'Submit Enquiry' %}
     </form>
   </div>
   <button data-close-modal>Close Modal</button>
