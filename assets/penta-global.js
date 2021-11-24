@@ -8,8 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			buttons: document.querySelectorAll("[data-modal]"),
 			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
+			body: document.querySelector("body"),
 			openModal(type) {
 				this.open = true;
+				this.body.classList.add("modal-open");
 				this.type = type;
 				this.elem = document.querySelector(`.penta-modal#${type}`);
 				this.elem.classList.add("penta-show");
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			},
 			closeModal() {
 				this.open = false;
+				this.body.classList.remove("modal-open");
 				this.type = "";
 				this.elem.classList.remove("penta-show");
 				this.overlay.classList.remove("penta-show");

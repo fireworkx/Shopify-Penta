@@ -6,11 +6,11 @@
           {%- for media in product.media -%}
               <div class="swiper-slide">
                   {%- if media != blank -%}
-                      <img src="{{ media | img_url: '1000x' }}"
-                            loading="lazy"
+                      <img data-src="{{ media | image_url: width: 2000 }}"
                             width=""
                             height=""
-                    >
+                            class="swiper-lazy">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                   {%- endif -%}
               </div>
           {%- endfor -%}
@@ -24,6 +24,10 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     var productSwiper = new Swiper("#penta-gallery-swiper", {
+      preloadImages: false,
+      lazy: {
+        loadPrevNext: true,
+      },
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -43,6 +47,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
+    pointer-events:all;
   }
   #gallery-modal .penta-modal-content{
     width: 100%;
@@ -51,7 +56,9 @@
   #gallery-modal .swiper-wrapper{
     align-items:center;
   }
-
+.swiper-lazy-preloader:empty{
+  display:block;
+}
   #gallery-modal .penta-close-modal-button{
     position:absolute;
     top:16px;

@@ -6,6 +6,10 @@ button svg {
 
 /* Modals */
 
+body.modal-open {
+	overflow: hidden;
+}
+
 .penta-modal {
 	position: fixed;
 	top: 0;
@@ -13,6 +17,7 @@ button svg {
 	right: 0;
 	visibility: hidden;
 	opacity: 0;
+	pointer-events: none;
 	transition: transform 0.15s, opacity 0.15s, visibility 0.15s;
 	z-index: 5;
 	width: 100%;

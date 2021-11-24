@@ -4,11 +4,8 @@
       {%- for media in product.media -%}
           <div class="swiper-slide" data-gallery-index="{{ forloop.index }}">
               {%- if media != blank -%}
-                  <img src="{{ media | img_url: '1000x' }}"
-                        loading="lazy"
-                        width=""
-                        height=""
-                >
+                  <img data-src="{{ media | image_url: width: 1000 }}" class="swiper-lazy">
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               {%- endif -%}
           </div>
       {%- endfor -%}
@@ -21,11 +18,8 @@
       {%- for media in product.media -%}
           <div class="swiper-slide"> 
               {%- if media != blank -%}
-                  <img src="{{ media | img_url: '500x' }}"
-                        loading="lazy"
-                        width=""
-                        height=""
-                  >
+                  <img data-src="{{ media | image_url: width: 250 }}" class="swiper-lazy">
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               {%- endif -%}
           </div>
       {%- endfor -%}
@@ -35,6 +29,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     var productThumbsSwiper = new Swiper("#penta-product-thumbs-swiper", {
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+          },
         spaceBetween: 10,
         slidesPerView: 2,
         breakpoints: {
@@ -56,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
         watchSlidesProgress: true
     });
     var productSwiper = new Swiper("#penta-product-swiper", {
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+          },
         spaceBetween: 10,
         navigation: {
             nextEl: ".swiper-button-next",
