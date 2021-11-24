@@ -12,9 +12,6 @@
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{% comment %} Custom scripts {% endcomment %}
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 {%- if first_3d_model -%}

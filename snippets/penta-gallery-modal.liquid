@@ -1,0 +1,63 @@
+<div class="penta-modal" id="gallery-modal">
+ {% render 'penta-close-modal-button' %}
+  <div class="penta-modal-content">
+    <div class="swiper penta-swiper" id="penta-gallery-swiper">
+      <div class="swiper-wrapper">
+          {%- for media in product.media -%}
+              <div class="swiper-slide">
+                  {%- if media != blank -%}
+                      <img src="{{ media | img_url: '1000x' }}"
+                            loading="lazy"
+                            width=""
+                            height=""
+                    >
+                  {%- endif -%}
+              </div>
+          {%- endfor -%}
+      </div>
+      <div class="swiper-button-next">.</div>
+      <div class="swiper-button-prev">.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    var productSwiper = new Swiper("#penta-gallery-swiper", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      }
+    });
+  });
+  
+</script>
+
+<style>
+  #gallery-modal{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  #gallery-modal .penta-modal-content{
+    width: 100%;
+    padding: 16px;
+  }
+  #gallery-modal .swiper-wrapper{
+    align-items:center;
+  }
+
+  #gallery-modal .penta-close-modal-button{
+    position:absolute;
+    top:16px;
+    right:16px;
+    background:white;
+    z-index:2;
+    cursor:pointer;
+  }
+</style>

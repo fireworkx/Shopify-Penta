@@ -123,8 +123,13 @@
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
-    {% comment %} Penta styles {% endcomment %}
+    {% comment %} Penta assets {% endcomment %}
 
+    {% comment %} Swiper {% endcomment %}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    {% comment %} Fireworkx {% endcomment %}
     <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
     <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
@@ -177,11 +182,16 @@
 
     {% comment %} Penta forms  {% endcomment %}
 
-    {% render 'penta-form-contact-us' %}
-    {% render 'penta-form-enquiry' %}
-    {% render 'penta-form-test-drive' %}
-    {% render 'penta-modal-overlay' %}
-    {% render 'penta-form-feedback' %}
+    {%- liquid
+      render 'penta-form-contact-us' 
+      render 'penta-form-enquiry' 
+      render 'penta-form-test-drive' 
+      render 'penta-modal-overlay' 
+      render 'penta-form-feedback' 
+      if template.name == 'page' or template.name == 'product' 
+        render 'penta-gallery-modal' 
+      endif
+    -%}
   
   </body>
 </html>

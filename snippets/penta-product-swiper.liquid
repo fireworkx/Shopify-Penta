@@ -1,7 +1,8 @@
 <div class="swiper penta-swiper" id="penta-product-swiper">
+<button type="button" data-modal="gallery-modal">{% render 'icon-penta-expand' %}</button>
   <div class="swiper-wrapper">
       {%- for media in product.media -%}
-          <div class="swiper-slide">
+          <div class="swiper-slide" data-gallery-index="{{ forloop.index }}">
               {%- if media != blank -%}
                   <img src="{{ media | img_url: '1000x' }}"
                         loading="lazy"
@@ -18,7 +19,7 @@
 <div class="swiper penta-swiper penta-thumbs-swiper" id="penta-product-thumbs-swiper">
   <div class="swiper-wrapper">
       {%- for media in product.media -%}
-          <div class="swiper-slide">
+          <div class="swiper-slide"> 
               {%- if media != blank -%}
                   <img src="{{ media | img_url: '500x' }}"
                         loading="lazy"
@@ -30,3 +31,62 @@
       {%- endfor -%}
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    var productThumbsSwiper = new Swiper("#penta-product-thumbs-swiper", {
+        spaceBetween: 10,
+        slidesPerView: 2,
+        breakpoints: {
+            320: {
+                slidesPerView: 3,
+                spaceBetween: 8
+            },
+            375: {
+                slidesPerView: 4,
+                spaceBetween: 8
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 16
+            }
+        },
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true
+    });
+    var productSwiper = new Swiper("#penta-product-swiper", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        thumbs: {
+            swiper: productThumbsSwiper
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        }
+    });
+});
+</script>
+
+<style>
+    #penta-product-swiper {
+        background-color: #000;
+        height: 280px;
+    }
+    
+    @media screen and (min-width: 750px) {
+        #penta-product-swiper {
+            height: 400px;
+        }
+    }
+    @media screen and (min-width: 990px) {
+        #penta-product-swiper {
+            height: 500px;
+        }
+    }
+
+</style>    
