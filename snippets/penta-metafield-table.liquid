@@ -1,3 +1,4 @@
+<h3>Overview</h3>
 <table class="penta-product-metafields-table">
   {% if product.metafields.product.Make != blank %}
     <tr><td>Make</td><td>{{ product.metafields.product.Make }}</td></tr>
@@ -37,8 +38,5 @@
   {% endif %}
   {% if product.metafields.product.HasServiceHistory != blank %}
     <tr><td>Has Service History</td><td>{{ product.metafields.product.HasServiceHistory }}</td></tr>
-  {% endif %}
-  {% if product.metafields.product.DealerContactNumber != blank %}
-    <tr><td>DealerContactNumber</td><td><a href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a></td></tr>
   {% endif %}
 </table>

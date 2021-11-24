@@ -28,3 +28,35 @@
 .penta-swiper .swiper-slide img {
 	width: 100%;
 }
+
+.penta-swiper .swiper-slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.penta-swiper .swiper-slide img {
+	width: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Thumbs */
+
+.penta-swiper.penta-thumbs-swiper {
+	height: 50px;
+}
+
+.penta-swiper.penta-thumbs-swiper .swiper-slide img {
+	max-height: none; /* Override regular swiper img */
+}
+
+@media screen and (min-width: 750px) {
+	.penta-swiper.penta-thumbs-swiper {
+		height: 60px;
+	}
+}
+@media screen and (min-width: 990px) {
+	.penta-swiper.penta-thumbs-swiper {
+		height: 80px;
+	}
+}
