@@ -25,23 +25,11 @@
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Title*</label>
-          <select required >
-            <option></option>
-            <option>Mr</option>
-            <option>Mrs</option>
-          </select>
-        </div>
-      </div>
-      <div class="penta-input-group">
-        <div class="penta-input">
           <label>Message*</label>
           <textarea type="text" required name="Message"></textarea>
         </div>
       </div>
-      <div class="penta-hidden-fields">
-            <input type="hidden" name="StocklistApiId" value="{% if product.metafields.product.StocklistApiId != blank %} {{ product.metafields.product.StocklistApiId }} {% else %}NA{% endif %}" />
-      </div>
+      {% render 'penta-hidden-fields' %}
       {% render 'penta-form-footer', 
         submitText: 'Submit Enquiry' %}
     </form>
