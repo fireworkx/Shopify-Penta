@@ -55,6 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		forms: {
 			api: "https://pinewood-api.dev.fireworkx.com/api/v1/leadsubmit",
 			form: {},
+			showFeedback(type) {
+				const successElem = document.querySelector(".penta-form-success");
+				const errorElem = document.querySelector(".penta-form-error");
+				successElem.classList.remove("penta-show");
+				errorElem.classList.remove("penta-show");
+				if (type === "success") {
+					successElem.classList.add("penta-show");
+				}
+				if (type === "error") {
+					errorElem.classList.add("penta-show");
+				}
+			},
 			init() {
 				const forms = document.querySelectorAll(".penta-form");
 				forms.forEach((elem) => {
@@ -68,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			this.forms.init();
 		}
 	};
+	// Form constructor
 	function Form(form) {
 		this.sendForm = function () {
 			let formData = new FormData(form);
@@ -84,10 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				.then((response) => {
 					if (response.status !== 200) {
 						console.error("Error: NOT 200");
+						penta.forms.showFeedback("error");
 					}
 					if (response.status == 200) {
 						console.log("Success:");
 						this.resetForm(form);
+						penta.forms.showFeedback("success");
+						penta.modal.closeModal();
 					}
 				})
 				.catch((error) => {
