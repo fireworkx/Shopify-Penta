@@ -1,6 +1,6 @@
 <section class="penta-modal" id="contact-us-modal">
   <div id="contact-us-form-content">
-    <form id="contact-us-form" class="penta-form">
+    <form id="contact-us-form" class="penta-form" data-form-type="ContactMeRequest">
       {% render 'penta-form-heading', form_heading: 'Get in Touch' %}
       <div class="penta-input-group">
         <div class="penta-input">
@@ -28,7 +28,6 @@
           <textarea type="text" required name="Message"></textarea>
         </div>
       </div>
-      {% render 'penta-hidden-fields' %}
       {% render 'penta-form-footer', 
         submitText: 'Submit Message' %}
     </form>

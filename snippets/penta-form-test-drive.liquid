@@ -1,6 +1,6 @@
 <section class="penta-modal" id="test-drive-modal">
   <div id="test-drive-form-content">
-    <form id="test-drive-form" class="penta-form">
+    <form id="test-drive-form" class="penta-form" data-form-type="TestDriveRequest">
       {% render 'penta-form-heading', form_heading: 'Book a Test Drive' %}
       {% render 'penta-form-context-block' %}
       <div class="penta-input-group">
@@ -21,6 +21,22 @@
         <div class="penta-input">
           <label>Email Address*</label>
           <input type="email" name="EmailAddress" value="" required />
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <label>Preferred Date*</label>
+          <input type="date" name="PreferredDate" value="" required />
+        </div>
+        <div class="penta-input">
+          <label>Preferred Time*</label>
+          <select required name="PreferredTime">
+            <option value="" disabled selected></option>
+            <option>Anytime</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
         </div>
       </div>
       <div class="penta-input-group">

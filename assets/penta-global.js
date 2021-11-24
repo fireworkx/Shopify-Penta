@@ -66,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				if (type === "error") {
 					errorElem.classList.add("penta-show");
 				}
+				setTimeout(function () {
+					successElem.classList.remove("penta-show");
+					errorElem.classList.remove("penta-show");
+				}, 5000);
 			},
 			init() {
 				const forms = document.querySelectorAll(".penta-form");
@@ -84,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	function Form(form) {
 		this.sendForm = function () {
 			let formData = new FormData(form);
-			formData.append("Type", form.id);
+			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
@@ -96,18 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
 			})
 				.then((response) => {
 					if (response.status !== 200) {
-						console.error("Error: NOT 200");
 						penta.forms.showFeedback("error");
 					}
 					if (response.status == 200) {
-						console.log("Success:");
 						this.resetForm(form);
 						penta.forms.showFeedback("success");
 						penta.modal.closeModal();
 					}
 				})
-				.catch((error) => {
-					console.error("Error: Catch ERROR", error);
+				.catch(() => {
+					penta.forms.showFeedback("error");
 				});
 		};
 		this.resetForm = function () {
