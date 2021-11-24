@@ -3,6 +3,7 @@
   <div class="penta-modal-content">
     <div class="swiper penta-swiper" id="penta-gallery-swiper">
       <div class="swiper-wrapper">
+        {% if template.name == 'product' %}
           {%- for media in product.media -%}
               <div class="swiper-slide">
                   {%- if media != blank -%}
@@ -14,6 +15,10 @@
                   {%- endif -%}
               </div>
           {%- endfor -%}
+        {% endif %}
+        {% if template.name == 'collection' %}
+
+        {% endif %}
       </div>
       <div class="swiper-button-next">.</div>
       <div class="swiper-button-prev">.</div>
@@ -23,6 +28,31 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+
+    // On new car pages - gets background images from gallery and injects into DOM
+    if('{{ template.name }}' == 'collection'){
+      if(document.querySelector('#penta-pagefly-gallery')){
+        const galleryImages = document.querySelectorAll('.penta-pagefly-gallery-image')
+        const swiperContainer = document.querySelector('.swiper-wrapper')
+        const sources = Array.from(galleryImages, image => {
+          let style = image.currentStyle || window.getComputedStyle(image, false),
+          imageUrl = style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+          return imageUrl;
+        });
+        const html = sources.map((source) => {
+          let slide = `<div class="swiper-slide">
+            <img data-src="${source}"
+                  width=""
+                  height=""
+                  class="swiper-lazy">
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          </div>`
+          return slide
+        })
+        swiperContainer.insertAdjacentHTML('afterbegin', html);
+      }
+    }
+
     var productSwiper = new Swiper("#penta-gallery-swiper", {
       preloadImages: false,
       lazy: {
@@ -34,7 +64,7 @@
         prevEl: ".swiper-button-prev"
       },
       pagination: {
-        el: ".swiper-pagination",
+      el: ".swiper-pagination",
         clickable: true
       }
     });
