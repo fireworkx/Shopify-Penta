@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				});
 		};
 		this.resetForm = function () {
-			console.log("form reset");
+			form.reset();
 		};
 		this.init = function () {
 			const submitButton = form.querySelector(".penta-submit-button");
