@@ -1,5 +1,5 @@
 <div class="swiper penta-swiper" id="penta-product-swiper">
-<button type="button" data-modal="gallery-modal">{% render 'icon-penta-expand' %}</button>
+{% render 'penta-expand-button' %}
   <div class="swiper-wrapper">
       {%- for media in product.media -%}
           <div class="swiper-slide" data-gallery-index="{{ forloop.index }}">
