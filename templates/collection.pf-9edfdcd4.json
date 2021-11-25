@@ -1,12 +1,7 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-      }
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "penta-collection-content": {
+      "type": "penta-collection-content",
       "settings": {
       }
     },
@@ -17,8 +12,7 @@
     }
   },
   "order": [
-    "banner",
-    "product-grid",
+    "penta-collection-content",
     "pf-9edfdcd4"
   ]
 }
