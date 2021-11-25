@@ -28,6 +28,9 @@
           <textarea type="text" required name="Message"></textarea>
         </div>
       </div>
+      <div class="penta-hidden-fields">
+        <input type="hidden" name="StocklistApiId" value="{% if product.metafields.product.StocklistApiId != blank %}{{ product.metafields.product.StocklistApiId }}{% else %}907b6bf5-da45-45a6-a326-05cb9908643e{% endif %}" />
+      </div>
       {% render 'penta-form-footer', 
         submitText: 'Submit Message' %}
     </form>

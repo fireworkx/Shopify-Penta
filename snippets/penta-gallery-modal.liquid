@@ -16,9 +16,6 @@
               </div>
           {%- endfor -%}
         {% endif %}
-        {% if template.name == 'collection' %}
-
-        {% endif %}
       </div>
       <div class="swiper-button-next">.</div>
       <div class="swiper-button-prev">.</div>
@@ -53,9 +50,10 @@
               return slide
             })
             swiperContainer.insertAdjacentHTML('afterbegin', html);
+            productSwiper.update();
           }
         }
-      }, 500)
+      }, 100)
     }
 
     var productSwiper = new Swiper("#penta-gallery-swiper", {
