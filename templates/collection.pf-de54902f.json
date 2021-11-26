@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "penta-collection-content": {
+      "type": "penta-collection-content",
+      "settings": {
+      }
+    },
+    "pf-de54902f": {
+      "type": "pf-de54902f",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "penta-collection-content",
+    "pf-de54902f"
+  ]
+}
