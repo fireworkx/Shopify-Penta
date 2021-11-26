@@ -127,8 +127,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
-    {% comment %} Penta styles {% endcomment %}
+    {% comment %} Penta assets {% endcomment %}
 
+    {% comment %} Swiper {% endcomment %}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    {% comment %} Fireworkx {% endcomment %}
     <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
     <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
