@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "penta-collection-content": {
+      "type": "penta-collection-content",
+      "settings": {
+      }
+    },
+    "pf-c2309a61": {
+      "type": "pf-c2309a61",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "penta-collection-content",
+    "pf-c2309a61"
+  ]
+}
