@@ -1,37 +1,39 @@
+<div class="penta-product-information-content">
 {% if product.metafields.product.Specification != blank %}
-  <h5>{{ product.metafields.product.Specification }}</h5>
+  <h5 class="penta-product-specification">{{ product.metafields.product.Specification }}</h5>
 {% endif %}
-<h1 class="product__title" {{ block.shopify_attributes }}>
+<h1 class="penta-product-title" {{ block.shopify_attributes }}>
   {{ product.title | escape }}
 </h1>
 {% if product.metafields.product.Odometer != blank %}
-  <h5>{% render 'icon-penta-odometer' %}{{ product.metafields.product.Odometer }}</h5>
+  <h5 class="penta-product-odometer">{% render 'icon-penta-odometer' %}{{ product.metafields.product.Odometer }}</h5>
 {% endif %}
 <div class="penta-product-icon-features">
   {% if product.metafields.product.FuelType != blank %}
-    <h5>{% render 'icon-penta-fuel-type' %}{{ product.metafields.product.FuelType }}</h5>
+    <h5 class="penta-product-fuel-type">{% render 'icon-penta-fuel-type' %}{{ product.metafields.product.FuelType }}</h5>
   {% endif %}
   {% if product.metafields.product.Doors != blank %}
-    <h5>{% render 'icon-penta-door' %}{{ product.metafields.product.Doors }}</h5>
+    <h5 class="penta-product-doors">{% render 'icon-penta-door' %}{{ product.metafields.product.Doors }}</h5>
   {% endif %}
   {% if product.metafields.product.Transmission != blank %}
-    <h5>{% render 'icon-penta-transmission' %}{{ product.metafields.product.Transmission }}</h5>
+    <h5 class="penta-product-transmission">{% render 'icon-penta-transmission' %}{{ product.metafields.product.Transmission }}</h5>
   {% endif %}
 </div>
 <div class="penta-product-location">
   {% if product.metafields.product.Location != blank %}
-    <h5>{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h5>
+    <h5 class="penta-product-location">{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h5>
   {% endif %}
   {% if product.metafields.product.DealerContactNumber != blank %}
-    <h5>{% render 'icon-penta-phone' %}{{ product.metafields.product.DealerContactNumber }}</h5>
+    <h5 class="penta-product-phone-number">{% render 'icon-penta-phone' %}{{ product.metafields.product.DealerContactNumber }}</h5>
   {% endif %}
+</div>
 </div>
 <div class="penta-checkout">
   <div class="penta-checkout-price">
     {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
   </div>
   <div class="penta-checkout-buttons">
-    <button data-modal="enquiry-modal">Enquire Now {% render 'icon-penta-arrow-right' %}</button>
-    <button data-modal="test-drive-modal">{% render 'icon-penta-car' %} Book a Test Drive</button>
+    <button data-modal="enquiry-modal" class="penta-button penta-button-green">Enquire Now {% render 'icon-penta-arrow-right' %}</button>
+    <button data-modal="test-drive-modal" class="penta-button penta-button-secondary penta-button-secondary-white" >{% render 'icon-penta-car' %} Book a Test Drive</button>
   </div>
 </div>
