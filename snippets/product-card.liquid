@@ -18,7 +18,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-<div class="penta-card" href="{{ product_card_product.url | default: '#' }}">
+<a class="penta-card" href="{{ product_card_product.url | default: '#' }}">
   <div class="penta-card-image">
     {%- if product_card_product.featured_media -%}
        <img
@@ -38,22 +38,26 @@
     <h3>{{ product_card_product.title | escape }}</h3>
   </div>
   <div class="penta-card-mileage">
-    <h5>{{ metafields.Odometer }}</h5>
+    <h5>{% render 'icon-penta-odometer' %}{{ metafields.Odometer }}</h5>
   </div>
   <div class="penta-card-stats">
     <ul>
       {% if metafields.FuelType != blank %}
-        <li>{{ metafields.FuelType }}</li>
+        <li>{% render 'icon-penta-fuel-type' %}{{ metafields.FuelType }}</li>
       {% endif %}
       {% if metafields.Doors != blank %}
-        <li>{{ metafields.Doors }}</li>
+        <li>{% render 'icon-penta-door' %}{{ metafields.Doors }}</li>
       {% endif %}
       {% if metafields.Transmission != blank %}
-        <li>{{ metafields.Transmission }}</li>
+        <li>{% render 'icon-penta-transmission' %}{{ metafields.Transmission }}</li>
       {% endif %}     
     </ul>
   </div>
   <div class="penta-card-location">
+    {% if metafields.Location != blank %}
+      <div>{% render 'icon-penta-map-pin' %}{{ metafields.Location }}</div>
+    {% endif %}     
+    
     {% render 'price', product: product_card_product, price_class: '' %}
   </div>
-</div>
+</a>
