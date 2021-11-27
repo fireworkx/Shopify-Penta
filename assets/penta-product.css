@@ -55,6 +55,10 @@
 
 .penta-product-information-content {
 	margin-bottom: 24px;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 /* Specification */
 
@@ -67,11 +71,23 @@
 	margin-bottom: 10px;
 }
 
+@media screen and (min-width: 990px) {
+	.penta-product-specification {
+		font-size: 14px;
+	}
+}
+
 /* Title */
 
 .penta-product-title {
 	font-size: 24px;
 	margin-bottom: 10px;
+}
+@media screen and (min-width: 990px) {
+	.penta-product-title {
+		font-size: 40px;
+		margin-bottom: 20px;
+	}
 }
 /* Odometer */
 
@@ -83,6 +99,15 @@
 	margin-bottom: 32px;
 }
 
+@media screen and (min-width: 990px) {
+	.penta-product-odometer {
+		font-size: 24px;
+	}
+	.penta-product-odometer svg {
+		width: 24px;
+		height: 20px;
+	}
+}
 /* Features */
 .penta-product-icon-features {
 	display: flex;
@@ -92,12 +117,25 @@
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 20px;
 	flex-wrap: wrap;
+	margin-top: auto;
+	width: 100%;
 }
 .penta-product-icon-features h5 {
 	display: flex;
 	align-items: center;
 	gap: 8px;
 	font-size: 14px;
+}
+
+@media screen and (min-width: 990px) {
+	.penta-product-icon-features {
+		gap: 30px;
+		padding-bottom: 30px;
+		margin-bottom: 24px;
+	}
+	.penta-product-icon-features h5 {
+		font-size: 18px;
+	}
 }
 /* Checkout */
 
@@ -106,13 +144,13 @@
 	padding: 24px 16px;
 	display: grid;
 	gap: 10px;
-	margin-top: auto;
 	border-radius: 3px;
 }
 
 @media screen and (min-width: 990px) {
 	.penta-checkout {
 		padding: 24px;
+		gap: 20px;
 	}
 }
 .penta-checkout .price {
@@ -121,11 +159,23 @@
 	font-weight: 700;
 }
 
+@media screen and (min-width: 990px) {
+	.penta-checkout .price {
+		font-size: 40px;
+	}
+}
+
 .penta-checkout-buttons {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 16px;
+}
+
+@media screen and (min-width: 990px) {
+	.penta-checkout-buttons {
+		gap: 30px;
+	}
 }
 
 @media screen and (max-width: 420px) {
@@ -147,6 +197,14 @@
 	align-items: center;
 	gap: 8px;
 	font-size: 14px;
+}
+@media screen and (min-width: 990px) {
+	.penta-product-location {
+		gap: 30px;
+	}
+	.penta-product-location h5 {
+		font-size: 18px;
+	}
 }
 
 @media screen and (min-width: 750px) {

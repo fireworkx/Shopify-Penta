@@ -6,7 +6,7 @@
   {{ product.title | escape }}
 </h1>
 {% if product.metafields.product.Odometer != blank %}
-  <h5 class="penta-product-odometer">{% render 'icon-penta-odometer' %}{{ product.metafields.product.Odometer }}</h5>
+  <h5 class="penta-product-odometer">{% render 'icon-penta-odometer' %}{{ product.metafields.product.Odometer }} km</h5>
 {% endif %}
 <div class="penta-product-icon-features">
   {% if product.metafields.product.FuelType != blank %}
