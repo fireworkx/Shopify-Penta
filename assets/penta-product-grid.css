@@ -40,6 +40,7 @@
 #penta-filters select {
 	font-weight: 700;
 	color: black;
+	margin: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -47,10 +48,14 @@
 		display: block;
 	}
 	#penta-filters .facets__form {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin: 0;
 	}
 	#penta-filters .facets__wrapper {
 		display: block;
+		width: 100%;
 	}
 	#penta-filters .facets__heading {
 		margin: 0;
@@ -58,27 +63,72 @@
 	#penta-filters .facet-filters {
 		padding: 0;
 	}
-
 	#penta-filters .facet-filters__field {
 		justify-content: start;
+		display: block;
 	}
+	/* Product count */
 	#penta-filters .product-count {
 		text-align: left;
 	}
-}
-
-@media screen and (min-width: 990px) {
+	/* Pills */
+	#penta-filters .active-facets {
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	#penta-filters .active-facets__button-wrapper {
+		padding: 0;
+	}
+	#penta-filters .active-facets__button,
+	#penta-filters .active-facets__button-remove {
+		margin: 0;
+		padding: 0;
+	}
 	#penta-filters {
 		background: #fff;
-		padding: 16px;
-		min-width: 250px;
+		min-width: 200px;
+		max-width: 200px;
 		border-radius: 3px;
+		padding-top: 24px;
+	}
+	#penta-filters .facet-filters__field,
+	#penta-filters .facets__heading,
+	#penta-filters .active-facets,
+	#penta-filters .product-count,
+	#penta-filters summary {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	#penta-filters summary {
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+	#penta-filters summary svg {
+		padding-right: 16px;
+	}
+
+	/* Filter dropdown flyouts */
+	#penta-filters .facets__display {
+		left: 1.2rem;
+	}
+	#penta-filters .facets__header {
+		color: black;
+	}
+	#penta-filters .facet-checkbox:not(.facet-checkbox--disabled) {
+		color: black;
 	}
 	#penta-product-grid {
 		column-gap: 24px;
 	}
 }
 
+@media screen and (min-width: 990px) {
+	#penta-filters {
+		min-width: 250px;
+	}
+}
 @media screen and (min-width: 750px) {
 	#penta-filters .facets__disclosure {
 		margin-right: 0;
