@@ -463,3 +463,36 @@
 	transform: translateY(0);
 	transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
 }
+
+/* Card style */
+.penta-card.card {
+	border: none;
+}
+
+.penta-card.card .penta-card-image {
+	overflow: hidden;
+	height: 180px;
+	background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+@media screen and (min-width: 750px) {
+	.penta-card.card {
+		padding: 0;
+	}
+	.penta-card.card .penta-card-specification h5 {
+		font-size: 12px;
+	}
+	.penta-card.card .penta-card-title h3 {
+		font-size: 16px;
+	}
+	.penta-card.card .penta-card-mileage h5 {
+		font-size: 14px;
+	}
+	.penta-card.card .penta-card-location .price {
+		font-size: 16px;
+	}
+}

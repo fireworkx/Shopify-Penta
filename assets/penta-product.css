@@ -1,3 +1,50 @@
 .penta-checkout-buttons svg {
 	fill: black;
 }
+
+/* Recommended */
+@media screen and (max-width: 750px) {
+	.penta-recommended-grid {
+		padding: 0;
+	}
+}
+
+.penta-recommended-grid .product-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	list-style: none;
+	padding: 0;
+}
+@media screen and (min-width: 460px) {
+	.penta-recommended-grid .product-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media screen and (min-width: 750px) {
+	.penta-recommended-grid .product-grid {
+		gap: 30px;
+	}
+}
+@media screen and (min-width: 990px) {
+	.penta-recommended-grid .product-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+.penta-recommended-grid .product-grid .grid__item {
+	width: 100%;
+	max-width: none;
+	padding: 0;
+}
+.penta-recommended-grid .penta-card.card .penta-card-location {
+	border: none;
+	padding-top: 0;
+}
+.penta-recommended-grid .penta-card.card .penta-card-location .price {
+	margin-left: 0;
+}
+
+.penta-recommended-grid .penta-card.card .penta-card-stats,
+.penta-recommended-grid .penta-card.card .penta-card-location > h5 {
+	display: none;
+}

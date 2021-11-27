@@ -18,7 +18,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-<a class="penta-card" href="{{ product_card_product.url | default: '#' }}">
+<a class="penta-card {% if type == 'card' %}card{% endif %}" href="{{ product_card_product.url | default: '#' }}">
   <span class="penta-card-arrow">{% render 'icon-penta-arrow-right' %}</span>
   <div class="penta-card-image">
     {%- if product_card_product.featured_media -%}
