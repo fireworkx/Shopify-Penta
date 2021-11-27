@@ -196,7 +196,7 @@
 	color: black;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 460px) {
 	.penta-card {
 		grid-template:
 			"image specification"
@@ -206,6 +206,20 @@
 			"image stats"
 			"image location";
 		grid-template-columns: 1fr 2fr;
+		column-gap: 24px;
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.penta-card {
+		grid-template:
+			"image specification"
+			"image title"
+			"image mileage"
+			"image ."
+			"image stats"
+			"image location";
+		grid-template-columns: 2fr 3fr;
 		column-gap: 24px;
 	}
 }
@@ -267,13 +281,58 @@
 	margin-top: 16px;
 	border-top: 1px solid #ccc;
 	padding-top: 16px;
+	gap: 8px;
 }
 
 .penta-card-location h5 {
 	font-size: 12px;
+	display: flex;
+	gap: 8px;
 }
 .penta-card-location .price {
 	font-size: 16px;
 	font-weight: 700;
 	margin-left: auto;
+	flex-shrink: 0;
+}
+
+@media screen and (min-width: 990px) {
+	.penta-card {
+		border-bottom: 1px solid #ccc;
+		padding: 30px 24px;
+	}
+	.penta-card-specification {
+		margin-bottom: 16px;
+	}
+	.penta-card-specification h5 {
+		font-size: 12px;
+	}
+	.penta-card-title {
+		margin-bottom: 16px;
+	}
+	.penta-card-title h3 {
+		font-size: 20px;
+		font-weight: 100;
+	}
+	.penta-card-mileage {
+	}
+	.penta-card-mileage h5 {
+		font-size: 18px;
+	}
+	.penta-card-stats {
+	}
+	.penta-card-stats ul {
+	}
+	.penta-card-stats ul li {
+		font-size: 14px;
+	}
+	.penta-card-location {
+	}
+
+	.penta-card-location h5 {
+		font-size: 14px;
+	}
+	.penta-card-location .price {
+		font-size: 20px;
+	}
 }
