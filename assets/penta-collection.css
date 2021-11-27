@@ -2,6 +2,7 @@
 	#penta-product-grid {
 		display: grid;
 		grid-template-areas: "filters products products";
+		column-gap: 16px;
 	}
 	#main-collection-filters {
 		grid-area: filters;
@@ -20,5 +21,11 @@
 	}
 	#penta-filters .facets__wrapper {
 		display: block;
+	}
+}
+
+@media screen and (min-width: 990px) {
+	#penta-product-grid {
+		column-gap: 24px;
 	}
 }
