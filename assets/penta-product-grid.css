@@ -1,4 +1,4 @@
-.penta-product-grid .product-grid .grid__item {
+.penta-product-grid-container .product-grid .grid__item {
 	width: 100% !important;
 	max-width: none;
 }

@@ -1,4 +1,14 @@
 @media screen and (min-width: 750px) {
+	#penta-product-grid {
+		display: grid;
+		grid-template-areas: "filters products products";
+	}
+	#main-collection-filters {
+		grid-area: filters;
+	}
+	#ProductGridContainer {
+		grid-area: products;
+	}
 	#penta-filters {
 		border: 1px solid red;
 	}
