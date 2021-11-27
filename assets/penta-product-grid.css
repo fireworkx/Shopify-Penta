@@ -1,5 +1,30 @@
 /* Layout */
 
+.collection-grid-section {
+	background: #f4f4f4;
+	margin: 0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.collection-grid-section:last-child {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 750px) {
+	#penta-product-grid {
+		display: grid;
+		grid-template-areas: "filters products products";
+		column-gap: 16px;
+	}
+	#main-collection-filters {
+		grid-area: filters;
+	}
+	#ProductGridContainer {
+		grid-area: products;
+	}
+}
+
 @media screen and (max-width: 750px) {
 	#penta-product-grid {
 		padding: 0;
@@ -15,6 +40,31 @@
 #penta-filters select {
 	font-weight: 700;
 	color: black;
+}
+
+@media screen and (min-width: 750px) {
+	#penta-filters .facets-container {
+		display: block;
+	}
+	#penta-filters .facets__form {
+		display: block;
+	}
+	#penta-filters .facets__wrapper {
+		display: block;
+	}
+	#penta-filters .facets__heading {
+		margin: 0;
+	}
+	#penta-filters .facet-filters {
+		padding: 0;
+	}
+
+	#penta-filters .facet-filters__field {
+		justify-content: start;
+	}
+	#penta-filters .product-count {
+		text-align: left;
+	}
 }
 
 @media screen and (min-width: 990px) {
