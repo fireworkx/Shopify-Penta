@@ -22,6 +22,8 @@
 	}
 	#ProductGridContainer {
 		grid-area: products;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 4px 6px rgba(0, 0, 0, 0.25);
+		border-radius: 5px;
 	}
 }
 
@@ -96,6 +98,8 @@
 		max-width: 200px;
 		border-radius: 3px;
 		padding-top: 24px;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 4px 6px rgba(0, 0, 0, 0.25);
+		border-radius: 3px;
 	}
 	#penta-filters .facet-filters__field,
 	#penta-filters .facets__heading,
@@ -149,11 +153,6 @@
 
 @media screen and (min-width: 750px) {
 	.penta-product-grid-container .product-grid {
-		row-gap: 16px;
-	}
-}
-@media screen and (min-width: 990px) {
-	.penta-product-grid-container .product-grid {
 		row-gap: 0;
 	}
 }
@@ -164,22 +163,12 @@
 }
 
 /* Card styles */
-
 .penta-card * {
 	margin: 0;
 }
-.penta-card-image {
-	display: flex;
-	align-items: flex-start;
-}
 
-.penta-card-image img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 3px;
-	image-rendering: -webkit-optimize-contrast;
-}
 .penta-card {
+	position: relative;
 	display: grid;
 	column-gap: 16px;
 	grid-template:
@@ -209,6 +198,11 @@
 		column-gap: 24px;
 	}
 }
+@media screen and (min-width: 750px) {
+	.penta-card {
+		border-bottom: 1px solid #ccc;
+	}
+}
 
 @media screen and (min-width: 990px) {
 	.penta-card {
@@ -224,9 +218,26 @@
 	}
 }
 
+/* Card image */
+
 .penta-card-image {
 	grid-area: image;
 }
+
+.penta-card-image {
+	display: flex;
+	align-items: flex-start;
+}
+
+.penta-card-image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 3px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+/* Specification */
+
 .penta-card-specification {
 	grid-area: specification;
 	line-height: 1;
@@ -240,6 +251,9 @@
 	display: inline;
 	line-height: 1;
 }
+
+/* Title  */
+
 .penta-card-title {
 	grid-area: title;
 	margin-bottom: 8px;
@@ -248,6 +262,9 @@
 	font-size: 16px;
 	font-weight: 700;
 }
+
+/* Mileage */
+
 .penta-card-mileage {
 	grid-area: mileage;
 }
@@ -257,10 +274,14 @@
 	gap: 6px;
 	align-items: center;
 }
+
+/* Stats */
+
 .penta-card-stats {
 	grid-area: stats;
 	margin-top: 20px;
 }
+
 .penta-card-stats ul {
 	list-style: none;
 	padding: 0;
@@ -268,12 +289,17 @@
 	align-items: center;
 	gap: 20px;
 }
+
 .penta-card-stats ul li {
 	display: flex;
 	align-items: center;
 	gap: 8px;
 	font-size: 12px;
+	white-space: nowrap;
 }
+
+/* Location */
+
 .penta-card-location {
 	grid-area: location;
 	display: flex;
@@ -298,41 +324,98 @@
 
 @media screen and (min-width: 990px) {
 	.penta-card {
-		border-bottom: 1px solid #ccc;
 		padding: 30px 24px;
 	}
 	.penta-card-specification {
 		margin-bottom: 16px;
 	}
 	.penta-card-specification h5 {
-		font-size: 12px;
+		font-size: 13px;
+		padding: 5px;
 	}
 	.penta-card-title {
-		margin-bottom: 16px;
+		margin-bottom: 12px;
 	}
 	.penta-card-title h3 {
 		font-size: 20px;
 		font-weight: 100;
 	}
 	.penta-card-mileage {
+		margin-bottom: 24px;
 	}
 	.penta-card-mileage h5 {
 		font-size: 18px;
 	}
-	.penta-card-stats {
-	}
 	.penta-card-stats ul {
+		gap: 30px;
 	}
 	.penta-card-stats ul li {
 		font-size: 14px;
 	}
-	.penta-card-location {
-	}
-
 	.penta-card-location h5 {
 		font-size: 14px;
 	}
 	.penta-card-location .price {
 		font-size: 20px;
 	}
+}
+
+@media screen and (min-width: 1280px) {
+	.penta-card {
+		padding: 40px 30px;
+		column-gap: 40px;
+	}
+	.penta-card-title h3 {
+		font-size: 24px;
+		font-weight: 100;
+	}
+	.penta-card-stats ul li {
+		font-size: 16px;
+	}
+	.penta-card-location h5 {
+		font-size: 16px;
+	}
+	.penta-card-location .price {
+		font-size: 24px;
+	}
+}
+
+/* Hover */
+.penta-card-arrow {
+	width: 32px;
+	height: 32px;
+	background: black;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.1s, visibility 0.1s, transform 0.1s;
+	transform: translateY(15px);
+}
+.penta-card-arrow svg {
+	fill: white;
+	max-width: 16px;
+}
+@media screen and (min-width: 990px) {
+	.penta-card-arrow {
+		top: 20px;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+	}
+	.penta-card-arrow svg {
+		max-width: 24px;
+	}
+}
+.penta-card:hover .penta-card-arrow {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
 }
