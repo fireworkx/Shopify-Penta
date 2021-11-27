@@ -1,7 +1,7 @@
 /* General */
 * {
-	font-family: "Inter", sans-serif;
-	letter-spacing: 0;
+	font-family: "Inter", sans-serif !important;
+	letter-spacing: 0 !important;
 }
 
 .button {

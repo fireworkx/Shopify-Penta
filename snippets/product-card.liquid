@@ -55,7 +55,7 @@
   </div>
   <div class="penta-card-location">
     {% if metafields.Location != blank %}
-      <div>{% render 'icon-penta-map-pin' %}{{ metafields.Location }}</div>
+      <h5>{% render 'icon-penta-map-pin' %}{{ metafields.Location }}</h5>
     {% endif %}     
     
     {% render 'price', product: product_card_product, price_class: '' %}
