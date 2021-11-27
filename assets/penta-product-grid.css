@@ -1,14 +1,48 @@
+/* Layout */
+
 @media screen and (max-width: 750px) {
 	#penta-product-grid {
 		padding: 0;
 	}
+	#penta-filters {
+		padding: 0 1.5rem;
+	}
 }
+
+/* Filters */
+
+#penta-filters summary,
+#penta-filters select {
+	font-weight: 700;
+	color: black;
+}
+
+@media screen and (min-width: 990px) {
+	#penta-filters {
+		background: #fff;
+		padding: 16px;
+		min-width: 250px;
+		border-radius: 3px;
+	}
+	#penta-product-grid {
+		column-gap: 24px;
+	}
+}
+
+@media screen and (min-width: 750px) {
+	#penta-filters .facets__disclosure {
+		margin-right: 0;
+	}
+}
+
+/* Product Grid */
 
 .penta-product-grid-container .product-grid {
 	margin: 0;
 	display: grid;
 	row-gap: 8px;
 }
+
 @media screen and (min-width: 750px) {
 	.penta-product-grid-container .product-grid {
 		row-gap: 16px;

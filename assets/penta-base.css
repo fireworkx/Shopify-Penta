@@ -3,6 +3,12 @@
 	font-family: "Inter", sans-serif;
 }
 
+/* Live chat button */
+
+#shopify-chat {
+	z-index: 1 !important;
+}
+
 /* Buttons */
 
 button svg {

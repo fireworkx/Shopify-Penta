@@ -44,12 +44,3 @@
 		text-align: left;
 	}
 }
-
-@media screen and (min-width: 990px) {
-	#penta-filters {
-		background: #fff;
-	}
-	#penta-product-grid {
-		column-gap: 24px;
-	}
-}
