@@ -1,3 +1,8 @@
+/* General */
+* {
+	font-family: "Inter", sans-serif;
+}
+
 /* Buttons */
 
 button svg {

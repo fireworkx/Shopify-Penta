@@ -54,6 +54,8 @@
 	grid-template-columns: 1fr 2fr;
 	background: #fff;
 	padding: 16px;
+	text-decoration: none;
+	color: black;
 }
 
 @media screen and (min-width: 750px) {
