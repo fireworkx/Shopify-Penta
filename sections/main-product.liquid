@@ -38,7 +38,10 @@
       </div>
       <div>
         {% if product.metafields.product.DealerContactNumber != blank %}
-          <h3>{% render 'icon-penta-phone' %}<a href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a></h3>
+          <h3>
+            {% render 'icon-penta-phone' %}
+            <a class="penta-link" href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a>
+          </h3>
         {% endif %}
         {% if product.metafields.product.Location != blank %}
           <h3>{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h3>

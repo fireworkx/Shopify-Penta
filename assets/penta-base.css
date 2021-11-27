@@ -65,6 +65,15 @@
 	background: #45975c;
 }
 
+/* Links */
+
+.penta-link {
+	color: #000;
+	text-underline-offset: 4px;
+	text-decoration-thickness: 2px;
+	font-weight: 700;
+}
+
 /* Live chat button */
 
 #shopify-chat {
