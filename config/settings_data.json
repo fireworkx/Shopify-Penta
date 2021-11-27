@@ -2,7 +2,7 @@
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
     "colors_accent_1": "#000000",
-    "colors_accent_2": "#334FB4",
+    "colors_accent_2": "#2a2a2a",
     "colors_text": "#000000",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#FFFFFF",
@@ -46,8 +46,15 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "Buying a Car?",
+              "menu": "main-menu"
+            }
+          },
+          "3f907799-3927-4189-ab12-1623152dbe5a": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Visit a Franchise",
+              "menu": "dealerships"
             }
           },
           "footer-1": {
@@ -60,10 +67,11 @@
         },
         "block_order": [
           "footer-0",
+          "3f907799-3927-4189-ab12-1623152dbe5a",
           "footer-1"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "accent-2",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": false,
