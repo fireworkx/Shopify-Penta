@@ -9,6 +9,14 @@
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+<div class="penta-collection-title page-width">
+  <h1>
+    {% if collection.title == "Pre-owned" %}{{ collection.title }} Cars{% else %} 
+      {{ collection.title }}
+    {% endif %}</h1>
+</div>
+
+
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <div id="penta-product-grid" class="page-width">
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
