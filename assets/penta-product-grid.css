@@ -22,8 +22,11 @@
 	}
 	#ProductGridContainer {
 		grid-area: products;
+	}
+	#product-grid {
 		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 4px 6px rgba(0, 0, 0, 0.25);
 		border-radius: 5px;
+		overflow: hidden;
 	}
 }
 
@@ -66,11 +69,17 @@
 		margin: 0;
 	}
 	#penta-filters .facet-filters {
-		padding: 0;
+		padding: 16px 0;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
 	}
 	#penta-filters .facet-filters__field {
 		justify-content: start;
-		display: block;
+		flex-wrap: wrap;
+	}
+
+	#penta-filters .facet-filters__field h2 {
+		margin-right: auto;
 	}
 	/* Product count */
 	#penta-filters .product-count {
@@ -135,6 +144,18 @@
 @media screen and (min-width: 990px) {
 	#penta-filters {
 		min-width: 250px;
+	}
+}
+@media screen and (min-width: 1280px) and (min-height: 1000px) {
+	#penta-filters {
+		min-width: 300px;
+		position: sticky;
+		top: 104px;
+		border-radius: 5px;
+		z-index: 1;
+	}
+	.shopify-section-header-hidden + main #penta-filters {
+		top: 30px;
 	}
 }
 @media screen and (min-width: 750px) {
@@ -377,6 +398,29 @@
 	}
 	.penta-card-location .price {
 		font-size: 24px;
+	}
+}
+
+/* Pagination */
+#penta-product-grid .pagination-wrapper {
+	margin-top: 30px;
+	margin-bottom: 0;
+	padding: 0 16px;
+}
+#penta-product-grid .pagination {
+	background: #fff;
+	box-shadow: 0px 1px 2px rgb(0 0 0 / 50%), 0px 4px 6px rgb(0 0 0 / 25%);
+	border-radius: 5px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+@media screen and (min-width: 750px) {
+	#penta-product-grid .pagination-wrapper {
+		padding: 0;
+	}
+	#penta-product-grid .pagination {
+		padding-top: 16px;
+		padding-bottom: 16px;
 	}
 }
 
