@@ -1,0 +1,71 @@
+.penta-product-grid .product-grid .grid__item {
+	width: 100% !important;
+	max-width: none;
+}
+
+.penta-card * {
+	margin: 0;
+}
+.penta-card-image {
+	overflow: hidden;
+	display: flex;
+	border-radius: 3px;
+	align-items: flex-start;
+}
+
+.penta-card-image img {
+	max-width: 100%;
+	height: auto;
+}
+.penta-card {
+	display: grid;
+	column-gap: 16px;
+	grid-template:
+		"image specification specification"
+		"image title title"
+		"image . ."
+		"image mileage mileage"
+		"stats stats stats"
+		"location location location";
+	grid-template-columns: 1fr 2fr;
+}
+
+.penta-card-image {
+	grid-area: image;
+}
+.penta-card-specification {
+	grid-area: specification;
+}
+.penta-card-title {
+	grid-area: title;
+}
+.penta-card-mileage {
+	grid-area: mileage;
+}
+.penta-card-stats {
+	grid-area: stats;
+}
+.penta-card-stats ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+.penta-card-location {
+	grid-area: location;
+}
+
+@media screen and (min-width: 750px) {
+	.penta-card {
+		grid-template:
+			"image specification"
+			"image title"
+			"image mileage"
+			"image ."
+			"image stats"
+			"image location";
+		grid-template-columns: 1fr 2fr;
+		column-gap: 24px;
+	}
+}

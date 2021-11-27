@@ -1,0 +1,14 @@
+@media screen and (min-width: 750px) {
+	#penta-filters {
+		border: 1px solid red;
+	}
+	#penta-filters .facets-container {
+		display: block;
+	}
+	#penta-filters .facets__form {
+		display: block;
+	}
+	#penta-filters .facets__wrapper {
+		display: block;
+	}
+}
