@@ -2,7 +2,7 @@
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
     "colors_accent_1": "#000000",
-    "colors_accent_2": "#334FB4",
+    "colors_accent_2": "#2a2a2a",
     "colors_text": "#000000",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#FFFFFF",
@@ -46,24 +46,48 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "Buying a Car?",
+              "menu": "main-menu"
             }
           },
-          "footer-1": {
+          "3f907799-3927-4189-ab12-1623152dbe5a": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Visit a Franchise",
+              "menu": "dealerships"
+            }
+          },
+          "9a82477e-a588-458a-8cca-fd35d00569f9": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Service & Parts",
+              "menu": "dealerships"
+            }
+          },
+          "81ca7369-3b8b-45d7-8201-93d053f2c1b5": {
+            "type": "link_list",
+            "settings": {
+              "heading": "About Penta",
+              "menu": "about-penta"
+            }
+          },
+          "81b586ca-58f8-4c98-bd84-4d643f1d7630": {
             "type": "text",
             "settings": {
-              "heading": "Heading",
-              "subtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+              "heading": "© 2021 Penta Motor Group",
+              "subtext": "<p>Reg Office: 501 Breed Str, Montana Gardens, Pretoria, 0182. Reg. Company Number: 2012\/086672\/07<br\/><\/p>"
             }
           }
         },
         "block_order": [
           "footer-0",
-          "footer-1"
+          "3f907799-3927-4189-ab12-1623152dbe5a",
+          "9a82477e-a588-458a-8cca-fd35d00569f9",
+          "81ca7369-3b8b-45d7-8201-93d053f2c1b5",
+          "81b586ca-58f8-4c98-bd84-4d643f1d7630"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "accent-2",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": false,
