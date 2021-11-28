@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
 			body: document.querySelector("body"),
-			openModal(type) {
+			openModal({ type, brand, uid, dealership }) {
+				console.log(`type:${type}\nbrand:${brand}\nuid:${uid}\ndealership:${dealership}`);
 				this.open = true;
 				this.body.classList.add("modal-open");
 				this.type = type;
@@ -28,8 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			init() {
 				if (this.buttons) {
 					this.buttons.forEach((button) => {
+						let data = {
+							// Return defaults if not available
+							type: (button.dataset.modal ??= "contact-us-modal"),
+							brand: (button.dataset.brand ??= "Penta"),
+							uid: (button.dataset.uid ??= "907b6bf5-da45-45a6-a326-05cb9908643e"),
+							dealership: (button.dataset.dealership ??= "Penta Head Office")
+						};
 						button.addEventListener("click", () => {
-							this.openModal(button.dataset.modal);
+							this.openModal(({ type, brand, uid, dealership } = data));
 						});
 					});
 				}
@@ -121,7 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		this.init = function () {
 			const submitButton = form.querySelector(".penta-submit-button");
 			submitButton.addEventListener("click", () => {
-				this.sendForm();
+				if (form.checkValidity()) {
+					this.sendForm();
+				} else {
+					form.reportValidity();
+				}
 			});
 		};
 		this.init();
