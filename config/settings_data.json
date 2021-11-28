@@ -10,6 +10,7 @@
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
     "currency_code_enabled": false,
+    "checkout_logo_image": "shopify:\/\/shop_images\/penta-logo.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
