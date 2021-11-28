@@ -162,6 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formData.set("StockListApiId", uid);
+			formData.set(
+				"Message",
+				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
+					"Model"
+				)}\nTest Drive - Preferred Date:  ${formData.get(
+					"PreferredDate"
+				)}\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
+			);
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",
