@@ -72,13 +72,6 @@
               "menu": "dealerships"
             }
           },
-          "9a82477e-a588-458a-8cca-fd35d00569f9": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Service & Parts",
-              "menu": "dealerships"
-            }
-          },
           "81b586ca-58f8-4c98-bd84-4d643f1d7630": {
             "type": "text",
             "settings": {
@@ -91,7 +84,6 @@
           "e2fbd537-f938-4861-b3c5-11a9342e2e34",
           "footer-0",
           "3f907799-3927-4189-ab12-1623152dbe5a",
-          "9a82477e-a588-458a-8cca-fd35d00569f9",
           "81b586ca-58f8-4c98-bd84-4d643f1d7630"
         ],
         "settings": {
