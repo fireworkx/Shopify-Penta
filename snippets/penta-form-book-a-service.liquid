@@ -3,7 +3,6 @@
     {% render 'penta-button-close-modal' %}
     <form id="book-a-service-form" class="penta-form" data-form-type="ServiceBookingRequest">
       {% render 'penta-form-heading', form_heading: 'Book a Service' %}
-      {% render 'penta-form-context-block' %}
       <div class="penta-input-group">
         <div class="penta-input">
           <input type="text" name="FirstName" value="" required />
@@ -26,21 +25,21 @@
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <input type="text" type="text" name="Make" value="" required disabled />
+          <input type="text" type="text" name="Make" value="" required />
           <label>Make*</label>
         </div>
         <div class="penta-input">
-          <input type="text" type="text" name="Model" value="" required disabled />
+          <input type="text" type="text" name="Model" value="" required />
           <label>Model*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <input type="text" type="text" name="Registration" value="" required disabled />
+          <input type="text" type="text" name="Registration" value="" required />
           <label>Vehicle Registration*</label>
         </div>
         <div class="penta-input">
-          <input type="text" type="text" name="Mileage" value="" required disabled />
+          <input type="text" type="text" name="Mileage" value="" required />
           <label>Current Vehicle Mileage*</label>
         </div>
       </div>
