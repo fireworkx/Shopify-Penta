@@ -40,14 +40,16 @@
           <label>Preferred Time*</label>
         </div>
       </div>
-      <div class="penta-input-group">
-        <div class="penta-input">
-          <select required name="Branch">
-            <option value="" disabled selected></option>
-          </select>
-          <label>Select a Branch</label>
+      {% if product.metafields.product.StocklistApiId == blank %} 
+        <div class="penta-input-group">
+          <div class="penta-input">
+            <select required name="Branch">
+              <option value="" disabled selected></option>
+            </select>
+            <label>Select a Branch</label>
+          </div>
         </div>
-      </div>
+      {% endif %}
       <div class="penta-input-group">
         <div class="penta-input">
           <textarea row="4" type="text" required name="Message"></textarea>
