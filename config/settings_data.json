@@ -55,7 +55,7 @@
             "type": "link_list",
             "settings": {
               "heading": "New Cars",
-              "menu": "footer"
+              "menu": "dealerships"
             }
           },
           "footer-0": {
@@ -79,13 +79,6 @@
               "menu": "dealerships"
             }
           },
-          "81ca7369-3b8b-45d7-8201-93d053f2c1b5": {
-            "type": "link_list",
-            "settings": {
-              "heading": "About Penta",
-              "menu": "about-penta"
-            }
-          },
           "81b586ca-58f8-4c98-bd84-4d643f1d7630": {
             "type": "text",
             "settings": {
@@ -99,7 +92,6 @@
           "footer-0",
           "3f907799-3927-4189-ab12-1623152dbe5a",
           "9a82477e-a588-458a-8cca-fd35d00569f9",
-          "81ca7369-3b8b-45d7-8201-93d053f2c1b5",
           "81b586ca-58f8-4c98-bd84-4d643f1d7630"
         ],
         "settings": {
