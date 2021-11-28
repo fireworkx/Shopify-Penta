@@ -9,6 +9,10 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "assistant_n4",
     "type_body_font": "assistant_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/pentamotorgroup",
+    "social_facebook_link": "https:\/\/www.facebook.com\/PentaMotorGroup\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/pentamotorgroup\/",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCYZFx7oZT0hy52bjLWcsoow",
     "currency_code_enabled": false,
     "checkout_logo_image": "shopify:\/\/shop_images\/penta-logo.png",
     "sections": {
