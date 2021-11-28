@@ -13,6 +13,7 @@
     "social_facebook_link": "https:\/\/www.facebook.com\/PentaMotorGroup\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/pentamotorgroup\/",
     "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCYZFx7oZT0hy52bjLWcsoow",
+    "predictive_search_show_vendor": true,
     "currency_code_enabled": false,
     "checkout_logo_image": "shopify:\/\/shop_images\/penta-logo.png",
     "sections": {
