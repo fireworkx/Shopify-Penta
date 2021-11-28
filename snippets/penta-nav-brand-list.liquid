@@ -1,0 +1,27 @@
+<details-disclosure>
+  <details id="Details-HeaderMenu-{{ forloop.index }}">
+    <summary class="header__menu-item list-menu__item link focus-inset">
+      <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+      {% render 'icon-caret' %}
+  </summary>
+  <div class="penta-brand-menu">
+    <div class="page-width">
+      <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+        {%- for childlink in link.links -%}
+          <li>
+            {%- if childlink.links == blank -%}
+              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                {% if childlink.type == "collection_link" and childlink.object.image %}
+                  {{ childlink.object.image | img_url: 'small' | img_tag }}
+                {% else %}
+                  {{ childlink.title | escape }}
+                {% endif %}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  </details>
+</details-disclosure>

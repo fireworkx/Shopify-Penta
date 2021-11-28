@@ -5,7 +5,7 @@
           <div class="swiper-slide" data-gallery-index="{{ forloop.index }}">
               {%- if media != blank -%}
                   <img data-src="{{ media | image_url: width: 1000 }}" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                  <div class="swiper-lazy-preloader"></div>
               {%- endif -%}
           </div>
       {%- endfor -%}
@@ -19,7 +19,7 @@
           <div class="swiper-slide"> 
               {%- if media != blank -%}
                   <img data-src="{{ media | image_url: width: 250 }}" class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                  <div class="swiper-lazy-preloader"></div>
               {%- endif -%}
           </div>
       {%- endfor -%}
