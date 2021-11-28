@@ -360,7 +360,7 @@
           {%- for link in section.settings.menu.links -%}
             <li>
             {% comment %} Penta desktop header {% endcomment %}
-            {%- if link.title == 'New Cars' -%}
+            {%- if link.title == 'New Cars' or link.title == 'Service & Parts' or link.title == 'Contact us' -%}
               {% render 'penta-nav-brand-list', link: link %}
             {% elsif link.title == 'Finance' -%}
               <a href="{{ link.url }}" target="_blank" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>

@@ -287,6 +287,11 @@ button[data-modal="gallery-modal"]:hover svg {
 		font-weight: 700;
 		color: black;
 	}
+	.penta-nav-flyout-heading {
+		font-weight: 700;
+		margin: 0;
+		padding-top: 24px;
+	}
 }
 
 /* Nav brand list flyout */
@@ -316,7 +321,7 @@ button[data-modal="gallery-modal"]:hover svg {
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 30px;
-		padding: 16px 0;
+		padding: 8px 0 12px 0;
 	}
 
 	/* li */
