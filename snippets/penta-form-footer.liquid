@@ -2,12 +2,12 @@
   {% if template.name == 'product' %}
     <div class="penta-form-footer-contact">
       {% if product.metafields.product.Location != blank %}
-        <h3>{{ product.metafields.product.Location }}</h3>
+        <h3>{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h3>
       {% endif %}
       {% if product.metafields.product.DealerContactNumber != blank %}
-        <h3><a href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a></h3>
-      {% endif %}
+        <h3>{% render 'icon-penta-phone' %}<a class="penta-link" href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a></h3>
+    {% endif %}
     </div>
   {% endif %}
-  <button class="penta-submit-button" type="button" >{{ submitText }}</button>
+  <button class="penta-button penta-submit-button" type="button" >{{ submitText }}</button>
 </div>

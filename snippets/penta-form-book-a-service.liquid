@@ -1,67 +1,67 @@
 <section class="penta-modal" id="book-a-service-modal">
   <div class="penta-form-content" id="book-a-service-form-content">
+    {% render 'penta-button-close-modal' %}
     <form id="book-a-service-form" class="penta-form" data-form-type="ServiceBookingRequest">
       {% render 'penta-form-heading', form_heading: 'Book a Service' %}
       {% render 'penta-form-context-block' %}
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>First Name*</label>
           <input type="text" name="FirstName" value="" required />
+          <label>First Name*</label>
         </div>
         <div class="penta-input">
-          <label>Surname*</label>
           <input type="text" type="text" name="Surname" value="" required />
+          <label>Surname*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Contact Number*</label>
           <input type="tel" name="TelephoneNumber" pattern="^[0-9-+\s()]*$" value="" required inputmode="numeric" />
+          <label>Contact Number*</label>
         </div>
         <div class="penta-input">
-          <label>Email Address*</label>
           <input type="email" name="EmailAddress" value="" required />
+          <label>Email Address*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Make*</label>
           <input type="text" type="text" name="Make" value="" required disabled />
+          <label>Make*</label>
         </div>
         <div class="penta-input">
-          <label>Model*</label>
           <input type="text" type="text" name="Model" value="" required disabled />
+          <label>Model*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Vehicle Registration*</label>
           <input type="text" type="text" name="Registration" value="" required disabled />
+          <label>Vehicle Registration*</label>
         </div>
         <div class="penta-input">
-          <label>Current Vehicle Mileage*</label>
           <input type="text" type="text" name="Mileage" value="" required disabled />
+          <label>Current Vehicle Mileage*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Vehicle Service Due Date*</label>
           <input type="date" name="ServiceDueDate" value="" required />
+          <label>Vehicle Service Due Date*</label>
         </div>
         <div class="penta-input">
-          <label>Branch*</label>
           <input type="text" type="text" name="Branch" value="" required disabled />
+          <label>Branch*</label>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <label>Message*</label>
           <textarea type="text" required name="Message"></textarea>
+          <label>Message*</label>
         </div>
       </div>
       {% render 'penta-form-footer', 
         submitText: 'Submit' %}
     </form>
   </div>
-  <button data-close-modal>Close Modal</button>
 </section>
