@@ -280,8 +280,7 @@ button[data-modal="gallery-modal"]:hover svg {
 
 /* Desktop Header */
 @media screen and (min-width: 990px) {
-	.penta-header {
-		border: none;
+	.header-wrapper {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
 	.penta-header .list-menu__item {
