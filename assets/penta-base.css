@@ -344,6 +344,10 @@ button[data-modal="gallery-modal"]:hover svg {
 	}
 }
 
+.penta-hidden-fields {
+	display: none;
+}
+
 /* Form input  */
 
 .penta-input {

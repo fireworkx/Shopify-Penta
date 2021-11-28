@@ -58,9 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
 							dealership: button.dataset.dealership
 						};
 						button.addEventListener("click", () => {
-							this.openModal(({ type, brand, uid, dealership } = data)).then(
-								penta.forms.buildSelect(elem, select, brand, dealership, uid)
-							);
+							this.openModal(({ type, brand, uid, dealership } = data)).then(() => {
+								if (!uid) {
+									penta.forms.buildSelect(elem, select, brand, dealership, uid);
+								}
+							});
 						});
 					});
 				}
@@ -96,7 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
 					.getDealerships()
 					.then((data) => {
 						// Build dropdown list filtered by brand data attribute
-						dealerships = data.dealerships.filter((dealership) => dealership.brand == brand);
+						dealerships = data.dealerships.filter(
+							(dealership) => dealership.brand.toLowerCase() == brand.toLowerCase()
+						);
 						let options = dealerships.map((dealership) => {
 							return `<option>${dealership.name}</option>`;
 						});
@@ -115,7 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
 						}
 						// listen for changes to select and update uid accordingly
 						select.addEventListener("change", () => {
-							dealership = dealerships.find((dealership) => dealership.name == select.value);
+							dealership = dealerships.find(
+								(dealership) => dealership.name.toLowerCase() == select.value.toLowerCase()
+							);
 							penta.modal.form.uid = dealership.id;
 						});
 					});
@@ -155,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			let formData = new FormData(form);
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
-			formData.append("StockListApiId", uid);
+			formData.set("StockListApiId", uid);
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",

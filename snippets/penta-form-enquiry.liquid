@@ -24,6 +24,7 @@
           <label>Email Address*</label>
         </div>
       </div>
+      {% if product.metafields.product.StocklistApiId == blank %} 
       <div class="penta-input-group">
         <div class="penta-input">
           <select required name="Branch">
@@ -32,6 +33,7 @@
           <label>Select a Branch</label>
         </div>
       </div>
+      {% endif %}
       <div class="penta-input-group">
         <div class="penta-input">
           <textarea rows="4" type="text" required name="Message"></textarea>
