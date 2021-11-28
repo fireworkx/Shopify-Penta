@@ -196,5 +196,14 @@
       endif
     -%}
   
+    <script>
+      var penta = {
+        getDealerships: async function() {
+          const response = await fetch("{{ 'dealerships.json' | asset_url }}");
+          return response.json();
+        }
+      }
+    </script>
+
   </body>
 </html>
