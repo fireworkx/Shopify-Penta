@@ -4,27 +4,42 @@ document.addEventListener("DOMContentLoaded", () => {
 		modal: {
 			open: false,
 			type: "",
-			elem: "",
+			form: {
+				elem: "",
+				type: "",
+				brand: "",
+				uid: "",
+				dealership: ""
+			},
 			buttons: document.querySelectorAll("[data-modal]"),
 			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
 			body: document.querySelector("body"),
 			openModal({ type, brand, uid, dealership }) {
-				console.log(`type:${type}\nbrand:${brand}\nuid:${uid}\ndealership:${dealership}`);
 				this.open = true;
 				this.body.classList.add("modal-open");
-				this.type = type;
-				this.elem = document.querySelector(`.penta-modal#${type}`);
-				this.elem.classList.add("penta-show");
+				this.form = {
+					elem: document.querySelector(`.penta-modal#${type}`),
+					type: type,
+					brand: brand,
+					uid: uid,
+					dealership: dealership
+				};
+				this.form.elem.classList.add("penta-show");
 				this.overlay.classList.add("penta-show");
 			},
 			closeModal() {
 				this.open = false;
 				this.body.classList.remove("modal-open");
-				this.type = "";
-				this.elem.classList.remove("penta-show");
+				this.form.elem.classList.remove("penta-show");
 				this.overlay.classList.remove("penta-show");
-				this.elem = "";
+				this.form = {
+					elem: "",
+					type: "",
+					brand: "",
+					uid: "",
+					dealership: ""
+				};
 			},
 			init() {
 				if (this.buttons) {
@@ -97,10 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	// Form constructor
 	function Form(form) {
-		this.sendForm = function () {
+		this.sendForm = function ({ uid }) {
 			let formData = new FormData(form);
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
+			formData.append("StockListApiId", uid);
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",
@@ -130,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const submitButton = form.querySelector(".penta-submit-button");
 			submitButton.addEventListener("click", () => {
 				if (form.checkValidity()) {
-					this.sendForm();
+					this.sendForm(({ uid } = penta.modal.form));
 				} else {
 					form.reportValidity();
 				}

@@ -36,7 +36,7 @@
     {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
   </div>
   <div class="penta-checkout-buttons">
-    <button data-modal="enquiry-modal" class="penta-button penta-button-green">Enquire Now {% render 'icon-penta-arrow-right' %}</button>
-    <button data-modal="test-drive-modal" class="penta-button penta-button-secondary penta-button-secondary-white" >{% render 'icon-penta-car' %} Book a Test Drive</button>
+    <button data-modal="enquiry-modal" data-uid="{{ product.metafields.product.StocklistApiId }}" class="penta-button penta-button-green">Enquire Now {% render 'icon-penta-arrow-right' %}</button>
+    <button data-modal="test-drive-modal" data-uid="{{ product.metafields.product.StocklistApiId }}" class="penta-button penta-button-secondary penta-button-secondary-white" >{% render 'icon-penta-car' %} Book a Test Drive</button>
   </div>
 </div>
