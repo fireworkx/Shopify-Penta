@@ -9,24 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
 				type: "",
 				brand: "",
 				uid: "",
-				dealership: ""
+				dealership: "",
+				select: ""
 			},
 			buttons: document.querySelectorAll("[data-modal]"),
 			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
 			body: document.querySelector("body"),
 			openModal({ type, brand, uid, dealership }) {
-				this.open = true;
-				this.body.classList.add("modal-open");
-				this.form = {
-					elem: document.querySelector(`.penta-modal#${type}`),
-					type: type,
-					brand: brand,
-					uid: uid,
-					dealership: dealership
-				};
-				this.form.elem.classList.add("penta-show");
-				this.overlay.classList.add("penta-show");
+				return new Promise((resolve, reject) => {
+					this.open = true;
+					this.body.classList.add("modal-open");
+					this.form = {
+						elem: document.querySelector(`.penta-modal#${type}`),
+						type: type,
+						brand: brand,
+						uid: uid,
+						dealership: dealership,
+						select: document.querySelector(`.penta-modal#${type} select[name="Branch"]`)
+					};
+					this.form.elem.classList.add("penta-show");
+					this.overlay.classList.add("penta-show");
+					return resolve(({ elem, select, brand, dealership, uid } = this.form));
+				});
 			},
 			closeModal() {
 				this.open = false;
@@ -38,7 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 					type: "",
 					brand: "",
 					uid: "",
-					dealership: ""
+					dealership: "",
+					select: ""
 				};
 			},
 			init() {
@@ -46,13 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
 					this.buttons.forEach((button) => {
 						let data = {
 							// Return defaults if not available
-							type: (button.dataset.modal ??= "contact-us-modal"),
-							brand: (button.dataset.brand ??= "Penta"),
-							uid: (button.dataset.uid ??= "907b6bf5-da45-45a6-a326-05cb9908643e"),
-							dealership: (button.dataset.dealership ??= "Penta Head Office")
+							type: button.dataset.modal,
+							brand: button.dataset.brand,
+							uid: button.dataset.uid,
+							dealership: button.dataset.dealership
 						};
 						button.addEventListener("click", () => {
-							this.openModal(({ type, brand, uid, dealership } = data));
+							this.openModal(({ type, brand, uid, dealership } = data)).then(
+								penta.forms.buildSelect(elem, select, brand, dealership, uid)
+							);
 						});
 					});
 				}
@@ -81,6 +89,37 @@ document.addEventListener("DOMContentLoaded", () => {
 		forms: {
 			api: "https://pinewood-api.dev.fireworkx.com/api/v1/leadsubmit",
 			form: {},
+			buildSelect(elem, select, brand, dealership, uid) {
+				// Builds select option list
+				let dealerships = [];
+				window.penta
+					.getDealerships()
+					.then((data) => {
+						// Build dropdown list filtered by brand data attribute
+						dealerships = data.dealerships.filter((dealership) => dealership.brand == brand);
+						let options = dealerships.map((dealership) => {
+							return `<option>${dealership.name}</option>`;
+						});
+						select.innerHTML = options;
+					})
+					.then(() => {
+						// If dealership available set as selected value and set form uid
+						if (dealership) {
+							select.value = dealership;
+							penta.modal.form.uid = dealership.id;
+						}
+						// else set to first option
+						if (!dealership) {
+							select.value = dealerships[0].name;
+							penta.modal.form.uid = dealerships[0].id;
+						}
+						// listen for changes to select and update uid accordingly
+						select.addEventListener("change", () => {
+							dealership = dealerships.find((dealership) => dealership.name == select.value);
+							penta.modal.form.uid = dealership.id;
+						});
+					});
+			},
 			showFeedback(type) {
 				const successElem = document.querySelector(".penta-form-success");
 				const errorElem = document.querySelector(".penta-form-error");
