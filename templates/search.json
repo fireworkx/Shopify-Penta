@@ -3,7 +3,7 @@
     "main": {
       "type": "main-search",
       "settings": {
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "show_secondary_image": false,
         "add_image_padding": true,
         "show_image_outline": true,
