@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formData.set("StockListApiId", uid);
-			// formData.delete("")
+			
 			formData.set(
 				"Message",
 				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
@@ -171,6 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
 					"PreferredDate"
 				)}\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
 			);
+			formData.delete("CanopyFeatures");
+			
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",
