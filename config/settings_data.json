@@ -62,14 +62,14 @@
             "type": "link_list",
             "settings": {
               "heading": "Buying a Car?",
-              "menu": "main-menu"
+              "menu": "footer"
             }
           },
           "3f907799-3927-4189-ab12-1623152dbe5a": {
             "type": "link_list",
             "settings": {
               "heading": "Visit a Franchise",
-              "menu": "dealerships"
+              "menu": "footer-visit-a-franchise"
             }
           },
           "81b586ca-58f8-4c98-bd84-4d643f1d7630": {
