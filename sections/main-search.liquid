@@ -46,20 +46,19 @@
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap : 5px;
+    align-items: start;
     padding-left : 5px;
     padding-right : 5px;
+    padding-bottom : 5px;
   }
 
   .grid-result-item .penta-card-specification {
     background: linear-gradient( 82.15deg,#000 0,#616161 100%);
     color: #fff;
-    
     max-width : max-content;
     border-radius: 13px;
     color : white;
-    padding : 1.5px;
+    padding-left : 1.5px;
     align-self : flex-start;
   }
 
@@ -76,21 +75,25 @@
   .grid-result-item .penta-card ul {
     padding-left : 3px;
     padding-right : 3px;
-      display : flex;
-      align-items : center;
-      justify-content : space-between;
-      color : #000;
-      gap : 15px;
-      list-style-type: none;
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    color : #000;
+    gap : 15px;
+    list-style-type: none;
   }
 
   .grid-result-item .price {
     font-weight : 800;
+    self-align : center;
   }
+  
   .grid__item--small {
-    display : none
+    font-size : 12px;
+    display : none;
   }
 
+  
 
 </style>
 
@@ -199,7 +202,7 @@
             <div class="loading-overlay gradient"></div>
             <ul class="grid-result-container" role="list">
               {%- for item in search.results -%}
-                <li class="grid__item {% unless item.object_type == 'product' %} grid__item--small{% endunless %} grid-result-item">
+                <li class="grid__item{% unless item.object_type == 'product' %} grid__item--small{% endunless %} grid-result-item">
                   {%- case item.object_type -%}
                     {%- when 'product' -%}
                       {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
