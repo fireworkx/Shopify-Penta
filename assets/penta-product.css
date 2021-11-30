@@ -186,7 +186,7 @@
 
 /* Location */
 .penta-product-location {
-	display: flex;
+	display: none;
 	align-items: center;
 	gap: 20px;
 	flex-wrap: wrap;
@@ -247,6 +247,9 @@
 }
 /* Recommended */
 
+.penta-product-metafields h3{
+	display : none
+}
 @media screen and (max-width: 750px) {
 	.penta-recommended-grid {
 		padding: 0;
