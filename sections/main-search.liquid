@@ -13,40 +13,85 @@
 {%- endif -%}
 
 <style>
-  .template-search__header {
-    margin-bottom: 3rem;
+
+  .grid-result-container {
+    list-style : none;
+    display : grid;
+    grid-template-columns : repeat(auto-fill, minmax(280px, 1fr));
+    gap : 20px 35px;
+    place-content : center;
+    padding : 0;
+    padding-left : 0;
   }
 
-  .template-search__search {
-    margin: 0 auto 3.5rem;
-    max-width: 47.8rem;
+  .grid-result-item {
+    min-width : 320px;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top : 10px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.25),0 4px 6px rgba(0,0,0,.25);
+    border-radius : 10px;
+    padding : 5px
   }
 
-  .template-search__search .search {
-    margin-top: 3rem;
+  .grid-result-item img {
+    width : 100%;
+    object-fit : cover;
+    object-position : cover;
+    height : 220px;
+    border-radius : 10px;
   }
 
-  .template-search--empty {
-    padding-bottom: 18rem;
+  .grid-result-item .penta-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 5px;
+    padding-left : 5px;
+    padding-right : 5px;
   }
 
-  .template-search .grid__item--small:not(:last-child) {
-    padding-bottom: 0.5rem;
+  .grid-result-item .penta-card-specification {
+    background: linear-gradient( 82.15deg,#000 0,#616161 100%);
+    color: #fff;
+    
+    max-width : max-content;
+    border-radius: 13px;
+    color : white;
+    padding : 1.5px;
+    align-self : flex-start;
   }
 
-  @media screen and (min-width: 750px) {
-    .template-search__header {
-      margin-bottom: 5rem;
-    }
-
-    .template-search .grid__item--small:not(:last-child) {
-      padding-bottom: 1rem;
-    }
+  .grid-result-item .penta-card-specification h5 {
+    color : white;
+    margin : 8px;
+    font-size : 12px;
   }
 
-  .search__button .icon {
-    height: 1.8rem;
+  .grid-result-item .penta-card-title {
+    font-weight : 600;
   }
+
+  .grid-result-item .penta-card ul {
+    padding-left : 3px;
+    padding-right : 3px;
+      display : flex;
+      align-items : center;
+      justify-content : space-between;
+      color : #000;
+      gap : 15px;
+      list-style-type: none;
+  }
+
+  .grid-result-item .price {
+    font-weight : 800;
+  }
+  .grid__item--small {
+    display : none
+  }
+
+
 </style>
 
 {%- liquid
@@ -147,11 +192,14 @@
         </div>
       {%- else -%}
         {% paginate search.results by 24 %}
-          <div class="template-search__results collection page-width" id="product-grid" data-id="{{ section.id }}">
+
+
+
+          <div class="collection page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
-            <ul class="grid grid--4-col-desktop grid--3-col-tablet grid--2-col grid--one-third-max grid--quarter-max negative-margin product-grid" role="list">
+            <ul class="grid-result-container" role="list">
               {%- for item in search.results -%}
-                <li class="grid__item{% unless item.object_type == 'product' %} grid__item--small{% endunless %}">
+                <li class="grid__item {% unless item.object_type == 'product' %} grid__item--small{% endunless %} grid-result-item">
                   {%- case item.object_type -%}
                     {%- when 'product' -%}
                       {%- capture product_settings -%}{%- if section.settings.product_show_vendor -%}vendor,{%- endif -%}title,price{%- endcapture -%}
@@ -165,11 +213,11 @@
                         show_rating: section.settings.show_rating
                       %}
                     {%- when 'article' -%}
-                      <a href="{{ item.url }}" class="card-wrapper">
-                        <div class="card card--search card--soft{% unless item.image %} card--text-only{% endunless %}">
-                          <div class="card__inner">
+                      <a href="{{ item.url }}" class="">
+                        <div class="">
+                          <div class="">
                             {%- if item.image -%}
-                              <div class="media media--cropped">
+                              <div class="">
                                 <img
                                   srcset="{%- if item.image.src.width >= 165 -%}{{ item.image.src | img_url: '165x' }} 165w,{%- endif -%}
                                     {%- if item.image.src.width >= 360 -%}{{ item.image.src | img_url: '360x' }} 360w,{%- endif -%}
@@ -187,7 +235,8 @@
                               >
                               </div>
                             {%- endif -%}
-                            <div class="card__content">
+                            PPPP
+                            <div class="">
                               <h2 class="card__text h3">{{ item.title | truncate: 50 | escape }}</h2>
                               <div class="card-article-info caption-with-letter-spacing h5">
                                 {%- if section.settings.article_show_date -%}
@@ -207,10 +256,10 @@
                     {%- when 'page' -%}
                       <a href="{{ item.url }}" class="card-wrapper">
                         <div class="card card--search card--soft card--text-only">
-                          <div class="card__inner">
+                          <div class="">
                             <div class="card__content"><h2 class="card__text h3">{{ item.title | truncate: 50 | escape }}</h2></div>
                             <div class="card__badge">
-                              <span class="badge color-background-1">{{ 'templates.search.page' | t }}</span>
+                              <span class="">{{ 'templates.search.page' | t }}</span>
                             </div>
                           </div>
                         </div>
