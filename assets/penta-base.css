@@ -4,6 +4,16 @@
 	letter-spacing: 0 !important;
 }
 
+a,
+.button,
+button {
+	cursor: pointer;
+}
+
+a {
+	color: black;
+}
+
 .button {
 	letter-spacing: 0;
 }
