@@ -162,6 +162,7 @@ button.penta-close-modal-button svg {
 }
 
 /* Expand buttons */
+
 button[data-modal="gallery-modal"] {
 	background: black;
 	width: 36px;
@@ -176,7 +177,7 @@ button[data-modal="gallery-modal"] {
 	border-radius: 50%;
 	padding: 0;
 	border: 1px solid #666;
-	transition: background-color 0.15s;
+	transition: background-color 0.15s, opacity 0.15s, visibility 0.15s;
 	cursor: pointer;
 	z-index: 2;
 }
@@ -193,6 +194,12 @@ button[data-modal="gallery-modal"] svg {
 button[data-modal="gallery-modal"]:hover svg {
 	background: white;
 	fill: black;
+}
+
+.penta-pagefly-gallery-image:not(.penta-ready) button[data-modal="gallery-modal"] {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
 }
 
 /* Thumbs */

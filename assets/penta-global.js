@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						};
 						button.addEventListener("click", () => {
 							this.openModal(({ type, brand, uid, dealership } = data)).then(() => {
-								if (!uid) {
+								if (!uid && type != "gallery-modal") {
 									penta.forms.buildSelect(elem, select, brand, dealership, uid);
 								}
 							});
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formData.set("StockListApiId", uid);
-			
+
 			formData.set(
 				"Message",
 				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				)}\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
 			);
 			formData.delete("CanopyFeatures");
-			
+
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		this.init = function () {
 			const submitButton = form.querySelector(".penta-submit-button");
 			submitButton.addEventListener("click", () => {
-				window.dataLayer.push({'event_name': 'enquiry_submit'});
+				window.dataLayer.push({ event_name: "enquiry_submit" });
 
 				if (form.checkValidity()) {
 					this.sendForm(({ uid } = penta.modal.form));
