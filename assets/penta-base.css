@@ -590,9 +590,11 @@ button[data-modal="gallery-modal"]:hover svg {
 .penta-table tr {
 	border-bottom: 1px solid #ccc !important;
 }
+
 .penta-table th,
 .penta-table td,
 .penta-table {
+	vertical-align: top;
 	color: black;
 	padding: 8px 0 !important;
 	text-align: left !important;

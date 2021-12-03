@@ -174,7 +174,7 @@
 
 @media screen and (min-width: 990px) {
 	.penta-checkout-buttons {
-		gap: 30px;
+		gap: 20px;
 	}
 }
 
@@ -186,7 +186,7 @@
 
 /* Location */
 .penta-product-location {
-	display: none;
+	display: flex;
 	align-items: center;
 	gap: 20px;
 	flex-wrap: wrap;
@@ -238,6 +238,7 @@
 	.penta-product-metafields {
 		margin-top: 60px;
 		grid-template-columns: 2fr 1fr;
+		gap: 40px;
 	}
 }
 @media screen and (min-width: 990px) {
@@ -245,11 +246,13 @@
 		margin-top: 80px;
 	}
 }
+@media screen and (min-width: 990px) {
+	.penta-product-metafields h2 {
+		margin-bottom: 40px;
+	}
+}
 /* Recommended */
 
-.penta-product-metafields h3{
-	display : none
-}
 @media screen and (max-width: 750px) {
 	.penta-recommended-grid {
 		padding: 0;
@@ -294,4 +297,9 @@
 .penta-recommended-grid .penta-card.card .penta-card-stats,
 .penta-recommended-grid .penta-card.card .penta-card-location > h5 {
 	display: none;
+}
+
+/* Contact info block */
+.penta-product-contact-block {
+	background-color: #f4f4f4;
 }
