@@ -76,6 +76,12 @@ a {
 	background: #45975c;
 }
 
+.button:disabled,
+.penta-button:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
 /* Links */
 
 .penta-link {

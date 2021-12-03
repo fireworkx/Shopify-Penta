@@ -156,12 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 	// Form constructor
 	function Form(form) {
+		const submitButton = form.querySelector(".penta-submit-button");
 		this.sendForm = function ({ uid }) {
 			let formData = new FormData(form);
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formData.set("StockListApiId", uid);
-
 			formData.set(
 				"Message",
 				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						penta.forms.showFeedback("success");
 						penta.modal.closeModal();
 					}
+					submitButton.disabled = false;
 				})
 				.catch(() => {
 					penta.forms.showFeedback("error");
@@ -198,11 +199,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			form.reset();
 		};
 		this.init = function () {
-			const submitButton = form.querySelector(".penta-submit-button");
 			submitButton.addEventListener("click", () => {
 				window.dataLayer.push({ event_name: "enquiry_submit" });
-
 				if (form.checkValidity()) {
+					submitButton.disabled = true;
 					this.sendForm(({ uid } = penta.modal.form));
 				} else {
 					form.reportValidity();
