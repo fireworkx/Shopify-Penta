@@ -580,21 +580,24 @@ button[data-modal="gallery-modal"]:hover svg {
 }
 
 /* Tables  */
-
+.penta-table table,
 .penta-table {
 	width: 100%;
 	border-collapse: collapse;
+	box-shadow: none !important;
 }
 
 .penta-table tr {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc !important;
 }
+.penta-table th,
 .penta-table td,
 .penta-table {
 	color: black;
-	padding: 8px 0;
-	text-align: left;
+	padding: 8px 0 !important;
+	text-align: left !important;
 	background: none;
+	border: none !important;
 }
 
 /* Desktop Header */
