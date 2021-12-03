@@ -26,49 +26,54 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
 
-    window.onload = () => {
-      // On new car pages - gets background images from gallery and injects into DOM
-      // Replace with mutation observer later
+    // On new car pages - gets background images from gallery and injects into DOM
+    // Replace with mutation observer later
 
-        if('{{ template.name }}' === 'collection'){
-          if(document.querySelector('#penta-pagefly-gallery')){
-            const galleryImages = document.querySelectorAll('.penta-pagefly-gallery-image')
-            const swiperContainer = document.querySelector('.swiper-wrapper')
-            let sources = []
-            let timer = setInterval(getSources, 1000)
-            function getSources() {
-              if(sources.length == 0 || sources.includes("none") || sources.includes(undefined)){
-                sources = Array.from(galleryImages, image => {
-                  let style = image.currentStyle || window.getComputedStyle(image, false),
-                  imageUrl = style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
-                  return imageUrl
-                });
-              }
-              else{
-                clearInterval(timer);
-                buildSlides(sources);
-              }
+      if('{{ template.name }}' === 'collection'){
+        if(document.querySelector('#penta-pagefly-gallery')){
+          const galleryImages = document.querySelectorAll('.penta-pagefly-gallery-image')
+          const swiperContainer = document.querySelector('.swiper-wrapper')
+          let sources = []
+          let timer = setInterval(getSources, 1000)
+          function getSources() {
+            if(sources.length == 0 || sources.includes("none") || sources.includes(undefined)){
+              sources = Array.from(galleryImages, image => {
+                let style = image.currentStyle || window.getComputedStyle(image, false),
+                imageUrl = style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+                return imageUrl
+              });
             }
-
-            function buildSlides(sources){
-              const html = sources.map((source) => {
-                let slide = `<div class="swiper-slide">
-                  <img data-src="${source}"
-                        width=""
-                        height=""
-                        class="swiper-lazy">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>`
-                return slide
-              })
-              galleryImages.forEach(slide => slide.classList.add('penta-ready'))
-              swiperContainer.insertAdjacentHTML('afterbegin', html);
+            else{
+              clearInterval(timer);
+              buildSlides(sources);
             }
           }
-        }
-    }
 
-    var productSwiper = new Swiper("#penta-gallery-swiper", {
+          function buildSlides(sources){
+            const html = sources.map((source, index) => {
+              let slide = `<div class="swiper-slide" data-gallery-index="${index}">
+                <img data-src="${source}"
+                      width=""
+                      height=""
+                      class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>`
+              return slide
+            })
+            galleryImages.forEach(slide => slide.classList.add('penta-ready'))
+            swiperContainer.insertAdjacentHTML('afterbegin', html);
+          }
+        }
+      }
+    
+
+      document.querySelectorAll('.penta-pagefly-gallery-image [data-modal="gallery-modal"]').forEach((button, index) => {
+        button.addEventListener('click', function() {
+          window.penta.gallery.swiper.activeIndex = index;
+        });
+      });
+
+    window.penta.gallery.swiper = new Swiper("#penta-gallery-swiper", {
       preloadImages: false,
       lazy: {
         loadPrevNext: true,
@@ -81,6 +86,11 @@
       pagination: {
       el: ".swiper-pagination",
         clickable: true
+      },
+      on: {
+        slideChange: function(){
+          window.penta.gallery.index = this.activeIndex;
+        }
       }
     });
   });

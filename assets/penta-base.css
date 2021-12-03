@@ -132,12 +132,6 @@ button.penta-close-modal-button svg {
 	max-width: 16px;
 }
 
-/* Accordions */
-
-.penta-accordion-content:not(.penta-show) {
-	display: none !important;
-}
-
 /* Swipers */
 
 .penta-swiper .swiper-slide img {

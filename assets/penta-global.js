@@ -12,40 +12,53 @@ document.addEventListener("DOMContentLoaded", () => {
 				dealership: "",
 				select: ""
 			},
+			gallery: {
+				index: 0
+			},
 			buttons: document.querySelectorAll("[data-modal]"),
 			closeElems: document.querySelectorAll("[data-close-modal]"),
 			overlay: document.querySelector(".penta-modal-overlay"),
 			body: document.querySelector("body"),
-			openModal({ type, brand, uid, dealership }) {
+			openModal({ type, brand, uid, dealership }, e) {
 				return new Promise((resolve, reject) => {
 					this.open = true;
 					this.body.classList.add("modal-open");
-					this.form = {
-						elem: document.querySelector(`.penta-modal#${type}`),
-						type: type,
-						brand: brand,
-						uid: uid,
-						dealership: dealership,
-						select: document.querySelector(`.penta-modal#${type} select[name="Branch"]`)
-					};
-					this.form.elem.classList.add("penta-show");
 					this.overlay.classList.add("penta-show");
-					return resolve(({ elem, select, brand, dealership, uid } = this.form));
+					if (type == "gallery-modal") {
+						this.type = "gallery-modal";
+					}
+					{
+						this.type = type;
+						this.form = {
+							elem: document.querySelector(`.penta-modal#${type}`),
+							type: type,
+							brand: brand,
+							uid: uid,
+							dealership: dealership,
+							select: document.querySelector(`.penta-modal#${type} select[name="Branch"]`)
+						};
+						this.form.elem.classList.add("penta-show");
+						return resolve(({ elem, select, brand, dealership, uid } = this.form));
+					}
 				});
 			},
 			closeModal() {
 				this.open = false;
 				this.body.classList.remove("modal-open");
-				this.form.elem.classList.remove("penta-show");
 				this.overlay.classList.remove("penta-show");
-				this.form = {
-					elem: "",
-					type: "",
-					brand: "",
-					uid: "",
-					dealership: "",
-					select: ""
-				};
+				if (type == "gallery-modal") {
+				}
+				{
+					this.form.elem.classList.remove("penta-show");
+					this.form = {
+						elem: "",
+						type: "",
+						brand: "",
+						uid: "",
+						dealership: "",
+						select: ""
+					};
+				}
 			},
 			init() {
 				if (this.buttons) {
@@ -70,19 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 					this.closeElems.forEach((elem) => {
 						elem.addEventListener("click", () => {
 							this.closeModal();
-						});
-					});
-				}
-			}
-		},
-		accordions: {
-			buttons: document.querySelectorAll(".penta-accordion"),
-			init() {
-				if (this.buttons) {
-					this.buttons.forEach((button) => {
-						button.addEventListener("click", () => {
-							if (button.nextElementSibling.classList.contains("penta-accordion-content"))
-								button.nextElementSibling.classList.toggle("penta-show");
 						});
 					});
 				}
@@ -151,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		},
 		init() {
 			this.modal.init();
-			this.accordions.init();
 			this.forms.init();
 		}
 	};

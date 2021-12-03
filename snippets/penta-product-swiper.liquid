@@ -69,6 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination: {
             el: ".swiper-pagination",
             clickable: true
+        },
+        on: {
+            slideChange: function () {
+                window.penta.gallery.swiper.activeIndex = this.activeIndex
+            }
         }
     });
 });
