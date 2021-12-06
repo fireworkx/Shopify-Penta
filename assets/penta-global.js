@@ -159,19 +159,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		const submitButton = form.querySelector(".penta-submit-button");
 		this.sendForm = function ({ uid }) {
 			let formData = new FormData(form);
+			// Form specific payloads
+			switch (form.id) {
+				case "test-drive-form":
+					formData.set(
+						"Message",
+						[
+							`Message: ${formData.get("Message")}\n`,
+							`Preferred Date: ${formData.get("PreferredDate")}\n`,
+							`Preferred Time: ${formData.get("PreferredTime")}\n`
+						].join("")
+					);
+					formData.delete("PreferredDate");
+					formData.delete("PreferredTime");
+					break;
+				default:
+			}
 			formData.append("Type", form.dataset.formType);
 			formData.append("URL", window.location.href);
 			formData.set("StockListApiId", uid);
-			formData.set(
-				"Message",
-				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
-					"Model"
-				)}\nTest Drive - Preferred Date:  ${formData.get(
-					"PreferredDate"
-				)}\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
-			);
-			formData.delete("CanopyFeatures");
-
+			formData.delete("Branch");
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
 			fetch(penta.forms.api, {
 				method: "POST",
