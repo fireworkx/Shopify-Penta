@@ -622,6 +622,12 @@ button[data-modal="gallery-modal"]:hover svg {
 		margin: 0;
 		padding-top: 24px;
 	}
+	.penta-header .list-menu {
+		flex-wrap: nowrap;
+	}
+	.penta-header .list-menu li {
+		flex-shrink: 0;
+	}
 }
 
 /* Nav brand list flyout */
