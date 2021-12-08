@@ -676,6 +676,10 @@ button[data-modal="gallery-modal"]:hover svg {
 
 /* Footer */
 
+footer {
+	background: #252525;
+}
+
 .footer__blocks-wrapper .footer-block.grid__item:nth-child(4) {
 	width: 100%;
 }
