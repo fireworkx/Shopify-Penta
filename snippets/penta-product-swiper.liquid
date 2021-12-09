@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         on: {
             slideChange: function () {
                 window.penta.gallery.swiper.activeIndex = this.activeIndex
+                window.penta.gallery.swiper.update();
             }
         }
     });
