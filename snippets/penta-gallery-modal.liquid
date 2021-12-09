@@ -63,6 +63,7 @@
             galleryImages.forEach(slide => slide.classList.add('penta-ready'))
             swiperContainer.insertAdjacentHTML('afterbegin', html);
           }
+          window.penta.gallery.swiper.update();
         }
       }
     
