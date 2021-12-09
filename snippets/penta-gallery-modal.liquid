@@ -62,7 +62,7 @@
             })
             galleryImages.forEach(slide => slide.classList.add('penta-ready'))
             swiperContainer.insertAdjacentHTML('afterbegin', html);
-            window.penta.gallery.swiper.update();
+            initSwiper();
           }
         }
       }
@@ -75,26 +75,28 @@
         });
       });
 
-    window.penta.gallery.swiper = new Swiper("#penta-gallery-swiper", {
-      preloadImages: false,
-      lazy: {
-        loadPrevNext: true,
-      },
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      pagination: {
-      el: ".swiper-pagination",
-        clickable: true
-      },
-      on: {
-        slideChange: function(){
-          window.penta.gallery.index = this.activeIndex;
+    function initSwiper(){
+      window.penta.gallery.swiper = new Swiper("#penta-gallery-swiper", {
+        preloadImages: false,
+        lazy: {
+          loadPrevNext: true,
+        },
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+        el: ".swiper-pagination",
+          clickable: true
+        },
+        on: {
+          slideChange: function(){
+            window.penta.gallery.index = this.activeIndex;
+          }
         }
-      }
-    });
+      });
+    }
   });
   
 </script>
