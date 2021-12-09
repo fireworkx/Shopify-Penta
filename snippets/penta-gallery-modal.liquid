@@ -70,6 +70,7 @@
       document.querySelectorAll('.penta-pagefly-gallery-image [data-modal="gallery-modal"]').forEach((button, index) => {
         button.addEventListener('click', function() {
           window.penta.gallery.swiper.activeIndex = index;
+          window.penta.gallery.swiper.updateSwiper();
         });
       });
 
