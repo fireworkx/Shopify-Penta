@@ -674,6 +674,11 @@ button[data-modal="gallery-modal"]:hover svg {
 	}
 }
 
+.penta-brand-menu .header__submenu .header__menu-item img {
+	max-width: 100px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
 /* Footer */
 
 .footer {
