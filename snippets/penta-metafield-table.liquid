@@ -21,12 +21,6 @@
   {% if product.metafields.product.Transmission != blank %}
     <tr><th>Gearbox</th><td>{{ product.metafields.product.Transmission }}</td></tr>
   {% endif %}
-  {% if product.metafields.product.RegistrationNumber != blank %}
-    <tr><th>Registration</th><td>{{ product.metafields.product.RegistrationNumber }}</td></tr>
-  {% endif %}
-  {% if product.metafields.product.RegistrationDate != blank %}
-    <tr><th>Registered</th><td>{{ product.metafields.product.RegistrationDate | date: "%Y"  }} </td></tr>
-  {% endif %}
   {% if product.metafields.product.Colour != blank %}
     <tr><th>Colour</th><td>{{ product.metafields.product.Colour }}</td></tr>
   {% endif %}
@@ -36,7 +30,13 @@
   {% if product.metafields.product.VehicleType != blank %}
     <tr><th>Vehicle Type</th><td>{{ product.metafields.product.VehicleType }}</td></tr>
   {% endif %}
+  {% if product.metafields.product.StockNumber != blank %}
+    <tr><th>Stock Number</th><td>{{ product.metafields.product.StockNumber }}</td></tr>
+  {% endif %}
   {% if product.metafields.product.HasServiceHistory != blank %}
     <tr><th>Has Service History</th><td>{{ product.metafields.product.HasServiceHistory }}</td></tr>
+  {% endif %}
+  {% if product.metafields.product.InternetNotes != blank %}
+    <tr><th>Additional Notes</th><td>{{ product.metafields.product.InternetNotes }}</td></tr>
   {% endif %}
 </table>
