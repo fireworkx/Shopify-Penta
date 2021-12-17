@@ -23,7 +23,16 @@
                 {% endif %}
               </a>
             {%- else -%}
-            <details-disclosure>
+            <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+              {% if childlink.type == "collection_link" and childlink.object.image %}
+                {{ childlink.object.image | img_url: '200x' | img_tag }}
+              {% elsif linkCollection.featured_image %}
+                {{ linkCollection.featured_image | img_url: '200x' | img_tag }}
+              {% else %}
+                {{ childlink.title | escape }}
+              {% endif %}
+            </a>
+            {% comment %} <details-disclosure>
               <details>
                 <summary>
                   <div type="button" class="penta-new-car-brand-button header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
@@ -57,7 +66,7 @@
                   </div>
                 </div>
               </details>
-            </details-disclosure>
+            </details-disclosure> {% endcomment %}
             {%- endif -%}
             
           </li>
