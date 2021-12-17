@@ -1,5 +1,5 @@
 <details-disclosure>
-  <details id="Details-HeaderMenu-{{ forloop.index }}">
+  <details id="Details-HeaderMenu-{{ forloop.index }}" class="penta-new-cars-details">
     <summary class="header__menu-item list-menu__item link focus-inset">
       <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
       {% render 'icon-caret' %}
@@ -11,7 +11,7 @@
         {%- for childlink in link.links -%}
           {% assign linkTitle = childlink.title %}
           {% assign linkCollection = collections[linkTitle] %}
-          <li>
+          <li class="penta-nav-logo">
             {%- if childlink.links == blank -%}
               <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                 {% if childlink.type == "collection_link" and childlink.object.image %}
@@ -22,7 +22,44 @@
                   {{ childlink.title | escape }}
                 {% endif %}
               </a>
+            {%- else -%}
+            <details-disclosure>
+              <details>
+                <summary>
+                  <div type="button" class="penta-new-car-brand-button header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                    {% if childlink.type == "collection_link" and childlink.object.image %}
+                      {{ childlink.object.image | img_url: '256x' | img_tag }}
+                    {% elsif linkCollection.featured_image %}
+                      {{ linkCollection.featured_image | img_url: '256x' | img_tag }}
+                    {% else %}
+                      {{ childlink.title | escape }}
+                    {% endif %}
+                  </div>
+                </summary>
+                <div class="penta-brand-menu penta-supernav">
+                  <div class="page-width">
+                    <div class="penta-nav-flyout-heading">
+                      <h2>{{ childlink.title | escape }}</h2>
+                      <a href="{{ childlink.url }}" class="penta-button penta-button-small">Visit {{ childlink.title | escape }}</a>
+                    </div>
+                    <ul class="penta-nav-model-list {% if childlink.links.size > 6 %} penta-nav-grid-medium {% endif %} {% if childlink.links.size > 12 %} penta-nav-grid-large {% endif %}">
+                      {%- for grandchildlink in childlink.links -%}
+                        <li>
+                          <a href="{{ grandchildlink.url }}" class="penta-nav-model header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                            {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
+                              {{ grandchildlink.object.image | img_url: '256x' | img_tag }}
+                            {% endif %}
+                            {{ grandchildlink.title | escape }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </div>
+              </details>
+            </details-disclosure>
             {%- endif -%}
+            
           </li>
         {%- endfor -%}
       </ul>

@@ -33,6 +33,13 @@ a {
 	font-size: 14px;
 	gap: 10px;
 	cursor: pointer;
+	text-decoration: none;
+}
+
+.penta-button-small {
+	height: 40px;
+	padding: 0 16px;
+	font-size: 14px;
 }
 
 .penta-button svg {
@@ -51,6 +58,11 @@ a {
 	.penta-button svg {
 		max-width: 24px;
 		max-height: 20px;
+	}
+	.penta-button-small {
+		height: 40px;
+		padding: 0 16px;
+		font-size: 14px;
 	}
 }
 
@@ -610,8 +622,14 @@ button[data-modal="gallery-modal"]:hover svg {
 
 /* Desktop Header */
 @media screen and (min-width: 990px) {
+	.penta-header {
+		height: 92px;
+	}
 	.header-wrapper {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+	.penta-header .list-menu .penta-nav-logo{
+		flex-shrink: 1;
 	}
 	.penta-header .list-menu__item {
 		font-weight: 700;
@@ -621,12 +639,46 @@ button[data-modal="gallery-modal"]:hover svg {
 		font-weight: 700;
 		margin: 0;
 		padding-top: 24px;
+		display: flex;
+		align-items: center;
+	}
+	.penta-nav-flyout-heading h2{
+		margin: 0;
+		font-weight: bold;
+	}
+	.penta-nav-flyout-heading .penta-button {
+		margin-left: auto;
 	}
 	.penta-header .list-menu {
 		flex-wrap: nowrap;
 	}
 	.penta-header .list-menu li {
 		flex-shrink: 0;
+	}
+	/* Super Nav */
+	.penta-nav-model-list {
+		display: flex;
+		gap: 16px;	
+		row-gap: 8px;
+		flex-wrap: wrap;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		padding-left: 0;
+		list-style: none;
+	}
+	.penta-nav-model-list a {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	.penta-brand-menu .header__submenu .header__menu-item.penta-nav-model {
+		padding-bottom: 16px;
+		width: 128px;
+		text-align: center;
+		font-size: 16px;
+	}
+	.penta-brand-menu .header__submenu .header__menu-item.penta-nav-model img{
+		max-width: 128px;
 	}
 }
 
@@ -647,16 +699,22 @@ button[data-modal="gallery-modal"]:hover svg {
 		animation: animateMenuOpen var(--duration-default) ease;
 	}
 
+	/* Super Nav */
+	details > .penta-supernav {
+		z-index: 1;
+	}
+
 	/* UL */
 
 	.penta-brand-menu .header__submenu.list-menu {
 		position: static;
 		border: none;
 		padding: 0;
-		display: flex;
+		display:flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 20px;
+		gap: 16px;
+		row-gap: 0;
 		padding: 8px 0 12px 0;
 	}
 
@@ -670,13 +728,49 @@ button[data-modal="gallery-modal"]:hover svg {
 	}
 
 	.penta-brand-menu .header__submenu .header__menu-item:hover {
-		background-color: #f4f4f4;
+		border-color: #ccc;
 	}
 }
 
 .penta-brand-menu .header__submenu .header__menu-item img {
 	max-width: 100px;
 	image-rendering: -webkit-optimize-contrast;
+	width: 100%;
+}
+
+/* Mobile Nav */
+
+.js .menu-drawer__menu li{
+	font-weight: bold;
+}
+
+.menu-drawer__menu-item{
+	gap: 20px;
+}
+
+.list-menu__item.penta-mobile-nav-model{
+	padding: 8px 20px;
+}
+
+.menu-drawer__close-button{
+	font-weight: bold;
+}
+
+.penta-mobile-nav-details summary{
+	padding-left: 20px;
+	gap: 16px;
+	padding: 8px 20px;
+}
+
+.penta-mobile-nav-details img{
+	max-height: 72px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+/* Mobile account */
+
+.menu-drawer__account{
+	display: none !important;
 }
 
 /* Footer */

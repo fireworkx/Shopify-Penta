@@ -118,7 +118,7 @@
                                           {{ childlink.title | escape }}
                                         </a>
                                       {%- else -%}
-                                        <details id="Details-menu-drawer-submenu-{{ forloop.index }}">
+                                        <details class="penta-mobile-nav-details" id="Details-menu-drawer-submenu-{{ forloop.index }}">
                                           <summary class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                             {% if childlink.type == "collection_link" and childlink.object.image %}
                                               {{ childlink.object.image | img_url: 'small' | img_tag }}
@@ -135,7 +135,7 @@
                                             <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                               {%- for grandchildlink in childlink.links -%}
                                                 <li>
-                                                  <a href="{{ grandchildlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
+                                                  <a href="{{ grandchildlink.url }}" class="penta-mobile-nav-model menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
                                                     {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
                                                       {{ grandchildlink.object.image | img_url: 'small' | img_tag }}
                                                     {% endif %}
