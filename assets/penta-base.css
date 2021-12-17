@@ -628,7 +628,7 @@ button[data-modal="gallery-modal"]:hover svg {
 	.header-wrapper {
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	}
-	.penta-header .list-menu .penta-nav-logo{
+	.penta-header .list-menu .penta-nav-logo {
 		flex-shrink: 1;
 	}
 	.penta-header .list-menu__item {
@@ -641,8 +641,33 @@ button[data-modal="gallery-modal"]:hover svg {
 		padding-top: 24px;
 		display: flex;
 		align-items: center;
+		gap: 8px;
 	}
-	.penta-nav-flyout-heading h2{
+	.penta-nav-flyout-heading button[data-close-flyout] {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		background: transparent;
+		padding: 0;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+	.penta-nav-flyout-heading button[data-close-flyout]:hover {
+		background-color: black;
+		transition: background-color 0.15s;
+	}
+	.penta-nav-flyout-heading button[data-close-flyout]:hover svg path {
+		fill: white;
+		transition: fill 0.15s;
+	}
+	.penta-nav-flyout-heading button[data-close-flyout] svg {
+		transform: rotate(180deg);
+		width: 24px;
+		pointer-events: none;
+	}
+	.penta-nav-flyout-heading h2 {
 		margin: 0;
 		font-weight: bold;
 	}
@@ -658,7 +683,7 @@ button[data-modal="gallery-modal"]:hover svg {
 	/* Super Nav */
 	.penta-nav-model-list {
 		display: flex;
-		gap: 16px;	
+		gap: 16px;
 		row-gap: 8px;
 		flex-wrap: wrap;
 		padding-bottom: 20px;
@@ -669,16 +694,25 @@ button[data-modal="gallery-modal"]:hover svg {
 	.penta-nav-model-list a {
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 		gap: 5px;
+		border-radius: 3px;
+		border: 2px solid transparent;
+		transition: border 0.15s;
+		padding: 8px;
 	}
-	.penta-brand-menu .header__submenu .header__menu-item.penta-nav-model {
+	.penta-nav-model-list a:hover {
+		border-color: #ccc;
+	}
+	.penta-supernav .penta-nav-model {
 		padding-bottom: 16px;
 		width: 128px;
 		text-align: center;
 		font-size: 16px;
 	}
-	.penta-brand-menu .header__submenu .header__menu-item.penta-nav-model img{
+	.penta-supernav .penta-nav-model img {
 		max-width: 128px;
+		pointer-events: none;
 	}
 }
 
@@ -700,8 +734,27 @@ button[data-modal="gallery-modal"]:hover svg {
 	}
 
 	/* Super Nav */
-	details > .penta-supernav {
+	.penta-supernav {
 		z-index: 1;
+		position: fixed;
+		top: 92px;
+		width: 100%;
+		left: 0;
+		right: 0;
+		padding: 0;
+		z-index: -1;
+		border: none;
+		background: #fff;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		animation: animateMenuOpen var(--duration-default) ease;
+		transition: visibility 0.15s, opacity 0.15s, transform 0.15s;
+	}
+
+	.penta-supernav:not(.open) {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-1.5rem);
 	}
 
 	/* UL */
@@ -710,7 +763,7 @@ button[data-modal="gallery-modal"]:hover svg {
 		position: static;
 		border: none;
 		padding: 0;
-		display:flex;
+		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 16px;
@@ -736,40 +789,41 @@ button[data-modal="gallery-modal"]:hover svg {
 	max-width: 100px;
 	image-rendering: -webkit-optimize-contrast;
 	width: 100%;
+	pointer-events: none;
 }
 
 /* Mobile Nav */
 
-.js .menu-drawer__menu li{
+.js .menu-drawer__menu li {
 	font-weight: bold;
 }
 
-.menu-drawer__menu-item{
+.menu-drawer__menu-item {
 	gap: 20px;
 }
 
-.list-menu__item.penta-mobile-nav-model{
+.list-menu__item.penta-mobile-nav-model {
 	padding: 8px 20px;
 }
 
-.menu-drawer__close-button{
+.menu-drawer__close-button {
 	font-weight: bold;
 }
 
-.penta-mobile-nav-details summary{
+.penta-mobile-nav-details summary {
 	padding-left: 20px;
 	gap: 16px;
 	padding: 8px 20px;
 }
 
-.penta-mobile-nav-details img{
+.penta-mobile-nav-details img {
 	max-height: 72px;
 	image-rendering: -webkit-optimize-contrast;
 }
 
 /* Mobile account */
 
-.menu-drawer__account{
+.menu-drawer__account {
 	display: none !important;
 }
 
