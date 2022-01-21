@@ -165,15 +165,22 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 			formData.set(
 				"Message",
-				`Message: ${formData.get("Message")}\nMake: ${formData.get("Make")}\nModel:  ${formData.get(
-					"Model"
-				)}\nTest Drive - Preferred Date:  ${formData.get(
-					"PreferredDate"
-				)}\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
+				`Message: ${formData.get("Message")} 
+							\nMake: ${formData.get("Make")} 
+							\nModel:  ${formData.get("Model")}
+							\nTest Drive - Preferred Date:  ${formData.get("PreferredDate")}
+							\nTest Drive - Preferred Time:  ${formData.get("PreferredTime")}\n`
 			);
+			
 			formData.delete("CanopyFeatures");
+			let model = formData.get('Model')
+			let make = formData.get('Make')
+			let spec = formData.get('Specification')
+
+			console.log(model, make, spec);
 			
 			formDataJson = JSON.stringify(Object.fromEntries(formData));
+			console.log(formDataJson);
 			fetch(penta.forms.api, {
 				method: "POST",
 				body: formDataJson,
