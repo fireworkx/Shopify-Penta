@@ -46,9 +46,9 @@
       {% if metafields.FuelType != blank %}
         <li>{% render 'icon-penta-fuel-type' %}{{ metafields.FuelType }}</li>
       {% endif %}
-      {% if metafields.Doors != blank %}
+      {% comment %} {% if metafields.Doors != blank %}
         <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
-      {% endif %}
+      {% endif %} {% endcomment %}
       {% if metafields.Transmission != blank %}
         <li>{% render 'icon-penta-transmission' %}{{ metafields.Transmission }}</li>
       {% endif %}     
