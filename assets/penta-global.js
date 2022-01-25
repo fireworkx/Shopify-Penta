@@ -158,7 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	function Form(form) {
 		const submitButton = form.querySelector(".penta-submit-button");
 		this.sendForm = function ({ uid }) {
-			let formData = new FormData(form);
+
+			let formData = new FormData(form),
+			 	Make = formData.has('Make'),
+				Model = formData.has('Model');
 			// Form specific payloads
 			switch (form.id) {
 				case "test-drive-form":
@@ -173,6 +176,12 @@ document.addEventListener("DOMContentLoaded", () => {
 					formData.delete("PreferredDate");
 					formData.delete("PreferredTime");
 					break;
+				case "enquiry-form":
+					formData.set("Message", [
+						`Message: ${formData.get("Message")}\n`,
+						`${Make && Make}\n`,
+						`${Model && Model}\n`,
+					])
 				default:
 			}
 			formData.append("Type", form.dataset.formType);
