@@ -56,7 +56,13 @@
           <label>Message*</label>
         </div>
       </div>
-      {% render 'penta-hidden-fields' %}
+      {% if product.type == 'Used Vehicle' %} 
+        {% render 'penta-hidden-fields' %}
+      {% else %}
+        {% render 'penta-hidden-fields-new-cars', 
+          title : collection.title
+        %}
+      {% endif %}
       {% render 'penta-form-footer', 
         submitText: 'Book Test Drive' %}
     </form>

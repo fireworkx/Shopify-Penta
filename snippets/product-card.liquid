@@ -14,7 +14,6 @@
     {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-
 {% assign metafields = product_card_product.metafields.product %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -47,9 +46,9 @@
       {% if metafields.FuelType != blank %}
         <li>{% render 'icon-penta-fuel-type' %}{{ metafields.FuelType }}</li>
       {% endif %}
-      {% comment %} {% if metafields.Doors != blank %}
+      {% if metafields.Doors != blank %}
         <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
-      {% endif %} {% endcomment %}
+      {% endif %}
       {% if metafields.Transmission != blank %}
         <li>{% render 'icon-penta-transmission' %}{{ metafields.Transmission }}</li>
       {% endif %}     

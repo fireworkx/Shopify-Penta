@@ -225,6 +225,9 @@
         getDealerships: async function() {
           const response = await fetch("{{ 'dealerships.json' | asset_url }}");
           return response.json();
+        },
+        gallery: {
+          index: 0,
         }
       }
     </script>

@@ -43,8 +43,8 @@
       {% if product.type == 'Used Vehicle' %} 
         {% render 'penta-hidden-fields' %}
       {% else %}
-        {% render 'penta-hidden-fields-new-card', 
-            title : collection.title
+        {% render 'penta-hidden-fields-new-cars', 
+          title : collection.title
         %}
       {% endif %}
       {% render 'penta-form-footer', 
