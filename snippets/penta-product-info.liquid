@@ -12,9 +12,9 @@
   {% if product.metafields.product.FuelType != blank %}
     <h5 class="penta-product-fuel-type">{% render 'icon-penta-fuel-type' %}{{ product.metafields.product.FuelType }}</h5>
   {% endif %}
-  {% if product.metafields.product.Doors != blank %}
+  {% comment %} {% if product.metafields.product.Doors != blank %}
     <h5 class="penta-product-doors">{% render 'icon-penta-door' %}{{ product.metafields.product.Doors }}</h5>
-  {% endif %}
+  {% endif %} {% endcomment %}
   {% if product.metafields.product.Transmission != blank %}
     <h5 class="penta-product-transmission">{% render 'icon-penta-transmission' %}{{ product.metafields.product.Transmission }}</h5>
   {% endif %}
