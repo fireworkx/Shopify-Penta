@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					break;
 				case "enquiry-form":
 					formData.set("Message", [
-						`Message: ${formData.get("Message")}\n`
+						`Message: ${formData.get("Message")}\n`,
 						`${Make && formData.get('Make')} ${Model && formData.get('Model')}`
 					])
 				default:
