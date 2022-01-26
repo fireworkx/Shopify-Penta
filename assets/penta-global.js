@@ -171,8 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							`Message: ${formData.get("Message")}\n`,
 							`Preferred Date: ${formData.get("PreferredDate")}\n`,
 							`Preferred Time: ${formData.get("PreferredTime")}\n`
-						].join("")
-					);
+						].join(""));
 					formData.delete("PreferredDate");
 					formData.delete("PreferredTime");
 					break;
@@ -180,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					formData.set("Message", [
 						`Message: ${formData.get("Message")}\n`,
 						`${Make && formData.get('Make')} ${Model && formData.get('Model')}`
-					])
+					].join(""))
 				default:
 			}
 			formData.append("Type", form.dataset.formType);
