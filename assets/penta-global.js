@@ -160,8 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		this.sendForm = function ({ uid }) {
 
 			let formData = new FormData(form),
-			 	Make = formData.has('Make'),
-				Model = formData.has('Model');
+			 	Make = formData.has('Make') ? formData.get('Make') : '',
+				Model = formData.has('Model') ? formData.get('Model') : '';
 			// Form specific payloads
 			switch (form.id) {
 				case "test-drive-form":
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				case "enquiry-form":
 					formData.set("Message", [
 						`Message: ${formData.get("Message")}\n`,
-						`${Make && formData.get('Make')} ${Model && formData.get('Model')}`
+						`${Make} ${Model}`
 					].join(""))
 				default:
 			}
