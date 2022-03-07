@@ -728,4 +728,3 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
-$(document).ready(function(){$("img.lazyload").lazyload();});
