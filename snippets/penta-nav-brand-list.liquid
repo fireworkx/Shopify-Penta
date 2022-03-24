@@ -15,9 +15,9 @@
             {%- if childlink.links == blank -%}
               <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                 {% if childlink.type == "collection_link" and childlink.object.image %}
-                  {{ childlink.object.image | img_url: '200x' | img_tag }}
+                  {{ childlink.object.image | img_url: '200x' | img_tag : childlink.object.image.alt }}
                 {% elsif linkCollection.featured_image %}
-                  {{ linkCollection.featured_image | img_url: '200x' | img_tag }}
+                  {{ linkCollection.featured_image | img_url: '200x' | img_tag : linkCollection.featured_image.alt }}
                 {% else %}
                   {{ childlink.title | escape }}
                 {% endif %}
@@ -25,9 +25,9 @@
             {%- else -%}
             <button data-nav-button="{{ childlink.title | escape }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
               {% if childlink.type == "collection_link" and childlink.object.image %}
-                {{ childlink.object.image | img_url: '200x' | img_tag }}
+                {{ childlink.object.image | img_url: '200x' | img_tag : childlink.object.image.alt }}
               {% elsif linkCollection.featured_image %}
-                {{ linkCollection.featured_image | img_url: '200x' | img_tag }}
+                {{ linkCollection.featured_image | img_url: '200x' | img_tag : linkCollection.featured_image.alt}}
               {% else %}
                 {{ childlink.title | escape }}
               {% endif %}
@@ -55,7 +55,7 @@
         <li>
           <a href="{{ grandchildlink.url }}" class="penta-nav-model header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"{% if grandchildlink.current %} aria-current="page"{% endif %}>
             {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
-              {{ grandchildlink.object.image | img_url: '256x' | img_tag }}
+              {{ grandchildlink.object.image | img_url: '256x' | img_tag : grandchildlink.object.image.alt }}
             {% endif %}
             {{ grandchildlink.title | escape }}
           </a>
