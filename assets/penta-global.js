@@ -214,8 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		};
 		this.init = function () {
 			submitButton.addEventListener("click", () => {
-				window.dataLayer.push({ event_name: "enquiry_submit" });
 				if (form.checkValidity()) {
+					window.dataLayer.push({ event_name: "enquiry_submit" });
 					submitButton.disabled = true;
 					this.sendForm(({ uid } = penta.modal.form));
 				} else {

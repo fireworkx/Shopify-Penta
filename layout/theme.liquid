@@ -137,8 +137,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     {% comment %} Swiper {% endcomment %}
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer ></script>
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
+
+    {% comment %} <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer ></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> {% endcomment %}
+    
 
     {% comment %} Fireworkx {% endcomment %}
     <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
