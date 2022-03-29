@@ -40,6 +40,12 @@
           <label>Message*</label>
         </div>
       </div>
+      <div class="penta-input-group">
+        <div class="penta-form-consent">
+          <input type="checkbox" id="consentForm" name="consentToForm" value="True" required/>
+          <label>By submitting this request, you consent to the processing of your data</label>
+        </div>
+      </div>
       {% if product.type == 'Used Vehicle' %} 
         {% render 'penta-hidden-fields' %}
       {% else %}
