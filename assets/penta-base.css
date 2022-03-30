@@ -732,7 +732,10 @@ button[data-modal='gallery-modal']:hover svg {
 	}
 	.penta-supernav .penta-nav-model img {
 		max-width: 128px;
+		max-height: 100px;
+		object-fit: contain;
 		pointer-events: none;
+		image-rendering: -webkit-optimize-contrast;
 	}
 }
 
