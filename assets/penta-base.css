@@ -415,7 +415,6 @@ button[data-modal="gallery-modal"]:hover svg {
 }
 
 .penta-form-consent label {
-	pointer-events: none;
 	width: 100%;
 	height: 100%;
 	font-size: 12px;

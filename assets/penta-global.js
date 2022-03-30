@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						penta.forms.showFeedback("error");
 					}
 					if (response.status == 200) {
+						window.dataLayer.push({ event_name: "enquiry_submit" });
 						this.resetForm(form);
 						penta.forms.showFeedback("success");
 						penta.modal.closeModal();
@@ -215,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		this.init = function () {
 			submitButton.addEventListener("click", () => {
 				if (form.checkValidity()) {
-					window.dataLayer.push({ event_name: "enquiry_submit" });
 					submitButton.disabled = true;
 					this.sendForm(({ uid } = penta.modal.form));
 				} else {
