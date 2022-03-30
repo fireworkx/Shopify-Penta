@@ -1,6 +1,6 @@
 /* General */
 * {
-	font-family: "Inter", sans-serif !important;
+	font-family: 'Inter', sans-serif !important;
 	letter-spacing: 0 !important;
 }
 
@@ -175,7 +175,7 @@ button.penta-close-modal-button svg {
 
 /* Expand buttons */
 
-button[data-modal="gallery-modal"] {
+button[data-modal='gallery-modal'] {
 	background: black;
 	width: 36px;
 	height: 36px;
@@ -194,21 +194,21 @@ button[data-modal="gallery-modal"] {
 	z-index: 2;
 }
 
-button[data-modal="gallery-modal"]:hover {
+button[data-modal='gallery-modal']:hover {
 	background: white;
 }
 
-button[data-modal="gallery-modal"] svg {
+button[data-modal='gallery-modal'] svg {
 	fill: white;
 	transition: background-color 0.15s;
 }
 
-button[data-modal="gallery-modal"]:hover svg {
+button[data-modal='gallery-modal']:hover svg {
 	background: white;
 	fill: black;
 }
 
-.penta-pagefly-gallery-image:not(.penta-ready) button[data-modal="gallery-modal"] {
+.penta-pagefly-gallery-image:not(.penta-ready) button[data-modal='gallery-modal'] {
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
@@ -393,9 +393,9 @@ button[data-modal="gallery-modal"]:hover svg {
 	overflow: hidden;
 }
 .penta-form-consent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .penta-input label {
@@ -807,6 +807,7 @@ button[data-modal="gallery-modal"]:hover svg {
 
 .penta-brand-menu .header__submenu .header__menu-item img {
 	max-width: 100px;
+	max-height: 100px;
 	image-rendering: -webkit-optimize-contrast;
 	width: 100%;
 	pointer-events: none;
@@ -838,6 +839,8 @@ button[data-modal="gallery-modal"]:hover svg {
 
 .penta-mobile-nav-details img {
 	max-height: 72px;
+	max-width: 72px;
+	object-fit: contain;
 	image-rendering: -webkit-optimize-contrast;
 }
 
