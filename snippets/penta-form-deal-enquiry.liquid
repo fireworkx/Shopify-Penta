@@ -1,0 +1,61 @@
+<section class="penta-modal" id="deal-enquiry-modal">
+  <div class="penta-form-content" id="deal-enquiry-form-content">
+    {% render 'penta-button-close-modal' %}
+    <form id="deal-enquiry-form" class="penta-form" data-form-type="ContactMeRequest">
+      {% render 'penta-form-heading', form_heading: 'Make an Enquiry' %}
+      {% render 'penta-form-context-block' %}
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="text" name="FirstName" value="" required />
+          <label>First Name*</label>
+        </div>
+        <div class="penta-input">
+          <input type="text" type="text" name="Surname" value="" required />
+          <label>Surname*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="tel" name="TelephoneNumber" pattern="^[0-9-+\s()]*$" value="" required inputmode="numeric" />
+          <label>Contact Number*</label>
+        </div>
+        <div class="penta-input">
+          <input type="email" name="EmailAddress" value="" required />
+          <label>Email Address*</label>
+        </div>
+      </div>
+      {% if product.metafields.product.StocklistApiId == blank %} 
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <select required name="Branch">
+            <option value="" disabled selected></option>
+          </select>
+          <label>Select a Branch</label>
+        </div>
+      </div>
+      {% endif %}
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <textarea rows="4" type="text" required name="Message"></textarea>
+          <label>Message*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-form-consent">
+          <input type="checkbox" id="consentForm" name="consentToForm" value="True" required/>
+          <label>By submitting this request, you consent to the processing of your data according to our 
+          <a href="https://pentamotorgroup.co.za/policies/privacy-policy">Privacy Policy.</a></label>
+        </div>
+      </div>
+      {% if product.type == 'Used Vehicle' %} 
+        {% render 'penta-hidden-fields' %}
+      {% else %}
+        {% render 'penta-hidden-fields-new-cars', 
+          title : collection.title
+        %}
+      {% endif %}
+      {% render 'penta-form-footer', 
+        submitText: 'Submit Enquiry' %}
+    </form>
+  </div>
+</section>
