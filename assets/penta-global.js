@@ -227,7 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Message",
             [
               `Message: ${formData.get("Message")}\n`,
-              `${penta.modal.deals.title} ${penta.modal.deals.price} ${penta.modal.deals.period} `,
+              `Variant: ${penta.modal.deals.title}\n`,
+              `Price: ${penta.modal.deals.price}\n`,
+              `Period: ${penta.modal.deals.period}\n`,
             ].join("")
           );
         default:
@@ -278,19 +280,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Get this deal
 
-  const brandDeal = document.querySelector("[data-brand]");
+  const brandDeal = document.querySelector("[data-brand]").dataset.brand;
   const dealBtns = document.querySelectorAll("[data-modal]");
 
   dealBtns.forEach((dealBtn) => {
     dealBtn.setAttribute("data-brand", brandDeal);
     let card = dealBtn.closest(".card-info");
-    penta.modal.deals.title = card.dataset.title;
-    penta.modal.deals.price = card.dataset.price;
-    penta.modal.deals.period = card.dataset.period;
-
-    dealBtn.addEventListener("click", function () {
-      // Send the data to the form ....( from the payload )
-    });
+    let imageSrc = card.querySelector('img').src
+    penta.modal.deals.title = card.querySelector('.deal-title').textContent;
+    penta.modal.deals.price = card.querySelector('.deal-price').textContent;
+    penta.modal.deals.period = card.querySelector('.deal-period').textContent;
+    penta.modal.deals.deposit = card.querySelector('.deal-deposit').textContent;
+    penta.modal.deals.interestType = card.querySelector('.deal-interest-type').textContent;
+    penta.modal.deals.balloon = card.querySelector('.deal-balloon').textContent;
+    penta.modal.deals.retailCost = card.querySelector('.deal-retail-cost').textContent;
+    penta.modal.deals.creditCost = card.querySelector('.deal-credit-cost').textContent;
+    const dealContext = document.querySelector('#penta-deal-form-context-block')
+    dealContext.querySelector('#deal-context-image').src = imageSrc
+    dealContext.querySelector('#deal-context-title').textContent = penta.modal.deals.title
+    dealContext.querySelector('#deal-context-price').textContent = penta.modal.deals.price
   });
 
   //Test Drive
