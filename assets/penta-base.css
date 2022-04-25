@@ -309,7 +309,7 @@ button[data-modal="gallery-modal"]:hover svg {
 @media screen and (min-width: 750px) {
   .penta-form-context-block {
     padding: 24px;
-    gap: 20px;
+    gap: 30px;
     margin-right: 24px;
     margin-left: 24px;
   }
@@ -889,4 +889,32 @@ button[data-modal="gallery-modal"]:hover svg {
 table tr td:first-child {
   position: sticky;
   background: #f9fafb;
+}
+
+#deal-context-image {
+  width: 200px;
+  height: 120px;
+}
+
+#deal-context-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  /* identical to box height, or 28px */
+
+  color: #000000;
+}
+
+.deal-context-price-container {
+  display: flex;
+}
+
+#deal-context-period {
+  background-color: revert;
+}
+
+.deal-context-deposit-container {
+  display: flex;
 }
