@@ -9,19 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const dealSection = document.querySelector(".section-deals");
   const specificationSection = document.querySelector(".section-specification");
 
-  scrollToDealBtn.addEventListener("click", function () {
-    dealSection.scrollIntoView({
-      behavior: "smooth",
-      inline: "end",
+  if (scrollToDealBtn || scrollToSpecBtn) {
+    scrollToDealBtn.addEventListener("click", function () {
+      dealSection.scrollIntoView({
+        behavior: "smooth",
+        inline: "end",
+      });
     });
-  });
-  scrollToSpecBtn.addEventListener("click", function () {
-    specificationSection.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
+    scrollToSpecBtn.addEventListener("click", function () {
+      specificationSection.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
     });
-  });
+  }
 
   // Modals
   const penta = {
@@ -285,70 +287,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Get this deal
 
-  const dealBtns = document.querySelectorAll("[data-modal]");
+  const dealBtns = document.querySelectorAll(
+    "[data-modal='deal-enquiry-modal']"
+  );
 
-  dealBtns.forEach((dealBtn) => {
-    dealBtn.setAttribute("data-brand", brandDeal);
-    let card = dealBtn.closest(".card-info");
-    let imageSrc = card.querySelector("img").src;
-    penta.modal.deals.title = card.querySelector(".deal-title").textContent;
-    penta.modal.deals.price = card.querySelector(".deal-price").textContent;
-    penta.modal.deals.period = card.querySelector(".deal-period").textContent;
-    penta.modal.deals.deposit = card.querySelector(".deal-deposit").textContent;
-    penta.modal.deals.interestType = card.querySelector(
-      ".deal-interest-type"
-    ).textContent;
-    penta.modal.deals.balloon = card.querySelector(".deal-balloon").textContent;
-    penta.modal.deals.retailCost =
-      card.querySelector(".deal-retail-cost").textContent;
-    penta.modal.deals.creditCost =
-      card.querySelector(".deal-credit-cost").textContent;
+  if (dealBtns) {
+    dealBtns.forEach((dealBtn) => {
+      dealBtn.setAttribute("data-brand", brandDeal);
+      let card = dealBtn.closest(".card-info");
+      let imageSrc = card.querySelector("img").src;
+      penta.modal.deals.title = card.querySelector(".deal-title").textContent;
+      penta.modal.deals.price = card.querySelector(".deal-price").textContent;
+      penta.modal.deals.period = card.querySelector(".deal-period").textContent;
+      penta.modal.deals.deposit =
+        card.querySelector(".deal-deposit").textContent;
+      penta.modal.deals.interestType = card.querySelector(
+        ".deal-interest-type"
+      ).textContent;
+      penta.modal.deals.balloon =
+        card.querySelector(".deal-balloon").textContent;
+      penta.modal.deals.retailCost =
+        card.querySelector(".deal-retail-cost").textContent;
+      penta.modal.deals.creditCost =
+        card.querySelector(".deal-credit-cost").textContent;
 
-    // Populate the form header snippet
-    const dealContext = document.querySelector(
-      "#penta-deal-form-context-block"
-    );
-    dealContext.querySelector("#deal-context-image").src = imageSrc;
-    dealContext.querySelector("#deal-context-title").textContent =
-      penta.modal.deals.title;
-    dealContext.querySelector("#deal-context-price").textContent =
-      penta.modal.deals.price;
-    dealContext.querySelector("#deal-context-period").textContent =
-      penta.modal.deals.period;
-    dealContext.querySelector("#deal-context-deposit").textContent =
-      penta.modal.deals.deposit;
-    dealContext.querySelector("#deal-context-interest-type").textContent =
-      penta.modal.deals.interestType;
-  });
+      // Populate the form header snippet
+      const dealContext = document.querySelector(
+        "#penta-deal-form-context-block"
+      );
+      dealContext.querySelector("#deal-context-image").src = imageSrc;
+      dealContext.querySelector("#deal-context-title").textContent =
+        penta.modal.deals.title;
+      dealContext.querySelector("#deal-context-price").textContent =
+        penta.modal.deals.price;
+      dealContext.querySelector("#deal-context-period").textContent =
+        penta.modal.deals.period;
+      dealContext.querySelector("#deal-context-deposit").textContent =
+        penta.modal.deals.deposit;
+      dealContext.querySelector("#deal-context-interest-type").textContent =
+        penta.modal.deals.interestType;
+    });
+  }
 
   //Test Drive
-  const table = document.getElementsByTagName("table")[0];
-  const tableBody = document
-    .getElementsByTagName("table")[0]
-    .getElementsByTagName("tbody")[0];
+  const table = document.querySelector(".specification-table table");
+  if (table) {
+    const tableBody = document
+      .getElementsByTagName("table")[0]
+      .getElementsByTagName("tbody")[0];
 
-  let columnCount = table.rows[0].cells.length;
-  let newRow = tableBody.insertRow();
+    let columnCount = table.rows[0].cells.length;
+    let newRow = tableBody.insertRow();
 
-  // insert new cells
-  for (let index = 0; index <= columnCount - 1; index++) {
-    var newCell = newRow.insertCell();
-    const button = document.createElement("button");
-    button.innerHTML = "Book a Test Drive";
-    button.setAttribute("data-modal", "deal-test-drive-modal");
-    button.setAttribute("data-brand", brandDeal);
-    button.classList.add("test-drive-button");
+    // insert new cells
+    for (let index = 0; index <= columnCount - 1; index++) {
+      var newCell = newRow.insertCell();
+      const button = document.createElement("button");
+      button.innerHTML = "Book a Test Drive";
+      button.setAttribute("data-modal", "deal-test-drive-modal");
+      button.setAttribute("data-brand", brandDeal);
+      button.classList.add("test-drive-button");
+      button.addEventListener("click", () => {
+        const variant = table.rows[0].cells[index].textContent;
 
-    // const variant = table.rows[0].cells[index].textContent;
+        const testContext = document.querySelector(
+          "#penta-deal-book-test-form-context-block"
+        );
 
-    const testContext = document.querySelector(
-      "#penta-deal-book-test-form-context-block"
-    );
-    testContext.querySelector(
-      "#book-test-deal-context-title"
-    ).textContent = `${brandDeal}`;
-    if (index > 0) {
-      newCell.append(button);
+        testContext.querySelector(
+          "#book-test-deal-context-title"
+        ).textContent = `${brandDeal} ${variant}`;
+      });
+
+      if (index > 0) {
+        newCell.append(button);
+      }
     }
   }
   penta.init();
