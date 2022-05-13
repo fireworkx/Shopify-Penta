@@ -1,5 +1,26 @@
 
-{% if shop.metafields.pagefly.acceptTracking %}<script>window.__pagefly_analytics_settings__={acceptTracking: true};</script>{% endif %}
+{% if shop.metafields.pagefly.acceptTracking %}
+<script>window.__pagefly_analytics_settings__={
+	acceptNewTracking: true, 
+	enableTrackingRevenue: {{shop.metafields.pagefly.enableTrackingRevenue | default: false}}, 
+	sessionTimeout: {{ shop.metafields.pagefly.sessionTimeout | default: 30 }},
+	timezoneOffset: {{ shop.metafields.pagefly.timezoneOffset | default: 0 }}
+};
+  // load pagefly analytics new verion
+  const analyticsSrc = "https://cdn.pagefly.io/pagefly/core/analytics.js"
+  const script = document.createElement('script')
+  script.src = analyticsSrc
+  script.async = true
+  script.defer = false
+  script.onload = () => {
+    console.log("load analytics new version sucessfully")
+  }
+  script.onerror = () => {
+    console.log("load analytics new version unsuccessfully")
+  }
+  document.body.appendChild(script)
+</script>
+{% endif %}
 
 {% if shop.metafields.pagefly.globalSetting %}{{ shop.metafields.pagefly.globalSetting }}{% endif %}
 {{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
