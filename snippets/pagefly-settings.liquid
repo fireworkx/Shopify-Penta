@@ -8,17 +8,17 @@
 };
   // load pagefly analytics new verion
   const analyticsSrc = "https://cdn.pagefly.io/pagefly/core/analytics.js"
-  const script = document.createElement('script')
-  script.src = analyticsSrc
-  script.async = true
-  script.defer = false
-  script.onload = () => {
+  const scriptPFAnalytic = document.createElement('script')
+  scriptPFAnalytic.src = analyticsSrc
+  scriptPFAnalytic.async = true
+  scriptPFAnalytic.defer = false
+  scriptPFAnalytic.onload = () => {
     console.log("load analytics new version sucessfully")
   }
-  script.onerror = () => {
+  scriptPFAnalytic.onerror = () => {
     console.log("load analytics new version unsuccessfully")
   }
-  document.body.appendChild(script)
+  document.body.appendChild(scriptPFAnalytic)
 </script>
 {% endif %}
 
