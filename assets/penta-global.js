@@ -363,6 +363,40 @@ document.addEventListener("DOMContentLoaded", () => {
         newCell.append(button);
       }
     }
+
+    // Add Icon in table
+
+    const checkIcon = document.querySelector(".check-circle-icon");
+    const optionIcon = document.querySelector(".option-circle-icon");
+    const minusIcon = document.querySelector(".minus-icon");
+
+    console.log(checkIcon);
+
+    const rows = table.rows;
+    if (!rows) {
+      return;
+    }
+    Array.from(rows).forEach((row) => {
+      const cells = Array.from(row.cells);
+      cells.forEach((cell) => {
+        const content = cell.textContent;
+        if (content === "Standard") {
+          cell.textContent = "";
+          const clonedIcon = checkIcon.cloneNode();
+          cell.append(clonedIcon);
+        }
+        if (content === "Optional") {
+          cell.textContent = "";
+          const clonedIcon = optionIcon.cloneNode();
+          cell.append(clonedIcon);
+        }
+        if (content === "Not available") {
+          cell.textContent = "";
+          const clonedIcon = minusIcon.cloneNode();
+          cell.append(clonedIcon);
+        }
+      });
+    });
   }
   penta.init();
 });
