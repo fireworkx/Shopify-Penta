@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         price: "",
         period: "",
       },
+      modelVariant: "",
       form: {
         elem: "",
         type: "",
@@ -240,12 +241,15 @@ document.addEventListener("DOMContentLoaded", () => {
           );
         default:
       }
+      formData.append(
+        "Model Variant and Specification",
+        penta.modal.modelVariant
+      );
       formData.append("Type", form.dataset.formType);
       formData.append("URL", window.location.href);
       formData.set("StockListApiId", uid);
       formData.delete("Branch");
       formDataJson = JSON.stringify(Object.fromEntries(formData));
-      console.log(formDataJson);
       fetch(penta.forms.api, {
         method: "POST",
         body: formDataJson,
@@ -357,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         testContext.querySelector(
           "#book-test-deal-context-title"
         ).textContent = `${brandDeal} ${variant}`;
+        penta.modal.modelVariant = `${brandDeal} ${variant}`;
       });
 
       if (index > 0) {
@@ -369,8 +374,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkIcon = document.querySelector(".check-circle-icon");
     const optionIcon = document.querySelector(".option-circle-icon");
     const minusIcon = document.querySelector(".minus-icon");
-
-    console.log(checkIcon);
 
     const rows = table.rows;
     if (!rows) {
