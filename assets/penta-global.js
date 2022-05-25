@@ -1,28 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Get deal from hero
-  const brandDeal = document.querySelector("[data-brand]").dataset.brand;
 
-  // Scroll into view
-  const scrollToDealBtn = document.querySelector("[data-deals-scroll]");
-  const scrollToSpecBtn = document.querySelector("[data-specification-scroll]");
-
-  const dealSection = document.querySelector(".section-deals");
-  const specificationSection = document.querySelector(".section-specification");
-
-  if (scrollToDealBtn || scrollToSpecBtn) {
-    scrollToDealBtn.addEventListener("click", function () {
-      dealSection.scrollIntoView({
-        behavior: "smooth",
-        inline: "end",
-      });
-    });
-    scrollToSpecBtn.addEventListener("click", function () {
-      specificationSection.scrollIntoView({
-        behavior: "smooth",
-        block: "end",
-        inline: "nearest",
-      });
-    });
+  let brandDeal = document.querySelector("[data-brand]");
+  if (brandDeal) {
+    brandDeal = brandDeal.dataset.brand;
   }
 
   // Modals
