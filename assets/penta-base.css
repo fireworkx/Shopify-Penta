@@ -889,13 +889,19 @@ button[data-modal="gallery-modal"]:hover svg {
   white-space: nowrap;
 }
 
-.specification-table table {
-  width: auto !important;
+@media screen and (max-width: 770px) {
+  .specification-table table {
+    width: auto !important;
+  }
 }
 
-.specification-table table tr td:first-child {
-  position: sticky;
-  background: #f9fafb;
+@media screen and (max-width: 770px) {
+  .specification-table table tr td:first-child,
+  .specification-table table th:first-child {
+    position: sticky;
+    left: 0;
+    background: #ededed;
+  }
 }
 
 #deal-context-image {
