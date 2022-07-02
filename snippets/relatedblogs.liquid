@@ -57,26 +57,12 @@
 {%- unless ex_frmpool_id contains article.id -%}
 
 
-  {%- assign atitle_temp = article.title | remove : " " | split: "" -%}
-  {%- assign flag = "false" -%}
-  {%- for word in atitle_temp -%}
-  {%- if article_title_arr contains word -%}
-  {%- assign flag = "true" -%}
-  {%- break -%}
+  {%- for tag in article.tags -%}
+  {%- if current_post_tags contains tag -%}
+  {%- assign related_posts = related_posts | append:article.id | append : "," -%}
   {%- endif -%}
   {%- endfor -%}
 
-  {%- assign t_flag = "false" -%}
-  {%- for tag in current_post_tags -%}
-  {%- if article.tags contains tag -%}
-  {%- assign t_flag = "true" -%}
-  {%- break -%}
-  {%- endif -%}
-  {%- endfor -%}
-
-  {%- if t_flag == "true"  or article_author ==  article.author or flag == "true" -%}
-  {%- assign related_posts = related_posts | append:article.id | append : ","-%}
-  {%- endif -%}
 
 {%- endunless -%}
 {%- endfor -%}
