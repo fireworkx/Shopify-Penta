@@ -114,7 +114,7 @@
 {%- assign article_ids = articleids | uniq -%}
 
 <div class="rb_row">
-  <h3>Related Posts</h3>{%- assign count = 0 -%}
+  <h2>Related Posts</h2>{%- assign count = 0 -%}
 {%- for aid in article_ids -%}
   {%- assign rflag = "false" -%}
   {%- for blog in blog_handle_arr -%}
@@ -150,7 +150,7 @@
 
                               {%- if article.excerpt != "" -%}
                   <div class="rb_contents">
-                    <span>{{ article.excerpt | strip_html | strip | truncate: 120, "" }}</span>
+                    <span>{{ article.excerpt | strip_html | strip | truncate: 0, "" }}</span>
                   </div>
                   <a href="{{ article.url }}" class="rb_continue_button">Read More</a>
                 {%- endif -%}
