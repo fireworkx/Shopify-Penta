@@ -48,6 +48,7 @@
         {%- when 'content'-%}
           <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{ block.shopify_attributes }}>
               {{ article.content }}
+                {% include 'relatedblogs' %}
           </div>
 
         {%- when 'share' -%}
@@ -350,7 +351,7 @@
       "name": "t:sections.main-article.blocks.content.name",
       "limit": 1
     },
-    {
+{
       "type": "share",
       "name": "t:sections.main-article.blocks.share.name",
       "limit": 2,
