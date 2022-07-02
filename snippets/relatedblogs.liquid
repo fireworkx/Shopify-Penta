@@ -113,7 +113,7 @@
 {%- assign articleids = articleids | slice: 0, rsize | split:"," -%}
 {%- assign article_ids = articleids | uniq -%}
 
-<div class="row">
+<div class="rb_row">
   <h3>Related Posts</h3>{%- assign count = 0 -%}
 {%- for aid in article_ids -%}
   {%- assign rflag = "false" -%}
