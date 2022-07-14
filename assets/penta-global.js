@@ -279,38 +279,41 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dealBtns) {
     dealBtns.forEach((dealBtn) => {
       dealBtn.setAttribute("data-brand", brandDeal);
-      let card = dealBtn.closest(".card-info");
-      let imageSrc = card.querySelector("img").src;
-      penta.modal.deals.title = card.querySelector(".deal-title").textContent;
-      penta.modal.deals.price = card.querySelector(".deal-price").textContent;
-      penta.modal.deals.period = card.querySelector(".deal-period").textContent;
-      penta.modal.deals.deposit =
-        card.querySelector(".deal-deposit").textContent;
-      penta.modal.deals.interestType = card.querySelector(
-        ".deal-interest-type"
-      ).textContent;
-      penta.modal.deals.balloon =
-        card.querySelector(".deal-balloon").textContent;
-      penta.modal.deals.retailCost =
-        card.querySelector(".deal-retail-cost").textContent;
-      penta.modal.deals.creditCost =
-        card.querySelector(".deal-credit-cost").textContent;
+      dealBtn.addEventListener("click", () => {
+        let card = dealBtn.closest(".card-info");
+        let imageSrc = card.querySelector("img").src;
+        penta.modal.deals.title = card.querySelector(".deal-title").textContent;
+        penta.modal.deals.price = card.querySelector(".deal-price").textContent;
+        penta.modal.deals.period =
+          card.querySelector(".deal-period").textContent;
+        penta.modal.deals.deposit =
+          card.querySelector(".deal-deposit").textContent;
+        penta.modal.deals.interestType = card.querySelector(
+          ".deal-interest-type"
+        ).textContent;
+        penta.modal.deals.balloon =
+          card.querySelector(".deal-balloon").textContent;
+        penta.modal.deals.retailCost =
+          card.querySelector(".deal-retail-cost").textContent;
+        penta.modal.deals.creditCost =
+          card.querySelector(".deal-credit-cost").textContent;
 
-      // Populate the form header snippet
-      const dealContext = document.querySelector(
-        "#penta-deal-form-context-block"
-      );
-      dealContext.querySelector("#deal-context-image").src = imageSrc;
-      dealContext.querySelector("#deal-context-title").textContent =
-        penta.modal.deals.title;
-      dealContext.querySelector("#deal-context-price").textContent =
-        penta.modal.deals.price;
-      dealContext.querySelector("#deal-context-period").textContent =
-        penta.modal.deals.period;
-      dealContext.querySelector("#deal-context-deposit").textContent =
-        penta.modal.deals.deposit;
-      dealContext.querySelector("#deal-context-interest-type").textContent =
-        penta.modal.deals.interestType;
+        // Populate the form header snippet
+        const dealContext = document.querySelector(
+          "#penta-deal-form-context-block"
+        );
+        dealContext.querySelector("#deal-context-image").src = imageSrc;
+        dealContext.querySelector("#deal-context-title").textContent =
+          penta.modal.deals.title;
+        dealContext.querySelector("#deal-context-price").textContent =
+          penta.modal.deals.price;
+        dealContext.querySelector("#deal-context-period").textContent =
+          penta.modal.deals.period;
+        dealContext.querySelector("#deal-context-deposit").textContent =
+          penta.modal.deals.deposit;
+        dealContext.querySelector("#deal-context-interest-type").textContent =
+          penta.modal.deals.interestType;
+      });
     });
   }
 
