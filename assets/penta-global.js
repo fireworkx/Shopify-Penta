@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     },
     forms: {
-      api: "https://pinewood-api.dev.fireworkx.com/api/v1/leadsubmit",
+      api: "https://pinewood-api.live.fireworkx.com/api/v1/leadsubmit",
       form: {},
       buildSelect(elem, select, brand, dealership, uid) {
         // Builds select option list
