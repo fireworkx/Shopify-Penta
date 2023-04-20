@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "penta-collection-content": {
+      "type": "penta-collection-content",
+      "settings": {
+      }
+    },
+    "pf-6449b553": {
+      "type": "pf-6449b553",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "penta-collection-content",
+    "pf-6449b553"
+  ]
+}
