@@ -510,3 +510,13 @@
     }
   }
 }
+
+/* hide bottom footer content */
+.footer .footer__content-bottom {
+  display: none;
+}
+
+/* email input background color change */
+.footer .newsletter-input {
+  background-color: #252525;
+}
