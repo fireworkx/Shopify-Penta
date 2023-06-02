@@ -29,8 +29,8 @@
         "footer-2": {
           "type": "text",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "© 2022 Penta Motor Group",
+            "subtext": "<p>Reg Office: 501 Breed Str, Montana Gardens, Pretoria, 0182. Reg. Company Number: 2012\/086672\/07<\/p>"
           }
         }
       },
@@ -43,7 +43,7 @@
       "settings": {
         "color_scheme": "inverse",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Subscribe to our newsletter",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
