@@ -8,14 +8,14 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "New Cars",
+            "menu": "dealerships"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "Buying a Car?",
             "menu": "footer"
           }
         },
