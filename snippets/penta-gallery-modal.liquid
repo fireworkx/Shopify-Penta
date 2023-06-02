@@ -1,0 +1,154 @@
+<div class="penta-modal" id="gallery-modal">
+ {% render 'penta-close-modal-button' %}
+  <div class="penta-modal-content">
+    <div class="swiper penta-swiper" id="penta-gallery-swiper">
+      <div class="swiper-wrapper">
+        {% if template.name == 'product' %}
+          {%- for media in product.media -%}
+              <div class="swiper-slide">
+                  {%- if media != blank -%}
+                      <img data-src="{{ media | image_url: width: 2000 }}"
+                            width=""
+                            height=""
+                            class="swiper-lazy">
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                  {%- endif -%}
+              </div>
+          {%- endfor -%}
+        {% endif %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    // On new car pages - gets background images from gallery and injects into DOM
+    // Replace with mutation observer later
+
+      if('{{ template.name }}' === 'collection'){
+        if(document.querySelector('#penta-pagefly-gallery')){
+          const galleryImages = document.querySelectorAll('.penta-pagefly-gallery-image')
+          const swiperContainer = document.querySelector('.swiper-wrapper')
+          let sources = []
+          let timer = setInterval(getSources, 1000)
+          function getSources() {
+            if(sources.length == 0 || sources.includes("none") || sources.includes(undefined)){
+              sources = Array.from(galleryImages, image => {
+                let style = image.currentStyle || window.getComputedStyle(image, false),
+                imageUrl = style.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2').split(',')[0];
+                return imageUrl
+              });
+            }
+            else{
+              clearInterval(timer);
+              buildSlides(sources);
+            }
+          }
+
+          function buildSlides(sources){
+            const html = sources.map((source, index) => {
+              let slide = `<div class="swiper-slide" data-gallery-index="${index}">
+                <img data-src="${source}"
+                      width=""
+                      height=""
+                      class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              </div>`
+              return slide
+            })
+            galleryImages.forEach(slide => slide.classList.add('penta-ready'))
+            swiperContainer.insertAdjacentHTML('afterbegin', html);
+            initGallerySwiper();
+          }
+          
+        }
+      }
+      else{
+        initGallerySwiper();
+      }
+    
+
+      document.querySelectorAll('.penta-pagefly-gallery-image [data-modal="gallery-modal"]').forEach((button, index) => {
+        button.addEventListener('click', function() {
+          window.penta.gallery.swiper.activeIndex = index;
+          window.penta.gallery.swiper.update();
+        });
+      });
+
+      function initGallerySwiper(){
+        window.penta.gallery.swiper = new Swiper("#penta-gallery-swiper", {
+          preloadImages: false,
+          lazy: {
+            loadPrevNext: true,
+          },
+          spaceBetween: 10,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },
+          pagination: {
+          el: ".swiper-pagination",
+            clickable: true
+          },
+          on: {
+            slideChange: function(){
+              window.penta.gallery.index = this.activeIndex;
+            }
+          }
+        });
+      }
+  });
+  
+</script>
+
+<style>
+  #gallery-modal{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:all;
+    background-color:rgba(0,0,0,0.75)
+  }
+  #gallery-modal .penta-modal-content{
+    width: 100%;
+    height: 100%;
+  }
+
+  #gallery-modal #penta-gallery-swiper{
+    height: 100%;
+  }
+  #gallery-modal #penta-gallery-swiper img{
+    height: auto;
+    width:auto;
+    max-width:100%;
+  }
+  #gallery-modal .swiper-wrapper{
+    align-items:center;
+  }
+.swiper-lazy-preloader:empty{
+  display:block;
+}
+  #gallery-modal .penta-close-modal-button{
+    position:absolute;
+    top:16px;
+    right:16px;
+    background:white;
+    z-index:2;
+    cursor:pointer;
+  }
+  #gallery-modal .penta-close-modal-button svg{
+    fill:black;
+  }
+  @media screen and (min-width:750px){
+    #gallery-modal .penta-close-modal-button{
+      top:24px;
+      right:24px;
+      width:40px;
+      height:40px;
+    }
+  }
+</style>

@@ -1,0 +1,115 @@
+<section class="penta-modal" id="book-a-service-modal">
+  <div class="penta-form-content" id="book-a-service-form-content">
+    <div class="penta-coming-soon-container">
+      <div class="penta-coming-soon">
+        {% render 'icon-penta-cone' %}
+        <h2>Coming soon</h2>
+      </div>
+    </div>
+    {% render 'penta-button-close-modal' %}
+    <form id="book-a-service-form" class="penta-form" data-form-type="ServiceBookingRequest">
+      {% render 'penta-form-heading', form_heading: 'Book a Service' %}
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="text" name="FirstName" value="" required />
+          <label>First Name*</label>
+        </div>
+        <div class="penta-input">
+          <input type="text" type="text" name="Surname" value="" required />
+          <label>Surname*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="tel" name="TelephoneNumber" pattern="^[0-9-+\s()]*$" value="" required inputmode="numeric" />
+          <label>Contact Number*</label>
+        </div>
+        <div class="penta-input">
+          <input type="email" name="EmailAddress" value="" required />
+          <label>Email Address*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="text" type="text" name="Make" value="" required />
+          <label>Make*</label>
+        </div>
+        <div class="penta-input">
+          <input type="text" type="text" name="Model" value="" required />
+          <label>Model*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="text" type="text" name="Registration" value="" required />
+          <label>Vehicle Registration*</label>
+        </div>
+        <div class="penta-input">
+          <input type="text" type="text" name="Mileage" value="" required />
+          <label>Current Vehicle Mileage*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <input type="date" name="ServiceDueDate" value="" required />
+          <label>Vehicle Service Due Date*</label>
+        </div>
+        <div class="penta-input">
+          <select required name="Branch">
+            <option value="" disabled selected></option>
+          </select>
+          <label>Select a Branch</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-input">
+          <textarea type="text" required name="Message"></textarea>
+          <label>Message*</label>
+        </div>
+      </div>
+      <div class="penta-input-group">
+        <div class="penta-form-consent">
+          <input type="checkbox" id="consentForm" name="consentToForm" value="True" required/>
+          <label>By submitting this request, you consent to the processing of your data according to our 
+          <a href="https://pentamotorgroup.co.za/policies/privacy-policy">Privacy Policy.</a></label>
+        </div>
+      </div>
+      {% render 'penta-form-footer', 
+        submitText: 'Submit' %}
+    </form>
+  </div>
+</section>
+
+<style>
+  .penta-coming-soon-container{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgb(244 244 244 / 70%);
+    z-index:1;
+  }
+  .penta-coming-soon{
+    padding:30px;
+    background:white;
+    border-radius:3px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    display:flex;
+    gap:20px;
+    flex-direction:column;
+    align-items:center;
+  }
+  .penta-coming-soon svg{
+    fill:black;
+    width:40px;
+    height: 40px;
+  }
+  .penta-coming-soon h2{
+    font-size:40px;
+    font-weight:bold;
+  }
+</style>

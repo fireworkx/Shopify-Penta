@@ -262,6 +262,10 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {% comment %} Fireworkx {% endcomment %}
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
+    <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

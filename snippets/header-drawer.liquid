@@ -58,11 +58,14 @@
                                     {{ childlink.title | escape }}
                                   </a>
                                 {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                  <details class="penta-mobile-nav-details" id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
                                     <summary
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
+                                      {% if childlink.type == "collection_link" and childlink.object.image %}
+                                        {{ childlink.object.featured_image | image_url: width: 144 | image_tag: loading: 'lazy' }}
+                                      {% endif %}
                                       {{ childlink.title | escape }}
                                       {% render 'icon-arrow' %}
                                       {% render 'icon-caret' %}
@@ -93,6 +96,9 @@
                                                 aria-current="page"
                                               {% endif %}
                                             >
+                                              {% if grandchildlink.type == "collection_link" and grandchildlink.object.image %}
+                                                {{ grandchildlink.object.featured_image | image_url: width: 144 | image_tag: loading: 'lazy' }}
+                                              {% endif %}
                                               {{ grandchildlink.title | escape }}
                                             </a>
                                           </li>
