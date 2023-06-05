@@ -932,3 +932,25 @@ button[data-modal="gallery-modal"]:hover svg {
 .deal-context-deposit-container {
   display: flex;
 }
+
+.spaced-section {
+  margin-top: 5rem;
+}
+
+.spaced-section:last-child {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .element-margin {
+    margin-top: 7rem;
+  }
+
+  .spaced-section {
+    margin-top: 7rem;
+  }
+
+  .spaced-section:last-child {
+    margin-bottom: 7rem;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "penta-main-collection-product-grid",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}
