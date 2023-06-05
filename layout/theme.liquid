@@ -263,6 +263,15 @@
       }
     </script>
 
+    {% comment %} Penta assets {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    {% comment %} Swiper {% endcomment %}
+
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer ></script>
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
+
     {% comment %} Fireworkx {% endcomment %}
     <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
     <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
@@ -323,5 +332,34 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% comment %} Penta forms  {% endcomment %}
+
+    {%- liquid
+      render 'penta-form-contact-us' 
+      render 'penta-form-enquiry' 
+      render 'penta-form-deal-enquiry' 
+      render 'penta-form-deal-test-drive' 
+      render 'penta-form-test-drive' 
+      render 'penta-form-book-a-service' 
+      render 'penta-modal-overlay' 
+      render 'penta-form-feedback' 
+      if template.name == 'collection' or template.name == 'product' 
+        render 'penta-gallery-modal' 
+      endif
+    -%}
+  
+    <script>
+      var penta = {
+        getDealerships: async function() {
+          const response = await fetch("{{ 'dealerships.json' | asset_url }}");
+          return response.json();
+        },
+        gallery: {
+          index: 0,
+        }
+      }
+    </script>
+
   </body>
 </html>
