@@ -29,7 +29,7 @@
 
     <div id="main-collection-filters" data-id="{{ section.id }}">
       <div id="penta-filters">
-        {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
+        {% render 'penta-facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
       </div>
     </div>
   {%- endif -%}
