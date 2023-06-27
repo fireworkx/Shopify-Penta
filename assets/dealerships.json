@@ -79,6 +79,16 @@
       "name": "Penta Suzuki Rustenburg",
       "brand": "Suzuki",
       "id": "1E6F0701-9D41-4B74-A25D-8301895C94DB"
+    },
+    {
+      "name": "Penta Suzuki Potchefstroom",
+      "brand": "Suzuki",
+      "id": "88b0e3e0-66c7-4f88-bff1-b1c60f2d12c0"
+    },
+    {
+      "name": "Penta Suzuki Brits",
+      "brand": "Suzuki",
+      "id": "f4639465-5bfc-4934-82ec-6198f14cd62f"
     }
   ]
 }
