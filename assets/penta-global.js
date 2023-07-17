@@ -247,7 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
             
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag(event: "enquiry_submit");
+            gtag(event, "enquiry_submit");
+            gtag('config', 'TAG_ID');
             
             this.resetForm(form);
             penta.forms.showFeedback("success");
