@@ -1,3 +1,4 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-K3QDV8X"></script>
 document.addEventListener("DOMContentLoaded", () => {
   // Get deal from hero
 
@@ -244,6 +245,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           if (response.status == 200) {
             window.dataLayer.push({ event: "enquiry_submit" });
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag(event: "enquiry_submit");
+            
             this.resetForm(form);
             penta.forms.showFeedback("success");
             penta.modal.closeModal();
