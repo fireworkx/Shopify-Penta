@@ -243,8 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
             penta.forms.showFeedback("error");
           }
           if (response.status == 200) {
-            // window.dataLayer.push({ event_name: "enquiry_submit" });
-            window.dataLayer.push({ event: "enquiry_submit" });
+            window.dataLayer.push({ event_name: "enquiry_submit" });
+            // window.dataLayer.push({ event: "enquiry_submit" });
             this.resetForm(form);
             penta.forms.showFeedback("success");
             penta.modal.closeModal();
