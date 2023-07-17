@@ -245,9 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
           if (response.status == 200) {
             window.dataLayer.push({ event: "enquiry_submit" });
             
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag(event, "enquiry_submit");
+            // window.dataLayer = window.dataLayer || [];
+            // function gtag(){dataLayer.push(arguments);}
+            // gtag(event, "enquiry_submit");
             
             this.resetForm(form);
             penta.forms.showFeedback("success");
