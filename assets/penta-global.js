@@ -1,4 +1,3 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-K3QDV8X"></script>
 document.addEventListener("DOMContentLoaded", () => {
   // Get deal from hero
 
