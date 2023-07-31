@@ -281,5 +281,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    <div class="pagefly-container">{{ content_for_layout }}</div></body>
 </html>
