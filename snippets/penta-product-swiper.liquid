@@ -18,7 +18,7 @@
       {%- for media in product.media -%}
           <div class="swiper-slide"> 
               {%- if media != blank -%}
-                  <img data-src="{{ media | image_url: width: 250 }}" class="swiper-lazy">
+                  <img data-src="{{ media | image_url: width: 250 }}" class="swiper-lazy" loading="lazy">
                   <div class="swiper-lazy-preloader"></div>
               {%- endif -%}
           </div>

@@ -114,7 +114,9 @@
     }
 
     if (!isIE()) return;
+    {% # theme-check-disable %}
     const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id"]');
+    {% # theme-check-enable %}
     const noScriptInputWrapper = document.createElement('div');
     const variantSwitcher = document.querySelector('variant-radios[data-section="{{ section.id }}"]') || document.querySelector('variant-selects[data-section="{{ section.id }}"]');
     noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-{{ section.id }}').textContent;
@@ -179,6 +181,7 @@
   }
 </script>
 <script src="{{ 'penta-product.js' | asset_url }}" defer="defer" ></script>
+
 
 {% schema %}
 {
