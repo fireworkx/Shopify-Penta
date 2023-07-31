@@ -23,7 +23,7 @@
   <div class="penta-card-image">
     {%- if product_card_product.featured_media -%}
        <img
-            src="{{ product_card_product.featured_media | img_url: '533x' }}"
+            src="{{ product_card_product.featured_media | image_url: width: 533 }}"
             alt="{{ product_card_product.featured_media.alt | escape }}"
             loading="lazy"
             class="motion-reduce"

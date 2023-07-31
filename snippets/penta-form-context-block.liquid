@@ -1,7 +1,7 @@
 <div class="penta-form-context-block">
   {% if template.name == 'collection' %}
     {%- if collection.featured_image != blank -%}
-      <img src="{{ collection.featured_image | img_url: '250x' }}"
+      <img src="{{ collection.featured_image | image_url: width: 250 }}"
         loading="lazy"
         width=""
         height=""
@@ -13,7 +13,7 @@
   {% endif %}
   {% if template.name == 'product' %}
       {%- if product.featured_image != blank -%}
-        <img src="{{ product.featured_image | img_url: '250x' }}"
+        <img src="{{ product.featured_image | image_url: width: 250 }}"
           loading="lazy"
           width=""
           height=""

@@ -13,7 +13,7 @@
       pf_page_subject_id: '{{ page.id }}',
       {% if template.name == 'product' %}
         
-    {% assign initial_image_url = product.featured_image | img_url %}
+    {% assign initial_image_url = product.featured_image | image_url: width: 100, height: 100 %}
     {% assign dynamic_image_path = "" %}
     {% if initial_image_url %}
       {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
@@ -26,7 +26,7 @@
       {% endif %}
       {% if template.name == 'collection' %}
         
-    {% assign initial_image_url = collection.featured_image | img_url %}
+    {% assign initial_image_url = collection.featured_image | image_url: width: 100, height: 100 %}
     {% assign dynamic_image_path = "" %}
     {% if initial_image_url %}
       {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
@@ -49,7 +49,7 @@
   {% endif %}
   <script>window.__pagefly_analytics_settings__={
     acceptNewTracking: true,
-    enableTrackingRevenue: {{shop.metafields.pagefly.enableTrackingRevenue | default: false}},
+    enableTrackingRevenue: {{ shop.metafields.pagefly.enableTrackingRevenue | default: false }},
     sessionTimeout: {{ shop.metafields.pagefly.sessionTimeout | default: 30 }},
     timezoneOffset: {{ shop.metafields.pagefly.timezoneOffset | default: 0 }}
   };

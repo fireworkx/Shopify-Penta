@@ -64,7 +64,7 @@
                           <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                             {{ childlink.title | escape }}
                             {% if childlink.type == "collection_link" and childlink.object.image %}
-                              {{ childlink.object.image | img_url: 'small' | img_tag }}
+                              {{ childlink.object.image | image_url: width: 100, height: 100 | img_tag }}
                             {% endif %}
                             {% render 'icon-caret' %}
                           </summary>
