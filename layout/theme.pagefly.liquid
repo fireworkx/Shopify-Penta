@@ -5,6 +5,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>{% render 'pagefly-head' %}
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K3QDV8X');
+    </script>
+  <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -277,10 +286,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
 
     {% comment %} Fireworkx {% endcomment %}
-    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
-    <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">    
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <div class="pagefly-container">{{ content_for_layout }}</div></body>
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
 </html>

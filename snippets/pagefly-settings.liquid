@@ -8,48 +8,70 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ shop.metafields.pagefly.measurementId }}', { groups: 'pagefly' });
-    window.pfPageInfo = Object.assign(window.pfPageInfo || {}, {
-      pf_page_type: '{{ request.page_type }}',
-      pf_page_subject_id: '{{ page.id }}',
+    window.pfPageInfo = Object.assign(window.pfPageInfo || {})
+
+    window.addEventListener("load", () => {
+      var pageId = window.__pagefly_setting__?.pageId
+      var pageTitle = window.__pagefly_setting__?.pageTitle
+
+      window.pfPageInfo = Object.assign(window.pfPageInfo || {}, {
+        pf_page_id: pageId,
+        pf_page_name: pageTitle,
+        pf_page_type: '{{ request.page_type }}',
+        pf_page_subject_id: '{{ page.id }}',
+        {% if template.name == 'product' %}
+          
+    {% assign initial_image_url = product.featured_image | img_url %}
+    {% assign dynamic_image_path = "" %}
+    {% if initial_image_url %}
+      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
+      {% assign dynamic_image_path = image_paths[1] | default: "" %}
+    {% endif %}
+  
+          pf_product_name: '{{ product.title }}',
+          pf_product_id: '{{ product.id }}',
+          pf_product_page_image: '{{ dynamic_image_path }}',
+        {% endif %}
+        {% if template.name == 'collection' %}
+          
+    {% assign initial_image_url = collection.featured_image | img_url %}
+    {% assign dynamic_image_path = "" %}
+    {% if initial_image_url %}
+      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
+      {% assign dynamic_image_path = image_paths[1] | default: "" %}
+    {% endif %}
+  
+          pf_collection_name: '{{ collection.title }}',
+          pf_collection_id: '{{ collection.id }}',
+          pf_collection_page_image: '{{ dynamic_image_path }}',
+        {% endif %}
+      });
+      setTimeout(function() {
+        gtag('event', 'pf_view_page', Object.assign({
+          pf_view_page: 1,
+          send_to: 'pagefly',
+          pf_event: 'view_page'
+        }, window.pfPageInfo))
+      }, 500);
+
       {% if template.name == 'product' %}
-        
-    {% assign initial_image_url = product.featured_image | image_url: width: 100, height: 100 %}
-    {% assign dynamic_image_path = "" %}
-    {% if initial_image_url %}
-      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
-      {% assign dynamic_image_path = image_paths[1] | default: "" %}
-    {% endif %}
-  
-        pf_product_name: '{{ product.title }}',
-        pf_product_id: '{{ product.id }}',
-        pf_product_page_image: '{{ dynamic_image_path }}',
+        setTimeout(() => {
+          gtag('event', 'pf_view_product', Object.assign(
+            {
+              send_to: 'pagefly',
+              pf_view_product: 1,
+              pf_event: 'view_product',
+            },
+              window.pfPageInfo)
+            )
+        }, 500)
       {% endif %}
-      {% if template.name == 'collection' %}
-        
-    {% assign initial_image_url = collection.featured_image | image_url: width: 100, height: 100 %}
-    {% assign dynamic_image_path = "" %}
-    {% if initial_image_url %}
-      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
-      {% assign dynamic_image_path = image_paths[1] | default: "" %}
-    {% endif %}
-  
-        pf_collection_name: '{{ collection.title }}',
-        pf_collection_id: '{{ collection.id }}',
-        pf_collection_page_image: '{{ dynamic_image_path }}',
-      {% endif %}
-    });
-    setTimeout(function() {
-      gtag('event', 'pf_view_page', Object.assign({
-        pf_view_page: 1,
-        send_to: 'pagefly',
-        pf_event: 'view_page'
-      }, window.pfPageInfo))
-    }, 500);
+    })
   </script>
   {% endif %}
   <script>window.__pagefly_analytics_settings__={
     acceptNewTracking: true,
-    enableTrackingRevenue: {{ shop.metafields.pagefly.enableTrackingRevenue | default: false }},
+    enableTrackingRevenue: {{shop.metafields.pagefly.enableTrackingRevenue | default: false}},
     sessionTimeout: {{ shop.metafields.pagefly.sessionTimeout | default: 30 }},
     timezoneOffset: {{ shop.metafields.pagefly.timezoneOffset | default: 0 }}
   };
