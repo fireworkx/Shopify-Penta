@@ -22,9 +22,10 @@
         {% if template.name == 'product' %}
           
     {% assign initial_image_url = product.featured_image | img_url %}
-    {% assign dynamic_image_path = "" %}
-    {% if initial_image_url %}
-      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
+    {% assign dynamic_image_path = initial_image_url %}
+    {% assign BASE_URL = "//cdn.shopify.com/s/files/" %}
+    {% if initial_image_url and initial_image_url contains BASE_URL %}
+      {% assign image_paths = initial_image_url | split: BASE_URL %}
       {% assign dynamic_image_path = image_paths[1] | default: "" %}
     {% endif %}
   
@@ -35,9 +36,10 @@
         {% if template.name == 'collection' %}
           
     {% assign initial_image_url = collection.featured_image | img_url %}
-    {% assign dynamic_image_path = "" %}
-    {% if initial_image_url %}
-      {% assign image_paths = initial_image_url | split: "//cdn.shopify.com/s/files/" %}
+    {% assign dynamic_image_path = initial_image_url %}
+    {% assign BASE_URL = "//cdn.shopify.com/s/files/" %}
+    {% if initial_image_url and initial_image_url contains BASE_URL %}
+      {% assign image_paths = initial_image_url | split: BASE_URL %}
       {% assign dynamic_image_path = image_paths[1] | default: "" %}
     {% endif %}
   
