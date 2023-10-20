@@ -13,11 +13,12 @@
     window.addEventListener("load", () => {
       var pageId = window.__pagefly_setting__?.pageId
       var pageTitle = window.__pagefly_setting__?.pageTitle
+      var pageType = window.__pagefly_setting__?.pageType
 
       window.pfPageInfo = Object.assign(window.pfPageInfo || {}, {
         pf_page_id: pageId,
         pf_page_name: pageTitle,
-        pf_page_type: '{{ request.page_type }}',
+        pf_page_type: pageType,
         pf_page_subject_id: '{{ page.id }}',
         {% if template.name == 'product' %}
           
