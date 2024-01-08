@@ -130,6 +130,20 @@
     "content_for_index": [
 
     ],
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      }
+    },
     "color_schemes": {
       "background-1": {
         "settings": {
@@ -184,20 +198,6 @@
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
-        }
-      }
-    },
-    "blocks": {
-      "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
-        "disabled": true,
-        "settings": {
-          "button_color": "#202a36",
-          "button_icon": "chat_bubble",
-          "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest",
-          "button_text": "chat_with_us",
-          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
       }
     }
