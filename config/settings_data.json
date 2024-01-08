@@ -1,6 +1,6 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/penta-logo_172f66df-6e79-41cd-adb0-c86e27894ade.png",
+    "logo": "shopify:\/\/shop_images\/Penta-logo_459d3bbb-88a2-4039-a5d9-a73238fe9c1b.png",
     "logo_width": 160,
     "favicon": "shopify:\/\/shop_images\/Penta-logo-favicon-tx.png",
     "type_header_font": "assistant_n4",
@@ -184,6 +184,20 @@
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
           "shadow": "#121212"
+        }
+      }
+    },
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "button_text": "chat_with_us",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
         }
       }
     }
