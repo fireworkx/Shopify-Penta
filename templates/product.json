@@ -54,12 +54,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "custom_liquid_KAAHg6": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{{visitor_number}} visitor(s) currently looking at this vehicle"
-          }
         }
       },
       "block_order": [
@@ -71,8 +65,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "custom_liquid_KAAHg6"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -91,10 +84,20 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "custom_liquid_cc3fyK": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{{visitor_number}} visitor(s) currently looking at this vehicle",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "custom_liquid_cc3fyK"
   ]
 }
