@@ -54,6 +54,12 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "custom_liquid_KAAHg6": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{visitor_number}} visitor(s) currently looking at this vehicle"
+          }
         }
       },
       "block_order": [
@@ -65,7 +71,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "custom_liquid_KAAHg6"
       ],
       "settings": {
         "enable_sticky_info": true,
