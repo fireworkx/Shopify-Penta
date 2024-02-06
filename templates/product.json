@@ -84,20 +84,10 @@
         "show_vendor": false,
         "show_rating": false
       }
-    },
-    "custom_liquid_4AxKHA": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{{visitor_number}} visitor(s) currently looking at this vehicle",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "custom_liquid_4AxKHA"
+    "product-recommendations"
   ]
 }
