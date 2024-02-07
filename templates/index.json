@@ -221,15 +221,6 @@
       "type": "pagefly-home",
       "settings": {
       }
-    },
-    "custom_liquid_RYQMRT": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{{visitor_number}} visitor(s) currently looking at this vehicle",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
@@ -239,7 +230,6 @@
     "collage",
     "video",
     "multicolumn",
-    "pagefly-home",
-    "custom_liquid_RYQMRT"
+    "pagefly-home"
   ]
 }
