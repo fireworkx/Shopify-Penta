@@ -3,13 +3,18 @@
   <head>
     <!-- Google Tag Manager -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-K3QDV8X');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-K3QDV8X');
     </script>
-  <!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -278,20 +283,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     {% comment %} Swiper {% endcomment %}
 
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer ></script>
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
 
     {% comment %} Fireworkx {% endcomment %}
-    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">    
-  
-{% include 'pagefly-app-header' %}</head>
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">
+
+    {% include 'pagefly-app-header' %}
+  </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3QDV8X"
-        height="0" width="0" style="display:none;visibility:hidden">
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K3QDV8X"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      >
       </iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
@@ -357,32 +366,32 @@
     {% comment %} Penta forms  {% endcomment %}
 
     {%- liquid
-      render 'penta-form-contact-us' 
-      render 'penta-form-enquiry' 
-      render 'penta-form-deal-enquiry' 
-      render 'penta-form-deal-test-drive' 
-      render 'penta-form-test-drive' 
-      render 'penta-form-book-a-service' 
-      render 'penta-modal-overlay' 
-      render 'penta-form-feedback' 
-      if template.name == 'collection' or template.name == 'product' 
-        render 'penta-gallery-modal' 
+      render 'penta-form-contact-us'
+      render 'penta-form-enquiry'
+      render 'penta-calculator'
+      render 'penta-form-deal-enquiry'
+      render 'penta-form-deal-test-drive'
+      render 'penta-form-test-drive'
+      render 'penta-form-book-a-service'
+      render 'penta-modal-overlay'
+      render 'penta-form-feedback'
+      if template.name == 'collection' or template.name == 'product'
+        render 'penta-gallery-modal'
       endif
     -%}
-  
+
     <script>
       var penta = {
-        getDealerships: async function() {
+        getDealerships: async function () {
           const response = await fetch("{{ 'dealerships.json' | asset_url }}");
           return response.json();
         },
         gallery: {
           index: 0,
-        }
-      }
+        },
+      };
     </script>
 
     <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
-    
   </body>
 </html>
