@@ -76,29 +76,5 @@
   </div>
   {% assign price = product_card_product.price | default: '0' %}
 
-  <div class="penta-card-loan" data-price="{{ price }}">/months</div>
+  <div class="penta-card-loan" data-price="{{ price }}">/ month</div>
 </a>
-
-<script>
-  let pricePerMonth = document.querySelector('.penta-card-loan');
-
-  if (pricePerMonth) {
-    const price = pricePerMonth.dataset.price;
-    const calc = perMonthCalculation(price, 72, 13.2, 0);
-    pricePerMonth.innerHTML = `${calc}/per month`;
-  }
-
-  function perMonthCalculation(amountInput, monthsInput, interestInput, downInput) {
-    const amount = parseInt(amountInput / 100) || 0;
-    const months = parseInt(monthsInput) || 0;
-    const interestRate = parseFloat(interestInput) || 0;
-    const downPayment = parseInt(downInput) || 0;
-    const monthlyInterest = interestRate / 1200;
-    return Math.abs(
-      (
-        (monthlyInterest + monthlyInterest / (Math.pow(1 + monthlyInterest, months) - 1)) *
-        (amount - downPayment)
-      ).toFixed(2)
-    );
-  }
-</script>

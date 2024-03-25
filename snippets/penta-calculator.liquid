@@ -7,26 +7,20 @@
       <div class="penta-input-group">
         <div class="penta-input">
           <input type="text" id="amount" name="amount">
-          <label for="amount">Loan Amount</label>
+          <label for="amount">Loan Amount in Rands</label>
           <span class="hidden" id="amount-error-message">Loan amount is required</span>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <input type="text" id="months">
+          <input type="text" id="months" value="72">
           <label for="months">Months</label>
           <span class="hidden" id="month-error-message">Month field is required</span>
         </div>
       </div>
       <div class="penta-input-group">
         <div class="penta-input">
-          <input type="text" id="years" disabled>
-          <label for="years">Years</label>
-        </div>
-      </div>
-      <div class="penta-input-group">
-        <div class="penta-input">
-          <input type="text" id="interest">
+          <input type="text" id="interest" value="13">
           <label for="interest">Interest Rate</label>
           <span class="hidden" id="interest-error-message">Interest Rate is required</span>
         </div>
@@ -34,7 +28,7 @@
       <div class="penta-input-group">
         <div class="penta-input">
           <input type="text" id="down">
-          <label for="payment">Down Payment</label>
+          <label for="payment">Down Payment in Rands</label>
         </div>
       </div>
       <button id="calculate-button" class="btn" type="button">Calculate</button>

@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
           form.reset();
       };
       this.init = function() {
-          submitButton.addEventListener("click", () => {
+          submitButton?.addEventListener("click", () => {
               if (form.checkValidity()) {
                   submitButton.disabled = true;
                   this.sendForm(({
@@ -418,6 +418,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+//   Load price per month on product card
+
+let prices = document.querySelectorAll('.penta-card-loan');
+
+prices.forEach((pricePerMonth) => {
+  if (pricePerMonth) {
+    const initialAmount = Number(pricePerMonth.dataset.price) / 100;
+    const initialTenPerCent = initialAmount * 0.1;
+    const initialLoanTermsPerMonths = 72;
+    const initialInterest = 13;
+    const calc = calculateMonthlyPayment(
+      initialAmount,
+      initialLoanTermsPerMonths,
+      initialInterest,
+      initialTenPerCent
+    );
+    pricePerMonth.innerHTML = `R ${calc}/ month`;
+  }
+});
+
+function calculateMonthlyPayment(loanAmount, loanTermMonths, annualInterestRate, depositValue) {
+    // Default values if not provided by the user
+    loanTermMonths = isNaN(loanTermMonths) ? 72 : parseInt(loanTermMonths);
+    annualInterestRate = isNaN(annualInterestRate) ? 13 : parseFloat(annualInterestRate);
+    depositValue = isNaN(depositValue) ? loanAmount * 0.1 : parseFloat(depositValue);
+
+    // Calculate loan amount after deducting deposit
+    var principal = loanAmount - depositValue;
+
+    // Convert annual interest rate to monthly rate
+    var monthlyInterestRate = (annualInterestRate / 12) / 100;
+
+    // Calculate monthly payment using the formula
+    var monthlyPayment = principal * monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -loanTermMonths));
+
+    // Return the result
+    return monthlyPayment.toFixed(2);
+}
+
   function calculatorModalOpen() {
 
       const form = document.getElementById('calculator-form');
@@ -425,13 +464,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const amountInput = document.getElementById('amount');
           const monthsInput = document.getElementById('months');
-          const yearsInput = document.getElementById('years');
           const interestInput = document.getElementById('interest');
           const downInput = document.getElementById('down');
           const output = document.getElementById('output');
 
+          const calculatorButton = document.querySelector('#calculator-modal-button');
 
-          let pricePerMonth = document.querySelector('.penta-card-loan');
+          
+          const initialAmount = Number(calculatorButton.dataset.price)/100;
+          const initialTenPerCent = initialAmount * 0.1;
+          const initialLoanTermsPerMonths = 72;
+          const initialInterest = 13;
+
+          amountInput.value = initialAmount;
+          downInput.value = `${initialTenPerCent} - (10%)`
+
+          output.innerHTML =  `Monthly Payment: R ${calculateMonthlyPayment(initialAmount, initialLoanTermsPerMonths, initialInterest, initialTenPerCent)}`;
 
           const calculateBtn = document.querySelector('#calculate-button');
           calculateBtn.addEventListener('click', function() {
@@ -474,37 +522,16 @@ document.addEventListener("DOMContentLoaded", () => {
                   toggleVisibility(input, target);
               });
 
-              const calculation = perMonthCalculation(amountInput.value, monthsInput.value, interestInput.value, downInput.value)
+              const calculation = calculateMonthlyPayment(amountInput.value, monthsInput.value, interestInput.value, downInput.value)
               output.innerHTML = calculation ? `Monthly Payment: R ${calculation}` : null
           });
 
           monthsInput.addEventListener('keyup', function() {
               setTimeout(() => {
                   const months = parseInt(monthsInput.value) || 0;
-                  yearsInput.value = (months / 12).toFixed(2);
               }, 500);
           });
 
-          yearsInput.addEventListener('keyup', function() {
-              setTimeout(() => {
-                  const years = parseInt(yearsInput.value) || 0;
-                  monthsInput.value = years * 12;
-              }, 500);
-          });
-
-          function perMonthCalculation(amountInput, monthsInput, interestInput, downInput) {
-            const amount = parseInt(amountInput / 100) || 0;
-            const months = parseInt(monthsInput) || 0;
-            const interestRate = parseFloat(interestInput) || 0;
-            const downPayment = parseInt(downInput) || 0;
-            const monthlyInterest = interestRate / 1200;
-            return Math.abs(
-              (
-                (monthlyInterest + monthlyInterest / (Math.pow(1 + monthlyInterest, months) - 1)) *
-                (amount - downPayment)
-              ).toFixed(2)
-            );
-          }
       }
   }
   penta.init();
