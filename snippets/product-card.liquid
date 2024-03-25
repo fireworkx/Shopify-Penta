@@ -1,17 +1,17 @@
 {% comment %}
-    Renders a product card
+  Renders a product card
 
-    Accepts:
-    - product_card_product: {Object} Product Liquid object (optional)
-    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
-    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
-    - add_image_padding: {Boolean} Enables padding on the image to space out the grid
-    - show_vendor: {Boolean} Show the product vendor. Default: false
-    - show_image_outline: {Boolean} Show card outline. Default: true (optional)
-    - show_rating: {Boolean} Show the product rating. Default: false
+  Accepts:
+  - product_card_product: {Object} Product Liquid object (optional)
+  - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+  - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+  - add_image_padding: {Boolean} Enables padding on the image to space out the grid
+  - show_vendor: {Boolean} Show the product vendor. Default: false
+  - show_image_outline: {Boolean} Show card outline. Default: true (optional)
+  - show_rating: {Boolean} Show the product rating. Default: false
 
-    Usage:
-    {% render 'product-card', show_vendor: section.settings.show_vendor %}
+  Usage:
+  {% render 'product-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
 {% assign metafields = product_card_product.metafields.product %}
@@ -22,14 +22,14 @@
   <span class="penta-card-arrow">{% render 'icon-penta-arrow-right' %}</span>
   <div class="penta-card-image">
     {%- if product_card_product.featured_media -%}
-       <img
-            src="{{ product_card_product.featured_media | image_url: width: 533 }}"
-            alt="{{ product_card_product.featured_media.alt | escape }}"
-            loading="lazy"
-            class="motion-reduce"
-            width="{{ product_card_product.featured_media.width }}"
-            height="{{ product_card_product.featured_media.height }}"
-          />
+      <img
+        src="{{ product_card_product.featured_media | image_url: width: 533 }}"
+        alt="{{ product_card_product.featured_media.alt | escape }}"
+        loading="lazy"
+        class="motion-reduce"
+        width="{{ product_card_product.featured_media.width }}"
+        height="{{ product_card_product.featured_media.height }}"
+      >
     {%- endif -%}
   </div>
   <div class="penta-card-specification">
@@ -39,26 +39,43 @@
     <h3>{{ product_card_product.title | escape }}</h3>
   </div>
   <div class="penta-card-mileage">
-    <h5>{% render 'icon-penta-odometer' %}{{ metafields.Odometer }} km</h5>
+    <h5>
+      {% render 'icon-penta-odometer' -%}
+      {{- metafields.Odometer }} km
+    </h5>
   </div>
   <div class="penta-card-stats">
     <ul>
       {% if metafields.FuelType != blank %}
-        <li>{% render 'icon-penta-fuel-type' %}{{ metafields.FuelType }}</li>
+        <li>
+          {% render 'icon-penta-fuel-type' -%}
+          {{- metafields.FuelType }}
+        </li>
       {% endif %}
-      {% comment %} {% if metafields.Doors != blank %}
-        <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
-      {% endif %} {% endcomment %}
+      {% comment %}
+        {% if metafields.Doors != blank %}
+          <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
+        {% endif %}
+      {% endcomment %}
       {% if metafields.Transmission != blank %}
-        <li>{% render 'icon-penta-transmission' %}{{ metafields.Transmission }}</li>
-      {% endif %}     
+        <li>
+          {% render 'icon-penta-transmission' -%}
+          {{- metafields.Transmission }}
+        </li>
+      {% endif %}
     </ul>
   </div>
   <div class="penta-card-location">
     {% if metafields.Location != blank %}
-      <h5>{% render 'icon-penta-map-pin' %}{{ metafields.Location }}</h5>
-    {% endif %}     
-    
+      <h5>
+        {% render 'icon-penta-map-pin' -%}
+        {{- metafields.Location }}
+      </h5>
+    {% endif %}
+
     {% render 'price', product: product_card_product, price_class: '' %}
   </div>
+  {% assign price = product_card_product.price | default: '0' %}
+
+  <div class="penta-card-loan" data-price="{{ price }}">/ month</div>
 </a>

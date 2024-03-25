@@ -212,9 +212,9 @@
 			"image specification"
 			"image title"
 			"image mileage"
-			"image ."
 			"image stats"
-			"image location";
+			"image location"
+			"image loan";
 		grid-template-columns: 1fr 2fr;
 		column-gap: 24px;
 	}
@@ -231,9 +231,9 @@
 			"image specification"
 			"image title"
 			"image mileage"
-			"image ."
 			"image stats"
-			"image location";
+			"image location"
+			"image loan";
 		grid-template-columns: 2fr 3fr;
 		column-gap: 24px;
 	}
@@ -328,6 +328,14 @@
 	margin-top: 16px;
 	border-top: 1px solid #ccc;
 	padding-top: 16px;
+	gap: 8px;
+}
+
+.penta-card-loan {
+	grid-area: loan;	
+	font-size: 12px;
+	display: flex;
+	justify-content: end;
 	gap: 8px;
 }
 
