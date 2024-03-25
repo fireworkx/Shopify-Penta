@@ -4,7 +4,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% endcomment %}
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>{% render 'pagefly-head' %}
+  <head>
     <!-- Google Tag Manager -->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -287,7 +287,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
     {% comment %} Fireworkx {% endcomment %}
     <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">    
-  </head>
+  
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"><div class="pagefly-container">{{ content_for_layout }}</div></body>
+{% include 'pagefly-app-header' %}</head>
+
+  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"><div class="pagefly-container">
+              {{ content_for_layout }}
+            </div></body>
 </html>
