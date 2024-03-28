@@ -486,7 +486,7 @@ function calculateMonthlyPayment(loanAmount, loanTermMonths, annualInterestRate,
 
           downInput.addEventListener('change', function(){
             const percentValue = ((Number(downInput.value)/Number(amountInput.value)) * 100).toFixed(0)
-            downLabel.innerHTML = `Down Payment (${percentValue}%)`
+            downLabel.innerHTML = `Down Payment - (${percentValue}%)`
           })
 
           const calculateBtn = document.querySelector('#calculate-button');
