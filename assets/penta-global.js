@@ -466,9 +466,12 @@ function calculateMonthlyPayment(loanAmount, loanTermMonths, annualInterestRate,
           const monthsInput = document.getElementById('months');
           const interestInput = document.getElementById('interest');
           const downInput = document.getElementById('down');
+          const downLabel = document.getElementById('down-payment-label');
           const output = document.getElementById('output');
 
           const calculatorButton = document.querySelector('#calculator-modal-button');
+
+          downLabel.innerHTML = 'Down Payment (10%)'
 
           
           const initialAmount = Number(calculatorButton.dataset.price)/100;
@@ -477,12 +480,18 @@ function calculateMonthlyPayment(loanAmount, loanTermMonths, annualInterestRate,
           const initialInterest = 13;
 
           amountInput.value = initialAmount;
-          downInput.value = `${initialTenPerCent} - (10%)`
+          downInput.value = initialTenPerCent
 
           output.innerHTML =  `Monthly Payment: R ${calculateMonthlyPayment(initialAmount, initialLoanTermsPerMonths, initialInterest, initialTenPerCent)}`;
 
+          downInput.addEventListener('change', function(){
+            const percentValue = ((Number(downInput.value)/Number(amountInput.value)) * 100).toFixed(0)
+            downLabel.innerHTML = `Down Payment (${percentValue}%)`
+          })
+
           const calculateBtn = document.querySelector('#calculate-button');
           calculateBtn.addEventListener('click', function() {
+           
               const amount = document.getElementById('amount-error-message');
               const month = document.getElementById('month-error-message');
               const interest = document.getElementById('interest-error-message');
