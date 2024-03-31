@@ -54,11 +54,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "approom_visitor_counter_pro_approom_visitor_counter_rYbC8e": {
-          "type": "shopify:\/\/apps\/approom-visitor-counter-pro\/blocks\/approom-visitor-counter\/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
-          "settings": {
-          }
         }
       },
       "block_order": [
@@ -70,8 +65,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "approom_visitor_counter_pro_approom_visitor_counter_rYbC8e"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
