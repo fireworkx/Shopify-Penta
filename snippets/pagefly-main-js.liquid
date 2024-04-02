@@ -1,6 +1,5 @@
 
-  {% if shop.metafields.pagefly.acceptTracking %}
-  {% if shop.metafields.pagefly.measurementId %}
+  {% if shop.metafields.pagefly.acceptTracking and shop.metafields.pagefly.measurementId %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ shop.metafields.pagefly.measurementId }}"></script>
   <script>
@@ -11,9 +10,17 @@
     window.pfPageInfo = Object.assign(window.pfPageInfo || {})
 
     window.addEventListener("load", () => {
-      var pageId = window.__pagefly_setting__?.pageId
-      var pageTitle = window.__pagefly_setting__?.pageTitle
-      var pageType = window.__pagefly_setting__?.pageType
+      
+    let pageId = window.__pagefly_setting__?.pageId
+    let pageTitle = window.__pagefly_setting__?.pageTitle
+    let pageType = window.__pagefly_setting__?.pageType
+
+    if(window.__pagefly_page_setting__) {
+      pageId = window.__pagefly_page_setting__.pageId
+      pageTitle = window.__pagefly_page_setting__.pageTitle
+      pageType = window.__pagefly_page_setting__.pageType
+    }
+  
 
       window.pfPageInfo = Object.assign(window.pfPageInfo || {}, {
         pf_page_id: pageId,
@@ -69,29 +76,28 @@
             )
         }, 500)
       {% endif %}
-    })
-  </script>
-  {% endif %}
-  <script>window.__pagefly_analytics_settings__={
-    acceptNewTracking: true,
-    enableTrackingRevenue: {{shop.metafields.pagefly.enableTrackingRevenue | default: false}},
-    sessionTimeout: {{ shop.metafields.pagefly.sessionTimeout | default: 30 }},
-    timezoneOffset: {{ shop.metafields.pagefly.timezoneOffset | default: 0 }}
-  };
-      if(typeof analyticsSrc === 'undefined'){
+
+    window.__pagefly_analytics_settings__={
+      acceptNewTracking: true,
+      enableTrackingRevenue: {{shop.metafields.pagefly.enableTrackingRevenue | default: false}},
+      sessionTimeout: {{ shop.metafields.pagefly.sessionTimeout | default: 30 }},
+      timezoneOffset: {{ shop.metafields.pagefly.timezoneOffset | default: 0 }}
+    };
+    if(typeof analyticsSrc === 'undefined'){
       let analyticsSrc = "https://cdn.pagefly.io/pagefly/core/analytics.js";
       const scriptPFAnalytic = document.createElement('script');
       scriptPFAnalytic.src = analyticsSrc;
       scriptPFAnalytic.async = true;
       scriptPFAnalytic.defer = false;
       scriptPFAnalytic.onload = () => {
-        console.log("load analytics new version sucessfully")
+        console.log("load analytics new version successfully")
       };
       scriptPFAnalytic.onerror = () => {
         console.log("load analytics new version unsuccessfully")
       };
       document.body.appendChild(scriptPFAnalytic);
-      };
+    }
+  });
   </script>
   {% endif %}
   <script>
