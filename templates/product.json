@@ -73,6 +73,22 @@
         "enable_video_looping": false
       }
     },
+    "1711897140626291ee": {
+      "type": "apps",
+      "blocks": {
+        "approom_visitor_counter_pro_approom_visitor_counter_PiUiih": {
+          "type": "shopify:\/\/apps\/approom-visitor-counter-pro\/blocks\/approom-visitor-counter\/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "approom_visitor_counter_pro_approom_visitor_counter_PiUiih"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -88,6 +104,7 @@
   },
   "order": [
     "main",
+    "1711897140626291ee",
     "product-recommendations"
   ]
 }
