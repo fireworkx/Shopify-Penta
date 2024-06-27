@@ -1,6 +1,9 @@
 {% if page and page.metafields.pagefly.html_meta %}
   {{page.metafields.pagefly.html_meta}}
 {% endif %}
+{% if request.path == '/a/pf_preview' %}
+  <meta name="robots" content="noindex">
+{% endif %}
 {%- liquid
   assign isValidPageBuitByPageFly = true
   if template.suffix != 'blank' and template.suffix contains 'pf-'
