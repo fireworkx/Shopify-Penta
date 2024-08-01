@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "settings_schema": {
     "colors": {
@@ -56,8 +65,8 @@
       "name": "소셜 미디어",
       "settings": {
         "social_twitter_link": {
-          "label": "Twitter",
-          "info": "https:\/\/twitter.com\/shopify"
+          "label": "X \/ Twitter",
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -359,10 +368,13 @@
             "label": "없음"
           },
           "options__2": {
-            "label": "3D 리프트"
+            "label": "수직 리프트"
           },
           "label": "호버 효과",
-          "info": "카드 및 버튼에 영향을 미칩니다."
+          "info": "카드 및 버튼에 영향을 미칩니다.",
+          "options__3": {
+            "label": "3D 리프트"
+          }
         }
       }
     }
@@ -392,6 +404,9 @@
         },
         "options__4": {
           "label": "특대"
+        },
+        "options__5": {
+          "label": "매우 매우 크게"
         }
       },
       "image_shape": {
@@ -434,6 +449,9 @@
           "label": "이미지 동작",
           "options__3": {
             "label": "고정 배경 위치"
+          },
+          "options__4": {
+            "label": "스크롤 시 확대"
           }
         }
       }
@@ -444,7 +462,8 @@
         "announcement": {
           "settings": {
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "스토어에 오신 것을 환영합니다"
             },
             "text_alignment": {
               "label": "텍스트 정렬",
@@ -467,10 +486,34 @@
       },
       "settings": {
         "auto_rotate": {
-          "label": "슬라이드 자동 회전"
+          "label": "공지 사항 자동 회전"
         },
         "change_slides_speed": {
-          "label": "슬라이드 변경 간격"
+          "label": "변경 간격"
+        },
+        "header__1": {
+          "content": "소셜 미디어 아이콘",
+          "info": "소셜 미디어 계정을 표시하려면 [테마 설정](\/editor?context=theme&category=social%20media)에서 계정을 연결하십시오."
+        },
+        "header__2": {
+          "content": "공지 사항"
+        },
+        "show_social": {
+          "label": "데스크톱에서 아이콘 표시"
+        },
+        "header__3": {
+          "content": "국가\/지역 선택기",
+          "info": "국가\/지역을 추가하려면 [마켓 설정](\/admin\/settings\/markets)으로 이동하십시오."
+        },
+        "enable_country_selector": {
+          "label": "국가\/지역 선택기 사용"
+        },
+        "header__4": {
+          "content": "언어 선택기",
+          "info": "언어를 추가하려면 [언어 설정](\/admin\/settings\/languages)으로 이동하십시오."
+        },
+        "enable_language_selector": {
+          "label": "언어 선택기 사용"
         }
       },
       "presets": {
@@ -481,7 +524,8 @@
       "name": "콜라주",
       "settings": {
         "heading": {
-          "label": "제목"
+          "label": "제목",
+          "default": "멀티미디어 콜라주"
         },
         "desktop_layout": {
           "label": "데스크톱 레이아웃",
@@ -555,7 +599,8 @@
             },
             "description": {
               "label": "동영상 대체 텍스트",
-              "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)"
+              "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)",
+              "default": "비디오 설명"
             }
           },
           "name": "동영상"
@@ -569,7 +614,8 @@
       "name": "컬렉션 목록",
       "settings": {
         "title": {
-          "label": "제목"
+          "label": "제목",
+          "default": "컬렉션"
         },
         "image_ratio": {
           "label": "이미지 비율",
@@ -624,14 +670,20 @@
       "name": "연락처 양식",
       "presets": {
         "name": "연락처 양식"
+      },
+      "settings": {
+        "title": {
+          "default": "연락처 양식",
+          "label": "제목"
+        }
       }
     },
     "custom-liquid": {
       "name": "사용자 지정 Liquid",
       "settings": {
         "custom_liquid": {
-          "label": "사용자 지정 Liquid",
-          "info": "앱 코드 조각 또는 기타 Liquid 코드를 추가하여 고급 사용자 지정을 생성할 수 있습니다."
+          "label": "Liquid 코드",
+          "info": "앱 코드 조각이나 기타 코드를 추가하여 고급 사용자 지정을 생성할 수 있습니다. [자세히 알아보기](https:\/\/shopify.dev\/docs\/api\/liquid)"
         }
       },
       "presets": {
@@ -642,7 +694,8 @@
       "name": "블로그 게시물",
       "settings": {
         "heading": {
-          "label": "제목"
+          "label": "제목",
+          "default": "블로그 게시물"
         },
         "blog": {
           "label": "블로그"
@@ -675,7 +728,8 @@
       "name": "추천 컬렉션",
       "settings": {
         "title": {
-          "label": "제목"
+          "label": "제목",
+          "default": "추천 컬렉션"
         },
         "collection": {
           "label": "컬렉션"
@@ -780,7 +834,8 @@
         "link_list": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "빠른 링크"
             },
             "menu": {
               "label": "메뉴",
@@ -792,10 +847,12 @@
         "text": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "제목"
             },
             "subtext": {
-              "label": "하위 텍스트"
+              "label": "하위 텍스트",
+              "default": "<p>연락처 정보, 스토어 세부 정보, 브랜드 콘텐츠를 고객과 공유하십시오.<\/p>"
             }
           },
           "name": "텍스트"
@@ -821,7 +878,8 @@
           "label": "이메일 가입 표시"
         },
         "newsletter_heading": {
-          "label": "제목"
+          "label": "제목",
+          "default": "이메일 구독"
         },
         "header__1": {
           "info": "가입자가 “마케팅 수락” 고객 목록에 자동으로 추가되었습니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/customers\/manage-customers)",
@@ -970,6 +1028,14 @@
         },
         "menu_color_scheme": {
           "label": "메뉴 색상 구성표"
+        },
+        "header__7": {
+          "content": "고객 계정 로그인",
+          "info": "고객 계정을 관리하려면 [고객 계정 설정](\/admin\/settings\/customer_accounts)으로 이동하십시오."
+        },
+        "enable_customer_avatar": {
+          "label": "아바타 표시",
+          "info": "고객이 Shop으로 로그인하면 본인의 아바타를 보기만 할 수 있습니다."
         }
       }
     },
@@ -981,9 +1047,6 @@
         },
         "image_2": {
           "label": "두 번째 이미지"
-        },
-        "color_scheme": {
-          "info": "컨테이너가 표시될 때 볼 수 있습니다."
         },
         "stack_images_on_mobile": {
           "label": "모바일 스택 이미지"
@@ -1075,7 +1138,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "이미지 배너"
             }
           },
           "name": "제목"
@@ -1083,7 +1147,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "설명"
+              "label": "설명",
+              "default": "템플릿에서 배너 이미지 또는 콘텐츠의 세부 정보를 고객에게 제공하십시오."
             },
             "text_style": {
               "options__1": {
@@ -1104,7 +1169,8 @@
           "settings": {
             "button_label_1": {
               "label": "첫 번째 버튼 레이블",
-              "info": "버튼을 숨기려면 레이블을 비워둡니다."
+              "info": "버튼을 숨기려면 레이블을 비워둡니다.",
+              "default": "버튼 레이블"
             },
             "button_link_1": {
               "label": "첫 번째 버튼 링크"
@@ -1114,7 +1180,8 @@
             },
             "button_label_2": {
               "label": "두 번째 버튼 레이블",
-              "info": "버튼을 숨기려면 레이블을 비워둡니다."
+              "info": "버튼을 숨기려면 레이블을 비워둡니다.",
+              "default": "버튼 레이블"
             },
             "button_link_2": {
               "label": "두 번째 버튼 링크"
@@ -1224,7 +1291,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "텍스트 포함 이미지"
             }
           },
           "name": "제목"
@@ -1232,7 +1300,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "콘텐츠"
+              "label": "콘텐츠",
+              "default": "<p>이미지와 텍스트를 짝지어 선택한 제품, 컬렉션, 블로그 게시물을 강조합니다. 사용 가능성, 스타일에 대한 자세한 정보를 추가하거나 리뷰를 제공합니다.<\/p>"
             },
             "text_style": {
               "label": "텍스트 스타일",
@@ -1250,10 +1319,14 @@
           "settings": {
             "button_label": {
               "label": "버튼 레이블",
-              "info": "버튼을 숨기려면 레이블을 비워둡니다."
+              "info": "버튼을 숨기려면 레이블을 비워둡니다.",
+              "default": "버튼 레이블"
             },
             "button_link": {
               "label": "버튼 링크"
+            },
+            "outline_button": {
+              "label": "윤곽 버튼 스타일 사용"
             }
           },
           "name": "버튼"
@@ -1262,7 +1335,8 @@
           "name": "캡션",
           "settings": {
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "슬로건 추가"
             },
             "text_style": {
               "label": "텍스트 스타일",
@@ -1340,7 +1414,8 @@
               "content": "미리 보기 이미지에 스토어 제목 및 설명이 포함됩니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "공유"
             }
           }
         }
@@ -1466,10 +1541,6 @@
           "label": "제품 평점 표시",
           "info": "평점을 표시하려면 제품 평점 앱을 추가하십시오. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/page-types#product-grid-section-settings)"
         },
-        "enable_quick_buy": {
-          "label": "빠른 추가 버튼 활성화",
-          "info": "팝업 또는 서랍식 카트 유형에 가장 알맞습니다."
-        },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
         },
@@ -1497,6 +1568,15 @@
             "label": "펼침 메뉴"
           },
           "info": "펼침 메뉴는 모바일용 기본 레이아웃입니다."
+        },
+        "quick_add": {
+          "label": "빠른 추가",
+          "info": "대량은 대량으로 구매되는 품목에 최적화됩니다.",
+          "options": {
+            "option_1": "없음",
+            "option_2": "표준",
+            "option_3": "대량"
+          }
         }
       }
     },
@@ -1504,7 +1584,8 @@
       "name": "컬렉션 목록 페이지",
       "settings": {
         "title": {
-          "label": "제목"
+          "label": "제목",
+          "default": "컬렉션"
         },
         "sort": {
           "label": "컬렉션 정렬 기준:",
@@ -1580,7 +1661,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "텍스트 블록"
             },
             "text_style": {
               "label": "텍스트 스타일",
@@ -1598,18 +1680,31 @@
           "name": "텍스트"
         },
         "variant_picker": {
+          "name": "이형 상품 피커",
           "settings": {
             "picker_type": {
-              "label": "유형",
+              "label": "스타일",
               "options__1": {
                 "label": "드롭다운"
               },
               "options__2": {
                 "label": "타원형"
               }
+            },
+            "swatch_shape": {
+              "label": "견본",
+              "info": "제품 옵션에서 [견본](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches)을 활성화합니다.",
+              "options__1": {
+                "label": "원형"
+              },
+              "options__2": {
+                "label": "정사각형"
+              },
+              "options__3": {
+                "label": "없음"
+              }
             }
-          },
-          "name": "이형 상품 피커"
+          }
         },
         "buy_buttons": {
           "settings": {
@@ -1633,7 +1728,8 @@
               "content": "미리 보기 이미지에 스토어 제목 및 설명이 포함됩니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "공유"
             }
           },
           "name": "공유"
@@ -1642,7 +1738,8 @@
           "settings": {
             "heading": {
               "info": "콘텐츠를 설명하는 제목을 포함합니다.",
-              "label": "제목"
+              "label": "제목",
+              "default": "축소 가능한 행"
             },
             "content": {
               "label": "행 콘텐츠"
@@ -1791,7 +1888,8 @@
         "popup": {
           "settings": {
             "link_label": {
-              "label": "레이블 링크"
+              "label": "레이블 링크",
+              "default": "팝업 링크 텍스트"
             },
             "page": {
               "label": "페이지"
@@ -1814,15 +1912,6 @@
         "description": {
           "name": "설명"
         },
-        "custom_liquid": {
-          "name": "사용자 지정 Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "사용자 지정 Liquid",
-              "info": "앱 코드 조각 또는 기타 Liquid 코드를 추가하여 고급 사용자 지정을 생성할 수 있습니다."
-            }
-          }
-        },
         "rating": {
           "name": "제품 평점",
           "settings": {
@@ -1838,7 +1927,8 @@
               "content": "보완 제품을 선택하려면 Search & Discovery 앱을 추가하십시오. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/product-recommendations)"
             },
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "잘 어울리는 아이템"
             },
             "make_collapsible_row": {
               "label": "축소 가능한 행으로 표시"
@@ -1901,7 +1991,8 @@
               "label": "첫 번째 이미지"
             },
             "heading_1": {
-              "label": "첫 번째 제목"
+              "label": "첫 번째 제목",
+              "default": "제목"
             },
             "icon_2": {
               "label": "두 번째 아이콘"
@@ -1910,7 +2001,8 @@
               "label": "두 번째 이미지"
             },
             "heading_2": {
-              "label": "두 번째 제목"
+              "label": "두 번째 제목",
+              "default": "제목"
             },
             "icon_3": {
               "label": "세 번째 아이콘"
@@ -1919,7 +2011,8 @@
               "label": "세 번째 이미지"
             },
             "heading_3": {
-              "label": "세 번째 제목"
+              "label": "세 번째 제목",
+              "default": "제목"
             }
           }
         },
@@ -2115,7 +2208,8 @@
       "name": "여러 열",
       "settings": {
         "title": {
-          "label": "제목"
+          "label": "제목",
+          "default": "여러 열"
         },
         "image_width": {
           "label": "이미지 폭",
@@ -2163,7 +2257,8 @@
           }
         },
         "button_label": {
-          "label": "버튼 레이블"
+          "label": "버튼 레이블",
+          "default": "버튼 레이블"
         },
         "button_link": {
           "label": "버튼 링크"
@@ -2194,10 +2289,12 @@
               "label": "이미지"
             },
             "title": {
-              "label": "제목"
+              "label": "제목",
+              "default": "열"
             },
             "text": {
-              "label": "설명"
+              "label": "설명",
+              "default": "<p>이미지와 텍스트를 짝지어 선택한 제품, 컬렉션, 블로그 게시물을 강조합니다. 사용 가능성, 스타일에 대한 자세한 정보를 추가하거나 리뷰를 제공합니다.<\/p>"
             },
             "link_label": {
               "label": "레이블 링크"
@@ -2227,7 +2324,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "이메일 구독"
             }
           },
           "name": "제목"
@@ -2235,7 +2333,8 @@
         "paragraph": {
           "settings": {
             "paragraph": {
-              "label": "설명"
+              "label": "설명",
+              "default": "<p>새로운 컬렉션과 독점 혜택 소식을 가장 먼저 알려드립니다.<\/p>"
             }
           },
           "name": "소제목"
@@ -2295,7 +2394,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "브랜드에 대해 이야기하기"
             }
           },
           "name": "제목"
@@ -2303,7 +2403,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "설명"
+              "label": "설명",
+              "default": "<p>고객과 브랜드 정보를 공유하세요. 제품을 설명하고 공지 사항을 제공하고, 스토어를 방문하는 고객을 환영할 수 있습니다.<\/p>"
             }
           },
           "name": "텍스트"
@@ -2312,7 +2413,8 @@
           "settings": {
             "button_label_1": {
               "label": "첫 번째 버튼 레이블",
-              "info": "버튼을 숨기려면 레이블을 비워둡니다."
+              "info": "버튼을 숨기려면 레이블을 비워둡니다.",
+              "default": "버튼 레이블"
             },
             "button_link_1": {
               "label": "첫 번째 버튼 링크"
@@ -2337,7 +2439,8 @@
           "name": "캡션",
           "settings": {
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "슬로건 추가"
             },
             "text_style": {
               "label": "텍스트 스타일",
@@ -2382,7 +2485,8 @@
       "name": "동영상",
       "settings": {
         "heading": {
-          "label": "제목"
+          "label": "제목",
+          "default": "동영상"
         },
         "cover_image": {
           "label": "커버 이미지"
@@ -2432,7 +2536,8 @@
           "name": "텍스트",
           "settings": {
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "텍스트 블록"
             },
             "text_style": {
               "label": "텍스트 스타일",
@@ -2461,12 +2566,25 @@
           "name": "이형 상품 피커",
           "settings": {
             "picker_type": {
-              "label": "유형",
+              "label": "스타일",
               "options__1": {
                 "label": "드롭다운"
               },
               "options__2": {
                 "label": "타원형"
+              }
+            },
+            "swatch_shape": {
+              "label": "견본",
+              "info": "제품 옵션에서 [견본](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches)을 활성화합니다.",
+              "options__1": {
+                "label": "원형"
+              },
+              "options__2": {
+                "label": "정사각형"
+              },
+              "options__3": {
+                "label": "없음"
               }
             }
           }
@@ -2493,15 +2611,8 @@
               "content": "미리 보기 이미지에 스토어 제목 및 설명이 포함됩니다. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "텍스트"
-            }
-          }
-        },
-        "custom_liquid": {
-          "name": "사용자 지정 Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "사용자 지정 Liquid"
+              "label": "텍스트",
+              "default": "공유"
             }
           }
         },
@@ -2581,9 +2692,6 @@
         "image_overlay_opacity": {
           "label": "이미지 오버레이 투명도"
         },
-        "color_scheme": {
-          "info": "컨테이너가 표시될 때 볼 수 있습니다."
-        },
         "show_text_below": {
           "label": "모바일에서 이미지 아래에 콘텐츠 표시",
           "info": "최고의 결과를 얻으려면 이미지의 가로 세로 비율을 16:9로 사용하십시오. [자세히 알아보기](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
@@ -2660,6 +2768,9 @@
             "label": "오른쪽"
           },
           "label": "모바일 콘텐츠 정렬"
+        },
+        "color_scheme": {
+          "info": "컨테이너가 표시될 때 볼 수 있습니다."
         }
       },
       "blocks": {
@@ -2667,7 +2778,8 @@
           "name": "제목",
           "settings": {
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "곧 개장 예정"
             }
           }
         },
@@ -2675,7 +2787,8 @@
           "name": "단락",
           "settings": {
             "paragraph": {
-              "label": "설명"
+              "label": "설명",
+              "default": "<p>출시 할 때 가장 먼저 알려드립니다.<\/p>"
             },
             "text_style": {
               "options__1": {
@@ -2750,7 +2863,8 @@
         "accessibility": {
           "content": "접근성",
           "label": "슬라이드 쇼 설명",
-          "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다."
+          "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다.",
+          "default": "브랜드 소개 슬라이드 쇼"
         }
       },
       "blocks": {
@@ -2761,14 +2875,17 @@
               "label": "이미지"
             },
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "이미지 슬라이드"
             },
             "subheading": {
-              "label": "소제목"
+              "label": "소제목",
+              "default": "이미지를 통해 브랜드 스토리 이야기하기"
             },
             "button_label": {
               "label": "버튼 레이블",
-              "info": "버튼을 숨기려면 레이블을 비워 둡니다."
+              "info": "버튼을 숨기려면 레이블을 비워 둡니다.",
+              "default": "버튼 레이블"
             },
             "link": {
               "label": "버튼 링크"
@@ -2825,9 +2942,6 @@
             "image_overlay_opacity": {
               "label": "이미지 오버레이 투명도"
             },
-            "color_scheme": {
-              "info": "컨테이너가 표시될 때 볼 수 있습니다."
-            },
             "text_alignment_mobile": {
               "label": "모바일 콘텐츠 정렬",
               "options__1": {
@@ -2854,7 +2968,8 @@
           "label": "캡션"
         },
         "heading": {
-          "label": "제목"
+          "label": "제목",
+          "default": "축소 가능한 콘텐츠"
         },
         "heading_alignment": {
           "label": "제목 정렬",
@@ -2922,7 +3037,8 @@
           "settings": {
             "heading": {
               "info": "콘텐츠를 설명하는 제목을 포함합니다.",
-              "label": "제목"
+              "label": "제목",
+              "default": "축소 가능한 행"
             },
             "row_content": {
               "label": "행 콘텐츠"
@@ -3082,7 +3198,10 @@
       "name": "주소"
     },
     "main-login": {
-      "name": "로그인"
+      "name": "로그인",
+      "shop_login_button": {
+        "enable": "Shop으로 로그인 활성화"
+      }
     },
     "main-order": {
       "name": "주문"
@@ -3106,7 +3225,8 @@
           "label": "데스크톱의 열 수"
         },
         "paragraph__1": {
-          "content": "동적 추천은 주문 및 제품 정보를 사용하여 시간에 따라 변경되고 개선됩니다. [자세히 알아보기](https:\/\/help.shopify.com\/themes\/development\/recommended-products)"
+          "content": "동적 추천은 주문 및 제품 정보를 사용하여 시간에 따라 변경되고 개선됩니다. [자세히 알아보기](https:\/\/help.shopify.com\/themes\/development\/recommended-products)",
+          "default": "회원님이 좋아할 만한 추천 제품"
         },
         "header__2": {
           "content": "제품 카드"
@@ -3180,18 +3300,6 @@
           },
           "label": "데스크톱 이미지 너비",
           "info": "이미지는 자동으로 모바일에 최적화됩니다."
-        },
-        "heading_size": {
-          "options__1": {
-            "label": "작게"
-          },
-          "options__2": {
-            "label": "보통"
-          },
-          "options__3": {
-            "label": "크게"
-          },
-          "label": "제목 크기"
         },
         "text_style": {
           "options__1": {
@@ -3279,16 +3387,20 @@
               "label": "이미지"
             },
             "caption": {
-              "label": "캡션"
+              "label": "캡션",
+              "default": "캡션"
             },
             "heading": {
-              "label": "제목"
+              "label": "제목",
+              "default": "열"
             },
             "text": {
-              "label": "텍스트"
+              "label": "텍스트",
+              "default": "<p>이미지와 텍스트를 짝지어 선택한 제품, 컬렉션, 블로그 게시물을 강조합니다. 사용 가능성, 스타일에 대한 자세한 정보를 추가하거나 리뷰를 제공합니다.<\/p>"
             },
             "button_label": {
-              "label": "버튼 레이블"
+              "label": "버튼 레이블",
+              "default": "버튼 레이블"
             },
             "button_link": {
               "label": "버튼 링크"
@@ -3298,6 +3410,20 @@
       },
       "presets": {
         "name": "여러 행"
+      }
+    },
+    "quick-order-list": {
+      "name": "빠른 주문 목록",
+      "settings": {
+        "show_image": {
+          "label": "이미지 표시"
+        },
+        "show_sku": {
+          "label": "SKU(재고 관리 코드) 표시"
+        }
+      },
+      "presets": {
+        "name": "빠른 주문 목록"
       }
     }
   }
