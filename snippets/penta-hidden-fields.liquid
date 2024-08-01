@@ -1,7 +1,0 @@
-<div class="penta-hidden-fields">
-  <input type="hidden" name="Handle" value="{% if product.metafields.product.Vehicle_UID != blank %}{{ product.metafields.product.Vehicle_UID }}{% else %}NA{% endif %}" />
-  {% if product.type == 'Used Vehicle' %} 
-    <input type="hidden" name="Make" value="{% if product.metafields.product.Make != blank %}{{ product.metafields.product.Make }}{% else %}NA{% endif %}" />
-    <input type="hidden" name="Model" value="{% if product.metafields.product.Model != blank %}{{ product.metafields.product.Model }}{% else %}NA{% endif %}" />
-  {% endif %}
-</div>
