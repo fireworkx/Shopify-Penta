@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "settings_schema": {
     "colors": {
@@ -56,8 +65,8 @@
       "name": "Media społecznościowe",
       "settings": {
         "social_twitter_link": {
-          "label": "Twitter",
-          "info": "https:\/\/twitter.com\/shopify"
+          "label": "X \/ Twitter",
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -359,10 +368,13 @@
             "label": "Brak"
           },
           "options__2": {
-            "label": "Podnoszenie 3D"
+            "label": "Podnoszenie w pionie"
           },
           "label": "Efekt obszaru aktywnego",
-          "info": "Wpływa na karty i przyciski."
+          "info": "Wpływa na karty i przyciski.",
+          "options__3": {
+            "label": "Podnoszenie 3D"
+          }
         }
       }
     }
@@ -392,6 +404,9 @@
         },
         "options__4": {
           "label": "Bardzo duży"
+        },
+        "options__5": {
+          "label": "Bardzo, bardzo duży"
         }
       },
       "image_shape": {
@@ -434,6 +449,9 @@
           "label": "Zachowanie obrazu",
           "options__3": {
             "label": "Stałe położenie tła"
+          },
+          "options__4": {
+            "label": "Powiększenie przy przewijaniu"
           }
         }
       }
@@ -445,7 +463,8 @@
           "name": "Ogłoszenie",
           "settings": {
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Witamy w naszym sklepie"
             },
             "text_alignment": {
               "label": "Wyrównanie tekstu",
@@ -467,18 +486,46 @@
       },
       "settings": {
         "auto_rotate": {
-          "label": "Automatyczna zmiana slajdów"
+          "label": "Automatyczna zmiana ogłoszeń"
         },
         "change_slides_speed": {
-          "label": "Zmieniaj slajdy co"
+          "label": "Zmieniaj co"
+        },
+        "header__1": {
+          "content": "Ikony mediów społecznościowych",
+          "info": "Aby wyświetlić swoje konta w mediach społecznościowych, podlinkuj je w [ustawienia szablonu](\/editor?context=theme&category=social%20media)."
+        },
+        "header__2": {
+          "content": "Ogłoszenia"
+        },
+        "show_social": {
+          "label": "Pokaż ikony na pulpicie"
+        },
+        "header__3": {
+          "content": "Selektor kraju\/regionu",
+          "info": "Aby dodać kraj\/region, przejdź do swoich [ustawień rynku.](\/admin\/settings\/markets)"
+        },
+        "enable_country_selector": {
+          "label": "Włącz selektor kraju\/regionu"
+        },
+        "header__4": {
+          "content": "Selektor języka",
+          "info": "Aby dodać język, przejdź do swoich [ustawień języka.](\/admin\/settings\/languages)"
+        },
+        "enable_language_selector": {
+          "label": "Włącz selektor języka"
         }
+      },
+      "presets": {
+        "name": "Pasek ogłoszeń"
       }
     },
     "collage": {
       "name": "Kolaż",
       "settings": {
         "heading": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Kolaż multimedialny"
         },
         "desktop_layout": {
           "label": "Układ pulpitu",
@@ -553,7 +600,8 @@
             },
             "description": {
               "label": "Alternatywny tekst filmu",
-              "info": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)"
+              "info": "Opisz film dla klientów korzystających z czytników ekranu. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)",
+              "default": "Opisz wideo"
             }
           }
         }
@@ -566,7 +614,8 @@
       "name": "Lista kolekcji",
       "settings": {
         "title": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Kolekcje"
         },
         "image_ratio": {
           "label": "Proporcja obrazu",
@@ -621,14 +670,20 @@
       "name": "Formularz kontaktowy",
       "presets": {
         "name": "Formularz kontaktowy"
+      },
+      "settings": {
+        "title": {
+          "default": "Formularz kontaktowy",
+          "label": "Nagłówek"
+        }
       }
     },
     "custom-liquid": {
       "name": "Niestandardowy Liquid",
       "settings": {
         "custom_liquid": {
-          "label": "Niestandardowy Liquid",
-          "info": "Dodawaj fragmenty kodu aplikacji lub kod Liquid, aby tworzyć zaawansowane dostosowania."
+          "label": "Kod Liquid",
+          "info": "Dodaj fragmenty kodu aplikacji lub inny kod, aby utworzyć zaawansowane dostosowania. [Dowiedz się więcej](https:\/\/shopify.dev\/docs\/api\/liquid)"
         }
       },
       "presets": {
@@ -639,7 +694,8 @@
       "name": "Posty na blogu",
       "settings": {
         "heading": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Posty na blogu"
         },
         "blog": {
           "label": "Blog"
@@ -672,7 +728,8 @@
       "name": "Polecana kolekcja",
       "settings": {
         "title": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Polecana kolekcja"
         },
         "collection": {
           "label": "Kolekcja"
@@ -778,7 +835,8 @@
           "name": "Menu",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Szybkie linki"
             },
             "menu": {
               "label": "Menu",
@@ -790,10 +848,12 @@
           "name": "Tekst",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Nagłówek"
             },
             "subtext": {
-              "label": "Tekst podrzędny"
+              "label": "Tekst podrzędny",
+              "default": "<p>Udostępniaj klientom informacje kontaktowe, dane sklepu i treści związane z marką.<\/p>"
             }
           }
         },
@@ -818,7 +878,8 @@
           "label": "Pokaż rejestrację w celu otrzymywania e-maili."
         },
         "newsletter_heading": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Subskrybuj nasze wiadomości e-mail"
         },
         "header__1": {
           "content": "Osoba zarejestrowana w celu otrzymywania e-maili",
@@ -967,6 +1028,14 @@
         },
         "menu_color_scheme": {
           "label": "Kolorystyka menu"
+        },
+        "header__7": {
+          "content": "Logowanie do kont klientów",
+          "info": "Aby zarządzać kontami klientów, przejdź do [ustawień kont klientów](\/admin\/settings\/customer_accounts)]."
+        },
+        "enable_customer_avatar": {
+          "label": "Pokaż awatar",
+          "info": "Klienci zobaczą swój awatar tylko po zalogowaniu się przez Shop"
         }
       }
     },
@@ -978,9 +1047,6 @@
         },
         "image_2": {
           "label": "Drugi obraz"
-        },
-        "color_scheme": {
-          "info": "Widoczne podczas wyświetlania kontenera."
         },
         "stack_images_on_mobile": {
           "label": "Układaj obrazy w stosy na urządzeniu mobilnym"
@@ -1073,7 +1139,8 @@
           "name": "Nagłówek",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Baner z obrazem"
             }
           }
         },
@@ -1081,7 +1148,8 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Opis"
+              "label": "Opis",
+              "default": "Podaj klientom szczegóły dotyczące obrazów banerów lub treści w szablonie."
             },
             "text_style": {
               "options__1": {
@@ -1102,7 +1170,8 @@
           "settings": {
             "button_label_1": {
               "label": "Pierwszy przycisk z etykietą",
-              "info": "Pozostaw etykietę pustą, aby ukryć przycisk."
+              "info": "Pozostaw etykietę pustą, aby ukryć przycisk.",
+              "default": "Przycisk z etykietą"
             },
             "button_link_1": {
               "label": "Pierwszy link przycisku"
@@ -1112,7 +1181,8 @@
             },
             "button_label_2": {
               "label": "Drugi przycisk z etykietą",
-              "info": "Pozostaw etykietę pustą, aby ukryć przycisk."
+              "info": "Pozostaw etykietę pustą, aby ukryć przycisk.",
+              "default": "Przycisk z etykietą"
             },
             "button_link_2": {
               "label": "Drugi link przycisku"
@@ -1222,7 +1292,8 @@
           "name": "Nagłówek",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Obraz z tekstem"
             }
           }
         },
@@ -1230,7 +1301,8 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Treść"
+              "label": "Treść",
+              "default": "<p>Połącz tekst z obrazem, aby skierować uwagę na wybrany produkt, kolekcję lub wpis na blogu. Dodaj szczegóły dotyczące dostępności, stylu lub dołącz recenzję.<\/p>"
             },
             "text_style": {
               "label": "Styl tekstu",
@@ -1248,10 +1320,14 @@
           "settings": {
             "button_label": {
               "label": "Przycisk z etykietą",
-              "info": "Pozostaw etykietę pustą, aby ukryć przycisk."
+              "info": "Pozostaw etykietę pustą, aby ukryć przycisk.",
+              "default": "Przycisk z etykietą"
             },
             "button_link": {
               "label": "Link przycisku"
+            },
+            "outline_button": {
+              "label": "Użyj stylu przycisku konspektu"
             }
           }
         },
@@ -1259,7 +1335,8 @@
           "name": "Napisy",
           "settings": {
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Dodaj slogan"
             },
             "text_style": {
               "label": "Styl tekstu",
@@ -1337,7 +1414,8 @@
               "content": "Tytuł i opis strony są dodawane wraz z obrazem podglądu. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)."
             },
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Udostępnij"
             }
           }
         }
@@ -1463,10 +1541,6 @@
           "label": "Pokaż ocenę produktu",
           "info": "Aby wyświetlić ocenę, dodaj aplikację do oceny produktów. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/page-types#product-grid-section-settings)"
         },
-        "enable_quick_buy": {
-          "label": "Włącz przycisk szybkiego dodawania",
-          "info": "Optymalny dla wózków w wyskakującym okienku lub wysuwanych."
-        },
         "columns_desktop": {
           "label": "Liczba kolumn na komputerze"
         },
@@ -1494,6 +1568,15 @@
             "label": "Szuflada"
           },
           "info": "Szuflada odpowiada domyślnemu układowi na urządzeniach mobilnych."
+        },
+        "quick_add": {
+          "label": "Szybkie dodawanie",
+          "info": "Opcja Zbiorczo jest optymalna dla produktów kupowanych w większych ilościach.",
+          "options": {
+            "option_1": "Brak",
+            "option_2": "Standard",
+            "option_3": "Zbiorczo"
+          }
         }
       }
     },
@@ -1501,7 +1584,8 @@
       "name": "Strona listy kolekcji",
       "settings": {
         "title": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Kolekcje"
         },
         "sort": {
           "label": "Sortuj kolekcje według:",
@@ -1578,7 +1662,8 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Blok tekstowy"
             },
             "text_style": {
               "label": "Text style",
@@ -1607,12 +1692,25 @@
           "name": "Selektor wariantów",
           "settings": {
             "picker_type": {
-              "label": "Typ",
+              "label": "Styl",
               "options__1": {
                 "label": "Lista rozwijana"
               },
               "options__2": {
                 "label": "Okrągłe przełączniki"
+              }
+            },
+            "swatch_shape": {
+              "label": "Próbka",
+              "info": "Włącz [próbki](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches) w opcjach produktu.",
+              "options__1": {
+                "label": "Koło"
+              },
+              "options__2": {
+                "label": "Kwadrat"
+              },
+              "options__3": {
+                "label": "Brak"
               }
             }
           }
@@ -1646,7 +1744,8 @@
               "content": "Tytuł i opis strony są dodawane wraz z obrazem podglądu. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)."
             },
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Udostępnij"
             }
           }
         },
@@ -1655,7 +1754,8 @@
           "settings": {
             "heading": {
               "info": "Dołącz nagłówek, który wyjaśnia treść.",
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Zwijany wiersz"
             },
             "content": {
               "label": "Treść wiersza"
@@ -1804,19 +1904,11 @@
           "name": "Wyskakujące okienko",
           "settings": {
             "link_label": {
-              "label": "Etykieta linku"
+              "label": "Etykieta linku",
+              "default": "Wyskakujące okienko tekstowe"
             },
             "page": {
               "label": "Strona"
-            }
-          }
-        },
-        "custom_liquid": {
-          "name": "Niestandardowy Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "Niestandardowy Liquid",
-              "info": "Dodawaj fragmenty kodu aplikacji lub kod Liquid, aby tworzyć zaawansowane dostosowania."
             }
           }
         },
@@ -1835,7 +1927,8 @@
               "content": "Aby wybrać produkty uzupełniające, dodaj aplikację Search & Discovery. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/product-recommendations)"
             },
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Pasuje do"
             },
             "make_collapsible_row": {
               "label": "Pokaż jako zwijany wiersz"
@@ -1898,7 +1991,8 @@
               "label": "Pierwszy obraz"
             },
             "heading_1": {
-              "label": "Pierwszy nagłówek"
+              "label": "Pierwszy nagłówek",
+              "default": "Nagłówek"
             },
             "icon_2": {
               "label": "Druga ikona"
@@ -1907,7 +2001,8 @@
               "label": "Drugi obraz"
             },
             "heading_2": {
-              "label": "Drugi nagłówek"
+              "label": "Drugi nagłówek",
+              "default": "Nagłówek"
             },
             "icon_3": {
               "label": "Trzecia ikona"
@@ -1916,7 +2011,8 @@
               "label": "Trzeci obraz"
             },
             "heading_3": {
-              "label": "Trzeci nagłówek"
+              "label": "Trzeci nagłówek",
+              "default": "Nagłówek"
             }
           }
         },
@@ -2112,7 +2208,8 @@
       "name": "Wielokolumnowy",
       "settings": {
         "title": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Wielokolumnowy"
         },
         "image_width": {
           "label": "Szerokość obrazu",
@@ -2160,7 +2257,8 @@
           }
         },
         "button_label": {
-          "label": "Przycisk z etykietą"
+          "label": "Przycisk z etykietą",
+          "default": "Przycisk z etykietą"
         },
         "button_link": {
           "label": "Link przycisku"
@@ -2192,10 +2290,12 @@
               "label": "Obraz"
             },
             "title": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Kolumna"
             },
             "text": {
-              "label": "Opis"
+              "label": "Opis",
+              "default": "<p>Połącz tekst z obrazem, aby skierować uwagę na wybrany produkt, kolekcję lub wpis na blogu. Dodaj szczegóły dotyczące dostępności, stylu lub dołącz recenzję.<\/p>"
             },
             "link_label": {
               "label": "Etykieta linku"
@@ -2225,7 +2325,8 @@
           "name": "Nagłówek",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Subskrybuj nasze wiadomości e-mail"
             }
           }
         },
@@ -2233,7 +2334,8 @@
           "name": "Nagłówek podrzędny",
           "settings": {
             "paragraph": {
-              "label": "Opis"
+              "label": "Opis",
+              "default": "<p>Dowiedz się jako pierwszy o nowych kolekcjach i ekskluzywnych ofertach.<\/p>"
             }
           }
         },
@@ -2293,7 +2395,8 @@
           "name": "Nagłówek",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Opowiedz o swojej marce"
             }
           }
         },
@@ -2301,7 +2404,8 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Opis"
+              "label": "Opis",
+              "default": "<p>Udostępnij klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub przywitaj klientów w swoim sklepie.<\/p>"
             }
           }
         },
@@ -2310,7 +2414,8 @@
           "settings": {
             "button_label_1": {
               "label": "Pierwszy przycisk z etykietą",
-              "info": "Pozostaw etykietę pustą, aby ukryć przycisk."
+              "info": "Pozostaw etykietę pustą, aby ukryć przycisk.",
+              "default": "Przycisk z etykietą"
             },
             "button_link_1": {
               "label": "Pierwszy link przycisku"
@@ -2334,7 +2439,8 @@
           "name": "Napisy",
           "settings": {
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Dodaj slogan"
             },
             "text_style": {
               "label": "Styl tekstu",
@@ -2379,7 +2485,8 @@
       "name": "Film",
       "settings": {
         "heading": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Film"
         },
         "cover_image": {
           "label": "Obraz w tle"
@@ -2429,7 +2536,8 @@
           "name": "Tekst",
           "settings": {
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "Blok tekstowy"
             },
             "text_style": {
               "label": "Styl tekstu",
@@ -2458,12 +2566,25 @@
           "name": "Selektor wariantów",
           "settings": {
             "picker_type": {
-              "label": "Typ",
+              "label": "Styl",
               "options__1": {
                 "label": "Lista rozwijana"
               },
               "options__2": {
                 "label": "Okrągłe przełączniki"
+              }
+            },
+            "swatch_shape": {
+              "label": "Próbka",
+              "info": "Włącz [próbki](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches) w opcjach produktu.",
+              "options__1": {
+                "label": "Koło"
+              },
+              "options__2": {
+                "label": "Kwadrat"
+              },
+              "options__3": {
+                "label": "Brak"
               }
             }
           }
@@ -2490,15 +2611,8 @@
               "content": "Tytuł i opis strony są dodawane wraz z obrazem podglądu. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "Tekst"
-            }
-          }
-        },
-        "custom_liquid": {
-          "name": "Niestandardowy Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "Niestandardowy Liquid"
+              "label": "Tekst",
+              "default": "Udostępnij"
             }
           }
         },
@@ -2578,9 +2692,6 @@
         "image_overlay_opacity": {
           "label": "Nieprzezroczystość nakładki obrazu"
         },
-        "color_scheme": {
-          "info": "Widoczne podczas wyświetlania kontenera."
-        },
         "show_text_below": {
           "label": "Pokaż treść pod obrazem na urządzeniu mobilnym",
           "info": "Aby uzyskać najlepsze wyniki, użyj obrazu o współczynniku proporcji 16:9. [Dowiedz się więcej](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
@@ -2657,6 +2768,9 @@
             "label": "Prawa strona"
           },
           "label": "Wyrównanie treści na urządzeniu mobilnym"
+        },
+        "color_scheme": {
+          "info": "Widoczne podczas wyświetlania kontenera."
         }
       },
       "blocks": {
@@ -2664,7 +2778,8 @@
           "name": "Nagłówek",
           "settings": {
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Wkrótce otwarcie"
             }
           }
         },
@@ -2672,7 +2787,8 @@
           "name": "Akapit",
           "settings": {
             "paragraph": {
-              "label": "Opis"
+              "label": "Opis",
+              "default": "<p>Bądź pierwszą osobą, która dowie się, kiedy wystartujemy.<\/p>"
             },
             "text_style": {
               "options__1": {
@@ -2747,7 +2863,8 @@
         "accessibility": {
           "content": "Dostępność",
           "label": "Opis pokazu slajdów",
-          "info": "Opisz pokaz slajdów dla klientów korzystających z czytników ekranu."
+          "info": "Opisz pokaz slajdów dla klientów korzystających z czytników ekranu.",
+          "default": "Pokaz slajdów na temat naszej marki"
         }
       },
       "blocks": {
@@ -2758,14 +2875,17 @@
               "label": "Obraz"
             },
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Slajd obrazu"
             },
             "subheading": {
-              "label": "Nagłówek podrzędny"
+              "label": "Nagłówek podrzędny",
+              "default": "Opowiedz historię swojej marki za pomocą obrazów"
             },
             "button_label": {
               "label": "Przycisk z etykietą",
-              "info": "Pozostaw etykietę pustą, aby ukryć przycisk."
+              "info": "Pozostaw etykietę pustą, aby ukryć przycisk.",
+              "default": "Przycisk z etykietą"
             },
             "link": {
               "label": "Link przycisku"
@@ -2822,9 +2942,6 @@
             "image_overlay_opacity": {
               "label": "Nieprzezroczystość nakładki obrazu"
             },
-            "color_scheme": {
-              "info": "Widoczne podczas wyświetlania kontenera."
-            },
             "text_alignment_mobile": {
               "label": "Wyrównanie treści na urządzeniu mobilnym",
               "options__1": {
@@ -2851,7 +2968,8 @@
           "label": "Napisy"
         },
         "heading": {
-          "label": "Nagłówek"
+          "label": "Nagłówek",
+          "default": "Zwijana treść"
         },
         "heading_alignment": {
           "label": "Wyrównanie nagłówka",
@@ -2919,7 +3037,8 @@
           "settings": {
             "heading": {
               "info": "Dołącz nagłówek, który wyjaśnia treść.",
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Zwijany wiersz"
             },
             "row_content": {
               "label": "Treść wiersza"
@@ -3079,7 +3198,10 @@
       "name": "Adresy"
     },
     "main-login": {
-      "name": "Zaloguj"
+      "name": "Zaloguj",
+      "shop_login_button": {
+        "enable": "Włącz logowanie przez Shop"
+      }
     },
     "main-order": {
       "name": "Zamówienie"
@@ -3103,7 +3225,8 @@
           "label": "Liczba kolumn na komputerze"
         },
         "paragraph__1": {
-          "content": "Dynamiczne rekomendacje wykorzystują informacje o zamówieniach i produktach do ciągłego zmieniania i ulepszania. [Dowiedz się więcej](https:\/\/help.shopify.com\/themes\/development\/recommended-products)"
+          "content": "Dynamiczne rekomendacje wykorzystują informacje o zamówieniach i produktach do ciągłego zmieniania i ulepszania. [Dowiedz się więcej](https:\/\/help.shopify.com\/themes\/development\/recommended-products)",
+          "default": "Może Ci się spodobać również"
         },
         "header__2": {
           "content": "Karta produktów"
@@ -3177,18 +3300,6 @@
           },
           "label": "Szerokość obrazu na komputerze",
           "info": "Obraz jest automatycznie optymalizowany dla urządzeń mobilnych."
-        },
-        "heading_size": {
-          "options__1": {
-            "label": "Mały"
-          },
-          "options__2": {
-            "label": "Średni"
-          },
-          "options__3": {
-            "label": "Duży"
-          },
-          "label": "Rozmiar nagłówka"
         },
         "text_style": {
           "options__1": {
@@ -3276,16 +3387,20 @@
               "label": "Obraz"
             },
             "caption": {
-              "label": "Napisy"
+              "label": "Napisy",
+              "default": "Napis"
             },
             "heading": {
-              "label": "Nagłówek"
+              "label": "Nagłówek",
+              "default": "Wiersz"
             },
             "text": {
-              "label": "Tekst"
+              "label": "Tekst",
+              "default": "<p>Połącz tekst z obrazem, aby skierować uwagę na wybrany produkt, kolekcję lub wpis na blogu. Dodaj szczegóły dotyczące dostępności, stylu lub dołącz recenzję.<\/p>"
             },
             "button_label": {
-              "label": "Przycisk z etykietą"
+              "label": "Przycisk z etykietą",
+              "default": "Przycisk z etykietą"
             },
             "button_link": {
               "label": "Link przycisku"
@@ -3295,6 +3410,20 @@
       },
       "presets": {
         "name": "Wiele wierszy"
+      }
+    },
+    "quick-order-list": {
+      "name": "Lista szybkich zamówień",
+      "settings": {
+        "show_image": {
+          "label": "Pokaż obrazy"
+        },
+        "show_sku": {
+          "label": "Pokaż SKU"
+        }
+      },
+      "presets": {
+        "name": "Lista szybkich zamówień"
       }
     }
   }

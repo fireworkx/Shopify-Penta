@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "general": {
     "password_page": {
@@ -13,11 +22,11 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "在 Facebook 上共享",
-        "share_on_twitter": "在 Twitter 上发推文",
+        "share_on_twitter": "在 X 上分享",
         "share_on_pinterest": "固定在 Pinterest 上"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X (Twitter)",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -118,7 +127,10 @@
         "minimum_of": "最小值为 {{ quantity }}",
         "maximum_of": "最大值为 {{ quantity }}",
         "multiples_of": "增量为 {{ quantity }}",
-        "in_cart_html": "购物车中 <span class=\"quantity-cart\">{{ quantity }}<\/span> 件"
+        "in_cart_html": "购物车中 <span class=\"quantity-cart\">{{ quantity }}<\/span> 件",
+        "note": "查看数量规则",
+        "min_of": "最小值 {{ quantity }}",
+        "max_of": "最大值 {{ quantity }}"
       },
       "price": {
         "from_price_html": "来自 {{ price }}",
@@ -153,7 +165,6 @@
         "image_available": "图片 {{ index }} 现已在图库视图中可用"
       },
       "view_full_details": "查看完整详细信息",
-      "include_taxes": "含税费。",
       "shipping_policy_html": "结账时计算的<a href=\"{{ link }}\">运费<\/a>。",
       "choose_options": "选择选项",
       "choose_product_options": "选择用于 {{ product_name }} 的选项",
@@ -165,7 +176,17 @@
       "inventory_low_stock_show_count": "低库存：剩余 {{ quantity }}",
       "inventory_out_of_stock": "缺货",
       "inventory_out_of_stock_continue_selling": "现货",
-      "sku": "SKU"
+      "sku": "SKU",
+      "volume_pricing": {
+        "title": "批量定价",
+        "note": "提供批量定价",
+        "minimum": "{{ quantity }}+",
+        "price_at_each": "{{ price }}\/件",
+        "price_range": "{{ minimum }} - {{ maximum }}"
+      },
+      "taxes_included": "已含税费。",
+      "duties_included": "已含关税。",
+      "duties_and_taxes_included": "已含关税和税费。"
     },
     "modal": {
       "label": "媒体图库"
@@ -198,14 +219,11 @@
       "clear_filter": "删除筛选条件",
       "filter_selected_accessibility": "{{ type }}（已选择 {{ count }} 个筛选条件）",
       "show_more": "显示更多内容",
-      "show_less": "隐藏部分内容"
+      "show_less": "隐藏部分内容",
+      "filter_and_operator_subtitle": "匹配全部"
     }
   },
   "templates": {
-    "404": {
-      "title": "找不到页面",
-      "subtext": "404"
-    },
     "search": {
       "no_results": "未找到“{{ terms }}”的结果。请检查拼写或使用其他词或短语。",
       "results_with_count": {
@@ -249,6 +267,10 @@
         "error_heading": "请调整以下内容：",
         "title": "联系表"
       }
+    },
+    "404": {
+      "title": "找不到页面",
+      "subtext": "404"
     }
   },
   "sections": {
@@ -264,17 +286,11 @@
       "title": "您的购物车",
       "caption": "购物车商品",
       "remove_title": "删除 {{ title }}",
-      "subtotal": "小计",
-      "new_subtotal": "新的小计",
       "note": "订单特殊说明",
       "checkout": "结账",
       "empty": "您的购物车为空",
       "cart_error": "更新购物车时出错。请重试。",
       "cart_quantity_error_html": "您只能向购物车添加 {{ quantity }} 件此商品。",
-      "taxes_and_shipping_policy_at_checkout_html": "结账时计算的税费和<a href=\"{{ link }}\">运费<\/a>",
-      "taxes_included_but_shipping_at_checkout": "结账时包含的税费和计算的运费",
-      "taxes_included_and_shipping_policy_html": "含税费。结账时计算的<a href=\"{{ link }}\">运费<\/a>。",
-      "taxes_and_shipping_at_checkout": "结账时计算的税费和运费",
       "headings": {
         "product": "产品",
         "price": "价格",
@@ -286,7 +302,17 @@
       "login": {
         "title": "已有账户？",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">登录<\/a>以快速结账。"
-      }
+      },
+      "estimated_total": "预计总额",
+      "new_estimated_total": "没有预计总额",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "已含关税和税费。结账时计算折扣和<a href=\"{{ link }}\">运费<\/a>。",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "已含关税和税费。结账时计算折扣和运费。",
+      "taxes_included_shipping_at_checkout_with_policy_html": "已含税费。结账时计算折扣和<a href=\"{{ link }}\">运费<\/a>。",
+      "taxes_included_shipping_at_checkout_without_policy": "已含税费。结账时计算折扣和运费。",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "已含关税。结账时计算税费、折扣和<a href=\"{{ link }}\">运费<\/a>。",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "已含关税。结账时计算税费、折扣和运费。",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "结账时计算税费、折扣和<a href=\"{{ link }}\">运费<\/a>。",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "结账时计算税费、折扣和运费。"
     },
     "footer": {
       "payment": "付款方式"
@@ -329,13 +355,41 @@
       "carousel": "轮播",
       "announcement": "公告",
       "announcement_bar": "公告栏"
+    },
+    "quick_order_list": {
+      "product_total": "产品小计",
+      "view_cart": "查看购物车",
+      "each": "{{ money }}\/件",
+      "product": "产品",
+      "variant": "多属性",
+      "variant_total": "多属性总计",
+      "items_added": {
+        "one": "已添加 {{ quantity }} 件商品",
+        "other": "已添加 {{ quantity }} 件商品"
+      },
+      "items_removed": {
+        "one": "已删除 {{ quantity }} 件商品",
+        "other": "已删除 {{ quantity }} 件商品"
+      },
+      "product_variants": "产品多属性",
+      "total_items": "商品总数",
+      "remove_all_items_confirmation": "删除您购物车中的全部 {{ quantity }} 件商品？",
+      "remove_all": "全部删除",
+      "cancel": "取消",
+      "remove_all_single_item_confirmation": "从购物车中删除 1 件商品？",
+      "min_error": "此商品的最小值为 {{ min }}",
+      "max_error": "此商品的最大值为 {{ max }}",
+      "step_error": "您只能以 {{ step }} 为增量来添加此商品"
     }
   },
   "localization": {
     "country_label": "国家\/地区",
     "language_label": "语言",
     "update_language": "更新语言",
-    "update_country": "更新国家\/地区"
+    "update_country": "更新国家\/地区",
+    "search": "搜索",
+    "popular_countries_regions": "热门国家\/地区",
+    "country_results_count": "找到 {{ count }} 个国家\/地区"
   },
   "customer": {
     "account": {
@@ -384,11 +438,12 @@
       "email": "电子邮件",
       "forgot_password": "忘记了密码？",
       "guest_continue": "继续",
-      "guest_title": "以游客身份继续",
+      "guest_title": "以访客身份继续",
       "password": "密码",
       "title": "登录",
       "sign_in": "登录",
-      "submit": "提交"
+      "submit": "提交",
+      "alternate_provider_separator": "或"
     },
     "orders": {
       "title": "订单历史记录",
@@ -474,52 +529,9 @@
       "max_characters": "不超过 {{ max_chars }} 个字符",
       "email_label_optional_for_no_js_behavior": "收件人邮箱（可选）",
       "send_on": "YYYY-MM-DD",
-      "send_on_label": "发送日期（可选）"
-    }
-  },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
-    },
-    "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
-    },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+      "send_on_label": "发送日期（可选）",
+      "expanded": "礼品卡收件人表单已展开",
+      "collapsed": "礼品卡收件人表单已折叠"
     }
   }
 }

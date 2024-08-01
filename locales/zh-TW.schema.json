@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "settings_schema": {
     "colors": {
@@ -56,8 +65,8 @@
       "name": "社群媒體",
       "settings": {
         "social_twitter_link": {
-          "label": "Twitter",
-          "info": "https:\/\/twitter.com\/shopify"
+          "label": "X \/ Twitter",
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
@@ -319,7 +328,7 @@
           "label": "標誌"
         },
         "logo_width": {
-          "label": "桌面版標誌寬度",
+          "label": "電腦版標誌寬度",
           "info": "標誌會自動調整為手機最佳寬度。"
         },
         "favicon": {
@@ -359,10 +368,13 @@
             "label": "無"
           },
           "options__2": {
-            "label": "3D 浮起"
+            "label": "垂直浮起"
           },
           "label": "暫留效果",
-          "info": "套用於卡片和按鈕。"
+          "info": "套用於卡片和按鈕。",
+          "options__3": {
+            "label": "3D 浮起"
+          }
         }
       }
     }
@@ -392,6 +404,9 @@
         },
         "options__4": {
           "label": "超大型"
+        },
+        "options__5": {
+          "label": "特大型"
         }
       },
       "image_shape": {
@@ -434,6 +449,9 @@
           "label": "圖片行為",
           "options__3": {
             "label": "固定背景位置"
+          },
+          "options__4": {
+            "label": "捲動時放大"
           }
         }
       }
@@ -444,7 +462,8 @@
         "announcement": {
           "settings": {
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "歡迎來到我們的商店"
             },
             "text_alignment": {
               "label": "文字對齊方式",
@@ -467,21 +486,49 @@
       },
       "settings": {
         "auto_rotate": {
-          "label": "自動輪播投影片"
+          "label": "自動輪播公告"
         },
         "change_slides_speed": {
-          "label": "每過以下時間即變更投影片"
+          "label": "變更頻率"
+        },
+        "header__1": {
+          "content": "社群媒體圖示",
+          "info": "若要顯示社群媒體帳號，請在您的 [佈景主題設定](\/editor?context=theme&category=social%20media) 中連接帳號。"
+        },
+        "header__2": {
+          "content": "公告"
+        },
+        "show_social": {
+          "label": "在電腦版顯示圖示"
+        },
+        "header__3": {
+          "content": "國家\/地區選擇器",
+          "info": "若要新增國家\/地區，請前往 [市場設定](\/admin\/settings\/markets)"
+        },
+        "enable_country_selector": {
+          "label": "啟用國家\/地區選擇器"
+        },
+        "header__4": {
+          "content": "語言選擇器",
+          "info": "若要新增語言，請前往 [語言設定。](\/admin\/settings\/languages)"
+        },
+        "enable_language_selector": {
+          "label": "啟用語言選擇器"
         }
+      },
+      "presets": {
+        "name": "公告列"
       }
     },
     "collage": {
       "name": "拼貼",
       "settings": {
         "heading": {
-          "label": "標題"
+          "label": "標題",
+          "default": "多媒體拼貼"
         },
         "desktop_layout": {
-          "label": "桌面版版面配置",
+          "label": "電腦版版面配置",
           "options__1": {
             "label": "左側大型區塊"
           },
@@ -552,7 +599,8 @@
             },
             "description": {
               "label": "影片替代文字",
-              "info": "為使用螢幕助讀程式的顧客說明該影片。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)"
+              "info": "為使用螢幕助讀程式的顧客說明該影片。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video-block)",
+              "default": "描述影片"
             }
           },
           "name": "影片"
@@ -566,7 +614,8 @@
       "name": "商品系列清單",
       "settings": {
         "title": {
-          "label": "標題"
+          "label": "標題",
+          "default": "商品系列"
         },
         "image_ratio": {
           "label": "圖片比例",
@@ -588,7 +637,7 @@
           "label": "若清單中包含的商品系列比顯示出的更多，請啟用「檢視全部」按鈕"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "header_mobile": {
           "content": "行動版版面配置"
@@ -621,14 +670,20 @@
       "name": "聯絡表單",
       "presets": {
         "name": "聯絡表單"
+      },
+      "settings": {
+        "title": {
+          "default": "聯絡表單",
+          "label": "標題"
+        }
       }
     },
     "custom-liquid": {
       "name": "自訂 Liquid",
       "settings": {
         "custom_liquid": {
-          "label": "自訂 Liquid",
-          "info": "新增應用程式程式碼片段或其他 Liquid 碼以建立進階自訂內容。"
+          "label": "Liquid 程式碼",
+          "info": "新增應用程式程式碼片段或其他程式碼以建立進階自訂內容。[瞭解詳情](https:\/\/shopify.dev\/docs\/api\/liquid)"
         }
       },
       "presets": {
@@ -639,7 +694,8 @@
       "name": "網誌文章",
       "settings": {
         "heading": {
-          "label": "標題"
+          "label": "標題",
+          "default": "網誌文章"
         },
         "blog": {
           "label": "網誌"
@@ -661,7 +717,7 @@
           "label": "顯示作者"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         }
       },
       "presets": {
@@ -672,7 +728,8 @@
       "name": "精選商品系列",
       "settings": {
         "title": {
-          "label": "標題"
+          "label": "標題",
+          "default": "精選商品系列"
         },
         "collection": {
           "label": "商品系列"
@@ -713,7 +770,7 @@
           "info": "最適合彈出式視窗或購物車導覽匣類型。"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "description": {
           "label": "說明"
@@ -746,7 +803,7 @@
           "label": "「檢視更多」樣式"
         },
         "enable_desktop_slider": {
-          "label": "在桌面版啟用輪播廣告"
+          "label": "在電腦版啟用輪播廣告"
         },
         "full_width": {
           "label": "讓產品以全寬度呈現"
@@ -777,7 +834,8 @@
         "link_list": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "快速連結"
             },
             "menu": {
               "label": "選單",
@@ -789,10 +847,12 @@
         "text": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "標題"
             },
             "subtext": {
-              "label": "子文字"
+              "label": "子文字",
+              "default": "<p>與顧客分享聯絡資訊、商店的詳細資訊和品牌內容。<\/p>"
             }
           },
           "name": "文字"
@@ -818,7 +878,8 @@
           "label": "顯示電子郵件訂閱"
         },
         "newsletter_heading": {
-          "label": "標題"
+          "label": "標題",
+          "default": "訂閱我們的電子郵件"
         },
         "header__1": {
           "info": "訂閱者已自動新增至您的「接受行銷」顧客名單。[瞭解詳情](https:\/\/help.shopify.com\/manual\/customers\/manage-customers)",
@@ -878,7 +939,7 @@
       "name": "標頭",
       "settings": {
         "logo_position": {
-          "label": "桌面版標誌位置",
+          "label": "電腦版標誌位置",
           "options__1": {
             "label": "中央左方"
           },
@@ -902,7 +963,7 @@
           "label": "下方邊界"
         },
         "menu_type_desktop": {
-          "label": "桌面版選單類型",
+          "label": "電腦版選單類型",
           "info": "行動版的選單類型會自動調整大小。",
           "options__1": {
             "label": "下拉式選單"
@@ -967,6 +1028,14 @@
         },
         "menu_color_scheme": {
           "label": "選單顏色配置"
+        },
+        "header__7": {
+          "content": "顧客帳號登入",
+          "info": "若要管理顧客帳號，請前往您的[顧客帳號設定](\/admin\/settings\/customer_accounts)。"
+        },
+        "enable_customer_avatar": {
+          "label": "顯示大頭貼",
+          "info": "當顧客登入 Shop 時只會看到他們的大頭貼。"
         }
       }
     },
@@ -979,14 +1048,11 @@
         "image_2": {
           "label": "第二張圖片"
         },
-        "color_scheme": {
-          "info": "顯示容器時可見。"
-        },
         "stack_images_on_mobile": {
           "label": "在行動裝置上堆疊圖片"
         },
         "show_text_box": {
-          "label": "在桌面顯示容器"
+          "label": "在電腦版顯示容器"
         },
         "image_overlay_opacity": {
           "label": "圖片疊加層透明度"
@@ -1038,7 +1104,7 @@
           "options__9": {
             "label": "下方靠右"
           },
-          "label": "桌面版內容位置"
+          "label": "電腦版內容位置"
         },
         "desktop_content_alignment": {
           "options__1": {
@@ -1050,7 +1116,7 @@
           "options__3": {
             "label": "靠右"
           },
-          "label": "桌面版內容對齊方式"
+          "label": "電腦版內容對齊方式"
         },
         "mobile_content_alignment": {
           "options__1": {
@@ -1072,7 +1138,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "圖片橫幅"
             }
           },
           "name": "標題"
@@ -1080,7 +1147,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "說明"
+              "label": "說明",
+              "default": "提供顧客關於範本上橫幅圖片或內容的詳細資訊。"
             },
             "text_style": {
               "options__1": {
@@ -1101,7 +1169,8 @@
           "settings": {
             "button_label_1": {
               "label": "第一個按鈕標籤",
-              "info": "將標籤保留空白以隱藏按鈕。"
+              "info": "將標籤保留空白以隱藏按鈕。",
+              "default": "按鈕標籤"
             },
             "button_link_1": {
               "label": "第一個按鈕連結"
@@ -1111,7 +1180,8 @@
             },
             "button_label_2": {
               "label": "第二個按鈕標籤",
-              "info": "將標籤保留空白以隱藏按鈕。"
+              "info": "將標籤保留空白以隱藏按鈕。",
+              "default": "按鈕標籤"
             },
             "button_link_2": {
               "label": "第二個按鈕連結"
@@ -1153,9 +1223,9 @@
             "label": "先顯示圖片"
           },
           "options__2": {
-            "label": "圖片秒數"
+            "label": "後顯示圖片"
           },
-          "label": "桌面版圖片位置",
+          "label": "電腦版圖片位置",
           "info": "圖片會先預設為行動版版面配置。"
         },
         "desktop_image_width": {
@@ -1168,7 +1238,7 @@
           "options__3": {
             "label": "大"
           },
-          "label": "桌面版圖片寬度",
+          "label": "電腦版圖片寬度",
           "info": "行動版的圖片會自動調整大小。"
         },
         "desktop_content_alignment": {
@@ -1178,7 +1248,7 @@
           "options__3": {
             "label": "靠右"
           },
-          "label": "桌面版內容對齊方式",
+          "label": "電腦版內容對齊方式",
           "options__2": {
             "label": "置中"
           }
@@ -1193,7 +1263,7 @@
           "options__3": {
             "label": "靠下"
           },
-          "label": "桌面版內容位置"
+          "label": "電腦版內容位置"
         },
         "content_layout": {
           "options__1": {
@@ -1221,7 +1291,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "附文字的圖片"
             }
           },
           "name": "標題"
@@ -1229,7 +1300,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "內容"
+              "label": "內容",
+              "default": "<p>文字搭配圖片，以便強調特定商品、商品系列或網誌文章。您可以加上各種有關可用性、樣式的詳細資料，甚至可以提供使用心得。<\/p>"
             },
             "text_style": {
               "label": "文字樣式",
@@ -1247,10 +1319,14 @@
           "settings": {
             "button_label": {
               "label": "按鈕標籤",
-              "info": "將標籤保留空白以隱藏按鈕。"
+              "info": "將標籤保留空白以隱藏按鈕。",
+              "default": "按鈕標籤"
             },
             "button_link": {
               "label": "按鈕連結"
+            },
+            "outline_button": {
+              "label": "使用外框按鈕樣式"
             }
           },
           "name": "按鈕"
@@ -1259,7 +1335,8 @@
           "name": "說明",
           "settings": {
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "新增標語"
             },
             "text_style": {
               "label": "文字樣式",
@@ -1337,7 +1414,8 @@
               "content": "商店名稱和說明包含在預覽圖片中。[瞭解詳情](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "分享"
             }
           }
         }
@@ -1362,7 +1440,7 @@
           "label": "顯示作者"
         },
         "layout": {
-          "label": "桌面版版面配置",
+          "label": "電腦版版面配置",
           "options__1": {
             "label": "網格"
           },
@@ -1463,12 +1541,8 @@
           "label": "顯示產品評等",
           "info": "新增產品評等應用程式，即可顯示評等。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/page-types#product-grid-section-settings)"
         },
-        "enable_quick_buy": {
-          "label": "啟用「快速新增」按鈕",
-          "info": "最適合彈出式視窗或購物車導覽匣類型。"
-        },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "header_mobile": {
           "content": "行動版版面配置"
@@ -1483,7 +1557,7 @@
           }
         },
         "filter_type": {
-          "label": "桌面版濾鏡版面配置",
+          "label": "電腦版濾鏡版面配置",
           "options__1": {
             "label": "水平"
           },
@@ -1494,6 +1568,15 @@
             "label": "收銀機"
           },
           "info": "收銀機為預設的行動版版面配置。"
+        },
+        "quick_add": {
+          "label": "快速新增",
+          "info": "「大量」針對大量購買的品項進行了最佳化。",
+          "options": {
+            "option_1": "無",
+            "option_2": "標準",
+            "option_3": "大量"
+          }
         }
       }
     },
@@ -1501,7 +1584,8 @@
       "name": "商品系列清單頁面",
       "settings": {
         "title": {
-          "label": "標題"
+          "label": "標題",
+          "default": "商品系列"
         },
         "sort": {
           "label": "以下列方式排序商品系列：",
@@ -1538,7 +1622,7 @@
           "info": "編輯您的商品系列以新增圖片。[瞭解詳情](https:\/\/help.shopify.com\/manual\/products\/collections)"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "header_mobile": {
           "content": "行動版版面配置"
@@ -1577,7 +1661,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "文字區塊"
             },
             "text_style": {
               "label": "文字樣式",
@@ -1595,18 +1680,31 @@
           "name": "文字"
         },
         "variant_picker": {
+          "name": "子類選擇器",
           "settings": {
             "picker_type": {
-              "label": "類型",
+              "label": "樣式",
               "options__1": {
                 "label": "下拉式選單"
               },
               "options__2": {
                 "label": "圓角"
               }
+            },
+            "swatch_shape": {
+              "label": "色樣",
+              "info": "為商品選項啟用 [色樣](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches)。",
+              "options__1": {
+                "label": "圓形"
+              },
+              "options__2": {
+                "label": "正方形"
+              },
+              "options__3": {
+                "label": "無"
+              }
             }
-          },
-          "name": "子類選擇器"
+          }
         },
         "buy_buttons": {
           "settings": {
@@ -1630,7 +1728,8 @@
               "content": "商店名稱和說明包含在預覽圖片中。[瞭解詳情](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "分享"
             }
           },
           "name": "分享"
@@ -1639,7 +1738,8 @@
           "settings": {
             "heading": {
               "info": "包含說明內容的標題。",
-              "label": "標題"
+              "label": "標題",
+              "default": "可折疊的橫列"
             },
             "content": {
               "label": "橫列內容"
@@ -1788,7 +1888,8 @@
         "popup": {
           "settings": {
             "link_label": {
-              "label": "連結標籤"
+              "label": "連結標籤",
+              "default": "彈出式視窗連結文字"
             },
             "page": {
               "label": "頁面"
@@ -1811,15 +1912,6 @@
         "description": {
           "name": "說明"
         },
-        "custom_liquid": {
-          "name": "自訂 Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "自訂 Liquid",
-              "info": "新增應用程式程式碼片段或其他 Liquid 碼以建立進階自訂內容。"
-            }
-          }
-        },
         "rating": {
           "name": "產品評等",
           "settings": {
@@ -1835,7 +1927,8 @@
               "content": "若要選取配套商品，請新增 Search & Discovery 應用程式。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/product-recommendations)"
             },
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "適合搭配"
             },
             "make_collapsible_row": {
               "label": "顯示為可收合的橫列"
@@ -1898,7 +1991,8 @@
               "label": "第一張圖片"
             },
             "heading_1": {
-              "label": "第一個標題"
+              "label": "第一個標題",
+              "default": "標題"
             },
             "icon_2": {
               "label": "第二個圖示"
@@ -1907,7 +2001,8 @@
               "label": "第二張圖片"
             },
             "heading_2": {
-              "label": "第二個標題"
+              "label": "第二個標題",
+              "default": "標題"
             },
             "icon_3": {
               "label": "第三個圖示"
@@ -1916,7 +2011,8 @@
               "label": "第三張圖片"
             },
             "heading_3": {
-              "label": "第三個標題"
+              "label": "第三個標題",
+              "default": "標題"
             }
           }
         },
@@ -1971,13 +2067,13 @@
           "label": "啟用影片循環播放功能"
         },
         "enable_sticky_info": {
-          "label": "在桌面版啟用黏性內容"
+          "label": "在電腦版啟用黏性內容"
         },
         "hide_variants": {
           "label": "在選取一個子類後，隱藏其他子類的多媒體檔案"
         },
         "gallery_layout": {
-          "label": "桌面版版面配置",
+          "label": "電腦版版面配置",
           "options__1": {
             "label": "已堆疊"
           },
@@ -1992,7 +2088,7 @@
           }
         },
         "media_size": {
-          "label": "桌面版多媒體檔案寬度",
+          "label": "電腦版多媒體檔案寬度",
           "options__1": {
             "label": "小"
           },
@@ -2017,7 +2113,7 @@
           }
         },
         "media_position": {
-          "label": "桌面版多媒體檔案位置",
+          "label": "電腦版多媒體檔案位置",
           "info": "行動版會自動調整為最佳位置。",
           "options__1": {
             "label": "靠左"
@@ -2092,7 +2188,7 @@
           "info": "新增產品評等應用程式，即可顯示評等。[瞭解詳情](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/page-types#search-results-section-settings)"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "header_mobile": {
           "content": "行動版版面配置"
@@ -2112,7 +2208,8 @@
       "name": "多列",
       "settings": {
         "title": {
-          "label": "標題"
+          "label": "標題",
+          "default": "多欄"
         },
         "image_width": {
           "label": "圖片寬度",
@@ -2160,7 +2257,8 @@
           }
         },
         "button_label": {
-          "label": "按鈕標籤"
+          "label": "按鈕標籤",
+          "default": "按鈕標籤"
         },
         "button_link": {
           "label": "按鈕連結"
@@ -2169,7 +2267,7 @@
           "label": "啟用行動裝置的滑動功能"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "header_mobile": {
           "content": "行動版版面配置"
@@ -2191,10 +2289,12 @@
               "label": "圖片"
             },
             "title": {
-              "label": "標題"
+              "label": "標題",
+              "default": "欄"
             },
             "text": {
-              "label": "說明"
+              "label": "說明",
+              "default": "<p>文字搭配圖片，以便強調特定商品、商品系列或網誌文章。您可以加上各種有關可用性、樣式的詳細資料，甚至可以提供使用心得。<\/p>"
             },
             "link_label": {
               "label": "連結標籤"
@@ -2224,7 +2324,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "訂閱我們的電子郵件"
             }
           },
           "name": "標題"
@@ -2232,7 +2333,8 @@
         "paragraph": {
           "settings": {
             "paragraph": {
-              "label": "說明"
+              "label": "說明",
+              "default": "<p>搶先收到新商品系列和專屬優惠的消息。<\/p>"
             }
           },
           "name": "子標題"
@@ -2272,7 +2374,7 @@
           "options__3": {
             "label": "靠右"
           },
-          "label": "桌面版內容位置",
+          "label": "電腦版內容位置",
           "info": "行動版會自動調整為最佳位置。"
         },
         "content_alignment": {
@@ -2292,7 +2394,8 @@
         "heading": {
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "描述您的品牌"
             }
           },
           "name": "標題"
@@ -2300,7 +2403,8 @@
         "text": {
           "settings": {
             "text": {
-              "label": "說明"
+              "label": "說明",
+              "default": "<p>和顧客分享品牌資訊、描述商品、進行公告，或歡迎顧客光臨您的商店。<\/p>"
             }
           },
           "name": "文字"
@@ -2309,7 +2413,8 @@
           "settings": {
             "button_label_1": {
               "label": "第一個按鈕標籤",
-              "info": "將標籤留白以隱藏按鈕。"
+              "info": "將標籤留白以隱藏按鈕。",
+              "default": "按鈕標籤"
             },
             "button_link_1": {
               "label": "第一個按鈕連結"
@@ -2334,7 +2439,8 @@
           "name": "說明",
           "settings": {
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "新增標語"
             },
             "text_style": {
               "label": "文字樣式",
@@ -2379,7 +2485,8 @@
       "name": "影片",
       "settings": {
         "heading": {
-          "label": "標題"
+          "label": "標題",
+          "default": "影片"
         },
         "cover_image": {
           "label": "封面圖片"
@@ -2429,7 +2536,8 @@
           "name": "文字",
           "settings": {
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "文字區塊"
             },
             "text_style": {
               "label": "文字樣式",
@@ -2458,12 +2566,25 @@
           "name": "子類選擇器",
           "settings": {
             "picker_type": {
-              "label": "類型",
+              "label": "樣式",
               "options__1": {
                 "label": "下拉式選單"
               },
               "options__2": {
                 "label": "圓角"
+              }
+            },
+            "swatch_shape": {
+              "label": "色樣",
+              "info": "為商品選項啟用 [色樣](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/theme-structure\/theme-settings#options-with-swatches)。",
+              "options__1": {
+                "label": "圓形"
+              },
+              "options__2": {
+                "label": "正方形"
+              },
+              "options__3": {
+                "label": "無"
               }
             }
           }
@@ -2490,15 +2611,8 @@
               "content": "商店名稱和說明包含在預覽圖片中。[瞭解詳情](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             },
             "text": {
-              "label": "文字"
-            }
-          }
-        },
-        "custom_liquid": {
-          "name": "自訂 Liquid",
-          "settings": {
-            "custom_liquid": {
-              "label": "自訂 Liquid"
+              "label": "文字",
+              "default": "分享"
             }
           }
         },
@@ -2543,10 +2657,10 @@
           "label": "啟用影片循環播放功能"
         },
         "hide_variants": {
-          "label": "隱藏桌面版未選擇的子類多媒體檔案"
+          "label": "隱藏電腦版未選擇的子類多媒體檔案"
         },
         "media_position": {
-          "label": "桌面版多媒體檔案位置",
+          "label": "電腦版多媒體檔案位置",
           "info": "行動版會自動調整為最佳位置。",
           "options__1": {
             "label": "靠左"
@@ -2573,13 +2687,10 @@
           "label": "顯示背景圖片"
         },
         "show_text_box": {
-          "label": "在桌面顯示容器"
+          "label": "在電腦版顯示容器"
         },
         "image_overlay_opacity": {
           "label": "圖片疊加層透明度"
-        },
-        "color_scheme": {
-          "info": "顯示容器時可見。"
         },
         "show_text_below": {
           "label": "在行動版圖片下方顯示內容",
@@ -2629,7 +2740,7 @@
           "options__3": {
             "label": "上方靠右"
           },
-          "label": "桌面版內容位置"
+          "label": "電腦版內容位置"
         },
         "desktop_content_alignment": {
           "options__1": {
@@ -2641,7 +2752,7 @@
           "options__3": {
             "label": "靠右"
           },
-          "label": "桌面版內容對齊方式"
+          "label": "電腦版內容對齊方式"
         },
         "header": {
           "content": "行動版版面配置"
@@ -2657,6 +2768,9 @@
             "label": "靠右"
           },
           "label": "行動版內容對齊方式"
+        },
+        "color_scheme": {
+          "info": "顯示容器時可見。"
         }
       },
       "blocks": {
@@ -2664,7 +2778,8 @@
           "name": "標題",
           "settings": {
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "即將開張"
             }
           }
         },
@@ -2672,7 +2787,8 @@
           "name": "段落",
           "settings": {
             "paragraph": {
-              "label": "說明"
+              "label": "說明",
+              "default": "<p>搶先收到產品發佈消息。<\/p>"
             },
             "text_style": {
               "options__1": {
@@ -2747,7 +2863,8 @@
         "accessibility": {
           "content": "無障礙功能",
           "label": "素材輪播說明",
-          "info": "為使用螢幕助讀程式的顧客說明該素材輪播。"
+          "info": "為使用螢幕助讀程式的顧客說明該素材輪播。",
+          "default": "我們的品牌素材輪播"
         }
       },
       "blocks": {
@@ -2758,14 +2875,17 @@
               "label": "圖片"
             },
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "圖片投影片"
             },
             "subheading": {
-              "label": "子標題"
+              "label": "子標題",
+              "default": "用圖片講述您的品牌故事"
             },
             "button_label": {
               "label": "按鈕標籤",
-              "info": "將標籤留白以隱藏按鈕。"
+              "info": "將標籤留白以隱藏按鈕。",
+              "default": "按鈕標籤"
             },
             "link": {
               "label": "按鈕連結"
@@ -2774,7 +2894,7 @@
               "label": "使用外框按鈕樣式"
             },
             "box_align": {
-              "label": "桌面版內容位置",
+              "label": "電腦版內容位置",
               "options__1": {
                 "label": "上方靠左"
               },
@@ -2805,10 +2925,10 @@
               "info": "行動版會自動調整為最佳位置。"
             },
             "show_text_box": {
-              "label": "在桌面顯示容器"
+              "label": "在電腦版顯示容器"
             },
             "text_alignment": {
-              "label": "桌面版內容對齊方式",
+              "label": "電腦版內容對齊方式",
               "option_1": {
                 "label": "靠左"
               },
@@ -2821,9 +2941,6 @@
             },
             "image_overlay_opacity": {
               "label": "圖片疊加層透明度"
-            },
-            "color_scheme": {
-              "info": "顯示容器時可見。"
             },
             "text_alignment_mobile": {
               "label": "行動版內容對齊方式",
@@ -2851,7 +2968,8 @@
           "label": "說明"
         },
         "heading": {
-          "label": "標題"
+          "label": "標題",
+          "default": "可折疊的內容"
         },
         "heading_alignment": {
           "label": "標題對齊方式",
@@ -2903,12 +3021,12 @@
           }
         },
         "desktop_layout": {
-          "label": "桌面版版面配置",
+          "label": "電腦版版面配置",
           "options__1": {
             "label": "先顯示圖片"
           },
           "options__2": {
-            "label": "圖片秒數"
+            "label": "後顯示圖片"
           },
           "info": "行動版上一律先顯示圖片。"
         }
@@ -2919,7 +3037,8 @@
           "settings": {
             "heading": {
               "info": "包含說明內容的標題。",
-              "label": "標題"
+              "label": "標題",
+              "default": "可折疊的橫列"
             },
             "row_content": {
               "label": "橫列內容"
@@ -3079,7 +3198,10 @@
       "name": "地址"
     },
     "main-login": {
-      "name": "登入"
+      "name": "登入",
+      "shop_login_button": {
+        "enable": "啟用以 Shop 登入"
+      }
     },
     "main-order": {
       "name": "訂單"
@@ -3100,10 +3222,11 @@
           "label": "商品數量顯示上限"
         },
         "columns_desktop": {
-          "label": "桌面版的欄數"
+          "label": "電腦版的欄數"
         },
         "paragraph__1": {
-          "content": "動態推薦會使用訂單和商品資訊，以隨著時間改變與改進。[瞭解詳情](https:\/\/help.shopify.com\/themes\/development\/recommended-products)"
+          "content": "動態推薦會使用訂單和商品資訊，以隨著時間改變與改進。[瞭解詳情](https:\/\/help.shopify.com\/themes\/development\/recommended-products)",
+          "default": "您也可能喜歡"
         },
         "header__2": {
           "content": "商品卡片"
@@ -3175,20 +3298,8 @@
           "options__3": {
             "label": "大"
           },
-          "label": "桌面版圖片寬度",
+          "label": "電腦版圖片寬度",
           "info": "行動版的圖片會自動調整大小。"
-        },
-        "heading_size": {
-          "options__1": {
-            "label": "小"
-          },
-          "options__2": {
-            "label": "中"
-          },
-          "options__3": {
-            "label": "大"
-          },
-          "label": "標題大小"
         },
         "text_style": {
           "options__1": {
@@ -3218,7 +3329,7 @@
           "options__3": {
             "label": "靠右"
           },
-          "label": "桌面版內容對齊方式"
+          "label": "電腦版內容對齊方式"
         },
         "desktop_content_position": {
           "options__1": {
@@ -3230,7 +3341,7 @@
           "options__3": {
             "label": "靠下"
           },
-          "label": "桌面版內容位置",
+          "label": "電腦版內容位置",
           "info": "行動版會自動調整為最佳位置。"
         },
         "image_layout": {
@@ -3246,7 +3357,7 @@
           "options__4": {
             "label": "靠右對齊"
           },
-          "label": "桌面版圖片位置",
+          "label": "電腦版圖片位置",
           "info": "行動版的圖片會自動調整位置。"
         },
         "container_color_scheme": {
@@ -3276,16 +3387,20 @@
               "label": "圖片"
             },
             "caption": {
-              "label": "說明"
+              "label": "說明",
+              "default": "說明文字"
             },
             "heading": {
-              "label": "標題"
+              "label": "標題",
+              "default": "列"
             },
             "text": {
-              "label": "文字"
+              "label": "文字",
+              "default": "<p>文字搭配圖片，以便強調特定商品、商品系列或網誌文章。您可以加上各種有關可用性、樣式的詳細資料，甚至可以提供使用心得。<\/p>"
             },
             "button_label": {
-              "label": "按鈕標籤"
+              "label": "按鈕標籤",
+              "default": "按鈕標籤"
             },
             "button_link": {
               "label": "按鈕連結"
@@ -3295,6 +3410,20 @@
       },
       "presets": {
         "name": "多列"
+      }
+    },
+    "quick-order-list": {
+      "name": "快速訂單清單",
+      "settings": {
+        "show_image": {
+          "label": "顯示圖片"
+        },
+        "show_sku": {
+          "label": "顯示存貨單位 (SKU)"
+        }
+      },
+      "presets": {
+        "name": "快速訂單清單"
       }
     }
   }
