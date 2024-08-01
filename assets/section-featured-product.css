@@ -11,11 +11,12 @@
 
 .featured-product .product__media-item {
   padding-left: 0;
-  width: 100%;
 }
 
-.featured-product .product__media-item:not(:first-child) {
-  display: none;
+.featured-product .placeholder-svg {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .background-secondary .featured-product {
@@ -30,6 +31,7 @@
   display: inline-flex;
   float: right;
   align-items: center;
+  min-height: 4.4rem;
 }
 
 .share-button + .product__view-details::after {
@@ -45,6 +47,10 @@
 
   .background-secondary .featured-product {
     padding: 5rem;
+  }
+
+  .product--right .product__media-wrapper {
+    order: 2;
   }
 }
 
