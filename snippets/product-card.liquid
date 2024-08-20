@@ -75,7 +75,7 @@
 
     {% render 'price', product: product_card_product, price_class: '' %}
   </div>
-  {% assign price = product_card_product.price | default: '0' %}
+  {% comment %} {% assign price = product_card_product.price | default: '0' %} {% endcomment %}
 
-  <div class="penta-card-loan" data-price="{{ price }}">/ month</div>
+  {% comment %} <div class="penta-card-loan" data-price="{{ price }}">/ month</div> {% endcomment %}
 </a>
