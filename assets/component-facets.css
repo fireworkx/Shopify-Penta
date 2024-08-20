@@ -976,7 +976,8 @@ details.menu-opening .mobile-facets__close svg {
   margin-left: auto;
 }
 
-.mobile-facets__summary > div {
+.mobile-facets__summary > div,
+.facets__summary > div {
   display: flex;
   align-items: center;
 }
