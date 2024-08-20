@@ -304,6 +304,8 @@
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
+      this.nav = document.querySelector(".header__inline-menu");
+      this.dropdowns = this.nav.querySelectorAll("details");
     }
 
     connectedCallback() {
@@ -357,7 +359,7 @@
 
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
-        
+
         // always close dropdowns
         // if (this.preventHide) return;
 
@@ -388,6 +390,13 @@
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
       this.closeMenuDisclosure();
       this.closeSearchModal();
+
+       // hide canopies dropdown
+       for(let dropdown of this.dropdowns) {
+        if(dropdown.open) { 
+          dropdown.open = false;
+        }
+      }
     }
 
     reveal() {
