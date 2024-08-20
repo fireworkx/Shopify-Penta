@@ -66,7 +66,7 @@
     >
       {% render 'icon-penta-car' %} Book a Test Drive
     </button>
-    <button
+    {% comment %} <button
       id="calculator-modal-button"
       data-modal="calculator-modal"
       data-uid="{{ product.metafields.product.StocklistApiId }}"
@@ -75,6 +75,6 @@
       data-price="{{ product.price }}"
     >
       Calculator{% render 'icon-penta-calculator' %}
-    </button>
+    </button> {% endcomment %}
   </div>
 </div>

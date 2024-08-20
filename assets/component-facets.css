@@ -219,6 +219,11 @@
   transition: text-decoration var(--duration-short) ease;
 }
 
+.facets__summary:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
 .facets__summary:hover .facets__summary-label {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
