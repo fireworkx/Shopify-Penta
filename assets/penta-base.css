@@ -4,7 +4,6 @@
   letter-spacing: 0 !important;
 }
 
-
 a,
 .button,
 button {
@@ -526,6 +525,16 @@ button[data-modal="gallery-modal"]:hover svg {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* hide bottom footer content */
+.footer .footer__content-bottom {
+  display: none;
+}
+
+/* email input background color change */
+.footer .newsletter-input {
+  background-color: #252525;
 }
 
 /* Close buttons */
