@@ -328,7 +328,7 @@
     <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
     </script>
-    
+
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -402,5 +402,34 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {%- liquid
+      render 'penta-form-contact-us'
+      render 'penta-form-enquiry'
+      render 'penta-calculator'
+      render 'penta-form-deal-enquiry'
+      render 'penta-form-deal-test-drive'
+      render 'penta-form-test-drive'
+      render 'penta-form-book-a-service'
+      render 'penta-modal-overlay'
+      render 'penta-form-feedback'
+      if template.name == 'collection' or template.name == 'product'
+        render 'penta-gallery-modal'
+      endif
+    -%}
+
+    <script>
+      var penta = {
+        getDealerships: async function () {
+          const response = await fetch("{{ 'dealerships.json' | asset_url }}");
+          return response.json();
+        },
+        gallery: {
+          index: 0,
+        },
+      };
+    </script>
+
+    <script src="{{ 'penta-global.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
