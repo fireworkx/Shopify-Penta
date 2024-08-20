@@ -65,23 +65,23 @@
 
 {% schema %}
 {
-  "name": "t:sections.product-recommendations.name",
+  "name": "Product recommendations",
   "tag": "section",
   "class": "spaced-section",
   "settings": [
     {
       "type": "paragraph",
-      "content": "t:sections.product-recommendations.settings.paragraph__1.content"
+      "content": "Dynamic recommendations use order and product information to change and improve over time. Learn more"
     },
     {
       "type": "text",
       "id": "heading",
       "default": "You may also like",
-      "label": "t:sections.product-recommendations.settings.heading.label"
+      "label": "Heading"
     },
     {
       "type": "header",
-      "content": "t:sections.product-recommendations.settings.header__2.content"
+      "content": "Product card"
     },
     {
       "type": "select",
@@ -89,50 +89,50 @@
       "options": [
         {
           "value": "adapt",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__1.label"
+          "label": "Adapt to image"
         },
         {
           "value": "portrait",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__2.label"
+          "label": "Portrait"
         },
         {
           "value": "square",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__3.label"
+          "label": "Square"
         }
       ],
       "default": "adapt",
-      "label": "t:sections.product-recommendations.settings.image_ratio.label"
+      "label": "Image ratio"
     },
     {
       "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
-      "label": "t:sections.product-recommendations.settings.show_secondary_image.label"
+      "label": "Show second image on hover"
     },
     {
       "type": "checkbox",
       "id": "add_image_padding",
       "default": false,
-      "label": "t:sections.product-recommendations.settings.add_image_padding.label"
+      "label": "Add image padding"
     },
     {
       "type": "checkbox",
       "id": "show_image_outline",
       "default": true,
-      "label": "t:sections.product-recommendations.settings.show_image_outline.label"
+      "label": "Show image border"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
       "default": false,
-      "label": "t:sections.product-recommendations.settings.show_vendor.label"
+      "label": "Show vendor"
     },
     {
       "type": "checkbox",
       "id": "show_rating",
       "default": false,
-      "label": "t:sections.product-recommendations.settings.show_rating.label",
-      "info": "t:sections.product-recommendations.settings.show_rating.info"
+      "label": "Show product rating",
+      "info": "To display a rating, add a product rating app. Learn more"
     }
   ]
 }
