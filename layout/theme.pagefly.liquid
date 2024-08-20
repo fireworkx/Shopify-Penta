@@ -5,6 +5,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-K3QDV8X');
+    </script>
+  <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -300,7 +309,20 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  {% include 'pagefly-app-header' %}</head>
+
+    {% comment %} Penta assets {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    {% comment %} Swiper {% endcomment %}
+
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer ></script>
+    <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
+ 
+    {% comment %} Fireworkx {% endcomment %}
+    <link rel="stylesheet" href="{{ 'penta-base.css' | asset_url }}">  
+
+    {% include 'pagefly-app-header' %}</head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"><div class="pagefly-container">
               {{ content_for_layout }}

@@ -1,0 +1,29 @@
+<div class="penta-form-context-block">
+  {% if template.name == 'collection' %}
+    {%- if collection.featured_image != blank -%}
+      <img src="{{ collection.featured_image | image_url: width: 250 }}"
+        loading="lazy"
+        width=""
+        height=""
+      >
+    {% endif %}
+    <div class="penta-form-context-block-title">
+      <h3>{{ collection.title }}</h3>
+    </div>
+  {% endif %}
+  {% if template.name == 'product' %}
+      {%- if product.featured_image != blank -%}
+        <img src="{{ product.featured_image | image_url: width: 250 }}"
+          loading="lazy"
+          width=""
+          height=""
+        >
+      {% endif %}
+      <div class="penta-form-context-block-title">
+        {% if product.metafields.product.Specification != blank %}
+          <h5>{{ product.metafields.product.Specification }}</h5>
+        {% endif %}
+        <h3>{{ product.title }}</h3>
+      </div>
+  {% endif %}
+</div>
