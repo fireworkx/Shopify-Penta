@@ -1116,10 +1116,19 @@ input.mobile-facets__checkbox {
 }
 
 .product-count .loading__spinner,
+.product-count-vertical .loading__spinner {
+  position: absolute;
+  padding-top: 0.6rem;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.8rem;
+}
+
+.product-count .loading-overlay__spinner,
 .product-count-vertical .loading-overlay__spinner {
   display: none;
   position: absolute;
-  padding-top: 0.6rem;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
