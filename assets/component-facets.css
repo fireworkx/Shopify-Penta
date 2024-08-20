@@ -1116,7 +1116,7 @@ input.mobile-facets__checkbox {
 }
 
 .product-count .loading__spinner,
-.product-count-vertical .loading__spinner {
+.product-count-vertical .loading-overlay__spinner {
   display: none;
   position: absolute;
   padding-top: 0.6rem;
