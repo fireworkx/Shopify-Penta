@@ -10,6 +10,7 @@
 
 <div class="page-width">
   <product-recommendations class="product-recommendations page-width penta-recommended-grid" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
+    <p>{{ recommendations.products_count }}</p>
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="product-recommendations__heading">{{ section.settings.heading | escape }}</h2>
       <ul class="product-grid" role="list">
