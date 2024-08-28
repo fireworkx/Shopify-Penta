@@ -258,6 +258,10 @@
 }
 
 /* Specification */
+.product-specification-container {
+  display: flex;
+  flex-direction: column;
+}
 
 .penta-card-specification {
   grid-area: specification;
@@ -300,7 +304,8 @@
 
 .penta-card-stats {
   grid-area: stats;
-  margin-top: 20px;
+  margin-top: auto;
+  /* margin-top: 20px; */
 }
 
 .penta-card-stats ul {
@@ -331,13 +336,13 @@
   gap: 8px;
 }
 
-/* .penta-card-loan {
-	grid-area: loan;	
-	font-size: 12px;
-	display: flex;
-	justify-content: end;
-	gap: 8px;
-} */
+.penta-card-loan {
+  grid-area: loan;
+  font-size: 12px;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
 
 .penta-card-location h5 {
   font-size: 12px;

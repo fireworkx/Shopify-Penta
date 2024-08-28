@@ -31,55 +31,56 @@
           width="{{ product_card_product.featured_media.width }}"
           height="{{ product_card_product.featured_media.height }}"
         >
-        {%- endif -%}
-      </div>
+      {%- endif -%}
     </div>
-    <div>
-  <div class="penta-card-specification">
-    <h5>{{ metafields.Specification }}</h5>
   </div>
-  <div class="penta-card-title">
-    <h3>{{ product_card_product.title | escape }}</h3>
-  </div>
-  <div class="penta-card-mileage">
-    <h5>
-      {% render 'icon-penta-odometer' -%}
-      {{- metafields.Odometer }} km
-    </h5>
-  </div>
-  <div class="penta-card-stats">
-    <ul>
-      {% if metafields.FuelType != blank %}
-        <li>
-          {% render 'icon-penta-fuel-type' -%}
-          {{- metafields.FuelType }}
-        </li>
-      {% endif %}
-      {% comment %}
-        {% if metafields.Doors != blank %}
-          <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
-        {% endif %}
-      {% endcomment %}
-      {% if metafields.Transmission != blank %}
-        <li>
-          {% render 'icon-penta-transmission' -%}
-          {{- metafields.Transmission }}
-        </li>
-      {% endif %}
-    </ul>
-  </div>
-  <div class="penta-card-location">
-    {% if metafields.Location != blank %}
+
+  <div class="product-specification-container">
+    <div class="penta-card-specification">
+      <h5>{{ metafields.Specification }}</h5>
+    </div>
+    <div class="penta-card-title">
+      <h3>{{ product_card_product.title | escape }}</h3>
+    </div>
+    <div class="penta-card-mileage">
       <h5>
-        {% render 'icon-penta-map-pin' -%}
-        {{- metafields.Location }}
+        {% render 'icon-penta-odometer' -%}
+        {{- metafields.Odometer }} km
       </h5>
-    {% endif %}
+    </div>
+    <div class="penta-card-stats">
+      <ul>
+        {% if metafields.FuelType != blank %}
+          <li>
+            {% render 'icon-penta-fuel-type' -%}
+            {{- metafields.FuelType }}
+          </li>
+        {% endif %}
+        {% comment %}
+          {% if metafields.Doors != blank %}
+            <li>{% render 'icon-penta-door' %}{{ metafields.Doors }} Doors</li>
+          {% endif %}
+        {% endcomment %}
+        {% if metafields.Transmission != blank %}
+          <li>
+            {% render 'icon-penta-transmission' -%}
+            {{- metafields.Transmission }}
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="penta-card-location">
+      {% if metafields.Location != blank %}
+        <h5>
+          {% render 'icon-penta-map-pin' -%}
+          {{- metafields.Location }}
+        </h5>
+      {% endif %}
 
-    {% render 'price', product: product_card_product, price_class: '' %}
+      {% render 'price', product: product_card_product, price_class: '' %}
+    </div>
+    {% comment %} {% assign price = product_card_product.price | default: '0' %} {% endcomment %}
+
+    {% comment %} <div class="penta-card-loan" data-price="{{ price }}">/ month</div> {% endcomment %}
   </div>
-  {% comment %} {% assign price = product_card_product.price | default: '0' %} {% endcomment %}
-
-  {% comment %} <div class="penta-card-loan" data-price="{{ price }}">/ month</div> {% endcomment %}
-</div>
 </a>
