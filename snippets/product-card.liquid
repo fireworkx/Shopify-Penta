@@ -20,18 +20,21 @@
 
 <a class="penta-card {% if type == 'card' %}card{% endif %}" href="{{ product_card_product.url | default: '#' }}">
   <span class="penta-card-arrow">{% render 'icon-penta-arrow-right' %}</span>
-  <div class="penta-card-image">
-    {%- if product_card_product.featured_media -%}
-      <img
-        src="{{ product_card_product.featured_media | image_url: width: 533 }}"
-        alt="{{ product_card_product.featured_media.alt | escape }}"
-        loading="lazy"
-        class="motion-reduce"
-        width="{{ product_card_product.featured_media.width }}"
-        height="{{ product_card_product.featured_media.height }}"
-      >
-    {%- endif -%}
-  </div>
+  <div>
+    <div class="penta-card-image">
+      {%- if product_card_product.featured_media -%}
+        <img
+          src="{{ product_card_product.featured_media | image_url: width: 533 }}"
+          alt="{{ product_card_product.featured_media.alt | escape }}"
+          loading="lazy"
+          class="motion-reduce"
+          width="{{ product_card_product.featured_media.width }}"
+          height="{{ product_card_product.featured_media.height }}"
+        >
+        {%- endif -%}
+      </div>
+    </div>
+    <div>
   <div class="penta-card-specification">
     <h5>{{ metafields.Specification }}</h5>
   </div>
@@ -78,4 +81,5 @@
   {% comment %} {% assign price = product_card_product.price | default: '0' %} {% endcomment %}
 
   {% comment %} <div class="penta-card-loan" data-price="{{ price }}">/ month</div> {% endcomment %}
+</div>
 </a>
