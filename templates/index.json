@@ -11,8 +11,7 @@
   "sections": {
     "pagefly-home": {
       "type": "pagefly-home",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
