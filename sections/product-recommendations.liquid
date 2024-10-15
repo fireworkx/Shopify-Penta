@@ -8,7 +8,7 @@
 <noscript>{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
 
-<div class="">
+<div class="page-width" onload="loadImage()">
   <product-recommendations class="product-recommendations page-width penta-recommended-grid" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="product-recommendations__heading">{{ section.settings.heading | escape }}</h2>
@@ -65,23 +65,23 @@
 
 {% schema %}
 {
-  "name": "Product recommendations",
+  "name": "t:sections.product-recommendations.name",
   "tag": "section",
   "class": "spaced-section",
   "settings": [
     {
       "type": "paragraph",
-      "content": "Dynamic recommendations use order and product information to change and improve over time. Learn more"
+      "content": "t:sections.product-recommendations.settings.paragraph__1.content"
     },
     {
       "type": "text",
       "id": "heading",
       "default": "You may also like",
-      "label": "Heading"
+      "label": "t:sections.product-recommendations.settings.heading.label"
     },
     {
       "type": "header",
-      "content": "Product card"
+      "content": "t:sections.product-recommendations.settings.header__2.content"
     },
     {
       "type": "select",
@@ -89,50 +89,50 @@
       "options": [
         {
           "value": "adapt",
-          "label": "Adapt to image"
+          "label": "t:sections.product-recommendations.settings.image_ratio.options__1.label"
         },
         {
           "value": "portrait",
-          "label": "Portrait"
+          "label": "t:sections.product-recommendations.settings.image_ratio.options__2.label"
         },
         {
           "value": "square",
-          "label": "Square"
+          "label": "t:sections.product-recommendations.settings.image_ratio.options__3.label"
         }
       ],
       "default": "adapt",
-      "label": "Image ratio"
+      "label": "t:sections.product-recommendations.settings.image_ratio.label"
     },
     {
       "type": "checkbox",
       "id": "show_secondary_image",
       "default": false,
-      "label": "Show second image on hover"
+      "label": "t:sections.product-recommendations.settings.show_secondary_image.label"
     },
     {
       "type": "checkbox",
       "id": "add_image_padding",
       "default": false,
-      "label": "Add image padding"
+      "label": "t:sections.product-recommendations.settings.add_image_padding.label"
     },
     {
       "type": "checkbox",
       "id": "show_image_outline",
       "default": true,
-      "label": "Show image border"
+      "label": "t:sections.product-recommendations.settings.show_image_outline.label"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
       "default": false,
-      "label": "Show vendor"
+      "label": "t:sections.product-recommendations.settings.show_vendor.label"
     },
     {
       "type": "checkbox",
       "id": "show_rating",
       "default": false,
-      "label": "Show product rating",
-      "info": "To display a rating, add a product rating app. Learn more"
+      "label": "t:sections.product-recommendations.settings.show_rating.label",
+      "info": "t:sections.product-recommendations.settings.show_rating.info"
     }
   ]
 }
