@@ -9,12 +9,13 @@
 */
 {
   "sections": {
-    "pagefly-home": {
-      "type": "pagefly-home",
-      "settings": {}
+    "pf-4392c321": {
+      "type": "pf-4392c321",
+      "settings": {
+      }
     }
   },
   "order": [
-    "pagefly-home"
+    "pf-4392c321"
   ]
 }

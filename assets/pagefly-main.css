@@ -234,44 +234,73 @@ main .accent-background+.shopify-section {
 .__pf .pf-c-lt {
     justify-content: flex-start;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .__pf .pf-c-ct {
     justify-content: center;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .__pf .pf-c-rt {
     justify-content: flex-end;
     align-items: flex-start;
+    align-content: flex-start;
 }
 
 .__pf .pf-c-lm {
     justify-content: flex-start;
     align-items: center;
+    align-content: center;
 }
 
 .__pf .pf-c-cm {
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
 
 .__pf .pf-c-rm {
     justify-content: flex-end;
     align-items: center;
+    align-content: center;
 }
 
 .__pf .pf-c-lb {
     justify-content: flex-start;
     align-items: flex-end;
+    align-content: flex-end;
 }
 
 .__pf .pf-c-cb {
     justify-content: center;
     align-items: flex-end;
+    align-content: flex-end;
 }
 
 .__pf .pf-c-rb {
     justify-content: flex-end;
     align-items: flex-end;
+    align-content: flex-end;
+}
+
+.pf-no-border {
+    border: 0;
+}
+
+.pf-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+}
+
+.pf-visibility-hidden {
+    visibility: hidden;
 }

@@ -1008,6 +1008,7 @@ details.menu-opening .mobile-facets__close svg {
 .js details[open].menu-opening > .mobile-facets__submenu {
   transform: translateX(0);
   visibility: visible;
+  background-color: rgb(255,255,255);
 }
 
 .js .menu-drawer__submenu .mobile-facets__submenu {

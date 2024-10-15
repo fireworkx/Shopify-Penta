@@ -9,13 +9,12 @@
 */
 {
   "sections": {
-    "pf-6449b553": {
-      "type": "pf-6449b553",
-      "settings": {
-      }
+    "pf-bb33228b": {
+      "type": "pf-bb33228b",
+      "settings": {}
     }
   },
   "order": [
-    "pf-6449b553"
+    "pf-bb33228b"
   ]
 }
