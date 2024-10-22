@@ -413,8 +413,8 @@ document.addEventListener("DOMContentLoaded", () => {
         initialInterest,
         initialTenPerCent
       );
-      const formattedPrice = calc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-      console.log(typeof calc)
+      const formattedPrice = Number(calc).toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+      console.log(typeof formattedPrice)
       pricePerMonth.innerHTML = `R ${formattedPrice}/ months`;
     }
   });
