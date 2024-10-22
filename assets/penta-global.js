@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parsedDefaultCalc = Number(defaultCalcValue);
         const formattedDefaultPrice = parsedDefaultCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
         output.innerHTML = formattedDefaultPrice
-          ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice}</span>`
+          ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice.replaceAll(",", " ")}</span>`
           : null;
       
       output.innerHTML = `Monthly Payment: <span class="monthly-price">R ${calculateMonthlyPayment(
@@ -603,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parsedCalc = Number(calculation);
         const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
         output.innerHTML = formattedPrice
-          ? `Monthly Payment: <span class="monthly-price">R ${formattedPrice}</span>`
+          ? `Monthly Payment: <span class="monthly-price">R ${formattedPrice.replaceAll(",", " ")}</span>`
           : null;
       });
 
