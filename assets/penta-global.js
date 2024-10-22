@@ -524,14 +524,19 @@ document.addEventListener("DOMContentLoaded", () => {
       amountInput.value = initialAmount;
       downInput.value = initialTenPerCent;
 
-      
-      output.innerHTML = `Monthly Payment: <span class="monthly-price">R ${calculateMonthlyPayment(
+      const defaultCalcValue =calculateMonthlyPayment(
         initialAmount,
         initialLoanTermsPerMonths,
         initialInterest,
         initialTenPerCent
-      )}<span>`;
+      )
 
+        const parsedDefaultCalc = Number(defaultCalcValue);
+        const formattedDefaultPrice = parsedDefaultCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+        output.innerHTML = formattedDefaultPrice
+          ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice.replaceAll(",", " ")}</span>`
+          : null;
+      
       downInput.addEventListener("change", function () {
         const percentValue = (
           (Number(downInput.value) / Number(amountInput.value)) *
@@ -591,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parsedCalc = Number(calculation);
         const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
         output.innerHTML = formattedPrice
-          ? `Monthly Payment: <span class="monthly-price">${formattedPrice}</span>`
+          ? `Monthly Payment: <span class="monthly-price"> ${formattedPrice.replaceAll(",", " ")}</span>`
           : null;
       });
 
