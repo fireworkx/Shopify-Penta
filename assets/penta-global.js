@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const parsedCalc = Number(calc);
       const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-      pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")}/ months`;
+      pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")} / month`;
     }
   });
 
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
           const parsedCalc = Number(calc);
           const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-          pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")}/ months`;
+          pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")} / month`;
         }
       });
     });
