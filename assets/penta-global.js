@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const test = Number(calc);
       console.log(typeof test)
       const formattedPrice = test.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-      pricePerMonth.innerHTML = `R ${formattedPrice}/ months`;
+      pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")}/ months`;
     }
   });
 
