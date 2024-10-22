@@ -537,13 +537,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice.replaceAll(",", " ")}</span>`
           : null;
       
-      output.innerHTML = `Monthly Payment: <span class="monthly-price"> ${calculateMonthlyPayment(
-        initialAmount,
-        initialLoanTermsPerMonths,
-        initialInterest,
-        initialTenPerCent
-      )}<span>`;
-
       downInput.addEventListener("change", function () {
         const percentValue = (
           (Number(downInput.value) / Number(amountInput.value)) *
