@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (1 - Math.pow(1 + monthlyInterestRate, -loanTermMonths));
 
     // Return the result
-    return monthlyPayment.toFixed(2);
+    return Number(monthlyPayment.toFixed(2));
   }
 
   // load prices on recomended products card on product detail page
