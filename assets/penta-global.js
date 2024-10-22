@@ -414,6 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initialTenPerCent
       );
       const formattedPrice = calc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+      console.log(formattedPrice)
       pricePerMonth.innerHTML = `R ${formattedPrice}/ months`;
     }
   });
@@ -491,6 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
             initialTenPerCent
           );
           const formattedPrice = calc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+          console.log(formattedPrice)
           pricePerMonth.innerHTML = `R ${formattedPrice}/ months`;
         }
       });
