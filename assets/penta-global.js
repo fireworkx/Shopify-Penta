@@ -413,9 +413,8 @@ document.addEventListener("DOMContentLoaded", () => {
         initialInterest,
         initialTenPerCent
       );
-      const test = Number(calc);
-      console.log(typeof test)
-      const formattedPrice = test.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+      const parsedCalc = Number(calc);
+      const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
       pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")}/ months`;
     }
   });
@@ -492,9 +491,9 @@ document.addEventListener("DOMContentLoaded", () => {
             initialInterest,
             initialTenPerCent
           );
-          const formattedPrice = calc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-          console.log(typeof calc)
-          pricePerMonth.innerHTML = `R ${formattedPrice}/ months`;
+          const parsedCalc = Number(calc);
+          const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
+          pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")}/ months`;
         }
       });
     });
