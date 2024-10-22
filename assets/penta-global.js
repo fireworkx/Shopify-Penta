@@ -534,7 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const parsedDefaultCalc = Number(defaultCalcValue);
         const formattedDefaultPrice = parsedDefaultCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
         output.innerHTML = formattedDefaultPrice
-          ? `Monthly Payment: <span class="monthly-price">R ${formattedDefaultPrice}</span>`
+          ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice}</span>`
           : null;
       
       output.innerHTML = `Monthly Payment: <span class="monthly-price">R ${calculateMonthlyPayment(
