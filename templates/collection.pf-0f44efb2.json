@@ -42,5 +42,6 @@
     "banner",
     "product-grid",
     "pf-0f44efb2"
-  ]
+  ],
+  "layout": "theme.pagefly"
 }
