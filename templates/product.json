@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -21,8 +21,7 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "subtitle": {
           "type": "text",
@@ -33,8 +32,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -44,8 +42,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -55,14 +52,17 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
           }
+        },
+        "approom_visitor_counter_pro_approom_visitor_counter_gPtE9P": {
+          "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+          "settings": {}
         }
       },
       "block_order": [
@@ -74,7 +74,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "approom_visitor_counter_pro_approom_visitor_counter_gPtE9P"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -86,9 +87,8 @@
       "type": "apps",
       "blocks": {
         "approom_visitor_counter_pro_approom_visitor_counter_PiUiih": {
-          "type": "shopify:\/\/apps\/approom-visitor-counter-pro\/blocks\/approom-visitor-counter\/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
-          "settings": {
-          }
+          "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+          "settings": {}
         }
       },
       "block_order": [
