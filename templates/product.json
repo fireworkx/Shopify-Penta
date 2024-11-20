@@ -104,11 +104,16 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "penta_main_product_metafield_table_QPWiNy": {
+      "type": "penta-main-product-metafield-table",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "1711897140626291ee",
+    "penta_main_product_metafield_table_QPWiNy",
     "product-recommendations"
   ]
 }

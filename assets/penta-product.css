@@ -1,3 +1,4 @@
+
 @media screen and (max-width: 750px) {
 	#penta-product-page {
 		padding: 0;
@@ -228,7 +229,7 @@
 }
 
 .penta-product-metafields {
-	margin-top: 30px;
+    /* margin-top: 30px; */
 	display: grid;
 	width: 100%;
 	gap: 30px;
@@ -236,19 +237,27 @@
 
 @media screen and (min-width: 750px) {
 	.penta-product-metafields {
-		margin-top: 60px;
+		/* margin-top: 60px; */
 		grid-template-columns: 2fr 1fr;
 		gap: 40px;
 	}
 }
 @media screen and (min-width: 990px) {
 	.penta-product-metafields {
-		margin-top: 80px;
+		/* margin-top: 80px;*/
 	}
 }
+
+.penta-product-metafields h2 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
 @media screen and (min-width: 990px) {
 	.penta-product-metafields h2 {
-		margin-bottom: 40px;
+      margin-top: 0px;
+      margin-bottom: 15px;
+		/* margin-bottom: 40px;*/
 	}
 }
 /* Recommended */

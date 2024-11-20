@@ -1,17 +1,17 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/Penta-logo_459d3bbb-88a2-4039-a5d9-a73238fe9c1b.png",
+    "logo": "shopify://shop_images/Penta-logo_459d3bbb-88a2-4039-a5d9-a73238fe9c1b.png",
     "logo_width": 160,
-    "favicon": "shopify:\/\/shop_images\/Penta-logo-favicon-tx.png",
+    "favicon": "shopify://shop_images/Penta-logo-favicon-tx.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -105,11 +105,11 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
-    "social_facebook_link": "https:\/\/www.facebook.com\/PentaMotorGroup\/",
-    "social_instagram_link": "https:\/\/www.instagram.com\/pentamotorgroup\/",
-    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCYZFx7oZT0hy52bjLWcsoow",
+    "social_facebook_link": "https://www.facebook.com/PentaMotorGroup/",
+    "social_instagram_link": "https://www.instagram.com/pentamotorgroup/",
+    "social_youtube_link": "https://www.youtube.com/channel/UCYZFx7oZT0hy52bjLWcsoow",
     "social_tiktok_link": "",
-    "social_twitter_link": "https:\/\/twitter.com\/pentamotorgroup",
+    "social_twitter_link": "https://twitter.com/pentamotorgroup",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
@@ -136,15 +136,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "pagefly-page-builder": {
-        "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
@@ -391,10 +388,9 @@
       },
       "blocks": {
         "pagefly-page-builder": {
-          "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
+          "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
           "disabled": false,
-          "settings": {
-          }
+          "settings": {}
         }
       }
     }
