@@ -31,24 +31,26 @@
     <div class="penta-product-information">
       {% render 'penta-product-info' %}
     </div>
-
-    <div class="penta-product-metafields">
-      <div>
-        {% render 'penta-metafield-table' %}
+    
+    {% comment %}
+      <div class="penta-product-metafields">
+        <div>
+          {% render 'penta-metafield-table' %}
+        </div>
+        <div class="penta-product-car-location">
+          <h2>Car Location</h2>
+          {% if product.metafields.product.Location != blank %}
+            <h3>{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h3>
+          {% endif %}
+          {% if product.metafields.product.DealerContactNumber != blank %}
+            <h3>
+              {% render 'icon-penta-phone' %}
+              <a class="penta-link" href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a>
+            </h3>
+          {% endif %}
+        </div>
       </div>
-      <div class="penta-product-car-location">
-        <h2>Car Location</h2>
-        {% if product.metafields.product.Location != blank %}
-          <h3>{% render 'icon-penta-map-pin' %}{{ product.metafields.product.Location }}</h3>
-        {% endif %}
-        {% if product.metafields.product.DealerContactNumber != blank %}
-          <h3>
-            {% render 'icon-penta-phone' %}
-            <a class="penta-link" href="tel:{{ product.metafields.product.DealerContactNumber | replace: ' ', '' }}">{{ product.metafields.product.DealerContactNumber }}</a>
-          </h3>
-        {% endif %}
-      </div>
-    </div>
+    {% endcomment %}}
   </div>
 
 
