@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     forms: {
       api: "https://pinewood-api.live.fireworkx.com/api/v1/leadsubmit",
+      apiV2: "https://motify-api.dev.fireworkx.net/V0.1/LeadSubmit",
       form: {},
       buildSelect(elem, select, brand, dealership, uid) {
         // Builds select option list
@@ -234,6 +235,35 @@ document.addEventListener("DOMContentLoaded", () => {
       formData.set("StockListApiId", uid);
       formData.delete("Branch");
       formDataJson = JSON.stringify(Object.fromEntries(formData));
+
+      fetch(penta.forms.apiV2, {
+        method: "POST",
+        body: JSON.stringify({
+          DealershipIdGuid: "85FA8095-89E4-EF11-A6FD-E0C2643B3DEA",
+          Firstname: form.querySelector('input[name="FirstName"]').value,
+          Surname: form.querySelector('input[name="Surname"]').value,
+          EmailAddress: form.querySelector('input[name="EmailAddress"]').value,
+          TelephoneNumber: form.querySelector('input[name="TelephoneNumber"]')
+            .value,
+          City: "",
+          Province: "",
+          Message: formData.get("Message"),
+          Type: form.id,
+          Url: window.location.href,
+          Make: "",
+          Model: "",
+          Specification: "",
+          VehicleId: document.querySelector("input[name=Handle]")
+            ? document.querySelector("input[name=Handle]")
+            : "",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error));
+
       fetch(penta.forms.api, {
         method: "POST",
         body: formDataJson,
@@ -398,7 +428,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //   Load price per month on product card on collection page
+  //   Load price per month on product card
+
   let prices = document.querySelectorAll(".penta-card-loan");
 
   prices.forEach((pricePerMonth) => {
@@ -413,9 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initialInterest,
         initialTenPerCent
       );
-      const parsedCalc = Number(calc);
-      const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-      pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")} / month`;
+      pricePerMonth.innerHTML = `R ${calc}/ month`;
     }
   });
 
@@ -446,60 +475,9 @@ document.addEventListener("DOMContentLoaded", () => {
       (1 - Math.pow(1 + monthlyInterestRate, -loanTermMonths));
 
     // Return the result
-    return Number(monthlyPayment.toFixed(2));
+    return monthlyPayment.toFixed(2);
   }
 
-  // load prices on recomended products card on product detail page
-  const productRecommendations = document.querySelector(
-    ".product-recommendations"
-  );
-
-  function waitForRecommendedProducts(className) {
-    return new Promise((resolve) => {
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.type === "childList") {
-            const addedNodes = Array.from(mutation.addedNodes);
-            addedNodes.forEach((node) => {
-              if (node.classList && node.classList.contains(className)) {
-                observer.disconnect();
-                resolve(node);
-              }
-            });
-          }
-        });
-      });
-
-      observer.observe(document.body, { childList: true, subtree: true });
-    });
-  }
-
-  if (productRecommendations) {
-    waitForRecommendedProducts("product-grid").then((div) => {
-      //   Load price per month on product card on collection page
-      let prices = document.querySelectorAll(".penta-card-loan");
-
-      prices.forEach((pricePerMonth) => {
-        if (pricePerMonth) {
-          const initialAmount = Number(pricePerMonth.dataset.price) / 100;
-          const initialTenPerCent = initialAmount * 0.1;
-          const initialLoanTermsPerMonths = 72;
-          const initialInterest = 13;
-          const calc = calculateMonthlyPayment(
-            initialAmount,
-            initialLoanTermsPerMonths,
-            initialInterest,
-            initialTenPerCent
-          );
-          const parsedCalc = Number(calc);
-          const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-          pricePerMonth.innerHTML = `${formattedPrice.replaceAll(",", " ")} / month`;
-        }
-      });
-    });
-  }
-
-  // open calculator modal
   function calculatorModalOpen() {
     const form = document.getElementById("calculator-form");
     if (form) {
@@ -524,19 +502,13 @@ document.addEventListener("DOMContentLoaded", () => {
       amountInput.value = initialAmount;
       downInput.value = initialTenPerCent;
 
-      const defaultCalcValue =calculateMonthlyPayment(
+      output.innerHTML = `Monthly Payment: R ${calculateMonthlyPayment(
         initialAmount,
         initialLoanTermsPerMonths,
         initialInterest,
         initialTenPerCent
-      )
+      )}`;
 
-        const parsedDefaultCalc = Number(defaultCalcValue);
-        const formattedDefaultPrice = parsedDefaultCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        output.innerHTML = formattedDefaultPrice
-          ? `Monthly Payment: <span class="monthly-price"> ${formattedDefaultPrice.replaceAll(",", " ")}</span>`
-          : null;
-      
       downInput.addEventListener("change", function () {
         const percentValue = (
           (Number(downInput.value) / Number(amountInput.value)) *
@@ -592,11 +564,8 @@ document.addEventListener("DOMContentLoaded", () => {
           interestInput.value,
           downInput.value
         );
-
-        const parsedCalc = Number(calculation);
-        const formattedPrice = parsedCalc.toLocaleString('en-ZA', { style: 'currency', currency: 'ZAR' });
-        output.innerHTML = formattedPrice
-          ? `Monthly Payment: <span class="monthly-price"> ${formattedPrice.replaceAll(",", " ")}</span>`
+        output.innerHTML = calculation
+          ? `Monthly Payment: R ${calculation}`
           : null;
       });
 
