@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     forms: {
       api: "https://pinewood-api.live.fireworkx.com/api/v1/leadsubmit",
-      apiV2: "https://motify-api.dev.fireworkx.net/V0.1/LeadSubmit",
+      apiV2: "https://motify-api-v2.live.fireworkx.net/v2.0/LeadSubmit",
       form: {},
       buildSelect(elem, select, brand, dealership, uid) {
         // Builds select option list
