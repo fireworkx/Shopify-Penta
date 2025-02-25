@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000);
       },
       init() {
+        console.log("test");
         const forms = document.querySelectorAll(".penta-form");
         forms.forEach((elem) => {
           let form = new Form(elem);
