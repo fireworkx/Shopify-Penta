@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(penta.forms.apiV2, {
         method: "POST",
         body: JSON.stringify({
-          DealershipIdGuid: "85FA8095-89E4-EF11-A6FD-E0C2643B3DEA",
+          DealershipIdGuid: uid,
           Firstname: form.querySelector('input[name="FirstName"]').value,
           Surname: form.querySelector('input[name="Surname"]').value,
           EmailAddress: form.querySelector('input[name="EmailAddress"]').value,
