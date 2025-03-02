@@ -262,17 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Content-Type": "application/json",
         },
       })
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
-
-      fetch(penta.forms.api, {
-        method: "POST",
-        body: formDataJson,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => {
+         .then((response) => {
           if (response.status !== 200) {
             penta.forms.showFeedback("error");
           }
@@ -296,6 +286,17 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(() => {
           penta.forms.showFeedback("error");
         });
+       
+
+      fetch(penta.forms.api, {
+        method: "POST",
+        body: formDataJson,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+         .then((response) => console.log(response))
+        .catch((error) => console.log(error));
     };
     this.resetForm = function () {
       form.reset();
