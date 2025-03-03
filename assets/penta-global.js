@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
           Make: "",
           Model: "",
           Specification: "",
-          VehicleId: document.querySelector("input[name=Handle]").value
+          VehicleId: document.querySelector("input[name=Handle]")
             ? document.querySelector("input[name=Handle]").value
             : "",
         }),
