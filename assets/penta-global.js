@@ -108,8 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   
                   if(branchSelect && uid) {
                     const inputGroup = branchSelect.closest(".penta-input-group");
-                    inputGroup.style.display = "none";
-                    branchSelect.required = false;
+                    inputGroup.remove();
                   }
                 }
               );
