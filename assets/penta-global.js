@@ -129,8 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((data) => {
             // Build dropdown list filtered by brand data attribute
             dealerships = data.dealerships.filter(
-              (dealership) =>
-                dealership.brand.toLowerCase() == brand.toLowerCase()
+              (dealership) => {
+                console.log(dealership.brand.toLowerCase() + " " + brand.toLowerCase())
+                return dealership.brand.toLowerCase() == brand.toLowerCase();
+              }
             );
             let options = dealerships.map((dealership) => {
               return `<option>${dealership.name}</option>`;
@@ -175,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 5000);
       },
       init() {
-        console.log("test");
         const forms = document.querySelectorAll(".penta-form");
         forms.forEach((elem) => {
           let form = new Form(elem);
