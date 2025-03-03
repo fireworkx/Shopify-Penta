@@ -103,6 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
                       uid
                     );
                   }
+
+                  const select = document.querySelector(`.penta-modal#${type} select[name="Branch"]`) ?? null;
+                  console.log(select);
                 }
               );
             });
