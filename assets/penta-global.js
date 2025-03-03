@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     );
                   }
 
-                  const select = document.querySelector(`.penta-modal#${type} select[name="Branch"]`) ?? null;
+                  const branchSelect = document.querySelector(`.penta-modal#${type} select[name="Branch"]`) ?? null;
                   
-                  if(select && uid) {
-                    const inputGroup = select.closest(".penta-input-group");
+                  if(branchSelect && uid) {
+                    const inputGroup = branchSelect.closest(".penta-input-group");
                     console.log(inputGroup);
                   }
                 }
