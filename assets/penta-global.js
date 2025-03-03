@@ -262,8 +262,8 @@ document.addEventListener("DOMContentLoaded", () => {
           Make: "",
           Model: "",
           Specification: "",
-          VehicleId: document.querySelector("input[name=Handle]")
-            ? document.querySelector("input[name=Handle]")
+          VehicleId: document.querySelector("input[name=Handle]").value
+            ? document.querySelector("input[name=Handle]").value
             : "",
         }),
         headers: {
