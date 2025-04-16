@@ -33,9 +33,12 @@
   {% if product.metafields.product.StockNumber != blank %}
     <tr><th>Stock Number</th><td>{{ product.metafields.product.StockNumber }}</td></tr>
   {% endif %}
+  {% comment %}
+
   {% if product.metafields.product.HasServiceHistory != blank %}
     <tr><th>Has Service History</th><td>{{ product.metafields.product.HasServiceHistory }}</td></tr>
   {% endif %}
+  {% endcomment %}
   {% if product.metafields.product.InternetNotes != blank %}
     <tr><th>Additional Notes</th><td>{{ product.metafields.product.InternetNotes }}</td></tr>
   {% endif %}
