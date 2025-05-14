@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -38,8 +38,8 @@
         "text_TwKgHT": {
           "type": "text",
           "settings": {
-            "heading": "© 2024 Penta Motor Group",
-            "subtext": "<p>Reg Office: 501 Breed Str, Montana Gardens, Pretoria, 0182. Reg. Company Number: 2012\/086672\/07<\/p>"
+            "heading": "© 2025 Penta Motor Group",
+            "subtext": "<p>Reg Office: 501 Breed Str, Montana Gardens, Pretoria, 0182. Reg. Company Number: 2012/086672/07</p>"
           }
         }
       },
