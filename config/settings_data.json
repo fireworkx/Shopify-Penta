@@ -142,6 +142,11 @@
         "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
         "settings": {}
+      },
+      "3807995532714858160": {
+        "type": "shopify://apps/trafficly-visitors-counter/blocks/trafficly/ff0a9f47-c478-468c-8fa1-f5a7bb122960",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
