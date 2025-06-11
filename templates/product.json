@@ -82,6 +82,18 @@
       "type": "penta-main-product-metafield-table",
       "settings": {}
     },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
     "1711897140626291ee": {
       "type": "apps",
       "blocks": {
@@ -96,24 +108,12 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "You may also like",
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": false,
-        "show_rating": false
-      }
     }
   },
   "order": [
     "main",
     "penta_main_product_metafield_table_QPWiNy",
-    "1711897140626291ee",
-    "product-recommendations"
+    "product-recommendations",
+    "1711897140626291ee"
   ]
 }
