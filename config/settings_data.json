@@ -147,6 +147,11 @@
         "type": "shopify://apps/trafficly-visitors-counter/blocks/trafficly/ff0a9f47-c478-468c-8fa1-f5a7bb122960",
         "disabled": false,
         "settings": {}
+      },
+      "4722930852595529262": {
+        "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter-embedded/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

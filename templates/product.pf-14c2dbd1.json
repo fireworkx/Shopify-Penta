@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -21,8 +21,7 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "subtitle": {
           "type": "text",
@@ -33,32 +32,32 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
+            "show_dynamic_checkout": true
           }
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "share": {
           "type": "share",
           "settings": {
+            "share_label": "Share"
           }
         }
       },
@@ -74,22 +73,47 @@
         "share"
       ],
       "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
       }
     },
     "pf-14c2dbd1": {
       "type": "pf-14c2dbd1",
+      "settings": {}
+    },
+    "1749630304c0741130": {
+      "type": "apps",
+      "blocks": {
+        "approom_visitor_counter_pro_approom_visitor_counter_pp4GFN": {
+          "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "approom_visitor_counter_pro_approom_visitor_counter_pp4GFN"
+      ],
       "settings": {
+        "include_margins": true
       }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "pf-14c2dbd1"
+    "pf-14c2dbd1",
+    "1749630304c0741130"
   ]
 }
