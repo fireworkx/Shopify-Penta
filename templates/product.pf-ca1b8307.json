@@ -112,9 +112,9 @@
   },
   "order": [
     "main",
-    "17496303872360a104",
     "product-recommendations",
-    "pf-ca1b8307"
+    "pf-ca1b8307",
+    "17496303872360a104"
   ],
   "layout": "theme.pagefly"
 }
