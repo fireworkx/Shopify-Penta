@@ -12,10 +12,6 @@
     "main": {
       "type": "penta-main-product",
       "blocks": {
-        "approom_visitor_counter_pro_approom_visitor_counter_n7JijU": {
-          "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
-          "settings": {}
-        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -66,7 +62,6 @@
         }
       },
       "block_order": [
-        "approom_visitor_counter_pro_approom_visitor_counter_n7JijU",
         "vendor",
         "title",
         "subtitle",
@@ -81,6 +76,21 @@
         "enable_sticky_info": true,
         "hide_variants": false,
         "enable_video_looping": false
+      }
+    },
+    "1711897140626291ee": {
+      "type": "apps",
+      "blocks": {
+        "approom_visitor_counter_pro_approom_visitor_counter_xxyjmi": {
+          "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "approom_visitor_counter_pro_approom_visitor_counter_xxyjmi"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "penta_main_product_metafield_table_QPWiNy": {
@@ -98,18 +108,12 @@
         "show_vendor": false,
         "show_rating": false
       }
-    },
-    "1711897140626291ee": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "main",
+    "1711897140626291ee",
     "penta_main_product_metafield_table_QPWiNy",
-    "product-recommendations",
-    "1711897140626291ee"
+    "product-recommendations"
   ]
 }
