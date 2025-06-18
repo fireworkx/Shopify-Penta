@@ -441,7 +441,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //   Load price per month on product card
 
   let prices = document.querySelectorAll(".penta-card-loan");
-
+  console.log(prices);
+  
   prices.forEach((pricePerMonth) => {
     if (pricePerMonth) {
       const initialAmount = Number(pricePerMonth.dataset.price) / 100;
