@@ -76,10 +76,9 @@
   </div>
   {% assign price = product_card_product.price | plus: 0 | default: 0 %}
   {% unless template.name == 'product' or template contains 'product'%}
-    <div class="penta-card-loan" data-price="{{ price }}">/ month</div>
   {% endunless %}
 
-  {{ template }}
   {% comment %}
+    <div class="penta-card-loan" data-price="{{ price }}">/ month</div>
   {% endcomment %}
 </a>
