@@ -963,3 +963,13 @@ button[data-modal="gallery-modal"]:hover svg {
     margin-bottom: 7rem;
   }
 }
+.penta-form-consent {
+  max-width: 100%; /* or a specific pixel value like 600px */
+}
+
+.penta-form-consent label {
+  display: block;          /* make it a block-level element */
+  line-height: 1.4;        /* improve readability */
+  word-wrap: break-word;   /* optional: break long words if needed */
+  white-space: normal;     /* allow wrapping */
+}
