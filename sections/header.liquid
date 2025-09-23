@@ -32,6 +32,21 @@
     }
   {%- endif -%}
 
+  /* Hide the horizontal (inline) menu on tablet-and-down */
+@media screen and (max-width: 1199px) {
+  .header__inline-menu {
+    display: none !important;
+  }
+  /* Make sure the hamburger toggle is visible if your theme hides it */
+  header-drawer,
+  .menu-drawer__toggle,
+  .header__icon--menu,
+  button.menu-toggle {
+    display: flex !important;
+    align-items: center;
+  }
+}
+
   .menu-drawer-container {
     display: flex;
   }
