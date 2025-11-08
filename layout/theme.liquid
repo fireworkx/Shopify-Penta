@@ -22,11 +22,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    {% if request.path contains '/blogs/blog/' %}
-     <meta http-equiv="refresh" content="0; url=/">
-     <script>window.location.href = "/";</script>
-   {% endif %}
-
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
