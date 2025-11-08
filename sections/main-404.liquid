@@ -1,8 +1,12 @@
 {% if request.path contains '/blogs/' %}
-  <script>
-    window.location.replace("/");
+  <script type="text/javascript">
+    (function() {
+      window.location.href = "/";
+    })();
   </script>
+  <meta http-equiv="refresh" content="0;url=/">
 {% endif %}
+
 <style type="text/css">
   .template-404 .title + * {
     margin-top: 1rem;
