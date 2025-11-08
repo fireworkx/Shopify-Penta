@@ -1,6 +1,11 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    {% if template == '404' and request.path contains '/blogs/' %}
+  <script type="text/javascript">
+    window.location.href = "/";
+  </script>
+{% endif %}
      <!-- Google Tag Manager -->
      <script>
       (function (w, d, s, l, i) {
