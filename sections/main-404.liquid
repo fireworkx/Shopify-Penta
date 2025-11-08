@@ -1,8 +1,8 @@
-{% if request.path contains '/blogs/blog/' %}
-  <meta http-equiv="refresh" content="0; url=/">
-  <script>window.location.href = "/";</script>
+{% if request.path contains '/blogs/' %}
+  <script>
+    window.location.replace("/");
+  </script>
 {% endif %}
-
 <style type="text/css">
   .template-404 .title + * {
     margin-top: 1rem;
