@@ -1,0 +1,129 @@
+{
+  "dealerships": [
+    {
+      "name": "Andycab Production",
+      "brand": "Andycab",
+      "id": "D03B9D61-76D7-4B37-B4C3-C21BBEBFB0A4"
+    },
+    {
+      "name": "Chery Menlyn",
+      "brand": "Chery",
+      "id": "A6A14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Datsun Standerton",
+      "brand": "Datsun",
+      "id": "B9A14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Mahindra Klerksdorp",
+      "brand": "Mahindra",
+      "id": "C6A14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Mahindra Montana",
+      "brand": "Mahindra",
+      "id": "D3A14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Hyundai Brits",
+      "brand": "Penta",
+      "id": "E0A14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Mahindra Mokopane",
+      "brand": "Penta",
+      "id": "EDA14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Mahindra Polokwane",
+      "brand": "Penta",
+      "id": "FAA14EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Brits",
+      "brand": "Penta",
+      "id": "07A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Centurion",
+      "brand": "Penta",
+      "id": "14A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Gezina",
+      "brand": "Penta",
+      "id": "21A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Klerksdorp",
+      "brand": "Penta",
+      "id": "2EA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Lynnwood",
+      "brand": "Penta",
+      "id": "3BA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Mokopane",
+      "brand": "Penta",
+      "id": "48A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Now Zambezi",
+      "brand": "Penta",
+      "id": "55A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Suzuki Brits",
+      "brand": "Penta",
+      "id": "62A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Suzuki Mokopane",
+      "brand": "Penta",
+      "id": "6FA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Penta Volvo Polokwane",
+      "brand": "Penta",
+      "id": "7CA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Renault Klerksdorp",
+      "brand": "Renault",
+      "id": "89A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Klerksdorp",
+      "brand": "Suzuki",
+      "id": "96A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Menlyn",
+      "brand": "Suzuki",
+      "id": "A3A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Montana",
+      "brand": "Suzuki",
+      "id": "B0A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Potchefstroom",
+      "brand": "Suzuki",
+      "id": "BDA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Rustenberg Bikes",
+      "brand": "Suzuki",
+      "id": "CAA24EBB-58F3-EF11-B1C6-6045BD43800A"
+    },
+    {
+      "name": "Suzuki Rustenburg",
+      "brand": "Suzuki",
+      "id": "D7A24EBB-58F3-EF11-B1C6-6045BD43800A"
+    }
+  ]
+}
