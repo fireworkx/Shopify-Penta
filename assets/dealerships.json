@@ -31,11 +31,6 @@
       "id": "E0A14EBB-58F3-EF11-B1C6-6045BD43800A"
     },
     {
-      "name": "Penta Mahindra Mokopane",
-      "brand": "Penta",
-      "id": "EDA14EBB-58F3-EF11-B1C6-6045BD43800A"
-    },
-    {
       "name": "Penta Mahindra Polokwane",
       "brand": "Penta",
       "id": "FAA14EBB-58F3-EF11-B1C6-6045BD43800A"
@@ -81,11 +76,6 @@
       "id": "62A24EBB-58F3-EF11-B1C6-6045BD43800A"
     },
     {
-      "name": "Penta Suzuki Mokopane",
-      "brand": "Penta",
-      "id": "6FA24EBB-58F3-EF11-B1C6-6045BD43800A"
-    },
-    {
       "name": "Penta Volvo Polokwane",
       "brand": "Penta",
       "id": "7CA24EBB-58F3-EF11-B1C6-6045BD43800A"
@@ -114,16 +104,6 @@
       "name": "Suzuki Potchefstroom",
       "brand": "Suzuki",
       "id": "BDA24EBB-58F3-EF11-B1C6-6045BD43800A"
-    },
-    {
-      "name": "Suzuki Rustenberg Bikes",
-      "brand": "Suzuki",
-      "id": "CAA24EBB-58F3-EF11-B1C6-6045BD43800A"
-    },
-    {
-      "name": "Suzuki Rustenburg",
-      "brand": "Suzuki",
-      "id": "D7A24EBB-58F3-EF11-B1C6-6045BD43800A"
     }
   ]
 }
