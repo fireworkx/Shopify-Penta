@@ -152,6 +152,16 @@
         "type": "shopify://apps/approom-visitor-counter-pro/blocks/approom-visitor-counter-embedded/e86c0791-abf3-4999-a3f5-7e856ff11fd7",
         "disabled": false,
         "settings": {}
+      },
+      "2200952712151285029": {
+        "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
+      "2567389343055140935": {
+        "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
