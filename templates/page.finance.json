@@ -12,7 +12,7 @@
     "finance_page": {
       "type": "finance-page",
       "settings": {
-        "application_url": "https://siriti.co.za",
+        "application_url": "https://torque.seritisolutions.co.za/app/financeapplication?CompanyCode=PENT&UniqueCode=5E24DC9E-6E0F-478E-8E82-1857695088C8",
         "enquiry_url": "/pages/contact"
       }
     }
