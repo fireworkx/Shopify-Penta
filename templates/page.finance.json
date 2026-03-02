@@ -9,15 +9,13 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
+    "finance_page": {
+      "type": "finance-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "application_url": "https://siriti.co.za",
+        "enquiry_url": "/pages/contact"
       }
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["finance_page"]
 }
