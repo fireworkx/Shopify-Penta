@@ -1,0 +1,514 @@
+{% comment %}
+  Section: finance-page.liquid
+  Theme: Dawn 15
+  Location: /sections/finance-page.liquid
+{% endcomment %}
+
+<style>
+  /* =============================================
+     FINANCE PAGE – PENTA MOTOR GROUP
+     ============================================= */
+
+  .finance-page {
+    --color-brand: #C8A96E;
+    --color-brand-dark: #a8893e;
+    --color-surface: #f8f8f6;
+    --color-border: #e5e3df;
+    --radius: 4px;
+    font-family: var(--font-body-family, sans-serif);
+    color: var(--color-foreground);
+  }
+
+  /* ---- HERO ---- */
+  .finance-hero {
+    background-color: #111;
+    color: #fff;
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+
+  .finance-hero__eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    margin-bottom: 16px;
+  }
+
+  .finance-hero__heading {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    margin: 0 0 16px;
+    line-height: 1.1;
+  }
+
+  .finance-hero__subheading {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 620px;
+    margin: 0 auto 12px;
+    line-height: 1.6;
+  }
+
+  .finance-hero__tagline {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 40px;
+  }
+
+  .finance-hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .finance-btn-primary {
+    display: inline-block;
+    background: var(--color-brand);
+    color: #111 !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .finance-btn-primary:hover { background: var(--color-brand-dark); }
+
+  .finance-btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .finance-btn-secondary:hover {
+    border-color: var(--color-brand);
+    background: rgba(200,169,110,0.08);
+  }
+
+  /* ---- SECTION WRAPPERS ---- */
+  .finance-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  .finance-section--shaded {
+    background: var(--color-surface);
+  }
+
+  .finance-section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .finance-section-heading {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    margin: 0 0 32px;
+    line-height: 1.2;
+  }
+
+  /* ---- HOW IT WORKS ---- */
+  .finance-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .finance-step-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+  }
+
+  .finance-step-card__number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-brand);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .finance-step-card__text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  .finance-how-tagline {
+    font-size: 1rem;
+    font-style: italic;
+    color: #666;
+    border-left: 3px solid var(--color-brand);
+    padding-left: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* ---- SPEAK BANNER ---- */
+  .finance-speak-banner {
+    background: #111;
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+  }
+
+  .finance-speak-banner__heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  .finance-speak-banner__text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 540px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+
+  /* ---- WHY PENTA ---- */
+  .finance-why-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .finance-why-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.97rem;
+    line-height: 1.5;
+  }
+
+  .finance-why-list__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--color-brand);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .finance-why-list__icon svg {
+    width: 10px;
+    height: 10px;
+    stroke: #111;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .finance-compliance-note {
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* ---- FAQs ---- */
+  .finance-faq-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .finance-faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .finance-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    padding: 20px 0;
+    font-size: 0.97rem;
+    font-weight: 600;
+    line-height: 1.4;
+    list-style: none;
+    user-select: none;
+  }
+
+  .finance-faq-question::-webkit-details-marker { display: none; }
+
+  .finance-faq-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  details[open] .finance-faq-icon {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+  }
+
+  .finance-faq-icon svg {
+    width: 10px;
+    height: 10px;
+    stroke: #111;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s;
+  }
+
+  details[open] .finance-faq-icon svg {
+    transform: rotate(45deg);
+  }
+
+  .finance-faq-answer {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #555;
+    padding: 0 0 20px;
+  }
+
+  .finance-faq-answer ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+  }
+
+  .finance-faq-answer li { margin-bottom: 4px; }
+
+  @media (min-width: 750px) {
+    .finance-why-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<div class="finance-page">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="finance-hero">
+    <span class="finance-hero__eyebrow">Vehicle Finance</span>
+    <h1 class="finance-hero__heading">Vehicle Finance at Penta Motor Group</h1>
+    <p class="finance-hero__subheading">
+      Whether you're buying your first vehicle or upgrading your fleet, our finance team is here to make the process straightforward and stress-free.
+    </p>
+    <p class="finance-hero__tagline">Simple. Transparent. Structured around you.</p>
+    <div class="finance-hero__ctas">
+      <a href="{{ section.settings.application_url }}" target="_blank" rel="noopener" class="finance-btn-primary">
+        Start Your Online Finance Application
+      </a>
+      <a href="{{ section.settings.enquiry_url }}" class="finance-btn-secondary">
+        Send a Finance Enquiry
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <div>
+    <div class="finance-section">
+      <span class="finance-section-label">Process</span>
+      <h2 class="finance-section-heading">How It Works</h2>
+
+      <div class="finance-steps-grid">
+        <div class="finance-step-card">
+          <div class="finance-step-card__number">01</div>
+          <p class="finance-step-card__text">Submit your online application or enquiry</p>
+        </div>
+        <div class="finance-step-card">
+          <div class="finance-step-card__number">02</div>
+          <p class="finance-step-card__text">We structure the best available deal based on your profile</p>
+        </div>
+        <div class="finance-step-card">
+          <div class="finance-step-card__number">03</div>
+          <p class="finance-step-card__text">We liaise with the banks on your behalf</p>
+        </div>
+        <div class="finance-step-card">
+          <div class="finance-step-card__number">04</div>
+          <p class="finance-step-card__text">You receive feedback and next steps quickly</p>
+        </div>
+      </div>
+
+      <p class="finance-how-tagline">Simple. Transparent. Managed for you.</p>
+
+      <div class="finance-speak-banner">
+        <h3 class="finance-speak-banner__heading">Prefer to Speak to Us First?</h3>
+        <p class="finance-speak-banner__text">
+          Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.
+        </p>
+        <a href="{{ section.settings.enquiry_url }}" class="finance-btn-primary">Send a Finance Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WHY PENTA ===================== -->
+  <div class="finance-section--shaded">
+    <div class="finance-section">
+      <span class="finance-section-label">Why Choose Us</span>
+      <h2 class="finance-section-heading">Why Finance Through Penta?</h2>
+
+      <ul class="finance-why-list">
+        {%- assign why_items = "Access to leading South African banks and finance houses|Competitive rates tailored to your profile|Transparent advice aligned to your best interest|Full support from application to approval|Finance and insurance handled professionally under regulated standards" | split: "|" -%}
+        {%- for item in why_items -%}
+          <li class="finance-why-list__item">
+            <span class="finance-why-list__icon">
+              <svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg>
+            </span>
+            <span>{{ item }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <p class="finance-compliance-note">
+        Penta Motor Group works within regulated financial services frameworks, ensuring compliance, transparency and peace of mind throughout your finance journey.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================== FAQs ===================== -->
+  <div>
+    <div class="finance-section">
+      <span class="finance-section-label">FAQs</span>
+      <h2 class="finance-section-heading">Vehicle Finance FAQs</h2>
+      <p style="margin-bottom:32px;color:#666;font-size:0.95rem;">Still have questions? Here's what most clients ask before applying.</p>
+
+      <div class="finance-faq-list">
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            How long does vehicle finance approval take?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>In most cases, feedback is received within 24–48 hours after submitting a complete application. Our team works to get you an answer as quickly as possible.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            Does applying affect my credit score?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>Submitting a finance application may result in a credit check by the bank. We guide you through the process so there are no surprises.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            What documents will I need?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>Typically:</p>
+            <ul>
+              <li>South African ID</li>
+              <li>Latest payslip (or proof of income)</li>
+              <li>3 months' bank statements</li>
+              <li>Proof of address</li>
+            </ul>
+            <p style="margin-top:10px;">Our team will confirm exactly what's required based on your profile.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            Can I apply if I'm self-employed?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>Yes. Self-employed applicants are welcome. Additional financial documents may be required to support your application.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            Can I include insurance in my finance?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>Yes. We can structure finance and insurance solutions together, depending on your needs and approval terms.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            What if my application is declined?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>If finance is not approved initially, we'll review alternative options where possible and guide you on the next steps.</p>
+          </div>
+        </details>
+
+        <details class="finance-faq-item">
+          <summary class="finance-faq-question">
+            Is the online application secure?
+            <span class="finance-faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </summary>
+          <div class="finance-faq-answer">
+            <p>Yes. The Siriti platform is secure and your information is treated confidentially and in line with financial regulations.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Finance Page",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "application_url",
+      "label": "Finance Application URL (Siriti)"
+    },
+    {
+      "type": "url",
+      "id": "enquiry_url",
+      "label": "Finance Enquiry Page URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Finance Page"
+    }
+  ]
+}
+{% endschema %}
