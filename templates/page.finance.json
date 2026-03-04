@@ -22,13 +22,13 @@
         "cta_secondary_label": "Send a Finance Enquiry",
         "cta_secondary_url": "",
         "background_color": "#111111",
-        "accent_color": "#C8A96E",
-        "heading_color": "#FFFFFF",
-        "body_color": "#AAAAAA",
+        "accent_color": "#c8a96e",
+        "heading_color": "#ffffff",
+        "body_color": "#aaaaaa",
         "tagline_color": "#666666",
-        "btn_primary_bg": "#C8A96E",
+        "btn_primary_bg": "#c8a96e",
         "btn_primary_text": "#111111",
-        "btn_secondary_text": "#FFFFFF",
+        "btn_secondary_text": "#ffffff",
         "btn_secondary_border": "#555555"
       }
     },
@@ -71,13 +71,13 @@
         "label": "Process",
         "heading": "How It Works",
         "tagline": "Simple. Transparent. Managed for you.",
-        "background_color": "#FFFFFF",
-        "accent_color": "#C8A96E",
+        "background_color": "#ffffff",
+        "accent_color": "#c8a96e",
         "heading_color": "#111111",
         "body_color": "#444444",
         "tagline_color": "#666666",
-        "card_bg": "#FAFAFA",
-        "card_border": "#E8E6E2"
+        "card_bg": "#fafafa",
+        "card_border": "#e8e6e2"
       }
     },
     "finance_speak_banner_EqnMtR": {
@@ -87,13 +87,13 @@
         "heading": "Prefer to Speak to Us First?",
         "text": "Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.",
         "cta_label": "Send a Finance Enquiry",
-        "cta_url": "",
-        "outer_bg": "#FFFFFF",
+        "cta_url": "https://pentamotorgroup.co.za/pages/contact-us",
+        "outer_bg": "#ffffff",
         "banner_bg": "#111111",
-        "accent_color": "#C8A96E",
-        "heading_color": "#FFFFFF",
-        "body_color": "#AAAAAA",
-        "btn_bg": "#C8A96E",
+        "accent_color": "#c8a96e",
+        "heading_color": "#ffffff",
+        "body_color": "#aaaaaa",
+        "btn_bg": "#c8a96e",
         "btn_text": "#111111"
       }
     },
@@ -143,13 +143,13 @@
         "label": "Why Choose Us",
         "heading": "Why Finance Through Penta?",
         "compliance_note": "Penta Motor Group works within regulated financial services frameworks, ensuring compliance, transparency and peace of mind throughout your finance journey.",
-        "background_color": "#F5F4F1",
-        "accent_color": "#C8A96E",
+        "background_color": "#f5f4f1",
+        "accent_color": "#c8a96e",
         "icon_check_color": "#111111",
         "heading_color": "#111111",
         "body_color": "#333333",
         "compliance_color": "#777777",
-        "divider_color": "#DEDAD5"
+        "divider_color": "#dedad5"
       }
     },
     "finance_faqs_izftkV": {
@@ -219,13 +219,13 @@
         "label": "FAQs",
         "heading": "Vehicle Finance FAQs",
         "intro": "Still have questions? Here's what most clients ask before applying.",
-        "background_color": "#FFFFFF",
-        "accent_color": "#C8A96E",
+        "background_color": "#ffffff",
+        "accent_color": "#c8a96e",
         "heading_color": "#111111",
         "intro_color": "#666666",
         "question_color": "#111111",
         "answer_color": "#555555",
-        "divider_color": "#DEDAD5",
+        "divider_color": "#dedad5",
         "icon_color": "#111111",
         "icon_open_color": "#111111"
       }
