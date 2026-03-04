@@ -1,21 +1,21 @@
 {% comment %}
-  Section: finance-why-penta.liquid
-  Location: /sections/finance-why-penta.liquid
+  Section: finance-how-it-works.liquid
+  Location: /sections/finance-how-it-works.liquid
   Theme: Dawn 15 — Penta Motor Group
 {% endcomment %}
 
 <style>
-  #finance-why-{{ section.id }} {
+  #finance-how-{{ section.id }} {
     background-color: {{ section.settings.background_color }};
   }
 
-  #finance-why-{{ section.id }} .fwp-inner {
+  #finance-how-{{ section.id }} .fhow-inner {
     max-width: 1000px;
     margin: 0 auto;
     padding: 72px 24px;
   }
 
-  #finance-why-{{ section.id }} .fwp-label {
+  #finance-how-{{ section.id }} .fhow-label {
     display: inline-block;
     font-family: var(--font-body-family);
     font-size: 0.7rem;
@@ -26,7 +26,7 @@
     margin-bottom: 16px;
   }
 
-  #finance-why-{{ section.id }} .fwp-heading {
+  #finance-how-{{ section.id }} .fhow-heading {
     font-family: var(--font-heading-family);
     font-style: var(--font-heading-style);
     font-weight: var(--font-heading-weight);
@@ -37,122 +37,105 @@
     margin: 0 0 40px;
   }
 
-  #finance-why-{{ section.id }} .fwp-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px;
+  #finance-how-{{ section.id }} .fhow-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
   }
 
-  #finance-why-{{ section.id }} .fwp-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
+  #finance-how-{{ section.id }} .fhow-card {
+    background: {{ section.settings.card_bg }};
+    border: 1px solid {{ section.settings.card_border }};
+    padding: 32px 24px;
+  }
+
+  #finance-how-{{ section.id }} .fhow-card__number {
+    font-family: var(--font-heading-family);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: {{ section.settings.accent_color }};
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.9;
+  }
+
+  #finance-how-{{ section.id }} .fhow-card__text {
     font-family: var(--font-body-family);
-    font-size: 0.97rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     color: {{ section.settings.body_color }};
   }
 
-  #finance-why-{{ section.id }} .fwp-icon {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    background-color: {{ section.settings.accent_color }};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
-
-  #finance-why-{{ section.id }} .fwp-icon svg {
-    width: 11px;
-    height: 11px;
-    stroke: {{ section.settings.icon_check_color }};
-    fill: none;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  #finance-why-{{ section.id }} .fwp-compliance {
+  #finance-how-{{ section.id }} .fhow-tagline {
     font-family: var(--font-body-family);
-    font-size: 0.84rem;
-    line-height: 1.7;
-    color: {{ section.settings.compliance_color }};
-    border-top: 1px solid {{ section.settings.divider_color }};
-    padding-top: 24px;
-  }
-
-  @media (min-width: 750px) {
-    #finance-why-{{ section.id }} .fwp-list {
-      grid-template-columns: 1fr 1fr;
-    }
+    font-size: 0.95rem;
+    font-style: italic;
+    color: {{ section.settings.tagline_color }};
+    border-left: 3px solid {{ section.settings.accent_color }};
+    padding-left: 20px;
+    margin: 0;
+    line-height: 1.6;
   }
 </style>
 
-<div id="finance-why-{{ section.id }}">
-  <div class="fwp-inner">
+<div id="finance-how-{{ section.id }}">
+  <div class="fhow-inner">
     {%- if section.settings.label != blank -%}
-      <p class="fwp-label">{{ section.settings.label }}</p>
+      <p class="fhow-label">{{ section.settings.label }}</p>
     {%- endif -%}
-    <h2 class="fwp-heading">{{ section.settings.heading }}</h2>
+    <h2 class="fhow-heading">{{ section.settings.heading }}</h2>
 
-    <ul class="fwp-list">
+    <div class="fhow-grid">
       {%- for block in section.blocks -%}
-        <li class="fwp-item" {{ block.shopify_attributes }}>
-          <span class="fwp-icon">
-            <svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg>
-          </span>
-          <span>{{ block.settings.item_text }}</span>
-        </li>
+        <div class="fhow-card" {{ block.shopify_attributes }}>
+          <div class="fhow-card__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+          <p class="fhow-card__text">{{ block.settings.step_text }}</p>
+        </div>
       {%- endfor -%}
-    </ul>
+    </div>
 
-    {%- if section.settings.compliance_note != blank -%}
-      <p class="fwp-compliance">{{ section.settings.compliance_note }}</p>
+    {%- if section.settings.tagline != blank -%}
+      <p class="fhow-tagline">{{ section.settings.tagline }}</p>
     {%- endif -%}
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Finance – Why Penta",
+  "name": "Finance – How It Works",
   "tag": "div",
   "settings": [
     { "type": "header", "content": "Content" },
-    { "type": "text", "id": "label", "label": "Section label", "default": "Why Choose Us" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Finance Through Penta?" },
-    { "type": "textarea", "id": "compliance_note", "label": "Compliance note (below list)", "default": "Penta Motor Group works within regulated financial services frameworks, ensuring compliance, transparency and peace of mind throughout your finance journey." },
+    { "type": "text", "id": "label", "label": "Section label", "default": "Process" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How It Works" },
+    { "type": "text", "id": "tagline", "label": "Tagline (below steps)", "default": "Simple. Transparent. Managed for you." },
     { "type": "header", "content": "Colours" },
-    { "type": "color", "id": "background_color", "label": "Section background", "default": "#F5F4F1" },
-    { "type": "color", "id": "accent_color", "label": "Accent / icon background", "default": "#C8A96E" },
-    { "type": "color", "id": "icon_check_color", "label": "Checkmark colour", "default": "#111111" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "color", "id": "accent_color", "label": "Accent / label / numbers", "default": "#C8A96E" },
     { "type": "color", "id": "heading_color", "label": "Heading", "default": "#111111" },
-    { "type": "color", "id": "body_color", "label": "List item text", "default": "#333333" },
-    { "type": "color", "id": "compliance_color", "label": "Compliance note", "default": "#777777" },
-    { "type": "color", "id": "divider_color", "label": "Divider line", "default": "#DEDAD5" }
+    { "type": "color", "id": "body_color", "label": "Step text", "default": "#444444" },
+    { "type": "color", "id": "tagline_color", "label": "Tagline text", "default": "#666666" },
+    { "type": "color", "id": "card_bg", "label": "Card background", "default": "#FAFAFA" },
+    { "type": "color", "id": "card_border", "label": "Card border", "default": "#E8E6E2" }
   ],
   "blocks": [
     {
-      "type": "reason",
-      "name": "Reason",
+      "type": "step",
+      "name": "Step",
       "settings": [
-        { "type": "text", "id": "item_text", "label": "Item text" }
+        { "type": "textarea", "id": "step_text", "label": "Step description" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Finance – Why Penta",
+      "name": "Finance – How It Works",
       "blocks": [
-        { "type": "reason", "settings": { "item_text": "Access to leading South African banks and finance houses" } },
-        { "type": "reason", "settings": { "item_text": "Competitive rates tailored to your profile" } },
-        { "type": "reason", "settings": { "item_text": "Transparent advice aligned to your best interest" } },
-        { "type": "reason", "settings": { "item_text": "Full support from application to approval" } },
-        { "type": "reason", "settings": { "item_text": "Finance and insurance handled professionally under regulated standards" } }
+        { "type": "step", "settings": { "step_text": "Submit your online application or enquiry" } },
+        { "type": "step", "settings": { "step_text": "We structure the best available deal based on your profile" } },
+        { "type": "step", "settings": { "step_text": "We liaise with the banks on your behalf" } },
+        { "type": "step", "settings": { "step_text": "You receive feedback and next steps quickly" } }
       ]
     }
   ]
