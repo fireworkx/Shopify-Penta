@@ -1,0 +1,192 @@
+{% comment %}
+  Section: finance-faqs.liquid
+  Location: /sections/finance-faqs.liquid
+  Theme: Dawn 15 — Penta Motor Group
+{% endcomment %}
+
+<style>
+  #finance-faqs-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-label {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 16px;
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 12px;
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-intro {
+    font-family: var(--font-body-family);
+    font-size: 0.97rem;
+    color: {{ section.settings.intro_color }};
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-list {
+    border-top: 1px solid {{ section.settings.divider_color }};
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-item {
+    border-bottom: 1px solid {{ section.settings.divider_color }};
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    padding: 22px 0;
+    font-family: var(--font-body-family);
+    font-size: 0.97rem;
+    font-weight: 600;
+    line-height: 1.45;
+    list-style: none;
+    user-select: none;
+    color: {{ section.settings.question_color }};
+  }
+  #finance-faqs-{{ section.id }} .ffaq-question::-webkit-details-marker { display: none; }
+
+  #finance-faqs-{{ section.id }} .ffaq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid {{ section.settings.divider_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  #finance-faqs-{{ section.id }} details[open] .ffaq-icon {
+    background: {{ section.settings.accent_color }};
+    border-color: {{ section.settings.accent_color }};
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-icon svg {
+    width: 10px;
+    height: 10px;
+    stroke: {{ section.settings.icon_color }};
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
+  }
+
+  #finance-faqs-{{ section.id }} details[open] .ffaq-icon svg {
+    transform: rotate(45deg);
+    stroke: {{ section.settings.icon_open_color }};
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-answer {
+    font-family: var(--font-body-family);
+    font-size: 0.93rem;
+    line-height: 1.75;
+    color: {{ section.settings.answer_color }};
+    padding: 0 0 24px;
+  }
+
+  #finance-faqs-{{ section.id }} .ffaq-answer p { margin-top: 0; }
+  #finance-faqs-{{ section.id }} .ffaq-answer ul { padding-left: 20px; margin-top: 8px; }
+  #finance-faqs-{{ section.id }} .ffaq-answer li { margin-bottom: 4px; }
+</style>
+
+<div id="finance-faqs-{{ section.id }}">
+  <div class="ffaq-inner">
+    {%- if section.settings.label != blank -%}
+      <p class="ffaq-label">{{ section.settings.label }}</p>
+    {%- endif -%}
+    <h2 class="ffaq-heading">{{ section.settings.heading }}</h2>
+    {%- if section.settings.intro != blank -%}
+      <p class="ffaq-intro">{{ section.settings.intro }}</p>
+    {%- endif -%}
+
+    <div class="ffaq-list">
+      {%- for block in section.blocks -%}
+        <details class="ffaq-item" {{ block.shopify_attributes }}>
+          <summary class="ffaq-question">
+            {{ block.settings.question }}
+            <span class="ffaq-icon">
+              <svg viewBox="0 0 12 12">
+                <line x1="6" y1="1" x2="6" y2="11"/>
+                <line x1="1" y1="6" x2="11" y2="6"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="ffaq-answer">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Finance – FAQs",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "label", "label": "Section label", "default": "FAQs" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Vehicle Finance FAQs" },
+    { "type": "text", "id": "intro", "label": "Intro text", "default": "Still have questions? Here's what most clients ask before applying." },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#FFFFFF" },
+    { "type": "color", "id": "accent_color", "label": "Accent / label / open icon bg", "default": "#C8A96E" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#111111" },
+    { "type": "color", "id": "intro_color", "label": "Intro text", "default": "#666666" },
+    { "type": "color", "id": "question_color", "label": "Question text", "default": "#111111" },
+    { "type": "color", "id": "answer_color", "label": "Answer text", "default": "#555555" },
+    { "type": "color", "id": "divider_color", "label": "Divider lines", "default": "#DEDAD5" },
+    { "type": "color", "id": "icon_color", "label": "Icon (closed)", "default": "#111111" },
+    { "type": "color", "id": "icon_open_color", "label": "Icon (open)", "default": "#111111" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Finance – FAQs",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "How long does vehicle finance approval take?", "answer": "<p>In most cases, feedback is received within 24\u201348 hours after submitting a complete application. Our team works to get you an answer as quickly as possible.</p>" } },
+        { "type": "faq", "settings": { "question": "Does applying affect my credit score?", "answer": "<p>Submitting a finance application may result in a credit check by the bank. We guide you through the process so there are no surprises.</p>" } },
+        { "type": "faq", "settings": { "question": "What documents will I need?", "answer": "<p>Typically:</p><ul><li>South African ID</li><li>Latest payslip (or proof of income)</li><li>3 months\u2019 bank statements</li><li>Proof of address</li></ul><p>Our team will confirm exactly what\u2019s required based on your profile.</p>" } },
+        { "type": "faq", "settings": { "question": "Can I apply if I'm self-employed?", "answer": "<p>Yes. Self-employed applicants are welcome. Additional financial documents may be required to support your application.</p>" } },
+        { "type": "faq", "settings": { "question": "Can I include insurance in my finance?", "answer": "<p>Yes. We can structure finance and insurance solutions together, depending on your needs and approval terms.</p>" } },
+        { "type": "faq", "settings": { "question": "What if my application is declined?", "answer": "<p>If finance is not approved initially, we\u2019ll review alternative options where possible and guide you on the next steps.</p>" } },
+        { "type": "faq", "settings": { "question": "Is the online application secure?", "answer": "<p>Yes. The Siriti platform is secure and your information is treated confidentially and in line with financial regulations.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
