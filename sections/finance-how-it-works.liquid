@@ -1,0 +1,160 @@
+{% comment %}
+  Section: finance-why-penta.liquid
+  Location: /sections/finance-why-penta.liquid
+  Theme: Dawn 15 — Penta Motor Group
+{% endcomment %}
+
+<style>
+  #finance-why-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  #finance-why-{{ section.id }} .fwp-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+
+  #finance-why-{{ section.id }} .fwp-label {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 16px;
+  }
+
+  #finance-why-{{ section.id }} .fwp-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 40px;
+  }
+
+  #finance-why-{{ section.id }} .fwp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #finance-why-{{ section.id }} .fwp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: var(--font-body-family);
+    font-size: 0.97rem;
+    line-height: 1.6;
+    color: {{ section.settings.body_color }};
+  }
+
+  #finance-why-{{ section.id }} .fwp-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background-color: {{ section.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  #finance-why-{{ section.id }} .fwp-icon svg {
+    width: 11px;
+    height: 11px;
+    stroke: {{ section.settings.icon_check_color }};
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  #finance-why-{{ section.id }} .fwp-compliance {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    line-height: 1.7;
+    color: {{ section.settings.compliance_color }};
+    border-top: 1px solid {{ section.settings.divider_color }};
+    padding-top: 24px;
+  }
+
+  @media (min-width: 750px) {
+    #finance-why-{{ section.id }} .fwp-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
+<div id="finance-why-{{ section.id }}">
+  <div class="fwp-inner">
+    {%- if section.settings.label != blank -%}
+      <p class="fwp-label">{{ section.settings.label }}</p>
+    {%- endif -%}
+    <h2 class="fwp-heading">{{ section.settings.heading }}</h2>
+
+    <ul class="fwp-list">
+      {%- for block in section.blocks -%}
+        <li class="fwp-item" {{ block.shopify_attributes }}>
+          <span class="fwp-icon">
+            <svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg>
+          </span>
+          <span>{{ block.settings.item_text }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.compliance_note != blank -%}
+      <p class="fwp-compliance">{{ section.settings.compliance_note }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Finance – Why Penta",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "label", "label": "Section label", "default": "Why Choose Us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Finance Through Penta?" },
+    { "type": "textarea", "id": "compliance_note", "label": "Compliance note (below list)", "default": "Penta Motor Group works within regulated financial services frameworks, ensuring compliance, transparency and peace of mind throughout your finance journey." },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#F5F4F1" },
+    { "type": "color", "id": "accent_color", "label": "Accent / icon background", "default": "#C8A96E" },
+    { "type": "color", "id": "icon_check_color", "label": "Checkmark colour", "default": "#111111" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#111111" },
+    { "type": "color", "id": "body_color", "label": "List item text", "default": "#333333" },
+    { "type": "color", "id": "compliance_color", "label": "Compliance note", "default": "#777777" },
+    { "type": "color", "id": "divider_color", "label": "Divider line", "default": "#DEDAD5" }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        { "type": "text", "id": "item_text", "label": "Item text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Finance – Why Penta",
+      "blocks": [
+        { "type": "reason", "settings": { "item_text": "Access to leading South African banks and finance houses" } },
+        { "type": "reason", "settings": { "item_text": "Competitive rates tailored to your profile" } },
+        { "type": "reason", "settings": { "item_text": "Transparent advice aligned to your best interest" } },
+        { "type": "reason", "settings": { "item_text": "Full support from application to approval" } },
+        { "type": "reason", "settings": { "item_text": "Finance and insurance handled professionally under regulated standards" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
