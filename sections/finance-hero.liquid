@@ -1,0 +1,167 @@
+{% comment %}
+  Section: finance-hero.liquid
+  Location: /sections/finance-hero.liquid
+  Theme: Dawn 15 — Penta Motor Group
+{% endcomment %}
+
+<style>
+  #finance-hero-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding: 80px 24px 72px;
+    text-align: center;
+  }
+
+  #finance-hero-{{ section.id }} .fh-eyebrow {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 20px;
+  }
+
+  #finance-hero-{{ section.id }} .fh-heading {
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: clamp(3.6rem.2rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #finance-hero-{{ section.id }} .fh-subheading {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: {{ section.settings.body_color }};
+    max-width: 600px;
+    margin: 0 auto 12px;
+  }
+
+  #finance-hero-{{ section.id }} .fh-tagline {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: {{ section.settings.tagline_color }};
+    margin-bottom: 44px;
+    text-transform: uppercase;
+  }
+
+  #finance-hero-{{ section.id }} .fh-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  /* Primary button — gold fill, matches site style */
+  #finance-hero-{{ section.id }} .fh-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    background-color: {{ section.settings.btn_primary_bg }};
+    color: {{ section.settings.btn_primary_text }} !important;
+    border: 2px solid {{ section.settings.btn_primary_bg }};
+    border-radius: var(--buttons-radius, 0px);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+  }
+  #finance-hero-{{ section.id }} .fh-btn-primary:hover { opacity: 0.82; }
+
+  /* Secondary button — ghost style */
+  #finance-hero-{{ section.id }} .fh-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    background-color: transparent;
+    color: {{ section.settings.btn_secondary_text }} !important;
+    border: 2px solid {{ section.settings.btn_secondary_border }};
+    border-radius: var(--buttons-radius, 0px);
+    cursor: pointer;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+  }
+  #finance-hero-{{ section.id }} .fh-btn-secondary:hover { opacity: 0.75; }
+</style>
+
+<section id="finance-hero-{{ section.id }}">
+  {%- if section.settings.eyebrow != blank -%}
+    <p class="fh-eyebrow">{{ section.settings.eyebrow }}</p>
+  {%- endif -%}
+
+  <h1 class="fh-heading">{{ section.settings.heading }}</h1>
+
+  {%- if section.settings.subheading != blank -%}
+    <p class="fh-subheading">{{ section.settings.subheading }}</p>
+  {%- endif -%}
+
+  {%- if section.settings.tagline != blank -%}
+    <p class="fh-tagline">{{ section.settings.tagline }}</p>
+  {%- endif -%}
+
+  <div class="fh-ctas">
+    {%- if section.settings.cta_primary_label != blank and section.settings.cta_primary_url != blank -%}
+      <a href="{{ section.settings.cta_primary_url }}" target="_blank" rel="noopener" class="fh-btn-primary">
+        {{ section.settings.cta_primary_label }}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.cta_secondary_label != blank and section.settings.cta_secondary_url != blank -%}
+      <a href="{{ section.settings.cta_secondary_url }}" class="fh-btn-secondary">
+        {{ section.settings.cta_secondary_label }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Finance – Hero",
+  "tag": "div",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow label", "default": "Vehicle Finance" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Vehicle Finance at Penta Motor Group" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Whether you're buying your first vehicle or upgrading your fleet, our finance team is here to make the process straightforward and stress-free." },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Simple. Transparent. Structured around you." },
+    { "type": "header", "content": "Primary CTA" },
+    { "type": "text", "id": "cta_primary_label", "label": "Button label", "default": "Start Your Online Finance Application" },
+    { "type": "url", "id": "cta_primary_url", "label": "Button URL" },
+    { "type": "header", "content": "Secondary CTA" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Button label", "default": "Send a Finance Enquiry" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Button URL" },
+    { "type": "header", "content": "Colours" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#111111" },
+    { "type": "color", "id": "accent_color", "label": "Accent / eyebrow", "default": "#C8A96E" },
+    { "type": "color", "id": "heading_color", "label": "Heading", "default": "#FFFFFF" },
+    { "type": "color", "id": "body_color", "label": "Subheading", "default": "#AAAAAA" },
+    { "type": "color", "id": "tagline_color", "label": "Tagline", "default": "#666666" },
+    { "type": "header", "content": "Button colours" },
+    { "type": "color", "id": "btn_primary_bg", "label": "Primary background", "default": "#C8A96E" },
+    { "type": "color", "id": "btn_primary_text", "label": "Primary text", "default": "#111111" },
+    { "type": "color", "id": "btn_secondary_text", "label": "Secondary text", "default": "#FFFFFF" },
+    { "type": "color", "id": "btn_secondary_border", "label": "Secondary border", "default": "#555555" }
+  ],
+  "presets": [{ "name": "Finance – Hero" }]
+}
+{% endschema %}
