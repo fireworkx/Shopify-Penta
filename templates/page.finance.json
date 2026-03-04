@@ -9,13 +9,233 @@
  */
 {
   "sections": {
-    "finance_page": {
-      "type": "finance-page",
+    "finance_hero_y68ThL": {
+      "type": "finance-hero",
+      "name": "Finance – Hero",
       "settings": {
-        "application_url": "https://torque.seritisolutions.co.za/app/financeapplication?CompanyCode=PENT&UniqueCode=5E24DC9E-6E0F-478E-8E82-1857695088C8",
-        "enquiry_url": "/pages/contact"
+        "eyebrow": "Vehicle Finance",
+        "heading": "Vehicle Finance at Penta Motor Group",
+        "subheading": "Whether you're buying your first vehicle or upgrading your fleet, our finance team is here to make the process straightforward and stress-free.",
+        "tagline": "Simple. Transparent. Structured around you.",
+        "cta_primary_label": "Start Your Online Finance Application",
+        "cta_primary_url": "",
+        "cta_secondary_label": "Send a Finance Enquiry",
+        "cta_secondary_url": "",
+        "background_color": "#111111",
+        "accent_color": "#C8A96E",
+        "heading_color": "#FFFFFF",
+        "body_color": "#AAAAAA",
+        "tagline_color": "#666666",
+        "btn_primary_bg": "#C8A96E",
+        "btn_primary_text": "#111111",
+        "btn_secondary_text": "#FFFFFF",
+        "btn_secondary_border": "#555555"
+      }
+    },
+    "finance_how_it_works_7BRxV4": {
+      "type": "finance-how-it-works",
+      "blocks": {
+        "step_eD8pk6": {
+          "type": "step",
+          "settings": {
+            "step_text": "Submit your online application or enquiry"
+          }
+        },
+        "step_ktVbwn": {
+          "type": "step",
+          "settings": {
+            "step_text": "We structure the best available deal based on your profile"
+          }
+        },
+        "step_WdakK4": {
+          "type": "step",
+          "settings": {
+            "step_text": "We liaise with the banks on your behalf"
+          }
+        },
+        "step_cwYpbP": {
+          "type": "step",
+          "settings": {
+            "step_text": "You receive feedback and next steps quickly"
+          }
+        }
+      },
+      "block_order": [
+        "step_eD8pk6",
+        "step_ktVbwn",
+        "step_WdakK4",
+        "step_cwYpbP"
+      ],
+      "name": "Finance – How It Works",
+      "settings": {
+        "label": "Process",
+        "heading": "How It Works",
+        "tagline": "Simple. Transparent. Managed for you.",
+        "background_color": "#FFFFFF",
+        "accent_color": "#C8A96E",
+        "heading_color": "#111111",
+        "body_color": "#444444",
+        "tagline_color": "#666666",
+        "card_bg": "#FAFAFA",
+        "card_border": "#E8E6E2"
+      }
+    },
+    "finance_speak_banner_EqnMtR": {
+      "type": "finance-speak-banner",
+      "name": "Finance – Speak to Us",
+      "settings": {
+        "heading": "Prefer to Speak to Us First?",
+        "text": "Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.",
+        "cta_label": "Send a Finance Enquiry",
+        "cta_url": "",
+        "outer_bg": "#FFFFFF",
+        "banner_bg": "#111111",
+        "accent_color": "#C8A96E",
+        "heading_color": "#FFFFFF",
+        "body_color": "#AAAAAA",
+        "btn_bg": "#C8A96E",
+        "btn_text": "#111111"
+      }
+    },
+    "finance_why_penta_J9nCV6": {
+      "type": "finance-why-penta",
+      "blocks": {
+        "reason_7NbRHh": {
+          "type": "reason",
+          "settings": {
+            "item_text": "Access to leading South African banks and finance houses"
+          }
+        },
+        "reason_YeYHkW": {
+          "type": "reason",
+          "settings": {
+            "item_text": "Competitive rates tailored to your profile"
+          }
+        },
+        "reason_CVz8cn": {
+          "type": "reason",
+          "settings": {
+            "item_text": "Transparent advice aligned to your best interest"
+          }
+        },
+        "reason_X8KnHt": {
+          "type": "reason",
+          "settings": {
+            "item_text": "Full support from application to approval"
+          }
+        },
+        "reason_HAaqpy": {
+          "type": "reason",
+          "settings": {
+            "item_text": "Finance and insurance handled professionally under regulated standards"
+          }
+        }
+      },
+      "block_order": [
+        "reason_7NbRHh",
+        "reason_YeYHkW",
+        "reason_CVz8cn",
+        "reason_X8KnHt",
+        "reason_HAaqpy"
+      ],
+      "name": "Finance – Why Penta",
+      "settings": {
+        "label": "Why Choose Us",
+        "heading": "Why Finance Through Penta?",
+        "compliance_note": "Penta Motor Group works within regulated financial services frameworks, ensuring compliance, transparency and peace of mind throughout your finance journey.",
+        "background_color": "#F5F4F1",
+        "accent_color": "#C8A96E",
+        "icon_check_color": "#111111",
+        "heading_color": "#111111",
+        "body_color": "#333333",
+        "compliance_color": "#777777",
+        "divider_color": "#DEDAD5"
+      }
+    },
+    "finance_faqs_izftkV": {
+      "type": "finance-faqs",
+      "blocks": {
+        "faq_7UerPQ": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does vehicle finance approval take?",
+            "answer": "<p>In most cases, feedback is received within 24–48 hours after submitting a complete application. Our team works to get you an answer as quickly as possible.</p>"
+          }
+        },
+        "faq_ffLa8T": {
+          "type": "faq",
+          "settings": {
+            "question": "Does applying affect my credit score?",
+            "answer": "<p>Submitting a finance application may result in a credit check by the bank. We guide you through the process so there are no surprises.</p>"
+          }
+        },
+        "faq_jKyhfU": {
+          "type": "faq",
+          "settings": {
+            "question": "What documents will I need?",
+            "answer": "<p>Typically:</p><ul><li>South African ID</li><li>Latest payslip (or proof of income)</li><li>3 months’ bank statements</li><li>Proof of address</li></ul><p>Our team will confirm exactly what’s required based on your profile.</p>"
+          }
+        },
+        "faq_QQ7yJT": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I apply if I'm self-employed?",
+            "answer": "<p>Yes. Self-employed applicants are welcome. Additional financial documents may be required to support your application.</p>"
+          }
+        },
+        "faq_4iwWnj": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I include insurance in my finance?",
+            "answer": "<p>Yes. We can structure finance and insurance solutions together, depending on your needs and approval terms.</p>"
+          }
+        },
+        "faq_6TwzUT": {
+          "type": "faq",
+          "settings": {
+            "question": "What if my application is declined?",
+            "answer": "<p>If finance is not approved initially, we’ll review alternative options where possible and guide you on the next steps.</p>"
+          }
+        },
+        "faq_mP8BYH": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the online application secure?",
+            "answer": "<p>Yes. The Siriti platform is secure and your information is treated confidentially and in line with financial regulations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7UerPQ",
+        "faq_ffLa8T",
+        "faq_jKyhfU",
+        "faq_QQ7yJT",
+        "faq_4iwWnj",
+        "faq_6TwzUT",
+        "faq_mP8BYH"
+      ],
+      "name": "Finance – FAQs",
+      "settings": {
+        "label": "FAQs",
+        "heading": "Vehicle Finance FAQs",
+        "intro": "Still have questions? Here's what most clients ask before applying.",
+        "background_color": "#FFFFFF",
+        "accent_color": "#C8A96E",
+        "heading_color": "#111111",
+        "intro_color": "#666666",
+        "question_color": "#111111",
+        "answer_color": "#555555",
+        "divider_color": "#DEDAD5",
+        "icon_color": "#111111",
+        "icon_open_color": "#111111"
       }
     }
   },
-  "order": ["finance_page"]
+  "order": [
+    "finance_hero_y68ThL",
+    "finance_how_it_works_7BRxV4",
+    "finance_speak_banner_EqnMtR",
+    "finance_why_penta_J9nCV6",
+    "finance_faqs_izftkV"
+  ]
 }
