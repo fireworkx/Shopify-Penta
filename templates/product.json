@@ -108,12 +108,51 @@
         "show_vendor": false,
         "show_rating": false
       }
+    },
+    "177486123815922404": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_carousel_widget_block_a8VYUX": {
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "settings": {
+            "contentIndex": "1",
+            "variant": "carousel",
+            "headerType_rotator": "top",
+            "headerType_carousel": "top",
+            "customContentIndex": 31,
+            "font": "default",
+            "themeId": "light",
+            "ratingType": "stars",
+            "emojiType": "0",
+            "cardColor": "#F3F6F9",
+            "starsColor": "#FBB000",
+            "textColor": "#404040",
+            "transparent": 1,
+            "solidShadow": false,
+            "hasShadow": false,
+            "autoscroll": true,
+            "fluidScrolling": false,
+            "delay": 5,
+            "reviewPhotosType_carousel": "small",
+            "reviewPhotosType_rotator": "small",
+            "writeReview": true,
+            "fixedReviewsHeight": false
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_carousel_widget_block_a8VYUX"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
     "1711897140626291ee",
     "penta_main_product_metafield_table_QPWiNy",
-    "product-recommendations"
+    "product-recommendations",
+    "177486123815922404"
   ]
 }
