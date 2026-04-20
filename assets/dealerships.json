@@ -66,6 +66,11 @@
       "id": "55A24EBB-58F3-EF11-B1C6-6045BD43800A"
     },
     {
+      "name": "Penta Now Potch",
+      "brand": "Penta",
+      "id": "D35E9B89-233A-F111-B1DE-6045BD43800A"
+    },
+    {
       "name": "Penta Suzuki Brits",
       "brand": "Suzuki",
       "id": "62A24EBB-58F3-EF11-B1C6-6045BD43800A"
@@ -94,11 +99,6 @@
       "name": "Suzuki Potchefstroom",
       "brand": "Suzuki",
       "id": "BDA24EBB-58F3-EF11-B1C6-6045BD43800A"
-    },
-    {
-      "name": "Penta Now Potch",
-      "brand": "Penta",
-      "id": "D35E9B89-233A-F111-B1DE-6045BD43800A"
     }
   ]
 }
