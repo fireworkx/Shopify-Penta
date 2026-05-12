@@ -11,7 +11,21 @@
   "sections": {
     "pf-80b87f7a": {
       "type": "pf-80b87f7a",
-      "settings": {}
+      "settings": {
+        "pf_f1097ec9_value": "1591 Avocet Avenue<br>Montana Gardens<br>Pretoria<br>0182",
+        "pf_8e46f9f9_value": "Send us a Message&nbsp;",
+        "pf_944b518e_value": "Penta Mahindra Montana",
+        "pf_73e2bdf1_value": "Penta Mahindra Montana",
+        "pf_70ef15aa_value": "Book a Service&nbsp;",
+        "pf_d1429c81_value": "View on Google Maps",
+        "pf_7763160d_value": "&nbsp;087 353 2550",
+        "pf_c3ab6327_value": "&nbsp;087 353 2550",
+        "pf_11bdca6b_value": "&nbsp;087 353 2550",
+        "pf_1fb68a70_value": "Our Mahindra Range",
+        "pf_a8c859c3_value": "Service",
+        "pf_1887c177_value": "Sales",
+        "pf_03646c11_value": "Parts"
+      }
     }
   },
   "order": [
