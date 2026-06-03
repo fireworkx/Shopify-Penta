@@ -86,8 +86,8 @@
       "settings": {
         "heading": "Prefer to Speak to Us First?",
         "text": "Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.",
-        "cta_label": "Send a Finance Enquiry",
-        "cta_url": "https://pentamotorgroup.co.za/pages/contact-us",
+        "cta_label": "",
+        "cta_url": "",
         "outer_bg": "#ffffff",
         "banner_bg": "#111111",
         "accent_color": "#c8a96e",
@@ -95,6 +95,34 @@
         "body_color": "#aaaaaa",
         "btn_bg": "#f5c500",
         "btn_text": "#111111"
+      }
+    },
+    "178051214732aac75e": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_4rdxJE": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "1015896",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_4rdxJE"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "finance_why_penta_J9nCV6": {
@@ -258,6 +286,7 @@
     "finance_hero_y68ThL",
     "finance_how_it_works_7BRxV4",
     "finance_speak_banner_EqnMtR",
+    "178051214732aac75e",
     "finance_why_penta_J9nCV6",
     "finance_hero_iTi88x",
     "finance_faqs_izftkV"
