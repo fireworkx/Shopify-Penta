@@ -80,21 +80,48 @@
         "card_border": "#e8e6e2"
       }
     },
-    "finance_speak_banner_EqnMtR": {
-      "type": "finance-speak-banner",
-      "name": "Finance – Speak to Us",
+    "rich_text_bNLeYe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nKe6tB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Prefer to Speak to Us First?</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_VffJwM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.</p>"
+          }
+        },
+        "button_CNBXqA": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_nKe6tB",
+        "text_VffJwM",
+        "button_CNBXqA"
+      ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "heading": "Prefer to Speak to Us First?",
-        "text": "Our finance specialists will discuss your options, explain the process clearly, and help you understand what to expect so you can move forward with confidence.",
-        "cta_label": "",
-        "cta_url": "",
-        "outer_bg": "#ffffff",
-        "banner_bg": "#111111",
-        "accent_color": "#c8a96e",
-        "heading_color": "#ffffff",
-        "body_color": "#aaaaaa",
-        "btn_bg": "#f5c500",
-        "btn_text": "#111111"
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "178051214732aac75e": {
@@ -285,7 +312,7 @@
   "order": [
     "finance_hero_y68ThL",
     "finance_how_it_works_7BRxV4",
-    "finance_speak_banner_EqnMtR",
+    "rich_text_bNLeYe",
     "178051214732aac75e",
     "finance_why_penta_J9nCV6",
     "finance_hero_iTi88x",
