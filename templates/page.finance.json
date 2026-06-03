@@ -159,7 +159,7 @@
           "type": "faq",
           "settings": {
             "question": "How long does vehicle finance approval take?",
-            "answer": "<p>In most cases, feedback is received within 24–48 hours after submitting a complete application. Our team works to get you an answer as quickly as possible.</p>"
+            "answer": "<p>In most cases, feedback is received in less than 24 hours after submitting a complete application. Our team works to get you an answer as quickly as possible.</p>"
           }
         },
         "faq_ffLa8T": {
@@ -173,7 +173,7 @@
           "type": "faq",
           "settings": {
             "question": "What documents will I need?",
-            "answer": "<p>Typically:</p><ul><li>South African ID</li><li>Latest payslip (or proof of income)</li><li>3 months’ bank statements</li><li>Proof of address</li></ul><p>Our team will confirm exactly what’s required based on your profile.</p>"
+            "answer": "<p>Please have ready:</p><ul><li>3 months bank statements</li><li>3 months payslips</li><li>Proof of address not older than 3 months</li></ul><p>Our team will confirm exactly what’s required based on your profile.</p>"
           }
         },
         "faq_QQ7yJT": {
@@ -186,7 +186,7 @@
         "faq_4iwWnj": {
           "type": "faq",
           "settings": {
-            "question": "Can I include insurance in my finance?",
+            "question": "Can you assist with competitive insurance quotes?",
             "answer": "<p>Yes. We can structure finance and insurance solutions together, depending on your needs and approval terms.</p>"
           }
         },
@@ -201,7 +201,7 @@
           "type": "faq",
           "settings": {
             "question": "Is the online application secure?",
-            "answer": "<p>Yes. The Siriti platform is secure and your information is treated confidentially and in line with financial regulations.</p>"
+            "answer": "<p>Yes. The Seriti Solutions platform is secure and your information is treated confidentially and in line with financial regulations.</p>"
           }
         }
       },
