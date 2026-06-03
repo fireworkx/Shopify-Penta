@@ -32,7 +32,7 @@
       <div class="penta-input-group">
         <div class="penta-input">
           <input type="text" id="interest" value="13">
-          <label for="interest">Interest Rate %</label>
+          <label for="interest">Interest Rate</label>
           <span class="hidden" id="interest-error-message">Interest Rate is required</span>
         </div>
       </div>
@@ -41,8 +41,35 @@
           <input type="text" id="down">
           <label for="payment" id="down-payment-label"></label>
         </div>
-      </div>        <di        <div style="display: flex; flex-direction: row; align-items: center; gap: 16px;"><button id="calculate-button" class="btn" type="button" style="margin-top: 0;">Calculate</button><a href="https://pentamotorgroup.co.za/pages/finance" target="_blank" class="btn" style="text-decoration: none; margin-top: 0; background-color: #000; color: #fff;">Get Finance</a></div>
-      <p id="output"></p>
+                </div>
+         <div style="display: flex; flex-direction: row; align-items: center; gap: 16px;"><button id="calculate-button" class="btn" type="button" style="margin-top: 0;">Calculate</button><a href="https://pentamotorgroup.co.za/pages/finance" target="_blank" class="btn" style="text-decoration: none; margin-top: 0; background-color: #000; color: #fff;">Get Finance</a></div>
+        <p id="output"></p>
     </form>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('calculate-button');
+          if (btn) {
+                btn.addEventListener('click', function() {
+                        var amount = parseFloat(document.getElementById('amount').value) || 0;
+                                var months = parseInt(document.getElementById('months').value) || 72;
+                                        var interest = parseFloat(document.getElementById('interest').value) || 13;
+                                                var down = parseFloat(document.getElementById('down').value) || 0;
+                                                        var principal = amount - down;
+                                                                if (principal <= 0) {
+                                                                          document.getElementById('output').textContent = 'Please enter a valid loan amount greater than your down payment.';
+                                                                                    return;
+                                                                                            }
+                                                                                                    var monthlyRate = interest / 100 / 12;
+                                                                                                            var payment;
+                                                                                                                    if (monthlyRate === 0) {
+                                                                                                                              payment = principal / months;
+                                                                                                                                      } else {
+                                                                                                                                                payment = principal * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+                                                                                                                                                        }
+                                                                                                                                                                document.getElementById('output').textContent = 'Estimated Monthly Payment: $' + payment.toFixed(2);
+                                                                                                                                                                      });
+                                                                                                                                                                          }
+                                                                                                                                                                            });
+                                                                                                                                                                            </script>
