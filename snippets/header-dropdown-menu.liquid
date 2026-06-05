@@ -12,7 +12,7 @@
         {% comment %} Penta desktop header {% endcomment %}
         {%- if link.title == 'New Cars' or link.title == 'Service & Parts' or link.title == 'Contact us' -%}
           {% render 'penta-nav-brand-list', link: link %}
-        {% elsif link.title == 'Finance' -%}
+        {% elsif link.title == 'Vehicle Finance' -%}
           <a href="{{ link.url }}" target="_blank" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
             <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
           </a>
