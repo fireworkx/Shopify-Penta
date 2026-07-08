@@ -99,6 +99,11 @@
       "name": "Suzuki Potchefstroom",
       "brand": "Suzuki",
       "id": "BDA24EBB-58F3-EF11-B1C6-6045BD43800A"
-    }
+    },
+    {
+      "name": "iCAUR Montana",
+      "brand": "iCAUR",
+      "id": "c29cde0e-8f8a-4333-9b2a-ca2146b94f92"
+    }    
   ]
 }
