@@ -1,0 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pf-94a2b76c": {
+      "type": "pf-94a2b76c",
+      "settings": {
+        "pf_01725046_value": "Get in touch with Penta Motor Group and let us assist you with your vehicle needs and requirements through our dealer network.\r\rWhether you're interested in buying a new or used car or information on our parts and servicing, we can help you find exactly what you are looking for.",
+        "pf_a1340c9e_value": "501 Breed street, Montana Tuine, 0182, South Africa",
+        "pf_b841a4f8_value": "Dealership Details&nbsp;",
+        "pf_21971807_value": "Penta iCAUR Dealerships",
+        "pf_7b881f60_value": "Book a Service&nbsp;",
+        "pf_f7f7d155_value": "Penta iCAUR Montana",
+        "pf_ca156d7a_value": "+27 69 891 0735",
+        "pf_c1efd40b_value": "Our Locations"
+      }
+    }
+  },
+  "order": [
+    "pf-94a2b76c"
+  ]
+}
