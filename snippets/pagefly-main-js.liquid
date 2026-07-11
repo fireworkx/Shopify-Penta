@@ -1,12 +1,16 @@
 
-  {% if shop.metafields.pagefly.acceptTracking and shop.metafields.pagefly.measurementId %}
+  {% if shop.metafields.pagefly.acceptTracking or shop.metafields.pagefly.pfAnalyticsEnabled.value %}
+  {% if shop.metafields.pagefly.measurementId %}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ shop.metafields.pagefly.measurementId }}"></script>
+  {% endif %}
   <script>
+    {% if shop.metafields.pagefly.measurementId %}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ shop.metafields.pagefly.measurementId }}', { groups: 'pagefly' });
+    {% endif %}
     window.pfPageInfo = Object.assign(window.pfPageInfo || {});
 
     document.addEventListener("PageFlyHelperContentLoaded", () => {
@@ -56,6 +60,8 @@
           pf_collection_page_image: '{{ dynamic_image_path }}',
         {% endif %}
       });
+
+      {% if shop.metafields.pagefly.measurementId %}
       setTimeout(function() {
         gtag('event', 'pf_view_page', Object.assign({
           pf_view_page: 1,
@@ -75,6 +81,7 @@
               window.pfPageInfo)
             )
         }, 500)
+      {% endif %}
       {% endif %}
 
     window.__pagefly_analytics_settings__={
