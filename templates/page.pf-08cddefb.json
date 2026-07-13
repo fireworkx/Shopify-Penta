@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pf-08cddefb": {
+      "type": "pf-08cddefb",
+      "settings": {
+        "pf_ee97985f_value": "Get in touch with Penta Motor Group and let us assist you with your vehicle needs and requirements through our dealer network.\r\rWhether you're interested in buying a new or used car or information on our parts and servicing, we can help you find exactly what you are looking for.",
+        "pf_3a152903_value": "501 Breed street, Montana Tuine, 0182, South Africa",
+        "pf_69f08633_value": "27 Nelson Mandela Dr, Potchefstroom, 2520",
+        "pf_bf5f89b7_value": "5 Hendrik Verwoerd street, Brits, 0250",
+        "pf_f1735ca0_value": "181 Golden Way,\nKlerksdorp,\n2570",
+        "pf_c511558a_value": "Penta iCAUR Service &amp; Parts",
+        "pf_5886ba04_value": "Penta Suzuki Potchefstroom",
+        "pf_317982d8_value": "Dealership Details&nbsp;",
+        "pf_99183372_value": "Dealership Details&nbsp;",
+        "pf_4afce3a6_value": "Dealership Details&nbsp;",
+        "pf_29b37d9a_value": "Dealership Details&nbsp;",
+        "pf_903a0805_value": "Penta Suzuki Klerksdorp",
+        "pf_88e8b824_value": "Book a Service&nbsp;",
+        "pf_fdcc3ee8_value": "Book a Service&nbsp;",
+        "pf_58abe7b0_value": "Book a Service&nbsp;",
+        "pf_a9998bb3_value": "Book a Service&nbsp;",
+        "pf_d8f4bd94_value": "Penta iCAUR Montana",
+        "pf_c3fae668_value": "Penta Suzuki Brits",
+        "pf_023e3e44_value": "+27 69 891 0735",
+        "pf_4c054e15_value": " 018 000 5735",
+        "pf_83a0cd77_value": "Our Locations",
+        "pf_2154b155_value": "087 353 4144",
+        "pf_a7b93228_value": "012 883 4288"
+      }
+    }
+  },
+  "order": [
+    "pf-08cddefb"
+  ]
+}
